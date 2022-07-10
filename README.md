@@ -194,10 +194,17 @@ For bug or feature request, please fill the ticket in the github repository.
 
 The project is distributed under [Apache 2.0 license](LICENSE).
 
+# Forum and Q&A
+
+You are welcome to join the Slack workspace of project and ask questions.
+
+https://fl-pytorch-workspace.slack.com/
+
+
 # Another Resources
 
-1. [https://dl.acm.org/doi/abs/10.1145/3488659.3493775](https://dl.acm.org/doi/abs/10.1145/3488659.3493775)
-2. [https://arxiv.org/abs/2202.03099](https://arxiv.org/abs/2202.03099) 
-3. [FL_PyTorch in deepai.org](https://deepai.org/publication/fl-pytorch-optimization-research-simulator-for-federated-learning)
-4. [FL_PyTorch in researchgate.net](https://www.researchgate.net/publication/358422816_FL_PyTorch_optimization_research_simulator_for_federated_learning)
-5. [Video. FL_PyTorch at Rising Stars in AI Symposium 2022 at KAUST](https://webcast.kaust.edu.sa/mediasite/Showcase/kaust/Presentation/600c852bedf94c8298f92d8c1703f8521d)
+1. [https://arxiv.org/abs/2202.03099](https://arxiv.org/abs/2202.03099) 
+2. [https://dl.acm.org/doi/abs/10.1145/3488659.3493775](https://dl.acm.org/doi/abs/10.1145/3488659.3493775)
+3. [Video. FL_PyTorch at Rising Stars in AI Symposium 2022 at KAUST](https://webcast.kaust.edu.sa/mediasite/Showcase/kaust/Presentation/600c852bedf94c8298f92d8c1703f8521d)
+4. [FL_PyTorch in deepai.org](https://deepai.org/publication/fl-pytorch-optimization-research-simulator-for-federated-learning)
+5. [FL_PyTorch in researchgate.net](https://www.researchgate.net/publication/358422816_FL_PyTorch_optimization_research_simulator_for_federated_learning)
