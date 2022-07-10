@@ -21,9 +21,10 @@
   * [3. Use the console command-line interface](#3-use-the-console-command-line-interface)
 - [Obtain Command-Line from GUI](#obtain-command-line-from-gui)
 - [Cleaning after Work](#cleaning-after-work)
+- [Forum and Q&A](#forum-and-q-a)
 - [Reporting an Issue](#reporting-an-issue)
-- [About the License](#about-the-license)
 - [Another Resources](#another-resources)
+- [About the License](#about-the-license)
 
 
 # About Document
@@ -32,7 +33,7 @@
 
 If you have already installed and prepared all the needed for a start but need assistance in the following steps, we recommend starting with [TUTORIAL.md](TUTORIAL.md). We also provide automatic generated documentation for the code [pdoc3 documentation](docs/generated) located in "docs/generated" folder of the project.
 
-The slides, presentations, posters, and video with the project presentation are available in [presentations](presentations).
+The slides, presentations, posters, and video with the project presentation are available in [presentations](presentations). 
 
 ---
 
@@ -176,7 +177,6 @@ The entry point and the script to use during work with CUI are located here [fl_
 * The first way is to specify command-line parameters explicitly via using ```python ./run.py ...```
 * Second way is to launch GUI tool ```python start.py```, select Extra->Low Window(F2), and press one of the command line icons. It will produce a command line for loaded and configured experiments in GUI.
 
-----
 # Cleaning after Work
 
 Remove Conda environment in case you are using Conda: 
@@ -185,21 +185,15 @@ conda remove --name fl --all
 ```
 And please remove all not need files in the filesystem, including logs, checkpoints, and saved experiments in binary format.
 
-# Reporting an Issue
-
-For bug or feature request, please fill the ticket in the github repository.
-
-----
-# About the License
-
-The project is distributed under [Apache 2.0 license](LICENSE).
-
 # Forum and Q&A
 
 You are welcome to join the Slack workspace of project and ask questions.
 
 https://fl-pytorch-workspace.slack.com/
 
+# Reporting an Issue
+
+For bug or feature request, please fill the ticket in the github repository.
 
 # Another Resources
 
@@ -208,3 +202,7 @@ https://fl-pytorch-workspace.slack.com/
 3. [Video. FL_PyTorch at Rising Stars in AI Symposium 2022 at KAUST](https://webcast.kaust.edu.sa/mediasite/Showcase/kaust/Presentation/600c852bedf94c8298f92d8c1703f8521d)
 4. [FL_PyTorch in deepai.org](https://deepai.org/publication/fl-pytorch-optimization-research-simulator-for-federated-learning)
 5. [FL_PyTorch in researchgate.net](https://www.researchgate.net/publication/358422816_FL_PyTorch_optimization_research_simulator_for_federated_learning)
+
+# About the License
+
+The project is distributed under [Apache 2.0 license](LICENSE).
