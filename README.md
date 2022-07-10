@@ -189,7 +189,7 @@ And please remove all not need files in the filesystem, including logs, checkpoi
 
 You are welcome to join the Slack workspace of project and ask questions.
 
-https://fl-pytorch-workspace.slack.com/
+[https://fl-pytorch.slack.com/](https://fl-pytorch.slack.com/)
 
 # Reporting an Issue
 
