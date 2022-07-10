@@ -21,7 +21,7 @@
   * [3. Use the console command-line interface](#3-use-the-console-command-line-interface)
 - [Obtain Command-Line from GUI](#obtain-command-line-from-gui)
 - [Cleaning after Work](#cleaning-after-work)
-- [Forum and Q&A](#forum-and-q-a)
+- [Forum](#forum)
 - [Reporting an Issue](#reporting-an-issue)
 - [Another Resources](#another-resources)
 - [About the License](#about-the-license)
@@ -185,7 +185,7 @@ conda remove --name fl --all
 ```
 And please remove all not need files in the filesystem, including logs, checkpoints, and saved experiments in binary format.
 
-# Forum and Q&A
+# Forum
 
 You are welcome to join the Slack workspace of project and ask questions.
 
