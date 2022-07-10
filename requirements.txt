@@ -1,0 +1,15 @@
+# Please use the following command to install requirements for python/virtualenv
+# python -m pip install -r requirements.txt -f https://download.pytorch.org/whl/cu113/torch_stable.html
+
+torch==1.10.0+cu113
+torchvision
+numpy
+h5py==3.6.0
+coloredlogs
+pyqt5
+pyqt5-tools
+matplotlib
+psutil
+pytest
+wandb
+pdoc3

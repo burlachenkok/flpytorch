@@ -1,0 +1,2188 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>run API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_CHTML" integrity="sha256-kZafAc6mZvK3W3v1pHOcUix30OHQN6pU/NO2oFkqZVw=" crossorigin></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>run</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">#!/usr/bin/env python3
+
+import os
+import sys
+import json
+import socket
+import math
+import signal
+
+# Import PyTorch root package import torch
+import torch
+from torch.utils.collect_env import get_pretty_env_info
+
+import numpy as np
+import time
+import copy
+import threading
+import pickle
+
+from utils import comm_socket
+from utils import gpu_utils
+from utils import execution_context
+from utils import thread_pool
+from utils import wandb_wrapper
+
+from opts import parse_args
+
+from utils.logger import Logger
+from data_preprocess.data_loader import load_data, get_test_batch_size
+from utils.model_funcs import get_training_elements, evaluate_model, get_lr_scheduler, get_optimiser, \
+    run_one_communication_round, local_training, initialise_model
+
+from utils.checkpointing import save_checkpoint
+from utils.checkpointing import defered_eval_and_save_checkpoint
+
+from utils.utils import create_model_dir, create_metrics_dict
+from utils.fl_funcs import get_sampled_clients
+
+from models import RNN_MODELS
+from models import mutils
+
+from utils import algorithms
+
+from utils.buffer import Buffer
+
+
+def main(args, raw_cmdline, extra_):
+    # Init project and save in args url for the plots
+    projectWB = None
+    if len(args.wandb_key) &gt; 0:
+        projectWB = wandb_wrapper.initWandbProject(
+            args.wandb_key,
+            args.wandb_project_name,
+            f&#34;{args.algorithm}-rounds-{args.rounds}-{args.model}@{args.dataset}-runid-{args.run_id}&#34;,
+            args
+        )
+        if projectWB is not None:
+            args.wandb_url = projectWB.url
+
+    # In case of DataParallel for .to() to
+    # This a device used by master for FL algorithms
+    args.device = gpu_utils.get_target_device_str(args.gpu[0]) if type(args.gpu) == list else args.gpu
+
+    # Instantiate execution context
+    exec_ctx = execution_context.initExecutionContext()
+    exec_ctx.extra_ = extra_
+
+    # Set all seeds
+    if args.deterministic:
+        exec_ctx.random.seed(args.manual_init_seed)
+        exec_ctx.np_random.seed(args.manual_init_seed)
+
+    # Setup extra options for experiments
+    for option in args.algorithm_options.split(&#34;,&#34;):
+        kv = option.split(&#34;:&#34;)
+        if len(kv) == 1:
+            exec_ctx.experimental_options[kv[0]] = True
+        else:
+            exec_ctx.experimental_options[kv[0]] = kv[1]
+
+    # Load validation set
+    trainset, testset = load_data(exec_ctx, args.data_path, args.dataset, args, load_trainset=True, download=True)
+
+    test_batch_size = get_test_batch_size(args.dataset, args.batch_size)
+
+    # Test set dataloader
+    testloader = torch.utils.data.DataLoader(testset,
+                                             batch_size=test_batch_size,
+                                             num_workers=args.num_workers_test,
+                                             shuffle=False,
+                                             pin_memory=False,
+                                             drop_last=False
+                                             )
+
+    # Reset all seeds
+    if args.deterministic:
+        exec_ctx.random.seed(args.manual_init_seed)
+        exec_ctx.np_random.seed(args.manual_init_seed)
+
+    if not args.evaluate:  # Training mode
+        trainloader = torch.utils.data.DataLoader(
+            trainset,
+            batch_size=args.batch_size,
+            num_workers=args.num_workers_train,
+            shuffle=False,
+            pin_memory=False,
+            drop_last=False)
+
+        # Is target device for master is GPU
+        is_target_dev_gpu = gpu_utils.is_target_dev_gpu(args.device)
+
+        # Initialize local training threads in case of using multithreading implementation
+        exec_ctx.local_training_threads.adjust_num_workers(w=args.threadpool_for_local_opt, own_cuda_stream=True,
+                                                           device_list=args.gpu)
+        for th in exec_ctx.local_training_threads.threads:
+            th.trainset_copy = copy.deepcopy(trainset)
+            th.train_loader_copy = torch.utils.data.DataLoader(th.trainset_copy,
+                                                               batch_size=args.batch_size,
+                                                               num_workers=args.num_workers_train,
+                                                               shuffle=False,
+                                                               pin_memory=False,
+                                                               drop_last=False)
+            if hasattr(th.trainset_copy, &#34;load_data&#34;):
+                th.trainset_copy.load_data()
+
+        # Initialize remote clients - one remote connection per one remote computation device
+        external_devices = [d.strip() for d in args.external_devices.split(&#34;,&#34;) if len(d.strip()) &gt; 0]
+        exec_ctx.remote_training_threads.adjust_num_workers(w=len(external_devices), own_cuda_stream=False,
+                                                            device_list=[&#34;cpu&#34;])
+        for th_i in range(len(exec_ctx.remote_training_threads.threads)):
+            th = exec_ctx.remote_training_threads.threads[th_i]
+            dev = external_devices[th_i]
+            th.external_dev_long = dev
+            th.external_ip, th.external_port, th.external_dev, th.external_dev_dumber = dev.split(&#34;:&#34;)
+
+            try:
+                th.external_socket = comm_socket.CommSocket()
+                th.external_socket.sock.connect((th.external_ip, int(th.external_port)))  # connect with remote side
+                th.external_socket.rawSendString(&#34;execute_work&#34;)  # initiate work execution COMMAND
+                th.external_socket.rawSendString(th.external_dev_long)  # provide device specification
+                th.external_socket.rawSend(pickle.dumps(
+                    raw_cmdline))  # provide original command line (it will be changed by the client) to be consistent with used devices
+                th.external_socket_online = True
+            except socket.error:
+                th.external_socket_online = False
+
+        # Initialize saver treads for information serialization (0 is acceptable)
+        exec_ctx.saver_thread.adjust_num_workers(w=args.save_async_threads, own_cuda_stream=True, device_list=args.gpu)
+
+        # Initialize local training threads in case of using multithreading implementation (0 is acceptable)
+        exec_ctx.eval_thread_pool.adjust_num_workers(w=args.eval_async_threads, own_cuda_stream=True,
+                                                     device_list=args.gpu)
+
+        for th in exec_ctx.eval_thread_pool.threads:
+            th.testset_copy = copy.deepcopy(testset)
+            th.testloader_copy = torch.utils.data.DataLoader(th.testset_copy,
+                                                             batch_size=test_batch_size,
+                                                             num_workers=args.num_workers_test,
+                                                             shuffle=False,
+                                                             pin_memory=False,
+                                                             drop_last=False
+                                                             )
+            if hasattr(th.testset_copy, &#34;load_data&#34;):
+                th.testset_copy.load_data()
+
+        if args.worker_listen_mode &lt;= 0:
+            # Path of execution for local simulation
+            init_and_train_model(args, raw_cmdline, trainloader, testloader, exec_ctx)
+        else:
+            # Path of execution for assist simulation with a remote means
+            init_and_help_with_compute(args, raw_cmdline, trainloader, testloader, exec_ctx)
+
+    else:  # Evaluation mode
+        # TODO: figure out how to exploit DataParallel. Currently - parallelism across workers
+        model, criterion, round = get_training_elements(args.model, args.dataset, args, args.resume_from,
+                                                        args.load_best, args.device, args.loss,
+                                                        args.turn_off_batch_normalization_and_dropout)
+
+        metrics = evaluate_model(model, testloader, criterion, args.device, round,
+                                 print_freq=10, metric_to_optim=args.metric,
+                                 is_rnn=args.model in RNN_MODELS)
+
+        metrics_dict = create_metrics_dict(metrics)
+        logger.info(f&#39;Validation metrics: {metrics_dict}&#39;)
+    wandb_wrapper.finishProject(projectWB)
+
+
+def init_and_help_with_compute(args, raw_cmdline, trainloader, testloader, exec_ctx):
+    logger = Logger.get(args.run_id)
+
+    model_dir = create_model_dir(args)
+    # don&#39;t train if setup already exists
+    if os.path.isdir(model_dir):
+        logger.info(f&#34;{model_dir} already exists.&#34;)
+        logger.info(&#34;Skipping this setup.&#34;)
+        return
+    # create model directory
+    os.makedirs(model_dir, exist_ok=True)
+    # save used args as json to experiment directory
+    with open(os.path.join(create_model_dir(args), &#39;args.json&#39;), &#39;w&#39;) as f:
+        json.dump(vars(args), f, indent=4)
+
+    is_rnn = args.model in RNN_MODELS
+    # TODO: figure out how to exploit DataParallel. Currently - parallelism across workers
+    model, criterion, current_round = get_training_elements(args.model, args.dataset, trainloader.dataset, args,
+                                                            args.resume_from, args.load_best, args.device, args.loss,
+                                                            args.turn_off_batch_normalization_and_dropout)
+    # ==================================================================================================================
+    # Reset execution seeds for tunable runtime behaviour
+    if args.deterministic:
+        exec_ctx.random.seed(args.manual_runtime_seed)
+        exec_ctx.np_random.seed(args.manual_runtime_seed)
+    # ==================================================================================================================
+    mutils.print_models_info(model, args)
+    logger.info(f&#34;Number of parameters in the model: {mutils.number_of_params(model):,d}\n&#34;)
+    gpu_utils.print_info_about_used_gpu(args.device, args.run_id)
+    # ==================================================================================================================
+    # Initialize server state
+    # ==================================================================================================================
+    trainloader.dataset.set_client(None)
+    algorithms.evaluateGradient(None, model, trainloader, criterion, is_rnn, update_statistics=False,
+                                evaluate_function=False, device=args.device, args=args)
+    gradient_at_start = mutils.get_gradient(model)
+    for p in model.parameters():
+        p.grad = None
+    H = algorithms.initializeServerState(args, model, trainloader.dataset.num_clients, gradient_at_start, exec_ctx)
+    logger.info(f&#39;D: {H[&#34;D&#34;]} / D_include_frozen : {H[&#34;D_include_frozen&#34;]}&#39;)
+
+    # Append all launch arguments (setup and default)
+    H[&#34;args&#34;] = args
+    H[&#34;raw_cmdline&#34;] = raw_cmdline
+    H[&#34;execution_context&#34;] = exec_ctx
+    H[&#34;total_clients&#34;] = trainloader.dataset.num_clients
+    H[&#34;comment&#34;] = args.comment
+    H[&#34;group-name&#34;] = args.group_name
+    # ==================================================================================================================
+    local_optimiser = get_optimiser(model.parameters(), args.local_optimiser, args.local_lr, args.local_momentum,
+                                    args.local_weight_decay)
+    socket = exec_ctx.extra_
+    state_dicts_thread_safe = Buffer()
+
+    while True:
+        # Main loop for obtaining commands from master
+        cmd = socket.rawRecvString()
+        if cmd != &#34;finish_work&#34; and cmd != &#34;non_local_training&#34;:
+            print(&#34;Unknown command: &#34;, cmd)
+            break
+
+        if cmd == &#34;finish_work&#34;:
+            # Work termination
+            break
+
+        if cmd == &#34;non_local_training&#34;:
+            # Remote training. Param# 1- all params with local training
+            msg = socket.rawRecv()
+            serialized_args = pickle.loads(msg)
+
+            (client_state, client_id, msg, model_dict_original, optimiser_dict_original,
+             model_, train_loader_, criterion, local_optimiser_, device_, round, run_local_iters,
+             number_of_local_steps, is_rnn, print_freq) = serialized_args
+
+            # 1. Update to client specific parameters - compute device, execution context
+            # 2. Move all tensors into device
+            device = args.device
+            client_state[&#39;device&#39;] = args.device
+
+            client_state[&#39;H&#39;][&#34;execution_context&#34;] = H[&#34;execution_context&#34;]
+
+            for k, v in client_state[&#39;H&#39;].items():
+                if torch.is_tensor(v):
+                    client_state[&#39;H&#39;][k] = v.to(device=device)
+
+            model_dict_original = model_dict_original.to(device=device)
+
+            res = local_training(None, client_state, client_id, msg, model_dict_original, optimiser_dict_original,
+                                 model, trainloader, criterion, local_optimiser, device, round, run_local_iters,
+                                 number_of_local_steps, is_rnn, print_freq, state_dicts_thread_safe)
+            # ==========================================================================================================
+            # Training is finished - response
+            socket.rawSendString(&#34;result_of_local_training&#34;)
+            msg = state_dicts_thread_safe.popFront()
+            # Temporary remove reference to server state from client
+            h_ctx = msg[&#39;client_state&#39;][&#39;H&#39;]
+            # Remove server state from sending
+            del msg[&#39;client_state&#39;][&#39;H&#39;]
+            for k, v in msg.items():
+                if torch.is_tensor(v):
+                    msg[k] = v.cpu()
+            socket.rawSend(pickle.dumps(msg))
+            # Revert reference to server state from client
+            msg[&#39;client_state&#39;][&#39;H&#39;] = h_ctx
+            # ==========================================================================================================
+
+
+def makeBackupOfServerState(H, round):
+    args = H[&#34;args&#34;]
+    job_id = args.run_id
+    fname = args.out
+
+    if fname == &#34;&#34;:
+        fname = os.path.join(args.checkpoint_dir, f&#34;{args.run_id}_{args.algorithm}_{args.global_lr}_backup.bin&#34;)
+    else:
+        fname = fname.replace(&#34;.bin&#34;, f&#34;{args.run_id}_{args.algorithm}_{args.global_lr}_backup.bin&#34;)
+
+    execution_context = H[&#34;execution_context&#34;]
+    H[&#34;execution_context&#34;] = None
+    exec_ctx_in_arg = (&#39;exec_ctx&#39; in H[&#34;args&#34;])
+    exec_ctx = None
+    if exec_ctx_in_arg:
+        exec_ctx = H[&#34;args&#34;][&#39;exec_ctx&#39;]
+        H[&#34;execution_context&#34;] = None
+
+    with open(fname, &#34;wb&#34;) as f:
+        pickle.dump([(job_id, H)], f)
+
+    H[&#34;execution_context&#34;] = execution_context
+    if exec_ctx_in_arg:
+        H[&#34;args&#34;][&#39;exec_ctx&#39;] = exec_ctx
+
+
+def init_and_train_model(args, raw_cmdline, trainloader, testloader, exec_ctx):
+    logger = Logger.get(args.run_id)
+    model_dir = create_model_dir(args)
+    # don&#39;t train if setup already exists
+    if os.path.isdir(model_dir):
+        logger.info(f&#34;{model_dir} already exists.&#34;)
+        logger.info(&#34;Skipping this setup.&#34;)
+        return
+    # create model directory
+    os.makedirs(model_dir, exist_ok=True)
+    # save used args as json to experiment directory
+    with open(os.path.join(create_model_dir(args), &#39;args.json&#39;), &#39;w&#39;) as f:
+        json.dump(vars(args), f, indent=4)
+
+    is_rnn = args.model in RNN_MODELS
+    # TODO: figure out how to exploit DataParallel. Currently - parallelism across workers
+    model, criterion, current_round = get_training_elements(args.model, args.dataset, trainloader.dataset, args,
+                                                            args.resume_from, args.load_best, args.device, args.loss,
+                                                            args.turn_off_batch_normalization_and_dropout)
+    # ==================================================================================================================
+    # Reset execution seeds for tunable runtime behaviour
+    if args.deterministic:
+        exec_ctx.random.seed(args.manual_runtime_seed)
+        exec_ctx.np_random.seed(args.manual_runtime_seed)
+    # ==================================================================================================================
+
+    local_optimiser = get_optimiser(model.parameters(), args.local_optimiser, args.local_lr,
+                                    args.local_momentum, args.local_weight_decay)
+
+    local_scheduler = get_lr_scheduler(local_optimiser, args.rounds, args.local_lr_type)
+
+    global_optimiser = get_optimiser(model.parameters(), args.global_optimiser, args.global_lr,
+                                     args.global_momentum, args.global_weight_decay)
+
+    global_scheduler = get_lr_scheduler(global_optimiser, args.rounds, args.global_lr_type)
+
+    metric_to_optim = args.metric
+    train_time_meter = 0
+
+    best_metric = -np.inf
+    eval_metrics = {}
+
+    mutils.print_models_info(model, args)
+    logger.info(f&#34;Number of parameters in the model: {mutils.number_of_params(model):,d}\n&#34;)
+
+    gpu_utils.print_info_about_used_gpu(args.device, args.run_id)
+
+    sampled_clients = get_sampled_clients(trainloader.dataset.num_clients, args, exec_ctx)
+
+    # ============= Initialize worker threads===========================================================================
+    for th in exec_ctx.local_training_threads.threads:
+        th.model_copy = copy.deepcopy(model)
+        # th.model_copy, _ = initialise_model(args.model, args.dataset, trainloader.dataset, args, args.resume_from,
+        #                                     args.load_best)
+        # th.model_copy.load_state_dict(copy.deepcopy(model.state_dict()))
+        th.model_copy = th.model_copy.to(th.device)
+
+        th.local_optimiser_copy = get_optimiser(th.model_copy.parameters(), args.local_optimiser, args.local_lr,
+                                                args.local_momentum, args.local_weight_decay)
+        th.local_scheduler = get_lr_scheduler(th.local_optimiser_copy, args.rounds, args.local_lr_type)
+
+    for th in exec_ctx.eval_thread_pool.threads:
+        th.model_copy = copy.deepcopy(model)
+        # th.model_copy, _ = initialise_model(args.model, args.dataset, trainloader.dataset, args, args.resume_from,
+        #                                     args.load_best)
+        # th.model_copy.load_state_dict(copy.deepcopy(model.state_dict()))
+        th.model_copy = th.model_copy.to(th.device)
+
+    for th in exec_ctx.saver_thread.threads:
+        th.model_copy = copy.deepcopy(model)
+        # th.model_copy, _ = initialise_model(args.model, args.dataset, trainloader.dataset, args, args.resume_from,
+        #                                     args.load_best)
+        # th.model_copy.load_state_dict(copy.deepcopy(model.state_dict()))
+        th.model_copy = th.model_copy.to(th.device)
+
+    exec_ctx.saver_thread.best_metric = -np.inf
+    exec_ctx.saver_thread.eval_metrics = {}
+    exec_ctx.saver_thread.best_metric_lock = threading.Lock()
+    # ==================================================================================================================
+    optimiser_dict_original = copy.deepcopy(local_optimiser.state_dict())
+    # ==================================================================================================================
+
+    logger.info(f&#34;Use separate {exec_ctx.local_training_threads.workers()} worker threads for make local optimization&#34;)
+
+    # Initialize server state
+
+    if args.initialize_shifts_policy == &#34;full_gradient_at_start&#34;:
+        trainloader.dataset.set_client(None)
+        algorithms.evaluateGradient(None, model, trainloader, criterion, is_rnn, update_statistics=False,
+                                    evaluate_function=False, device=args.device, args=args)
+        gradient_at_start = mutils.get_gradient(model)
+        for p in model.parameters():
+            p.grad = None
+    else:
+        D = mutils.number_of_params(model)
+        gradient_at_start = torch.zeros(D).to(args.device)
+
+    H = algorithms.initializeServerState(args, model, trainloader.dataset.num_clients, gradient_at_start, exec_ctx)
+    logger.info(f&#39;D: {H[&#34;D&#34;]} / D_include_frozen : {H[&#34;D_include_frozen&#34;]}&#39;)
+
+    # ==================================================================================================================
+    # Append all launch arguments (setup and default)
+    H[&#34;args&#34;] = args
+    H[&#34;raw_cmdline&#34;] = raw_cmdline
+    H[&#34;execution_context&#34;] = exec_ctx
+    H[&#34;total_clients&#34;] = trainloader.dataset.num_clients
+    H[&#34;comment&#34;] = args.comment
+    H[&#34;group-name&#34;] = args.group_name
+    # H[&#34;sampled_clients&#34;] = sampled_clients
+
+    # Probable pre-scale x0
+    if algorithms.has_experiment_option(H, &#34;x0_norm&#34;):
+        H[&#34;x0&#34;] = (H[&#34;x0&#34;] / H[&#34;x0&#34;].norm()) * algorithms.get_experiment_option_f(H, &#34;x0_norm&#34;)
+
+    # For task where we can obtain good estimation of L
+    if &#34;L&#34; in dir(trainloader.dataset):
+        H[&#34;L_compute&#34;] = trainloader.dataset.L
+    if &#34;Li_all_clients&#34; in dir(trainloader.dataset):
+        H[&#34;Li_all_clients&#34;] = trainloader.dataset.Li_all_clients
+        H[&#34;Li_max&#34;] = max(H[&#34;Li_all_clients&#34;])
+
+    # Initialize metrics
+    H[&#39;best_metric&#39;] = best_metric
+    H[&#39;eval_metrics&#39;] = copy.deepcopy(eval_metrics)
+
+    # Initialize starting point of optimization
+    mutils.set_params(model, H[&#39;x0&#39;])
+
+    is_target_gpu = gpu_utils.is_target_dev_gpu(args.device)
+
+    if execution_context.simulation_start_fn:
+        execution_context.simulation_start_fn(H)
+
+    extra_opts = [a.strip() for a in args.extra_track.split(&#34;,&#34;)]
+
+    fed_dataset_all_clients = np.arange(H[&#39;total_clients&#39;])
+
+    # Main Algorithm Optimization loop
+    for i in range(args.rounds):
+        # Check requirement to force stop simulation
+        if execution_context.is_simulation_need_earlystop_fn is not None:
+            if execution_context.is_simulation_need_earlystop_fn(H):
+                break
+
+        # Check that all is ok with current run
+        if i &gt; 0:
+            prev_history_stats = H[&#39;history&#39;][i - 1]
+            forceTermination = False
+
+            for elem in [&#34;x_before_round&#34;, &#34;grad_sgd_server_l2&#34;]:
+                if elem in prev_history_stats:
+                    if math.isnan(prev_history_stats[elem]) or math.isinf(prev_history_stats[elem]):
+                        logger.error(f&#34;Force early stop due to numerical problems with {elem} at round {i}.&#34;)
+                        forceTermination = True
+                        break
+
+            if forceTermination:
+                break
+
+        # Update information about current round
+        H[&#39;current_round&#39;] = i
+
+        start = time.time()
+        # Generate client state
+        # TODO: metrics meter to be used for Tensorboard/WandB
+        metrics_meter, fed_dataset_clients = run_one_communication_round(H, model, trainloader, criterion,
+                                                                         local_optimiser,
+                                                                         optimiser_dict_original, global_optimiser,
+                                                                         args.device,
+                                                                         current_round, args.run_local_steps,
+                                                                         args.number_of_local_iters,
+                                                                         is_rnn, sampled_clients)
+        train_time = time.time() - start
+        train_time_meter += train_time  # Track timings for across epochs average
+        logger.debug(f&#39;Epoch train time: {train_time}&#39;)
+        # H[&#39;history&#39;][current_round][&#34;xi_after&#34;] = mutils.get_params(model)
+        H[&#39;history&#39;][current_round][&#34;train_time&#34;] = train_time
+        H[&#39;history&#39;][current_round][&#34;time&#34;] = time.time() - exec_ctx.context_init_time
+        H[&#39;last_round_elapsed_sec&#39;] = train_time
+
+        if (i % args.eval_every == 0 or i == (args.rounds - 1)) and metric_to_optim != &#34;none&#34;:
+            # Save results obtained so far into backup file
+            # ==========================================================================================================
+            # Serialize server state into filesystem&#34;
+            makeBackupOfServerState(H, i)
+            # ==========================================================================================================
+            # Evaluate model
+            if args.eval_async_threads &gt; 0:
+                defered_eval_and_save_checkpoint(model, criterion, args, current_round, is_rnn=is_rnn,
+                                                 metric_to_optim=metric_to_optim, exec_ctx=exec_ctx)
+
+                # Update recent information about eval metrics
+                exec_ctx.saver_thread.best_metric_lock.acquire()
+                H[&#39;best_metric&#39;] = max(H[&#39;best_metric&#39;], exec_ctx.saver_thread.best_metric)
+                H[&#39;eval_metrics&#39;] = copy.deepcopy(exec_ctx.saver_thread.eval_metrics)
+                exec_ctx.saver_thread.best_metric_lock.release()
+
+            else:
+                metrics = evaluate_model(model, testloader, criterion, args.device, current_round, print_freq=10,
+                                         is_rnn=is_rnn, metric_to_optim=metric_to_optim)
+
+                avg_metric = metrics[metric_to_optim].get_avg()
+
+                cur_metrics = {&#34;loss&#34;: metrics[&#34;loss&#34;].get_avg(),
+                               &#34;top_1_acc&#34;: metrics[&#34;top_1_acc&#34;].get_avg(),
+                               &#34;top_5_acc&#34;: metrics[&#34;top_5_acc&#34;].get_avg(),
+                               &#34;neq_perplexity&#34;: metrics[&#34;neq_perplexity&#34;].get_avg()
+                               }
+
+                eval_metrics.update({metrics[&#39;round&#39;]: cur_metrics})
+
+                # Save model checkpoint
+                model_filename = &#39;{model}_{run_id}_checkpoint_{round:0&gt;2d}.pth.tar&#39;.format(model=args.model,
+                                                                                           run_id=args.run_id,
+                                                                                           round=current_round)
+
+                is_best = avg_metric &gt; best_metric
+                save_checkpoint(model, model_filename, is_best=is_best, args=args, metrics=metrics,
+                                metric_to_optim=metric_to_optim)
+
+                if is_best:
+                    best_metric = avg_metric
+
+                # Update recent information about eval metrics
+                H[&#39;best_metric&#39;] = max(H[&#39;best_metric&#39;], best_metric)
+                H[&#39;eval_metrics&#39;] = copy.deepcopy(eval_metrics)
+
+                if np.isnan(metrics[&#39;loss&#39;].get_avg()):
+                    logger.critical(&#39;NaN loss detected, aborting training procedure.&#39;)
+                #   return
+
+                logger.info(f&#39;Current lrs global:{global_scheduler.get_last_lr()}&#39;)
+        # ==============================================================================================================
+        # Add number of clients in that round
+        H[&#39;history&#39;][current_round][&#34;number_of_client_in_round&#34;] = len(fed_dataset_clients)
+
+        if args.log_gpu_usage:
+            H[&#39;history&#39;][current_round][&#34;memory_gpu_used&#34;] = 0
+            for dev in args.gpu:
+                if gpu_utils.is_target_dev_gpu(dev):
+                    memory_gpu_used = torch.cuda.memory_stats(args.device)[&#39;reserved_bytes.all.current&#39;]
+                    logger.info(
+                        f&#34;GPU: Before round {i} we have used {memory_gpu_used/(1024.0**2):.2f} MB from device {dev}&#34;)
+                    H[&#39;history&#39;][current_round][&#34;memory_gpu_used&#34;] += memory_gpu_used / (1024.0 ** 2)
+
+        if current_round % args.eval_every == 0 or i == (args.rounds - 1):
+            if &#34;full_gradient_norm_train&#34; in extra_opts and &#34;full_objective_value_train&#34; in extra_opts:
+                fed_dataset = trainloader.dataset
+
+                gradient_avg = mutils.get_zero_gradient_compatible_with_model(model)
+                fvalue_avg = 0.0
+
+                for c in fed_dataset_all_clients:
+                    fed_dataset.set_client(c)
+                    fvalue = algorithms.evaluateGradient(None, model, trainloader, criterion, is_rnn,
+                                                         update_statistics=False, evaluate_function=True,
+                                                         device=args.device, args=args)
+                    g = mutils.get_gradient(model)
+
+                    gradient_avg = (gradient_avg * c + g) / (c + 1)
+                    fvalue_avg = (fvalue_avg * c + fvalue) / (c + 1)
+
+                H[&#39;history&#39;][current_round][&#34;full_gradient_norm_train&#34;] = mutils.l2_norm_of_vec(gradient_avg)
+                H[&#39;history&#39;][current_round][&#34;full_objective_value_train&#34;] = fvalue_avg
+
+            if &#34;full_gradient_norm_train&#34; in extra_opts and &#34;full_objective_value_train&#34; not in extra_opts:
+                fed_dataset = trainloader.dataset
+                gradient_avg = mutils.get_zero_gradient_compatible_with_model(model)
+
+                for c in fed_dataset_all_clients:
+                    fed_dataset.set_client(c)
+                    algorithms.evaluateGradient(None, model, trainloader, criterion, is_rnn, update_statistics=False,
+                                                evaluate_function=False, device=args.device, args=args)
+                    g = mutils.get_gradient(model)
+                    gradient_avg = (gradient_avg * c + g) / (c + 1)
+
+                H[&#39;history&#39;][current_round][&#34;full_gradient_norm_train&#34;] = mutils.l2_norm_of_vec(gradient_avg)
+
+            if &#34;full_objective_value_train&#34; in extra_opts and &#34;full_gradient_norm_train&#34; not in extra_opts:
+                fed_dataset = trainloader.dataset
+                fvalue_avg = 0.0
+                for c in fed_dataset_all_clients:
+                    fed_dataset.set_client(c)
+                    fvalue = algorithms.evaluateFunction(None, model, trainloader, criterion, is_rnn,
+                                                         update_statistics=False, device=args.device, args=args)
+                    fvalue_avg = (fvalue_avg * c + fvalue) / (c + 1)
+                H[&#39;history&#39;][current_round][&#34;full_objective_value_train&#34;] = fvalue_avg
+            # ==========================================================================================================
+            if &#34;full_gradient_norm_val&#34; in extra_opts and &#34;full_objective_value_val&#34; in extra_opts:
+                fvalue = algorithms.evaluateGradient(None, model, testloader, criterion, is_rnn,
+                                                     update_statistics=False, evaluate_function=True,
+                                                     device=args.device, args=args)
+                H[&#39;history&#39;][current_round][&#34;full_gradient_norm_val&#34;] = mutils.l2_norm_of_gradient_m(model)
+                H[&#39;history&#39;][current_round][&#34;full_objective_value_val&#34;] = fvalue
+
+            if &#34;full_gradient_norm_val&#34; in extra_opts and &#34;full_objective_value_val&#34; not in extra_opts:
+                algorithms.evaluateGradient(None, model, testloader, criterion, is_rnn, update_statistics=False,
+                                            evaluate_function=False, device=args.device, args=args)
+                H[&#39;history&#39;][current_round][&#34;full_gradient_norm_val&#34;] = mutils.l2_norm_of_gradient_m(model)
+
+            if &#34;full_objective_value_val&#34; in extra_opts and &#34;full_gradient_norm_val&#34; not in extra_opts:
+                fvalue = algorithms.evaluateFunction(None, model, testloader, criterion, is_rnn,
+                                                     update_statistics=False, device=args.device, args=args)
+                H[&#39;history&#39;][current_round][&#34;full_objective_value_val&#34;] = fvalue
+            # ==========================================================================================================
+            # Interpolate
+            # ==========================================================================================================
+            if current_round &gt; 0:
+                look_behind = args.eval_every
+
+                # ======================================================================================================
+                if i % args.eval_every == 0:
+                    look_behind = args.eval_every  # Exactly look_behind previous evaluation had place to be
+                elif i == args.rounds - 1:
+                    look_behind = i % args.eval_every  # We are in case that we in last round &#34;R-1&#34;.
+                    pass  # Exactly i%args.eval_every round before previous eval had place to be
+                else:
+                    assert (not &#34;Impossible case&#34;)
+                # ======================================================================================================
+
+                for s in range(1, look_behind):
+                    alpha = s / float(look_behind)
+                    prev_eval_round = current_round - look_behind
+                    inter_round = prev_eval_round + s
+
+                    # Linearly interpolate between a (alpha=0.0) and b(alpha=1.0)
+                    def lerp(a, b, alpha):
+                        return (1.0 - alpha) * a + alpha * b
+
+                    if &#34;full_gradient_norm_train&#34; in extra_opts:
+                        H[&#39;history&#39;][inter_round][&#34;full_gradient_norm_train&#34;] = lerp(
+                            H[&#39;history&#39;][prev_eval_round][&#34;full_gradient_norm_train&#34;],
+                            H[&#39;history&#39;][current_round][&#34;full_gradient_norm_train&#34;], alpha)
+                    if &#34;full_objective_value_train&#34; in extra_opts:
+                        H[&#39;history&#39;][inter_round][&#34;full_objective_value_train&#34;] = lerp(
+                            H[&#39;history&#39;][prev_eval_round][&#34;full_objective_value_train&#34;],
+                            H[&#39;history&#39;][current_round][&#34;full_objective_value_train&#34;], alpha)
+                    if &#34;full_gradient_norm_val&#34; in extra_opts:
+                        H[&#39;history&#39;][inter_round][&#34;full_gradient_norm_val&#34;] = lerp(
+                            H[&#39;history&#39;][prev_eval_round][&#34;full_gradient_norm_val&#34;],
+                            H[&#39;history&#39;][current_round][&#34;full_gradient_norm_val&#34;], alpha)
+                    if &#34;full_objective_value_val&#34; in extra_opts:
+                        H[&#39;history&#39;][inter_round][&#34;full_objective_value_val&#34;] = lerp(
+                            H[&#39;history&#39;][prev_eval_round][&#34;full_objective_value_val&#34;],
+                            H[&#39;history&#39;][current_round][&#34;full_objective_value_val&#34;], alpha)
+
+        if current_round % args.eval_every == 0 or i == (args.rounds - 1):
+            if execution_context.simulation_progress_steps_fn is not None:
+                execution_context.simulation_progress_steps_fn(i / float(args.rounds) * 0.75, H)
+            wandb_wrapper.logStatistics(H, current_round)
+
+        # ==============================================================================================================
+        # Save parameters of the last model
+        # if i == args.rounds - 1:
+        #    xfinal = mutils.get_params(model)
+        #    H[&#39;xfinal&#39;] = xfinal
+        # ==============================================================================================================
+        # Update schedulers
+        if exec_ctx.local_training_threads.workers() &gt; 0:
+            # In this mode local optimizers for worker threads are used
+            for th in exec_ctx.local_training_threads.threads:
+                th.local_scheduler.step()
+        else:
+            # In this mode local optimizer is used
+            local_scheduler.step()
+
+        global_scheduler.step()
+
+        # Increment rounder counter
+        current_round += 1
+
+        # Empty caches. Force cleanup the cache after round (good to fix fragmentation issues)
+        if args.per_round_clean_torch_cache:
+            execution_context.torch_global_lock.acquire()
+            torch.cuda.empty_cache()
+            execution_context.torch_global_lock.release()
+
+    xfinal = mutils.get_params(model)
+    H[&#39;xfinal&#39;] = xfinal
+
+    logger.debug(f&#39;Average epoch train time: {train_time_meter / args.rounds}&#39;)
+    # ==================================================================================================================
+    logger.info(&#34;Wait for threads from a training threadpool&#34;)
+    exec_ctx.local_training_threads.stop()
+    if execution_context.simulation_progress_steps_fn is not None:
+        execution_context.simulation_progress_steps_fn(0.8, H)
+
+    logger.info(&#34;Wait for threads from a evaluate threadpool&#34;)
+    exec_ctx.eval_thread_pool.stop()
+    if execution_context.simulation_progress_steps_fn is not None:
+        execution_context.simulation_progress_steps_fn(0.95, H)
+
+    logger.info(&#34;Wait for threads from a serialization threadpool&#34;)
+    exec_ctx.saver_thread.stop()
+
+    # Not need for use in fact, but we do it for purpose of excluding any bugs inside PyTorch
+
+    logger.info(&#34;Synchronize all GPU streams&#34;)
+    if is_target_gpu:
+        torch.cuda.synchronize(args.device)
+
+    # Update metrics based on eval and save results
+    H[&#39;best_metric&#39;] = max(H[&#39;best_metric&#39;], exec_ctx.saver_thread.best_metric)
+    H[&#39;best_metric&#39;] = max(H[&#39;best_metric&#39;], best_metric)
+
+    if len(eval_metrics) &gt; 0:
+        H[&#39;eval_metrics&#39;] = copy.deepcopy(eval_metrics)
+    else:
+        H[&#39;eval_metrics&#39;] = copy.deepcopy(exec_ctx.saver_thread.eval_metrics)
+
+    if execution_context.simulation_progress_steps_fn is not None:
+        execution_context.simulation_progress_steps_fn(1.0, H)
+        # ==================================================================================================================
+    # Final prune
+    HKeys = list(H.keys())
+
+    # Remove any tensor field huger then 1 MBytes from final solution
+    tensor_prune_mb_threshold = 0.0
+
+    for field in HKeys:
+        if torch.is_tensor(H[field]):
+            size_in_mbytes = H[field].numel() * H[field].element_size() / (1024.0 ** 2)
+            if size_in_mbytes &gt; tensor_prune_mb_threshold:
+                del H[field]
+                continue
+            else:
+                # Convert any not removed tensor to CPU
+                H[field] = H[field].cpu()
+
+        if type(H[field]) == list:
+            sz = len(H[field])
+            i = 0
+
+            while i &lt; sz:
+                if torch.is_tensor(H[field][i]):
+                    size_in_mbytes = H[field][i].numel() * H[field][i].element_size() / (1024.0 ** 2)
+                    if size_in_mbytes &gt;= tensor_prune_mb_threshold:
+                        del H[field][i]
+                        sz = len(H[field])
+                    else:
+                        # Convert any not removed tensor to CPU
+                        H[field][i] = H[field][i].cpu()
+                        i += 1
+                else:
+                    i += 1
+
+    # Remove local optimiser state, client_compressors, reference to server state
+    not_to_remove_from_client_state = [&#34;error&#34;]
+
+    for round, history_state in H[&#39;history&#39;].items():
+        clients_history = history_state[&#39;client_states&#39;]
+        for client_id, client_state in clients_history.items():
+            client_state = client_state[&#39;client_state&#39;]
+
+            if &#39;H&#39; in client_state:
+                del client_state[&#39;H&#39;]
+            if &#39;optimiser&#39; in client_state:
+                del client_state[&#39;optimiser&#39;]
+            if &#39;buffers&#39; in client_state:
+                del client_state[&#39;buffers&#39;]
+            if &#39;client_compressor&#39; in client_state:
+                del client_state[&#39;client_compressor&#39;]
+
+            client_state_keys = list(client_state.keys())
+            for field in client_state_keys:
+
+                if field in not_to_remove_from_client_state:
+                    continue
+
+                if torch.is_tensor(client_state[field]):
+                    size_in_mbytes = client_state[field].numel() * client_state[field].element_size() / (1024.0 ** 2)
+                    if size_in_mbytes &gt; tensor_prune_mb_threshold:
+                        del client_state[field]
+                        continue
+                    else:
+                        # Convert any not removed tensor to CPU
+                        client_state[field] = client_state[field].cpu()
+                        continue
+
+                if type(client_state[field]) == list:
+                    sz = len(client_state[field])
+                    i = 0
+                    while i &lt; sz:
+                        if torch.is_tensor(client_state[field][i]):
+                            size_in_mbytes = client_state[field][i].numel() * client_state[field][i].element_size() / (
+                                        1024.0 ** 2)
+                            if size_in_mbytes &gt;= tensor_prune_mb_threshold:
+                                del client_state[field][i]
+                                sz = len(client_state[field])
+                            else:
+                                client_state[field][i] = client_state[field][i].cpu()
+                                i += 1
+                        else:
+                            i += 1
+
+    # Remove reference for execution context
+    del H[&#34;execution_context&#34;]
+    if &#39;exec_ctx&#39; in H[&#34;args&#34;]:
+        del H[&#34;args&#34;]
+
+    # ==================================================================================================================
+    # Cleanup execution context resources
+    # ==================================================================================================================
+    execution_context.resetExecutionContext(exec_ctx)
+    # ==================================================================================================================
+    if execution_context.simulation_finish_fn is not None:
+        execution_context.simulation_finish_fn(H)
+
+
+def runSimulation(cmdline, extra_=None):
+    # ==================================================================================================================
+    # ENTRY POINT FOR LAUNCH SIMULATION FROM GUI
+    # ==================================================================================================================
+    global CUDA_SUPPORT
+
+    args = parse_args(cmdline)
+    if args.hostname == &#34;&#34;:
+        args.hostname = socket.gethostname()
+
+    Logger.setup_logging(args.loglevel, args.logfilter, logfile=args.logfile)
+    logger = Logger.get(args.run_id)
+
+    logger.info(f&#34;CLI args original: {cmdline}&#34;)
+
+    if torch.cuda.device_count():
+        CUDA_SUPPORT = True
+        # torch.backends.cudnn.benchmark = True
+    else:
+        logger.warning(&#39;CUDA unsupported!!&#39;)
+        CUDA_SUPPORT = False
+
+    if not CUDA_SUPPORT:
+        args.gpu = &#34;cpu&#34;
+
+    if args.deterministic:
+        import torch.backends.cudnn as cudnn
+        import os
+        import random
+
+        # TODO: This settings are not thread safe in case of using cuda backend from several threads
+        # Project use execution context random generators for random and numpy in thread safe way
+        if CUDA_SUPPORT:
+            cudnn.deterministic = args.deterministic
+            cudnn.benchmark = not args.deterministic
+            torch.cuda.manual_seed(args.manual_init_seed)
+            torch.cuda.manual_seed_all(args.manual_init_seed)
+
+            # Turn off Tensor Cores if have been requested
+            torch.backends.cudnn.allow_tf32 = args.allow_use_nv_tensorcores
+            torch.backends.cuda.matmul.allow_tf32 = args.allow_use_nv_tensorcores
+
+        torch.manual_seed(args.manual_init_seed)
+        random.seed(args.manual_init_seed)
+        np.random.seed(args.manual_init_seed)
+
+        os.environ[&#39;PYTHONHASHSEED&#39;] = str(args.manual_init_seed)
+        torch.backends.cudnn.deterministic = True
+
+    main(args, cmdline, extra_)
+
+
+# ======================================================================================================================
+g_Terminate = False
+
+
+# ======================================================================================================================
+def terminationWithSignal(*args):
+    global g_Terminate
+    g_Terminate = True
+    print(&#34;Request for terminate process has been obtained. Save results and terminate.&#34;)
+
+
+def isSimulationNeedEarlyStopCmdLine(H):
+    global g_Terminate
+    return g_Terminate
+
+
+# ======================================================================================================================
+
+def saveResult(H):
+    &#34;&#34;&#34;Serialize server state into filesystem&#34;&#34;&#34;
+    args = H[&#34;args&#34;]
+
+    job_id = args.run_id
+    fname = args.out
+    if fname == &#34;&#34;:
+        fname = os.path.join(args.checkpoint_dir, f&#34;{args.algorithm}_simulation_history.bin&#34;)
+
+    # Save formally list of tuples (job_id, server_state)
+    with open(fname, &#34;wb&#34;) as f:
+        pickle.dump([(job_id, H)], f)
+
+    print(f&#34;Final server state for {job_id} is serialized into: &#39;{fname}&#39;&#34;)
+    print(f&#34;Program which uses &#39;{args.algorithm}&#39; algorithm for {args.rounds} rounds was finished&#34;)
+
+
+class ClientThread(threading.Thread):
+    def __init__(self, clientSocket, listenPort):
+        threading.Thread.__init__(self)
+        self.clientSocket = clientSocket  # OS-like socket to communicate with information
+        self.comSocket = comm_socket.CommSocket(clientSocket)  # Light construction on top of socket to communicate
+        self.listenPort = listenPort  # Listening port
+
+    def run(self):
+        cmd = self.comSocket.rawRecvString()  # Obtain command
+
+        t = time.localtime()
+        cur_time = time.strftime(&#34;%H:%M:%S&#34;, t)
+        print(f&#34;-- {cur_time}: The received command: {cmd}&#34;)
+
+        if cmd == &#34;list_of_gpus&#34;:  # List of resources in the system
+            gpus = len(gpu_utils.get_available_gpus())
+            self.comSocket.rawSendString(f&#34;{gpus}&#34;)
+        elif cmd == &#34;execute_work&#34;:  # Execute work
+            devConfig = self.comSocket.rawRecvString()  # 1-st param: device configuration
+            cmdLine = self.comSocket.rawRecv()  # 2-nd param: command line
+            cmdLine = pickle.loads(cmdLine)  # unpack cmdline
+
+            ip, port, dev_name, dev_number = devConfig.split(&#34;:&#34;)
+
+            # Remove unnecessary flags for worker
+            i = len(cmdLine) - 1
+            while i &gt;= 0:
+                if cmdLine[i] == &#34;--metric&#34;:
+                    cmdLine[i + 1] = &#34;none&#34;
+
+                if cmdLine[i] == &#34;--gpu&#34;:
+                    cmdLine[i + 1] = dev_number  # update device number
+
+                if cmdLine[i] in [&#39;--wandb-key&#39;, &#39;--eval-async-threads&#39;, &#39;--save-async-threads&#39;,
+                                  &#39;--threadpool-for-local-opt&#39;, &#39;--external-devices&#39;, &#39;--evaluate&#39;]:
+                    del cmdLine[i]  # remove flag
+                    del cmdLine[i]  # remove value for flag (originally at index i+1)
+                i -= 1
+
+            # Specify listen mode in which worker is
+            cmdLine.append(&#34;--worker-listen-mode&#34;)
+            cmdLine.append(str(self.listenPort))
+
+            runSimulation(cmdLine, extra_=self.comSocket)
+        else:
+            print(f&#34;The received command {cmd} is not valid&#34;)
+
+
+def executeRemoteWorkerSupportMode(listenPort):
+    &#34;&#34;&#34;
+    Listen for a specified port and wait for incoming connection. Maximum number of pending connection is 5.
+    &#34;&#34;&#34;
+    serversocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    serversocket.bind((&#39;0.0.0.0&#39;, listenPort))
+    MAX_CONNECTIONS = 5
+    serversocket.listen(MAX_CONNECTIONS)
+
+    while True:
+        t = time.localtime()
+        cur_time = time.strftime(&#34;%H:%M:%S&#34;, t)
+        print(f&#34;-- {cur_time}: Waiting for commands from the master by worker {socket.gethostname()}:{listenPort}&#34;)
+        # accept connections from outside and process it in separate threads
+        (clientsocket, address) = serversocket.accept()
+        ct = ClientThread(clientsocket, listenPort)
+        ct.run()
+
+
+if __name__ == &#34;__main__&#34;:
+    # ==================================================================================================================
+    # ENTRY POINT FOR CUI
+    # ==================================================================================================================
+    # Worker listener mode
+    for i in range(len(sys.argv)):
+        if sys.argv[i] == &#34;--worker-listen-mode&#34;:
+            print(get_pretty_env_info())
+            print(&#34;&#34;)
+            executeRemoteWorkerSupportMode(int(sys.argv[i + 1]))
+            sys.exit(0)
+    # ==================================================================================================================
+    # Usual mode
+
+    # Setup signal for CTRL+C(SIGINT) or SIGTERM
+    signal.signal(signal.SIGINT, terminationWithSignal)
+    signal.signal(signal.SIGTERM, terminationWithSignal)
+
+    execution_context.is_simulation_need_earlystop_fn = isSimulationNeedEarlyStopCmdLine
+    execution_context.simulation_finish_fn = saveResult
+    runSimulation(sys.argv[1:])
+    sys.exit(0)
+    # ==================================================================================================================</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="run.executeRemoteWorkerSupportMode"><code class="name flex">
+<span>def <span class="ident">executeRemoteWorkerSupportMode</span></span>(<span>listenPort)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Listen for a specified port and wait for incoming connection. Maximum number of pending connection is 5.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def executeRemoteWorkerSupportMode(listenPort):
+    &#34;&#34;&#34;
+    Listen for a specified port and wait for incoming connection. Maximum number of pending connection is 5.
+    &#34;&#34;&#34;
+    serversocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    serversocket.bind((&#39;0.0.0.0&#39;, listenPort))
+    MAX_CONNECTIONS = 5
+    serversocket.listen(MAX_CONNECTIONS)
+
+    while True:
+        t = time.localtime()
+        cur_time = time.strftime(&#34;%H:%M:%S&#34;, t)
+        print(f&#34;-- {cur_time}: Waiting for commands from the master by worker {socket.gethostname()}:{listenPort}&#34;)
+        # accept connections from outside and process it in separate threads
+        (clientsocket, address) = serversocket.accept()
+        ct = ClientThread(clientsocket, listenPort)
+        ct.run()</code></pre>
+</details>
+</dd>
+<dt id="run.init_and_help_with_compute"><code class="name flex">
+<span>def <span class="ident">init_and_help_with_compute</span></span>(<span>args, raw_cmdline, trainloader, testloader, exec_ctx)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def init_and_help_with_compute(args, raw_cmdline, trainloader, testloader, exec_ctx):
+    logger = Logger.get(args.run_id)
+
+    model_dir = create_model_dir(args)
+    # don&#39;t train if setup already exists
+    if os.path.isdir(model_dir):
+        logger.info(f&#34;{model_dir} already exists.&#34;)
+        logger.info(&#34;Skipping this setup.&#34;)
+        return
+    # create model directory
+    os.makedirs(model_dir, exist_ok=True)
+    # save used args as json to experiment directory
+    with open(os.path.join(create_model_dir(args), &#39;args.json&#39;), &#39;w&#39;) as f:
+        json.dump(vars(args), f, indent=4)
+
+    is_rnn = args.model in RNN_MODELS
+    # TODO: figure out how to exploit DataParallel. Currently - parallelism across workers
+    model, criterion, current_round = get_training_elements(args.model, args.dataset, trainloader.dataset, args,
+                                                            args.resume_from, args.load_best, args.device, args.loss,
+                                                            args.turn_off_batch_normalization_and_dropout)
+    # ==================================================================================================================
+    # Reset execution seeds for tunable runtime behaviour
+    if args.deterministic:
+        exec_ctx.random.seed(args.manual_runtime_seed)
+        exec_ctx.np_random.seed(args.manual_runtime_seed)
+    # ==================================================================================================================
+    mutils.print_models_info(model, args)
+    logger.info(f&#34;Number of parameters in the model: {mutils.number_of_params(model):,d}\n&#34;)
+    gpu_utils.print_info_about_used_gpu(args.device, args.run_id)
+    # ==================================================================================================================
+    # Initialize server state
+    # ==================================================================================================================
+    trainloader.dataset.set_client(None)
+    algorithms.evaluateGradient(None, model, trainloader, criterion, is_rnn, update_statistics=False,
+                                evaluate_function=False, device=args.device, args=args)
+    gradient_at_start = mutils.get_gradient(model)
+    for p in model.parameters():
+        p.grad = None
+    H = algorithms.initializeServerState(args, model, trainloader.dataset.num_clients, gradient_at_start, exec_ctx)
+    logger.info(f&#39;D: {H[&#34;D&#34;]} / D_include_frozen : {H[&#34;D_include_frozen&#34;]}&#39;)
+
+    # Append all launch arguments (setup and default)
+    H[&#34;args&#34;] = args
+    H[&#34;raw_cmdline&#34;] = raw_cmdline
+    H[&#34;execution_context&#34;] = exec_ctx
+    H[&#34;total_clients&#34;] = trainloader.dataset.num_clients
+    H[&#34;comment&#34;] = args.comment
+    H[&#34;group-name&#34;] = args.group_name
+    # ==================================================================================================================
+    local_optimiser = get_optimiser(model.parameters(), args.local_optimiser, args.local_lr, args.local_momentum,
+                                    args.local_weight_decay)
+    socket = exec_ctx.extra_
+    state_dicts_thread_safe = Buffer()
+
+    while True:
+        # Main loop for obtaining commands from master
+        cmd = socket.rawRecvString()
+        if cmd != &#34;finish_work&#34; and cmd != &#34;non_local_training&#34;:
+            print(&#34;Unknown command: &#34;, cmd)
+            break
+
+        if cmd == &#34;finish_work&#34;:
+            # Work termination
+            break
+
+        if cmd == &#34;non_local_training&#34;:
+            # Remote training. Param# 1- all params with local training
+            msg = socket.rawRecv()
+            serialized_args = pickle.loads(msg)
+
+            (client_state, client_id, msg, model_dict_original, optimiser_dict_original,
+             model_, train_loader_, criterion, local_optimiser_, device_, round, run_local_iters,
+             number_of_local_steps, is_rnn, print_freq) = serialized_args
+
+            # 1. Update to client specific parameters - compute device, execution context
+            # 2. Move all tensors into device
+            device = args.device
+            client_state[&#39;device&#39;] = args.device
+
+            client_state[&#39;H&#39;][&#34;execution_context&#34;] = H[&#34;execution_context&#34;]
+
+            for k, v in client_state[&#39;H&#39;].items():
+                if torch.is_tensor(v):
+                    client_state[&#39;H&#39;][k] = v.to(device=device)
+
+            model_dict_original = model_dict_original.to(device=device)
+
+            res = local_training(None, client_state, client_id, msg, model_dict_original, optimiser_dict_original,
+                                 model, trainloader, criterion, local_optimiser, device, round, run_local_iters,
+                                 number_of_local_steps, is_rnn, print_freq, state_dicts_thread_safe)
+            # ==========================================================================================================
+            # Training is finished - response
+            socket.rawSendString(&#34;result_of_local_training&#34;)
+            msg = state_dicts_thread_safe.popFront()
+            # Temporary remove reference to server state from client
+            h_ctx = msg[&#39;client_state&#39;][&#39;H&#39;]
+            # Remove server state from sending
+            del msg[&#39;client_state&#39;][&#39;H&#39;]
+            for k, v in msg.items():
+                if torch.is_tensor(v):
+                    msg[k] = v.cpu()
+            socket.rawSend(pickle.dumps(msg))
+            # Revert reference to server state from client
+            msg[&#39;client_state&#39;][&#39;H&#39;] = h_ctx
+            # ==========================================================================================================</code></pre>
+</details>
+</dd>
+<dt id="run.init_and_train_model"><code class="name flex">
+<span>def <span class="ident">init_and_train_model</span></span>(<span>args, raw_cmdline, trainloader, testloader, exec_ctx)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def init_and_train_model(args, raw_cmdline, trainloader, testloader, exec_ctx):
+    logger = Logger.get(args.run_id)
+    model_dir = create_model_dir(args)
+    # don&#39;t train if setup already exists
+    if os.path.isdir(model_dir):
+        logger.info(f&#34;{model_dir} already exists.&#34;)
+        logger.info(&#34;Skipping this setup.&#34;)
+        return
+    # create model directory
+    os.makedirs(model_dir, exist_ok=True)
+    # save used args as json to experiment directory
+    with open(os.path.join(create_model_dir(args), &#39;args.json&#39;), &#39;w&#39;) as f:
+        json.dump(vars(args), f, indent=4)
+
+    is_rnn = args.model in RNN_MODELS
+    # TODO: figure out how to exploit DataParallel. Currently - parallelism across workers
+    model, criterion, current_round = get_training_elements(args.model, args.dataset, trainloader.dataset, args,
+                                                            args.resume_from, args.load_best, args.device, args.loss,
+                                                            args.turn_off_batch_normalization_and_dropout)
+    # ==================================================================================================================
+    # Reset execution seeds for tunable runtime behaviour
+    if args.deterministic:
+        exec_ctx.random.seed(args.manual_runtime_seed)
+        exec_ctx.np_random.seed(args.manual_runtime_seed)
+    # ==================================================================================================================
+
+    local_optimiser = get_optimiser(model.parameters(), args.local_optimiser, args.local_lr,
+                                    args.local_momentum, args.local_weight_decay)
+
+    local_scheduler = get_lr_scheduler(local_optimiser, args.rounds, args.local_lr_type)
+
+    global_optimiser = get_optimiser(model.parameters(), args.global_optimiser, args.global_lr,
+                                     args.global_momentum, args.global_weight_decay)
+
+    global_scheduler = get_lr_scheduler(global_optimiser, args.rounds, args.global_lr_type)
+
+    metric_to_optim = args.metric
+    train_time_meter = 0
+
+    best_metric = -np.inf
+    eval_metrics = {}
+
+    mutils.print_models_info(model, args)
+    logger.info(f&#34;Number of parameters in the model: {mutils.number_of_params(model):,d}\n&#34;)
+
+    gpu_utils.print_info_about_used_gpu(args.device, args.run_id)
+
+    sampled_clients = get_sampled_clients(trainloader.dataset.num_clients, args, exec_ctx)
+
+    # ============= Initialize worker threads===========================================================================
+    for th in exec_ctx.local_training_threads.threads:
+        th.model_copy = copy.deepcopy(model)
+        # th.model_copy, _ = initialise_model(args.model, args.dataset, trainloader.dataset, args, args.resume_from,
+        #                                     args.load_best)
+        # th.model_copy.load_state_dict(copy.deepcopy(model.state_dict()))
+        th.model_copy = th.model_copy.to(th.device)
+
+        th.local_optimiser_copy = get_optimiser(th.model_copy.parameters(), args.local_optimiser, args.local_lr,
+                                                args.local_momentum, args.local_weight_decay)
+        th.local_scheduler = get_lr_scheduler(th.local_optimiser_copy, args.rounds, args.local_lr_type)
+
+    for th in exec_ctx.eval_thread_pool.threads:
+        th.model_copy = copy.deepcopy(model)
+        # th.model_copy, _ = initialise_model(args.model, args.dataset, trainloader.dataset, args, args.resume_from,
+        #                                     args.load_best)
+        # th.model_copy.load_state_dict(copy.deepcopy(model.state_dict()))
+        th.model_copy = th.model_copy.to(th.device)
+
+    for th in exec_ctx.saver_thread.threads:
+        th.model_copy = copy.deepcopy(model)
+        # th.model_copy, _ = initialise_model(args.model, args.dataset, trainloader.dataset, args, args.resume_from,
+        #                                     args.load_best)
+        # th.model_copy.load_state_dict(copy.deepcopy(model.state_dict()))
+        th.model_copy = th.model_copy.to(th.device)
+
+    exec_ctx.saver_thread.best_metric = -np.inf
+    exec_ctx.saver_thread.eval_metrics = {}
+    exec_ctx.saver_thread.best_metric_lock = threading.Lock()
+    # ==================================================================================================================
+    optimiser_dict_original = copy.deepcopy(local_optimiser.state_dict())
+    # ==================================================================================================================
+
+    logger.info(f&#34;Use separate {exec_ctx.local_training_threads.workers()} worker threads for make local optimization&#34;)
+
+    # Initialize server state
+
+    if args.initialize_shifts_policy == &#34;full_gradient_at_start&#34;:
+        trainloader.dataset.set_client(None)
+        algorithms.evaluateGradient(None, model, trainloader, criterion, is_rnn, update_statistics=False,
+                                    evaluate_function=False, device=args.device, args=args)
+        gradient_at_start = mutils.get_gradient(model)
+        for p in model.parameters():
+            p.grad = None
+    else:
+        D = mutils.number_of_params(model)
+        gradient_at_start = torch.zeros(D).to(args.device)
+
+    H = algorithms.initializeServerState(args, model, trainloader.dataset.num_clients, gradient_at_start, exec_ctx)
+    logger.info(f&#39;D: {H[&#34;D&#34;]} / D_include_frozen : {H[&#34;D_include_frozen&#34;]}&#39;)
+
+    # ==================================================================================================================
+    # Append all launch arguments (setup and default)
+    H[&#34;args&#34;] = args
+    H[&#34;raw_cmdline&#34;] = raw_cmdline
+    H[&#34;execution_context&#34;] = exec_ctx
+    H[&#34;total_clients&#34;] = trainloader.dataset.num_clients
+    H[&#34;comment&#34;] = args.comment
+    H[&#34;group-name&#34;] = args.group_name
+    # H[&#34;sampled_clients&#34;] = sampled_clients
+
+    # Probable pre-scale x0
+    if algorithms.has_experiment_option(H, &#34;x0_norm&#34;):
+        H[&#34;x0&#34;] = (H[&#34;x0&#34;] / H[&#34;x0&#34;].norm()) * algorithms.get_experiment_option_f(H, &#34;x0_norm&#34;)
+
+    # For task where we can obtain good estimation of L
+    if &#34;L&#34; in dir(trainloader.dataset):
+        H[&#34;L_compute&#34;] = trainloader.dataset.L
+    if &#34;Li_all_clients&#34; in dir(trainloader.dataset):
+        H[&#34;Li_all_clients&#34;] = trainloader.dataset.Li_all_clients
+        H[&#34;Li_max&#34;] = max(H[&#34;Li_all_clients&#34;])
+
+    # Initialize metrics
+    H[&#39;best_metric&#39;] = best_metric
+    H[&#39;eval_metrics&#39;] = copy.deepcopy(eval_metrics)
+
+    # Initialize starting point of optimization
+    mutils.set_params(model, H[&#39;x0&#39;])
+
+    is_target_gpu = gpu_utils.is_target_dev_gpu(args.device)
+
+    if execution_context.simulation_start_fn:
+        execution_context.simulation_start_fn(H)
+
+    extra_opts = [a.strip() for a in args.extra_track.split(&#34;,&#34;)]
+
+    fed_dataset_all_clients = np.arange(H[&#39;total_clients&#39;])
+
+    # Main Algorithm Optimization loop
+    for i in range(args.rounds):
+        # Check requirement to force stop simulation
+        if execution_context.is_simulation_need_earlystop_fn is not None:
+            if execution_context.is_simulation_need_earlystop_fn(H):
+                break
+
+        # Check that all is ok with current run
+        if i &gt; 0:
+            prev_history_stats = H[&#39;history&#39;][i - 1]
+            forceTermination = False
+
+            for elem in [&#34;x_before_round&#34;, &#34;grad_sgd_server_l2&#34;]:
+                if elem in prev_history_stats:
+                    if math.isnan(prev_history_stats[elem]) or math.isinf(prev_history_stats[elem]):
+                        logger.error(f&#34;Force early stop due to numerical problems with {elem} at round {i}.&#34;)
+                        forceTermination = True
+                        break
+
+            if forceTermination:
+                break
+
+        # Update information about current round
+        H[&#39;current_round&#39;] = i
+
+        start = time.time()
+        # Generate client state
+        # TODO: metrics meter to be used for Tensorboard/WandB
+        metrics_meter, fed_dataset_clients = run_one_communication_round(H, model, trainloader, criterion,
+                                                                         local_optimiser,
+                                                                         optimiser_dict_original, global_optimiser,
+                                                                         args.device,
+                                                                         current_round, args.run_local_steps,
+                                                                         args.number_of_local_iters,
+                                                                         is_rnn, sampled_clients)
+        train_time = time.time() - start
+        train_time_meter += train_time  # Track timings for across epochs average
+        logger.debug(f&#39;Epoch train time: {train_time}&#39;)
+        # H[&#39;history&#39;][current_round][&#34;xi_after&#34;] = mutils.get_params(model)
+        H[&#39;history&#39;][current_round][&#34;train_time&#34;] = train_time
+        H[&#39;history&#39;][current_round][&#34;time&#34;] = time.time() - exec_ctx.context_init_time
+        H[&#39;last_round_elapsed_sec&#39;] = train_time
+
+        if (i % args.eval_every == 0 or i == (args.rounds - 1)) and metric_to_optim != &#34;none&#34;:
+            # Save results obtained so far into backup file
+            # ==========================================================================================================
+            # Serialize server state into filesystem&#34;
+            makeBackupOfServerState(H, i)
+            # ==========================================================================================================
+            # Evaluate model
+            if args.eval_async_threads &gt; 0:
+                defered_eval_and_save_checkpoint(model, criterion, args, current_round, is_rnn=is_rnn,
+                                                 metric_to_optim=metric_to_optim, exec_ctx=exec_ctx)
+
+                # Update recent information about eval metrics
+                exec_ctx.saver_thread.best_metric_lock.acquire()
+                H[&#39;best_metric&#39;] = max(H[&#39;best_metric&#39;], exec_ctx.saver_thread.best_metric)
+                H[&#39;eval_metrics&#39;] = copy.deepcopy(exec_ctx.saver_thread.eval_metrics)
+                exec_ctx.saver_thread.best_metric_lock.release()
+
+            else:
+                metrics = evaluate_model(model, testloader, criterion, args.device, current_round, print_freq=10,
+                                         is_rnn=is_rnn, metric_to_optim=metric_to_optim)
+
+                avg_metric = metrics[metric_to_optim].get_avg()
+
+                cur_metrics = {&#34;loss&#34;: metrics[&#34;loss&#34;].get_avg(),
+                               &#34;top_1_acc&#34;: metrics[&#34;top_1_acc&#34;].get_avg(),
+                               &#34;top_5_acc&#34;: metrics[&#34;top_5_acc&#34;].get_avg(),
+                               &#34;neq_perplexity&#34;: metrics[&#34;neq_perplexity&#34;].get_avg()
+                               }
+
+                eval_metrics.update({metrics[&#39;round&#39;]: cur_metrics})
+
+                # Save model checkpoint
+                model_filename = &#39;{model}_{run_id}_checkpoint_{round:0&gt;2d}.pth.tar&#39;.format(model=args.model,
+                                                                                           run_id=args.run_id,
+                                                                                           round=current_round)
+
+                is_best = avg_metric &gt; best_metric
+                save_checkpoint(model, model_filename, is_best=is_best, args=args, metrics=metrics,
+                                metric_to_optim=metric_to_optim)
+
+                if is_best:
+                    best_metric = avg_metric
+
+                # Update recent information about eval metrics
+                H[&#39;best_metric&#39;] = max(H[&#39;best_metric&#39;], best_metric)
+                H[&#39;eval_metrics&#39;] = copy.deepcopy(eval_metrics)
+
+                if np.isnan(metrics[&#39;loss&#39;].get_avg()):
+                    logger.critical(&#39;NaN loss detected, aborting training procedure.&#39;)
+                #   return
+
+                logger.info(f&#39;Current lrs global:{global_scheduler.get_last_lr()}&#39;)
+        # ==============================================================================================================
+        # Add number of clients in that round
+        H[&#39;history&#39;][current_round][&#34;number_of_client_in_round&#34;] = len(fed_dataset_clients)
+
+        if args.log_gpu_usage:
+            H[&#39;history&#39;][current_round][&#34;memory_gpu_used&#34;] = 0
+            for dev in args.gpu:
+                if gpu_utils.is_target_dev_gpu(dev):
+                    memory_gpu_used = torch.cuda.memory_stats(args.device)[&#39;reserved_bytes.all.current&#39;]
+                    logger.info(
+                        f&#34;GPU: Before round {i} we have used {memory_gpu_used/(1024.0**2):.2f} MB from device {dev}&#34;)
+                    H[&#39;history&#39;][current_round][&#34;memory_gpu_used&#34;] += memory_gpu_used / (1024.0 ** 2)
+
+        if current_round % args.eval_every == 0 or i == (args.rounds - 1):
+            if &#34;full_gradient_norm_train&#34; in extra_opts and &#34;full_objective_value_train&#34; in extra_opts:
+                fed_dataset = trainloader.dataset
+
+                gradient_avg = mutils.get_zero_gradient_compatible_with_model(model)
+                fvalue_avg = 0.0
+
+                for c in fed_dataset_all_clients:
+                    fed_dataset.set_client(c)
+                    fvalue = algorithms.evaluateGradient(None, model, trainloader, criterion, is_rnn,
+                                                         update_statistics=False, evaluate_function=True,
+                                                         device=args.device, args=args)
+                    g = mutils.get_gradient(model)
+
+                    gradient_avg = (gradient_avg * c + g) / (c + 1)
+                    fvalue_avg = (fvalue_avg * c + fvalue) / (c + 1)
+
+                H[&#39;history&#39;][current_round][&#34;full_gradient_norm_train&#34;] = mutils.l2_norm_of_vec(gradient_avg)
+                H[&#39;history&#39;][current_round][&#34;full_objective_value_train&#34;] = fvalue_avg
+
+            if &#34;full_gradient_norm_train&#34; in extra_opts and &#34;full_objective_value_train&#34; not in extra_opts:
+                fed_dataset = trainloader.dataset
+                gradient_avg = mutils.get_zero_gradient_compatible_with_model(model)
+
+                for c in fed_dataset_all_clients:
+                    fed_dataset.set_client(c)
+                    algorithms.evaluateGradient(None, model, trainloader, criterion, is_rnn, update_statistics=False,
+                                                evaluate_function=False, device=args.device, args=args)
+                    g = mutils.get_gradient(model)
+                    gradient_avg = (gradient_avg * c + g) / (c + 1)
+
+                H[&#39;history&#39;][current_round][&#34;full_gradient_norm_train&#34;] = mutils.l2_norm_of_vec(gradient_avg)
+
+            if &#34;full_objective_value_train&#34; in extra_opts and &#34;full_gradient_norm_train&#34; not in extra_opts:
+                fed_dataset = trainloader.dataset
+                fvalue_avg = 0.0
+                for c in fed_dataset_all_clients:
+                    fed_dataset.set_client(c)
+                    fvalue = algorithms.evaluateFunction(None, model, trainloader, criterion, is_rnn,
+                                                         update_statistics=False, device=args.device, args=args)
+                    fvalue_avg = (fvalue_avg * c + fvalue) / (c + 1)
+                H[&#39;history&#39;][current_round][&#34;full_objective_value_train&#34;] = fvalue_avg
+            # ==========================================================================================================
+            if &#34;full_gradient_norm_val&#34; in extra_opts and &#34;full_objective_value_val&#34; in extra_opts:
+                fvalue = algorithms.evaluateGradient(None, model, testloader, criterion, is_rnn,
+                                                     update_statistics=False, evaluate_function=True,
+                                                     device=args.device, args=args)
+                H[&#39;history&#39;][current_round][&#34;full_gradient_norm_val&#34;] = mutils.l2_norm_of_gradient_m(model)
+                H[&#39;history&#39;][current_round][&#34;full_objective_value_val&#34;] = fvalue
+
+            if &#34;full_gradient_norm_val&#34; in extra_opts and &#34;full_objective_value_val&#34; not in extra_opts:
+                algorithms.evaluateGradient(None, model, testloader, criterion, is_rnn, update_statistics=False,
+                                            evaluate_function=False, device=args.device, args=args)
+                H[&#39;history&#39;][current_round][&#34;full_gradient_norm_val&#34;] = mutils.l2_norm_of_gradient_m(model)
+
+            if &#34;full_objective_value_val&#34; in extra_opts and &#34;full_gradient_norm_val&#34; not in extra_opts:
+                fvalue = algorithms.evaluateFunction(None, model, testloader, criterion, is_rnn,
+                                                     update_statistics=False, device=args.device, args=args)
+                H[&#39;history&#39;][current_round][&#34;full_objective_value_val&#34;] = fvalue
+            # ==========================================================================================================
+            # Interpolate
+            # ==========================================================================================================
+            if current_round &gt; 0:
+                look_behind = args.eval_every
+
+                # ======================================================================================================
+                if i % args.eval_every == 0:
+                    look_behind = args.eval_every  # Exactly look_behind previous evaluation had place to be
+                elif i == args.rounds - 1:
+                    look_behind = i % args.eval_every  # We are in case that we in last round &#34;R-1&#34;.
+                    pass  # Exactly i%args.eval_every round before previous eval had place to be
+                else:
+                    assert (not &#34;Impossible case&#34;)
+                # ======================================================================================================
+
+                for s in range(1, look_behind):
+                    alpha = s / float(look_behind)
+                    prev_eval_round = current_round - look_behind
+                    inter_round = prev_eval_round + s
+
+                    # Linearly interpolate between a (alpha=0.0) and b(alpha=1.0)
+                    def lerp(a, b, alpha):
+                        return (1.0 - alpha) * a + alpha * b
+
+                    if &#34;full_gradient_norm_train&#34; in extra_opts:
+                        H[&#39;history&#39;][inter_round][&#34;full_gradient_norm_train&#34;] = lerp(
+                            H[&#39;history&#39;][prev_eval_round][&#34;full_gradient_norm_train&#34;],
+                            H[&#39;history&#39;][current_round][&#34;full_gradient_norm_train&#34;], alpha)
+                    if &#34;full_objective_value_train&#34; in extra_opts:
+                        H[&#39;history&#39;][inter_round][&#34;full_objective_value_train&#34;] = lerp(
+                            H[&#39;history&#39;][prev_eval_round][&#34;full_objective_value_train&#34;],
+                            H[&#39;history&#39;][current_round][&#34;full_objective_value_train&#34;], alpha)
+                    if &#34;full_gradient_norm_val&#34; in extra_opts:
+                        H[&#39;history&#39;][inter_round][&#34;full_gradient_norm_val&#34;] = lerp(
+                            H[&#39;history&#39;][prev_eval_round][&#34;full_gradient_norm_val&#34;],
+                            H[&#39;history&#39;][current_round][&#34;full_gradient_norm_val&#34;], alpha)
+                    if &#34;full_objective_value_val&#34; in extra_opts:
+                        H[&#39;history&#39;][inter_round][&#34;full_objective_value_val&#34;] = lerp(
+                            H[&#39;history&#39;][prev_eval_round][&#34;full_objective_value_val&#34;],
+                            H[&#39;history&#39;][current_round][&#34;full_objective_value_val&#34;], alpha)
+
+        if current_round % args.eval_every == 0 or i == (args.rounds - 1):
+            if execution_context.simulation_progress_steps_fn is not None:
+                execution_context.simulation_progress_steps_fn(i / float(args.rounds) * 0.75, H)
+            wandb_wrapper.logStatistics(H, current_round)
+
+        # ==============================================================================================================
+        # Save parameters of the last model
+        # if i == args.rounds - 1:
+        #    xfinal = mutils.get_params(model)
+        #    H[&#39;xfinal&#39;] = xfinal
+        # ==============================================================================================================
+        # Update schedulers
+        if exec_ctx.local_training_threads.workers() &gt; 0:
+            # In this mode local optimizers for worker threads are used
+            for th in exec_ctx.local_training_threads.threads:
+                th.local_scheduler.step()
+        else:
+            # In this mode local optimizer is used
+            local_scheduler.step()
+
+        global_scheduler.step()
+
+        # Increment rounder counter
+        current_round += 1
+
+        # Empty caches. Force cleanup the cache after round (good to fix fragmentation issues)
+        if args.per_round_clean_torch_cache:
+            execution_context.torch_global_lock.acquire()
+            torch.cuda.empty_cache()
+            execution_context.torch_global_lock.release()
+
+    xfinal = mutils.get_params(model)
+    H[&#39;xfinal&#39;] = xfinal
+
+    logger.debug(f&#39;Average epoch train time: {train_time_meter / args.rounds}&#39;)
+    # ==================================================================================================================
+    logger.info(&#34;Wait for threads from a training threadpool&#34;)
+    exec_ctx.local_training_threads.stop()
+    if execution_context.simulation_progress_steps_fn is not None:
+        execution_context.simulation_progress_steps_fn(0.8, H)
+
+    logger.info(&#34;Wait for threads from a evaluate threadpool&#34;)
+    exec_ctx.eval_thread_pool.stop()
+    if execution_context.simulation_progress_steps_fn is not None:
+        execution_context.simulation_progress_steps_fn(0.95, H)
+
+    logger.info(&#34;Wait for threads from a serialization threadpool&#34;)
+    exec_ctx.saver_thread.stop()
+
+    # Not need for use in fact, but we do it for purpose of excluding any bugs inside PyTorch
+
+    logger.info(&#34;Synchronize all GPU streams&#34;)
+    if is_target_gpu:
+        torch.cuda.synchronize(args.device)
+
+    # Update metrics based on eval and save results
+    H[&#39;best_metric&#39;] = max(H[&#39;best_metric&#39;], exec_ctx.saver_thread.best_metric)
+    H[&#39;best_metric&#39;] = max(H[&#39;best_metric&#39;], best_metric)
+
+    if len(eval_metrics) &gt; 0:
+        H[&#39;eval_metrics&#39;] = copy.deepcopy(eval_metrics)
+    else:
+        H[&#39;eval_metrics&#39;] = copy.deepcopy(exec_ctx.saver_thread.eval_metrics)
+
+    if execution_context.simulation_progress_steps_fn is not None:
+        execution_context.simulation_progress_steps_fn(1.0, H)
+        # ==================================================================================================================
+    # Final prune
+    HKeys = list(H.keys())
+
+    # Remove any tensor field huger then 1 MBytes from final solution
+    tensor_prune_mb_threshold = 0.0
+
+    for field in HKeys:
+        if torch.is_tensor(H[field]):
+            size_in_mbytes = H[field].numel() * H[field].element_size() / (1024.0 ** 2)
+            if size_in_mbytes &gt; tensor_prune_mb_threshold:
+                del H[field]
+                continue
+            else:
+                # Convert any not removed tensor to CPU
+                H[field] = H[field].cpu()
+
+        if type(H[field]) == list:
+            sz = len(H[field])
+            i = 0
+
+            while i &lt; sz:
+                if torch.is_tensor(H[field][i]):
+                    size_in_mbytes = H[field][i].numel() * H[field][i].element_size() / (1024.0 ** 2)
+                    if size_in_mbytes &gt;= tensor_prune_mb_threshold:
+                        del H[field][i]
+                        sz = len(H[field])
+                    else:
+                        # Convert any not removed tensor to CPU
+                        H[field][i] = H[field][i].cpu()
+                        i += 1
+                else:
+                    i += 1
+
+    # Remove local optimiser state, client_compressors, reference to server state
+    not_to_remove_from_client_state = [&#34;error&#34;]
+
+    for round, history_state in H[&#39;history&#39;].items():
+        clients_history = history_state[&#39;client_states&#39;]
+        for client_id, client_state in clients_history.items():
+            client_state = client_state[&#39;client_state&#39;]
+
+            if &#39;H&#39; in client_state:
+                del client_state[&#39;H&#39;]
+            if &#39;optimiser&#39; in client_state:
+                del client_state[&#39;optimiser&#39;]
+            if &#39;buffers&#39; in client_state:
+                del client_state[&#39;buffers&#39;]
+            if &#39;client_compressor&#39; in client_state:
+                del client_state[&#39;client_compressor&#39;]
+
+            client_state_keys = list(client_state.keys())
+            for field in client_state_keys:
+
+                if field in not_to_remove_from_client_state:
+                    continue
+
+                if torch.is_tensor(client_state[field]):
+                    size_in_mbytes = client_state[field].numel() * client_state[field].element_size() / (1024.0 ** 2)
+                    if size_in_mbytes &gt; tensor_prune_mb_threshold:
+                        del client_state[field]
+                        continue
+                    else:
+                        # Convert any not removed tensor to CPU
+                        client_state[field] = client_state[field].cpu()
+                        continue
+
+                if type(client_state[field]) == list:
+                    sz = len(client_state[field])
+                    i = 0
+                    while i &lt; sz:
+                        if torch.is_tensor(client_state[field][i]):
+                            size_in_mbytes = client_state[field][i].numel() * client_state[field][i].element_size() / (
+                                        1024.0 ** 2)
+                            if size_in_mbytes &gt;= tensor_prune_mb_threshold:
+                                del client_state[field][i]
+                                sz = len(client_state[field])
+                            else:
+                                client_state[field][i] = client_state[field][i].cpu()
+                                i += 1
+                        else:
+                            i += 1
+
+    # Remove reference for execution context
+    del H[&#34;execution_context&#34;]
+    if &#39;exec_ctx&#39; in H[&#34;args&#34;]:
+        del H[&#34;args&#34;]
+
+    # ==================================================================================================================
+    # Cleanup execution context resources
+    # ==================================================================================================================
+    execution_context.resetExecutionContext(exec_ctx)
+    # ==================================================================================================================
+    if execution_context.simulation_finish_fn is not None:
+        execution_context.simulation_finish_fn(H)</code></pre>
+</details>
+</dd>
+<dt id="run.isSimulationNeedEarlyStopCmdLine"><code class="name flex">
+<span>def <span class="ident">isSimulationNeedEarlyStopCmdLine</span></span>(<span>H)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def isSimulationNeedEarlyStopCmdLine(H):
+    global g_Terminate
+    return g_Terminate</code></pre>
+</details>
+</dd>
+<dt id="run.main"><code class="name flex">
+<span>def <span class="ident">main</span></span>(<span>args, raw_cmdline, extra_)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def main(args, raw_cmdline, extra_):
+    # Init project and save in args url for the plots
+    projectWB = None
+    if len(args.wandb_key) &gt; 0:
+        projectWB = wandb_wrapper.initWandbProject(
+            args.wandb_key,
+            args.wandb_project_name,
+            f&#34;{args.algorithm}-rounds-{args.rounds}-{args.model}@{args.dataset}-runid-{args.run_id}&#34;,
+            args
+        )
+        if projectWB is not None:
+            args.wandb_url = projectWB.url
+
+    # In case of DataParallel for .to() to
+    # This a device used by master for FL algorithms
+    args.device = gpu_utils.get_target_device_str(args.gpu[0]) if type(args.gpu) == list else args.gpu
+
+    # Instantiate execution context
+    exec_ctx = execution_context.initExecutionContext()
+    exec_ctx.extra_ = extra_
+
+    # Set all seeds
+    if args.deterministic:
+        exec_ctx.random.seed(args.manual_init_seed)
+        exec_ctx.np_random.seed(args.manual_init_seed)
+
+    # Setup extra options for experiments
+    for option in args.algorithm_options.split(&#34;,&#34;):
+        kv = option.split(&#34;:&#34;)
+        if len(kv) == 1:
+            exec_ctx.experimental_options[kv[0]] = True
+        else:
+            exec_ctx.experimental_options[kv[0]] = kv[1]
+
+    # Load validation set
+    trainset, testset = load_data(exec_ctx, args.data_path, args.dataset, args, load_trainset=True, download=True)
+
+    test_batch_size = get_test_batch_size(args.dataset, args.batch_size)
+
+    # Test set dataloader
+    testloader = torch.utils.data.DataLoader(testset,
+                                             batch_size=test_batch_size,
+                                             num_workers=args.num_workers_test,
+                                             shuffle=False,
+                                             pin_memory=False,
+                                             drop_last=False
+                                             )
+
+    # Reset all seeds
+    if args.deterministic:
+        exec_ctx.random.seed(args.manual_init_seed)
+        exec_ctx.np_random.seed(args.manual_init_seed)
+
+    if not args.evaluate:  # Training mode
+        trainloader = torch.utils.data.DataLoader(
+            trainset,
+            batch_size=args.batch_size,
+            num_workers=args.num_workers_train,
+            shuffle=False,
+            pin_memory=False,
+            drop_last=False)
+
+        # Is target device for master is GPU
+        is_target_dev_gpu = gpu_utils.is_target_dev_gpu(args.device)
+
+        # Initialize local training threads in case of using multithreading implementation
+        exec_ctx.local_training_threads.adjust_num_workers(w=args.threadpool_for_local_opt, own_cuda_stream=True,
+                                                           device_list=args.gpu)
+        for th in exec_ctx.local_training_threads.threads:
+            th.trainset_copy = copy.deepcopy(trainset)
+            th.train_loader_copy = torch.utils.data.DataLoader(th.trainset_copy,
+                                                               batch_size=args.batch_size,
+                                                               num_workers=args.num_workers_train,
+                                                               shuffle=False,
+                                                               pin_memory=False,
+                                                               drop_last=False)
+            if hasattr(th.trainset_copy, &#34;load_data&#34;):
+                th.trainset_copy.load_data()
+
+        # Initialize remote clients - one remote connection per one remote computation device
+        external_devices = [d.strip() for d in args.external_devices.split(&#34;,&#34;) if len(d.strip()) &gt; 0]
+        exec_ctx.remote_training_threads.adjust_num_workers(w=len(external_devices), own_cuda_stream=False,
+                                                            device_list=[&#34;cpu&#34;])
+        for th_i in range(len(exec_ctx.remote_training_threads.threads)):
+            th = exec_ctx.remote_training_threads.threads[th_i]
+            dev = external_devices[th_i]
+            th.external_dev_long = dev
+            th.external_ip, th.external_port, th.external_dev, th.external_dev_dumber = dev.split(&#34;:&#34;)
+
+            try:
+                th.external_socket = comm_socket.CommSocket()
+                th.external_socket.sock.connect((th.external_ip, int(th.external_port)))  # connect with remote side
+                th.external_socket.rawSendString(&#34;execute_work&#34;)  # initiate work execution COMMAND
+                th.external_socket.rawSendString(th.external_dev_long)  # provide device specification
+                th.external_socket.rawSend(pickle.dumps(
+                    raw_cmdline))  # provide original command line (it will be changed by the client) to be consistent with used devices
+                th.external_socket_online = True
+            except socket.error:
+                th.external_socket_online = False
+
+        # Initialize saver treads for information serialization (0 is acceptable)
+        exec_ctx.saver_thread.adjust_num_workers(w=args.save_async_threads, own_cuda_stream=True, device_list=args.gpu)
+
+        # Initialize local training threads in case of using multithreading implementation (0 is acceptable)
+        exec_ctx.eval_thread_pool.adjust_num_workers(w=args.eval_async_threads, own_cuda_stream=True,
+                                                     device_list=args.gpu)
+
+        for th in exec_ctx.eval_thread_pool.threads:
+            th.testset_copy = copy.deepcopy(testset)
+            th.testloader_copy = torch.utils.data.DataLoader(th.testset_copy,
+                                                             batch_size=test_batch_size,
+                                                             num_workers=args.num_workers_test,
+                                                             shuffle=False,
+                                                             pin_memory=False,
+                                                             drop_last=False
+                                                             )
+            if hasattr(th.testset_copy, &#34;load_data&#34;):
+                th.testset_copy.load_data()
+
+        if args.worker_listen_mode &lt;= 0:
+            # Path of execution for local simulation
+            init_and_train_model(args, raw_cmdline, trainloader, testloader, exec_ctx)
+        else:
+            # Path of execution for assist simulation with a remote means
+            init_and_help_with_compute(args, raw_cmdline, trainloader, testloader, exec_ctx)
+
+    else:  # Evaluation mode
+        # TODO: figure out how to exploit DataParallel. Currently - parallelism across workers
+        model, criterion, round = get_training_elements(args.model, args.dataset, args, args.resume_from,
+                                                        args.load_best, args.device, args.loss,
+                                                        args.turn_off_batch_normalization_and_dropout)
+
+        metrics = evaluate_model(model, testloader, criterion, args.device, round,
+                                 print_freq=10, metric_to_optim=args.metric,
+                                 is_rnn=args.model in RNN_MODELS)
+
+        metrics_dict = create_metrics_dict(metrics)
+        logger.info(f&#39;Validation metrics: {metrics_dict}&#39;)
+    wandb_wrapper.finishProject(projectWB)</code></pre>
+</details>
+</dd>
+<dt id="run.makeBackupOfServerState"><code class="name flex">
+<span>def <span class="ident">makeBackupOfServerState</span></span>(<span>H, round)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def makeBackupOfServerState(H, round):
+    args = H[&#34;args&#34;]
+    job_id = args.run_id
+    fname = args.out
+
+    if fname == &#34;&#34;:
+        fname = os.path.join(args.checkpoint_dir, f&#34;{args.run_id}_{args.algorithm}_{args.global_lr}_backup.bin&#34;)
+    else:
+        fname = fname.replace(&#34;.bin&#34;, f&#34;{args.run_id}_{args.algorithm}_{args.global_lr}_backup.bin&#34;)
+
+    execution_context = H[&#34;execution_context&#34;]
+    H[&#34;execution_context&#34;] = None
+    exec_ctx_in_arg = (&#39;exec_ctx&#39; in H[&#34;args&#34;])
+    exec_ctx = None
+    if exec_ctx_in_arg:
+        exec_ctx = H[&#34;args&#34;][&#39;exec_ctx&#39;]
+        H[&#34;execution_context&#34;] = None
+
+    with open(fname, &#34;wb&#34;) as f:
+        pickle.dump([(job_id, H)], f)
+
+    H[&#34;execution_context&#34;] = execution_context
+    if exec_ctx_in_arg:
+        H[&#34;args&#34;][&#39;exec_ctx&#39;] = exec_ctx</code></pre>
+</details>
+</dd>
+<dt id="run.runSimulation"><code class="name flex">
+<span>def <span class="ident">runSimulation</span></span>(<span>cmdline, extra_=None)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def runSimulation(cmdline, extra_=None):
+    # ==================================================================================================================
+    # ENTRY POINT FOR LAUNCH SIMULATION FROM GUI
+    # ==================================================================================================================
+    global CUDA_SUPPORT
+
+    args = parse_args(cmdline)
+    if args.hostname == &#34;&#34;:
+        args.hostname = socket.gethostname()
+
+    Logger.setup_logging(args.loglevel, args.logfilter, logfile=args.logfile)
+    logger = Logger.get(args.run_id)
+
+    logger.info(f&#34;CLI args original: {cmdline}&#34;)
+
+    if torch.cuda.device_count():
+        CUDA_SUPPORT = True
+        # torch.backends.cudnn.benchmark = True
+    else:
+        logger.warning(&#39;CUDA unsupported!!&#39;)
+        CUDA_SUPPORT = False
+
+    if not CUDA_SUPPORT:
+        args.gpu = &#34;cpu&#34;
+
+    if args.deterministic:
+        import torch.backends.cudnn as cudnn
+        import os
+        import random
+
+        # TODO: This settings are not thread safe in case of using cuda backend from several threads
+        # Project use execution context random generators for random and numpy in thread safe way
+        if CUDA_SUPPORT:
+            cudnn.deterministic = args.deterministic
+            cudnn.benchmark = not args.deterministic
+            torch.cuda.manual_seed(args.manual_init_seed)
+            torch.cuda.manual_seed_all(args.manual_init_seed)
+
+            # Turn off Tensor Cores if have been requested
+            torch.backends.cudnn.allow_tf32 = args.allow_use_nv_tensorcores
+            torch.backends.cuda.matmul.allow_tf32 = args.allow_use_nv_tensorcores
+
+        torch.manual_seed(args.manual_init_seed)
+        random.seed(args.manual_init_seed)
+        np.random.seed(args.manual_init_seed)
+
+        os.environ[&#39;PYTHONHASHSEED&#39;] = str(args.manual_init_seed)
+        torch.backends.cudnn.deterministic = True
+
+    main(args, cmdline, extra_)</code></pre>
+</details>
+</dd>
+<dt id="run.saveResult"><code class="name flex">
+<span>def <span class="ident">saveResult</span></span>(<span>H)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Serialize server state into filesystem</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def saveResult(H):
+    &#34;&#34;&#34;Serialize server state into filesystem&#34;&#34;&#34;
+    args = H[&#34;args&#34;]
+
+    job_id = args.run_id
+    fname = args.out
+    if fname == &#34;&#34;:
+        fname = os.path.join(args.checkpoint_dir, f&#34;{args.algorithm}_simulation_history.bin&#34;)
+
+    # Save formally list of tuples (job_id, server_state)
+    with open(fname, &#34;wb&#34;) as f:
+        pickle.dump([(job_id, H)], f)
+
+    print(f&#34;Final server state for {job_id} is serialized into: &#39;{fname}&#39;&#34;)
+    print(f&#34;Program which uses &#39;{args.algorithm}&#39; algorithm for {args.rounds} rounds was finished&#34;)</code></pre>
+</details>
+</dd>
+<dt id="run.terminationWithSignal"><code class="name flex">
+<span>def <span class="ident">terminationWithSignal</span></span>(<span>*args)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def terminationWithSignal(*args):
+    global g_Terminate
+    g_Terminate = True
+    print(&#34;Request for terminate process has been obtained. Save results and terminate.&#34;)</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="run.ClientThread"><code class="flex name class">
+<span>class <span class="ident">ClientThread</span></span>
+<span>(</span><span>clientSocket, listenPort)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>A class that represents a thread of control.</p>
+<p>This class can be safely subclassed in a limited fashion. There are two ways
+to specify the activity: by passing a callable object to the constructor, or
+by overriding the run() method in a subclass.</p>
+<p>This constructor should always be called with keyword arguments. Arguments are:</p>
+<p><em>group</em> should be None; reserved for future extension when a ThreadGroup
+class is implemented.</p>
+<p><em>target</em> is the callable object to be invoked by the run()
+method. Defaults to None, meaning nothing is called.</p>
+<p><em>name</em> is the thread name. By default, a unique name is constructed of
+the form "Thread-N" where N is a small decimal number.</p>
+<p><em>args</em> is the argument tuple for the target invocation. Defaults to ().</p>
+<p><em>kwargs</em> is a dictionary of keyword arguments for the target
+invocation. Defaults to {}.</p>
+<p>If a subclass overrides the constructor, it must make sure to invoke
+the base class constructor (Thread.<strong>init</strong>()) before doing anything
+else to the thread.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class ClientThread(threading.Thread):
+    def __init__(self, clientSocket, listenPort):
+        threading.Thread.__init__(self)
+        self.clientSocket = clientSocket  # OS-like socket to communicate with information
+        self.comSocket = comm_socket.CommSocket(clientSocket)  # Light construction on top of socket to communicate
+        self.listenPort = listenPort  # Listening port
+
+    def run(self):
+        cmd = self.comSocket.rawRecvString()  # Obtain command
+
+        t = time.localtime()
+        cur_time = time.strftime(&#34;%H:%M:%S&#34;, t)
+        print(f&#34;-- {cur_time}: The received command: {cmd}&#34;)
+
+        if cmd == &#34;list_of_gpus&#34;:  # List of resources in the system
+            gpus = len(gpu_utils.get_available_gpus())
+            self.comSocket.rawSendString(f&#34;{gpus}&#34;)
+        elif cmd == &#34;execute_work&#34;:  # Execute work
+            devConfig = self.comSocket.rawRecvString()  # 1-st param: device configuration
+            cmdLine = self.comSocket.rawRecv()  # 2-nd param: command line
+            cmdLine = pickle.loads(cmdLine)  # unpack cmdline
+
+            ip, port, dev_name, dev_number = devConfig.split(&#34;:&#34;)
+
+            # Remove unnecessary flags for worker
+            i = len(cmdLine) - 1
+            while i &gt;= 0:
+                if cmdLine[i] == &#34;--metric&#34;:
+                    cmdLine[i + 1] = &#34;none&#34;
+
+                if cmdLine[i] == &#34;--gpu&#34;:
+                    cmdLine[i + 1] = dev_number  # update device number
+
+                if cmdLine[i] in [&#39;--wandb-key&#39;, &#39;--eval-async-threads&#39;, &#39;--save-async-threads&#39;,
+                                  &#39;--threadpool-for-local-opt&#39;, &#39;--external-devices&#39;, &#39;--evaluate&#39;]:
+                    del cmdLine[i]  # remove flag
+                    del cmdLine[i]  # remove value for flag (originally at index i+1)
+                i -= 1
+
+            # Specify listen mode in which worker is
+            cmdLine.append(&#34;--worker-listen-mode&#34;)
+            cmdLine.append(str(self.listenPort))
+
+            runSimulation(cmdLine, extra_=self.comSocket)
+        else:
+            print(f&#34;The received command {cmd} is not valid&#34;)</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>threading.Thread</li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="run.ClientThread.run"><code class="name flex">
+<span>def <span class="ident">run</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Method representing the thread's activity.</p>
+<p>You may override this method in a subclass. The standard run() method
+invokes the callable object passed to the object's constructor as the
+target argument, if any, with sequential and keyword arguments taken
+from the args and kwargs arguments, respectively.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def run(self):
+    cmd = self.comSocket.rawRecvString()  # Obtain command
+
+    t = time.localtime()
+    cur_time = time.strftime(&#34;%H:%M:%S&#34;, t)
+    print(f&#34;-- {cur_time}: The received command: {cmd}&#34;)
+
+    if cmd == &#34;list_of_gpus&#34;:  # List of resources in the system
+        gpus = len(gpu_utils.get_available_gpus())
+        self.comSocket.rawSendString(f&#34;{gpus}&#34;)
+    elif cmd == &#34;execute_work&#34;:  # Execute work
+        devConfig = self.comSocket.rawRecvString()  # 1-st param: device configuration
+        cmdLine = self.comSocket.rawRecv()  # 2-nd param: command line
+        cmdLine = pickle.loads(cmdLine)  # unpack cmdline
+
+        ip, port, dev_name, dev_number = devConfig.split(&#34;:&#34;)
+
+        # Remove unnecessary flags for worker
+        i = len(cmdLine) - 1
+        while i &gt;= 0:
+            if cmdLine[i] == &#34;--metric&#34;:
+                cmdLine[i + 1] = &#34;none&#34;
+
+            if cmdLine[i] == &#34;--gpu&#34;:
+                cmdLine[i + 1] = dev_number  # update device number
+
+            if cmdLine[i] in [&#39;--wandb-key&#39;, &#39;--eval-async-threads&#39;, &#39;--save-async-threads&#39;,
+                              &#39;--threadpool-for-local-opt&#39;, &#39;--external-devices&#39;, &#39;--evaluate&#39;]:
+                del cmdLine[i]  # remove flag
+                del cmdLine[i]  # remove value for flag (originally at index i+1)
+            i -= 1
+
+        # Specify listen mode in which worker is
+        cmdLine.append(&#34;--worker-listen-mode&#34;)
+        cmdLine.append(str(self.listenPort))
+
+        runSimulation(cmdLine, extra_=self.comSocket)
+    else:
+        print(f&#34;The received command {cmd} is not valid&#34;)</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="run.executeRemoteWorkerSupportMode" href="#run.executeRemoteWorkerSupportMode">executeRemoteWorkerSupportMode</a></code></li>
+<li><code><a title="run.init_and_help_with_compute" href="#run.init_and_help_with_compute">init_and_help_with_compute</a></code></li>
+<li><code><a title="run.init_and_train_model" href="#run.init_and_train_model">init_and_train_model</a></code></li>
+<li><code><a title="run.isSimulationNeedEarlyStopCmdLine" href="#run.isSimulationNeedEarlyStopCmdLine">isSimulationNeedEarlyStopCmdLine</a></code></li>
+<li><code><a title="run.main" href="#run.main">main</a></code></li>
+<li><code><a title="run.makeBackupOfServerState" href="#run.makeBackupOfServerState">makeBackupOfServerState</a></code></li>
+<li><code><a title="run.runSimulation" href="#run.runSimulation">runSimulation</a></code></li>
+<li><code><a title="run.saveResult" href="#run.saveResult">saveResult</a></code></li>
+<li><code><a title="run.terminationWithSignal" href="#run.terminationWithSignal">terminationWithSignal</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="run.ClientThread" href="#run.ClientThread">ClientThread</a></code></h4>
+<ul class="">
+<li><code><a title="run.ClientThread.run" href="#run.ClientThread.run">run</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+FL_PyTorch. The document generated 09-July-2022 23:02:51.
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,1125 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>opts API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_CHTML" integrity="sha256-kZafAc6mZvK3W3v1pHOcUix30OHQN6pU/NO2oFkqZVw=" crossorigin></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>opts</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">#!/usr/bin/env python3
+
+import argparse
+import time
+from datetime import datetime
+import os
+import utils.gpu_utils as gpu_utils
+import random
+
+# Global simulation counter
+gSimulationCounter = 0
+
+
+def parse_args(args):
+    parser = initialise_arg_parser(args, &#39;FLPyTorch, running arguments.&#39;)
+
+    # SERVER OPTIMIZATION PARAMS
+    parser.add_argument(
+        &#34;--rounds&#34;,
+        type=int,
+        default=1,
+        help=&#34;Number of rounds of federated learning&#34;,
+    )
+    parser.add_argument(
+        &#39;--client-sampling-type&#39;,
+        type=str,
+        choices=[&#39;uniform&#39;, &#39;poisson&#39;, &#39;poisson-no-empty&#39;],
+        default=&#39;uniform&#39;,
+        help=&#39;Sampling strategy to sample clients&#39;
+    )
+    parser.add_argument(
+        &#34;--num-clients-per-round&#34;,
+        type=int,
+        default=0,
+        help=&#34;Number of available clients used for one communication round&#34;,
+    )
+    parser.add_argument(
+        &#34;--client-sampling-poisson&#34;,
+        type=float,
+        default=0.0,
+        help=&#34;Sampling probability for Poisson sampling.&#34; 
+             &#34;Coincident with probability for clients to be selected in communication round&#34;,
+    )
+    parser.add_argument(
+        &#39;--global-lr&#39;,
+        type=float,
+        default=1,
+        help=&#39;Global initial local learning rate (default: 1)&#39;
+    )
+    parser.add_argument(
+        &#39;--global-lr-type&#39;,
+        type=str,
+        choices=[&#39;cosine&#39;, &#39;cifar_1&#39;, &#39;cifar_2&#39;, &#39;static&#39;],
+        default=&#39;static&#39;,
+        help=&#39;Global learning rate strategy (default: static)&#39;
+    )
+    parser.add_argument(
+        &#34;--global-optimiser&#34;,
+        type=str,
+        choices=[&#39;sgd&#39;, &#39;adam&#39;, &#39;rmsprop&#39;],
+        default=&#39;sgd&#39;,
+        help=&#39;Global optimiser to use (default: SGD)&#39;
+    )
+    parser.add_argument(
+        &#39;--global-momentum&#39;,
+        type=float,
+        default=0.,
+        help=&#39;Global momentum (default: 0.)&#39;
+    )
+    parser.add_argument(
+        &#39;--global-weight-decay&#39;,
+        type=float,
+        default=0.,
+        help=&#39;Global weight decay (default: 0.)&#39;
+    )
+
+    # LOCAL OPTIMISATION PARAMETERS
+    parser.add_argument(
+        &#34;--run-local-steps&#34;,
+        action=&#34;store_true&#34;,
+        default=False,
+        help=&#34;Run local epochs or local iterations, &#34;
+             &#34;if &#39;True&#39; then each worker runs &#39;--number-of-local-iters&#39; steps in batches&#34;
+             &#34;          else each worker runs &#39;--number-of-local-iters&#39; local epochs.&#34;
+    )
+    parser.add_argument(
+        &#34;-li&#34;, &#34;--number-of-local-iters&#34;,
+        type=int,
+        default=None,
+        help=&#34;Static number of local steps to run training for defined by the server training configuration&#34;
+    )
+    parser.add_argument(
+        &#34;-b&#34;, &#34;--batch-size&#34;,
+        type=int,
+        default=32,
+        help=&#34;Static batch size for data loading&#34;
+    )
+    parser.add_argument(
+        &#39;--local-lr&#39;,
+        type=float,
+        default=0.1,
+        help=&#39;initial local learning rate (default: 0.1)&#39;
+    )
+    parser.add_argument(
+        &#39;--local-lr-type&#39;,
+        type=str,
+        choices=[&#39;cosine&#39;, &#39;cifar_1&#39;, &#39;cifar_2&#39;, &#39;static&#39;],
+        default=&#39;static&#39;,
+        help=&#39;Local learning rate strategy (default: static)&#39;
+    )
+    parser.add_argument(
+        &#34;--local-optimiser&#34;,
+        type=str,
+        choices=[&#39;sgd&#39;, &#39;adam&#39;, &#39;rmsprop&#39;],
+        default=&#39;sgd&#39;,
+        help=&#39;Local optimiser to use (default: SGD)&#39;
+    )
+    parser.add_argument(
+        &#39;--local-momentum&#39;,
+        type=float,
+        default=0.0,
+        help=&#39;Momentum (default: 0.0)&#39;
+    )
+    parser.add_argument(
+        &#39;--local-weight-decay&#39;,
+        type=float,
+        default=0.0,
+        help=&#39;Local weight decay (default: 1e-4)&#39;
+    )
+
+    # MODEL and DATA PARAMETERS
+    parser.add_argument(
+        &#34;--dataset&#34;,
+        type=str,
+        required=True,
+        choices=[
+            &#34;cifar10&#34;, &#34;cifar100&#34;, &#34;emnist&#34;, &#34;full_shakespeare&#34;,
+            &#34;cifar10_fl&#34;, &#34;cifar10_fl_by_class&#34;,
+            &#34;cifar100_fl&#34;, &#34;shakespeare&#34;, &#34;femnist&#34;,
+            # Artificial problem
+            &#34;generated_for_quadratic_minimization&#34;,
+            # For Logistic Regression
+            &#34;w9a&#34;, &#34;w8a&#34;, &#34;w7a&#34;, &#34;w6a&#34;, &#34;w5a&#34;, &#34;w4a&#34;, &#34;w3a&#34;, &#34;w2a&#34;, &#34;w1a&#34;,
+            &#34;a9a&#34;, &#34;a8a&#34;, &#34;a7a&#34;, &#34;a6a&#34;, &#34;a5a&#34;, &#34;a4a&#34;, &#34;a3a&#34;, &#34;a2a&#34;, &#34;a1a&#34;,
+            &#34;mushrooms&#34;, &#34;phishing&#34;
+        ],
+        help=&#34;Define which dataset to load&#34;
+    )
+    parser.add_argument(
+        &#34;--dataset-generation-spec&#34;,
+        type=str,
+        default=&#39;&#39;,
+        help=&#34;Specification when data is artificially generated&#34;
+    )
+    parser.add_argument(
+        &#34;--metric&#34;,
+        type=str,
+        default=&#39;top_1_acc&#39;,
+        choices=[&#34;top_1_acc&#34;, &#34;top_5_acc&#34;, &#34;neg_perplexity&#34;, &#34;loss&#34;, &#34;none&#34;],
+        help=&#34;Define which metric to optimize. None ignores validation step.&#34;
+    )
+    parser.add_argument(
+        &#34;--model&#34;,
+        type=str,
+        help=&#34;Define which model to load&#34;
+    )
+
+    parser.add_argument(
+        &#34;--use-pretrained&#34;,
+        action=&#34;store_true&#34;,
+        default=False,
+        help=&#34;Define should be modeled be pretrained or not&#34;
+    )
+
+    parser.add_argument(
+        &#34;--train-last-layer&#34;,
+        action=&#34;store_true&#34;,
+        default=False,
+        help=&#34;Train only last linear layer&#34;
+    )
+
+    parser.add_argument(
+        &#34;--turn-off-batch-normalization-and-dropout&#34;,
+        action=&#34;store_true&#34;,
+        default=False,
+        help=&#34;During train time do not use Batch Normalization and Dropout if it is inside compute graph f(x;ai,bi).&#34;
+    )
+
+    # SETUP ARGUMENTS
+    parser.add_argument(
+        &#34;--checkpoint-dir&#34;,
+        type=str,
+        default=&#39;../check_points&#39;,
+        help=&#34;Directory to persist run meta data_preprocess, e.g. best/last models.&#34;
+    )
+    parser.add_argument(
+        &#34;--do-not-save-eval-checkpoints&#34;,
+        action=&#34;store_true&#34;,
+        default=False,
+        help=&#34;Turn off save evaluate checkpoints.&#34;
+    )
+    parser.add_argument(
+        &#34;--resume-from&#34;,
+        type=str,
+        help=&#34;Resume from checkpoint.&#34;
+    )
+    parser.add_argument(
+        &#34;--load-best&#34;,
+        default=False,
+        action=&#39;store_true&#39;,
+        help=&#34;Load best from checkpoint&#34;
+    )
+    parser.add_argument(
+        &#34;--data-path&#34;,
+        type=str,
+        default=&#34;../data/&#34;,
+        help=&#34;Base root directory for the dataset.&#34;
+    )
+
+    parser.add_argument(
+        &#34;--compute-type&#34;,
+        type=str,
+        default=&#39;fp32&#39;,
+        choices=[&#34;bfp16&#34;, &#34;fp16&#34;, &#34;fp32&#34;, &#34;fp64&#34;],
+        help=&#34;Define the type for trainable parameters and for buffers used e.g. in Batch Normalization.&#34;
+    )
+
+    parser.add_argument(
+        &#34;--gpu&#34;,
+        type=str,
+        default=&#39;0&#39;,
+        help=&#34;Define on which GPU to run the model (comma-separated for multiple). If -1, use CPU.&#34;
+    )
+
+    parser.add_argument(
+        &#34;--log-gpu-usage&#34;,
+        default=False,
+        action=&#39;store_true&#39;,
+        help=&#34;Log GPU usage&#34;
+    )
+
+    parser.add_argument(
+        &#34;-n&#34;, &#34;--num-workers-train&#34;,
+        type=int,
+        default=0,
+        help=&#34;Num workers for train dataset loading&#34;
+    )
+    parser.add_argument(
+        &#34;-nt&#34;, &#34;--num-workers-test&#34;,
+        type=int,
+        default=0,
+        help=&#34;Num workers for test dataset loading&#34;
+    )
+    parser.add_argument(
+        &#34;--deterministic&#34;,
+        action=&#34;store_true&#34;,
+        default=False,
+        help=&#34;Run deterministically for reproducibility.&#34;
+    )
+
+    parser.add_argument(
+        &#34;--manual-init-seed&#34;,
+        type=int,
+        default=123,
+        help=&#34;Random seed to use for model initialization and data generation&#34;
+    )
+
+    parser.add_argument(
+        &#34;--manual-runtime-seed&#34;,
+        type=int,
+        default=123,
+        help=&#34;Random seed to use during runtime mostly for stochastic optimization algorithms&#34;
+    )
+
+    parser.add_argument(
+        &#34;--group-name&#34;,
+        type=str,
+        default=&#34;&#34;,
+        help=&#34;Name of the group which allow group experiments for statistics&#34;
+    )
+    parser.add_argument(
+        &#34;--comment&#34;,
+        type=str,
+        default=&#34;&#34;,
+        help=&#34;Extra arbitrarily comment during transferring experimental results&#34;
+    )
+    parser.add_argument(
+        &#34;--hostname&#34;,
+        type=str,
+        default=&#34;&#34;,
+        help=&#34;Name of the machine. If empty string is passed the name is determinate automatically.&#34;
+    )
+    parser.add_argument(
+        &#34;--eval-every&#34;,
+        type=int,
+        default=5,
+        help=&#34;How often to do validation.&#34;
+    )
+    parser.add_argument(
+        &#34;--eval-async-threads&#34;,
+        type=int,
+        default=0,
+        help=&#34;Thread pool size for perform evaluation checkpoint asynchronously&#34;
+    )
+    parser.add_argument(
+        &#34;--save-async-threads&#34;,
+        type=int,
+        default=0,
+        help=&#34;Thread pool size for perform serialization into filesystem asynchronously&#34;
+    )
+    parser.add_argument(
+        &#34;--threadpool-for-local-opt&#34;,
+        type=int,
+        default=0,
+        help=&#34;Perform local training within a pool of threads.&#34; 
+             &#34;Each one execute sequence of optimization for assigned clients in a serialized way.&#34;
+    )
+    parser.add_argument(
+        &#34;--run-id&#34;,
+        type=str,
+        default=str(time.time()),
+        help=&#34;Identifier for the current job&#34;
+    )
+    parser.add_argument(
+        &#34;--algorithm&#34;,
+        type=str,
+        default=&#34;dcgd&#34;,
+        help=&#34;Algorithm (marina, diana, dcgd, fedavg, scaffold, fedprox, ef21, cofig, frecon, ef21-pp, pp-marina)&#34;
+    )
+    parser.add_argument(
+        &#34;--algorithm-options&#34;,
+        type=str,
+        default=&#34;&#34;,
+        help=&#34;Extra option for pass into algorithm implementation to carry experiments (sgd:name-of-sgd)&#34;
+    )
+    parser.add_argument(
+        &#34;--client-compressor&#34;,
+        type=str,
+        default=&#34;ident&#34;,
+        help=&#34;Client compressor. ident, randk:k|&lt;percentage-of-D&gt;%, bernulli:p, natural, qsgd:levels, &#34;
+             &#34;nat.dithering:levels:norm, std.dithering:levels:norm, topk:k|topk:&lt;percentage-of-D&gt;%),&#34;
+             &#34;rank_k:k|rank_k:&lt;percentage-of-D&gt;%, terngrad&#34;
+    )
+    parser.add_argument(
+        &#34;--extra-track&#34;,
+        type=str,
+        default=&#34;&#34;,
+        help=&#34;Extra expensive comma separated tracking characterstics that should be collected&#34;
+             &#34;(full_gradient_norm_train,full_objective_value_train,full_gradient_norm_val,full_objective_value_val)&#34;
+    )
+    parser.add_argument(
+        &#34;--loss&#34;,
+        type=str,
+        default=&#34;crossentropy&#34;,
+        help=&#34;Name of the use loss function (crossentropy, mse, logistic)&#34;
+    )
+    parser.add_argument(
+        &#34;--global-regulizer&#34;,
+        type=str,
+        choices=[&#34;none&#34;, &#34;noncvx_robust_linear_regression&#34;, &#34;cvx_l2norm_square_div_2&#34;],
+        default=&#34;none&#34;,
+        help=&#34;Name of the extra global regulizer (default none)&#34;
+    )
+    parser.add_argument(
+        &#34;--global-regulizer-alpha&#34;,
+        type=float,
+        default=0.0,
+        help=&#34;Global regulizer scalar multiple (default value 0.0)&#34;
+    )
+    parser.add_argument(
+        &#34;--out&#34;,
+        type=str,
+        default=&#34;&#34;,
+        help=&#34;Name of the file for serialize results into filesystem&#34;
+    )
+
+    parser.add_argument(
+        &#34;--wandb-key&#34;,
+        type=str,
+        default=&#39;&#39;,
+        help=&#34;Personal Wandb key to wandb.ai online plotting tool&#34;
+    )
+
+    parser.add_argument(
+        &#34;--wandb-project-name&#34;,
+        type=str,
+        default=&#39;fl_pytorch_simulation&#39;,
+        help=&#34;Project name for wandb.ai online plotting tool in which plots will be generated&#34;
+    )
+
+    parser.add_argument(
+        &#34;--external-devices&#34;,
+        type=str,
+        default=&#39;&#39;,
+        help=&#34;List of external devices ip:port:device that can be used during simulation process&#34;
+    )
+
+    parser.add_argument(
+        &#34;--worker-listen-mode&#34;,
+        type=int,
+        default=-1,
+        help=&#34;This flag activate worker in local listener mode. For local worker mode only this flag is needed&#34;
+    )
+
+    parser.add_argument(
+        &#34;--loglevel&#34;,
+        type=str,
+        choices=[&#34;debug&#34;, &#34;info&#34;, &#34;warn&#34;, &#34;error&#34;, &#34;critical&#34;],
+        default=&#34;INFO&#34;
+    )
+    parser.add_argument(
+        &#34;--logfilter&#34;,
+        type=str,
+        default=&#39;.*&#39;,
+        help=&#34;Regular expression to filter logging strings in which we&#39;re interesting in during debugging&#34;
+    )
+    parser.add_argument(
+        &#34;--store-client-state-in-cpu&#34;,
+        action=&#34;store_true&#34;,
+        default=False,
+        help=&#34;Store client state in CPU DRAM memory. Useful when number of clients is relatively big&#34;
+    )
+    parser.add_argument(
+        &#34;--per-round-clean-torch-cache&#34;,
+        action=&#34;store_true&#34;,
+        default=False,
+        help=&#34;Force clean GPU PyTorch cache at the end of each communication round used internally by PyTorch.&#34;
+             &#34;Good to fix fragmentation issues.&#34;
+    )
+    parser.add_argument(
+        &#34;--allow-use-nv-tensorcores&#34;,
+        action=&#34;store_true&#34;,
+        default=False,
+        help=&#34;Allow to use NVIDIA Tensor Cores available from NVIDIA Ampere architecture&#34;
+    )
+    parser.add_argument(
+        &#34;--initialize-shifts-policy&#34;,
+        type=str,
+        choices=[&#34;zero&#34;, &#34;full_gradient_at_start&#34;],
+        default=&#34;zero&#34;,
+        help=&#34;Policy for initial shifts for opt. algorithms that contains notion of shifts&#34;
+    )
+    parser.add_argument(
+        &#34;--sort-dataset-by-class-before-split&#34;,
+        action=&#34;store_true&#34;,
+        default=False,
+        help=&#34;Sort train and test dataset by class label&#34;
+    )
+
+    now = datetime.now()
+    now = now.strftime(&#34;%Y%m%d%H%M%S&#34;)
+    os.makedirs(&#34;../logs/&#34;, exist_ok=True)
+    parser.add_argument(
+        &#34;--logfile&#34;,
+        type=str,
+        default=f&#34;../logs/log_{now}.txt&#34;
+    )
+
+    # Evaluation mode, do not run training
+    parser.add_argument(
+        &#34;--evaluate&#34;,
+        action=&#39;store_true&#39;, 
+        default=False, 
+        help=&#34;Evaluation or Training mode&#34;
+    )
+
+    # Parse cmdline arguments
+    args_dict = {}
+    i = 0
+    while True:
+        if i == len(args):
+            # Terminating the loop
+            break
+        if args[i].find(&#39;--&#39;) == 0 and (i + 1 == len(args) or args[i + 1].find(&#39;--&#39;) == 0):
+            # Flag
+            key = args[i][2:]
+            args_dict[key] = True
+            i += 1
+        else:
+            # Key-value pair
+            key = args[i][2:]
+            value = args[i+1]
+            args_dict[key] = value
+            i += 2
+
+    # Perform substitution
+    global gSimulationCounter
+    gSimulationCounter += 1
+
+    args_dict[&#34;simcounter&#34;] = gSimulationCounter     # Simulation counter
+    args_dict[&#34;now&#34;] = int(time.time())              # Time
+    args_dict[&#34;rnd-salt&#34;] = random.randint(0, 1024*1024)  # Any seeds are setting after parameters initialization
+
+    # Make substitution into arguments
+    for kNested in range(5):
+        for i in range(len(args)):
+            args[i] = str(args[i]).format(**args_dict).lower().strip()
+
+    args = parser.parse_args(args)
+
+    # Make args.gpu as a list of target devices
+    transform_gpu_args(args)
+    return args
+
+
+def initialise_arg_parser(args, description):
+    parser = argparse.ArgumentParser(args, description=description)
+    return parser
+
+
+def transform_gpu_args(args):
+    if args.gpu == &#34;-1&#34;:
+        args.gpu = [&#34;cpu&#34;]
+    else:
+        gpu_str_arg = args.gpu.split(&#39;,&#39;)
+        if len(gpu_str_arg) &gt; 1:
+            # args.gpu = sorted([int(card) for card in gpu_str_arg])
+            # Create a list of cuda(gpu) devices, followed at the end by cpu devices
+            args.gpu = sorted([gpu_utils.get_target_device_str(int(card)) for card in gpu_str_arg if int(card) &gt;= 0])
+            args.gpu += sorted([gpu_utils.get_target_device_str(int(card)) for card in gpu_str_arg if int(card) &lt; 0])
+        else:
+            args.gpu = [f&#34;cuda:{args.gpu}&#34;]</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="opts.initialise_arg_parser"><code class="name flex">
+<span>def <span class="ident">initialise_arg_parser</span></span>(<span>args, description)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def initialise_arg_parser(args, description):
+    parser = argparse.ArgumentParser(args, description=description)
+    return parser</code></pre>
+</details>
+</dd>
+<dt id="opts.parse_args"><code class="name flex">
+<span>def <span class="ident">parse_args</span></span>(<span>args)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def parse_args(args):
+    parser = initialise_arg_parser(args, &#39;FLPyTorch, running arguments.&#39;)
+
+    # SERVER OPTIMIZATION PARAMS
+    parser.add_argument(
+        &#34;--rounds&#34;,
+        type=int,
+        default=1,
+        help=&#34;Number of rounds of federated learning&#34;,
+    )
+    parser.add_argument(
+        &#39;--client-sampling-type&#39;,
+        type=str,
+        choices=[&#39;uniform&#39;, &#39;poisson&#39;, &#39;poisson-no-empty&#39;],
+        default=&#39;uniform&#39;,
+        help=&#39;Sampling strategy to sample clients&#39;
+    )
+    parser.add_argument(
+        &#34;--num-clients-per-round&#34;,
+        type=int,
+        default=0,
+        help=&#34;Number of available clients used for one communication round&#34;,
+    )
+    parser.add_argument(
+        &#34;--client-sampling-poisson&#34;,
+        type=float,
+        default=0.0,
+        help=&#34;Sampling probability for Poisson sampling.&#34; 
+             &#34;Coincident with probability for clients to be selected in communication round&#34;,
+    )
+    parser.add_argument(
+        &#39;--global-lr&#39;,
+        type=float,
+        default=1,
+        help=&#39;Global initial local learning rate (default: 1)&#39;
+    )
+    parser.add_argument(
+        &#39;--global-lr-type&#39;,
+        type=str,
+        choices=[&#39;cosine&#39;, &#39;cifar_1&#39;, &#39;cifar_2&#39;, &#39;static&#39;],
+        default=&#39;static&#39;,
+        help=&#39;Global learning rate strategy (default: static)&#39;
+    )
+    parser.add_argument(
+        &#34;--global-optimiser&#34;,
+        type=str,
+        choices=[&#39;sgd&#39;, &#39;adam&#39;, &#39;rmsprop&#39;],
+        default=&#39;sgd&#39;,
+        help=&#39;Global optimiser to use (default: SGD)&#39;
+    )
+    parser.add_argument(
+        &#39;--global-momentum&#39;,
+        type=float,
+        default=0.,
+        help=&#39;Global momentum (default: 0.)&#39;
+    )
+    parser.add_argument(
+        &#39;--global-weight-decay&#39;,
+        type=float,
+        default=0.,
+        help=&#39;Global weight decay (default: 0.)&#39;
+    )
+
+    # LOCAL OPTIMISATION PARAMETERS
+    parser.add_argument(
+        &#34;--run-local-steps&#34;,
+        action=&#34;store_true&#34;,
+        default=False,
+        help=&#34;Run local epochs or local iterations, &#34;
+             &#34;if &#39;True&#39; then each worker runs &#39;--number-of-local-iters&#39; steps in batches&#34;
+             &#34;          else each worker runs &#39;--number-of-local-iters&#39; local epochs.&#34;
+    )
+    parser.add_argument(
+        &#34;-li&#34;, &#34;--number-of-local-iters&#34;,
+        type=int,
+        default=None,
+        help=&#34;Static number of local steps to run training for defined by the server training configuration&#34;
+    )
+    parser.add_argument(
+        &#34;-b&#34;, &#34;--batch-size&#34;,
+        type=int,
+        default=32,
+        help=&#34;Static batch size for data loading&#34;
+    )
+    parser.add_argument(
+        &#39;--local-lr&#39;,
+        type=float,
+        default=0.1,
+        help=&#39;initial local learning rate (default: 0.1)&#39;
+    )
+    parser.add_argument(
+        &#39;--local-lr-type&#39;,
+        type=str,
+        choices=[&#39;cosine&#39;, &#39;cifar_1&#39;, &#39;cifar_2&#39;, &#39;static&#39;],
+        default=&#39;static&#39;,
+        help=&#39;Local learning rate strategy (default: static)&#39;
+    )
+    parser.add_argument(
+        &#34;--local-optimiser&#34;,
+        type=str,
+        choices=[&#39;sgd&#39;, &#39;adam&#39;, &#39;rmsprop&#39;],
+        default=&#39;sgd&#39;,
+        help=&#39;Local optimiser to use (default: SGD)&#39;
+    )
+    parser.add_argument(
+        &#39;--local-momentum&#39;,
+        type=float,
+        default=0.0,
+        help=&#39;Momentum (default: 0.0)&#39;
+    )
+    parser.add_argument(
+        &#39;--local-weight-decay&#39;,
+        type=float,
+        default=0.0,
+        help=&#39;Local weight decay (default: 1e-4)&#39;
+    )
+
+    # MODEL and DATA PARAMETERS
+    parser.add_argument(
+        &#34;--dataset&#34;,
+        type=str,
+        required=True,
+        choices=[
+            &#34;cifar10&#34;, &#34;cifar100&#34;, &#34;emnist&#34;, &#34;full_shakespeare&#34;,
+            &#34;cifar10_fl&#34;, &#34;cifar10_fl_by_class&#34;,
+            &#34;cifar100_fl&#34;, &#34;shakespeare&#34;, &#34;femnist&#34;,
+            # Artificial problem
+            &#34;generated_for_quadratic_minimization&#34;,
+            # For Logistic Regression
+            &#34;w9a&#34;, &#34;w8a&#34;, &#34;w7a&#34;, &#34;w6a&#34;, &#34;w5a&#34;, &#34;w4a&#34;, &#34;w3a&#34;, &#34;w2a&#34;, &#34;w1a&#34;,
+            &#34;a9a&#34;, &#34;a8a&#34;, &#34;a7a&#34;, &#34;a6a&#34;, &#34;a5a&#34;, &#34;a4a&#34;, &#34;a3a&#34;, &#34;a2a&#34;, &#34;a1a&#34;,
+            &#34;mushrooms&#34;, &#34;phishing&#34;
+        ],
+        help=&#34;Define which dataset to load&#34;
+    )
+    parser.add_argument(
+        &#34;--dataset-generation-spec&#34;,
+        type=str,
+        default=&#39;&#39;,
+        help=&#34;Specification when data is artificially generated&#34;
+    )
+    parser.add_argument(
+        &#34;--metric&#34;,
+        type=str,
+        default=&#39;top_1_acc&#39;,
+        choices=[&#34;top_1_acc&#34;, &#34;top_5_acc&#34;, &#34;neg_perplexity&#34;, &#34;loss&#34;, &#34;none&#34;],
+        help=&#34;Define which metric to optimize. None ignores validation step.&#34;
+    )
+    parser.add_argument(
+        &#34;--model&#34;,
+        type=str,
+        help=&#34;Define which model to load&#34;
+    )
+
+    parser.add_argument(
+        &#34;--use-pretrained&#34;,
+        action=&#34;store_true&#34;,
+        default=False,
+        help=&#34;Define should be modeled be pretrained or not&#34;
+    )
+
+    parser.add_argument(
+        &#34;--train-last-layer&#34;,
+        action=&#34;store_true&#34;,
+        default=False,
+        help=&#34;Train only last linear layer&#34;
+    )
+
+    parser.add_argument(
+        &#34;--turn-off-batch-normalization-and-dropout&#34;,
+        action=&#34;store_true&#34;,
+        default=False,
+        help=&#34;During train time do not use Batch Normalization and Dropout if it is inside compute graph f(x;ai,bi).&#34;
+    )
+
+    # SETUP ARGUMENTS
+    parser.add_argument(
+        &#34;--checkpoint-dir&#34;,
+        type=str,
+        default=&#39;../check_points&#39;,
+        help=&#34;Directory to persist run meta data_preprocess, e.g. best/last models.&#34;
+    )
+    parser.add_argument(
+        &#34;--do-not-save-eval-checkpoints&#34;,
+        action=&#34;store_true&#34;,
+        default=False,
+        help=&#34;Turn off save evaluate checkpoints.&#34;
+    )
+    parser.add_argument(
+        &#34;--resume-from&#34;,
+        type=str,
+        help=&#34;Resume from checkpoint.&#34;
+    )
+    parser.add_argument(
+        &#34;--load-best&#34;,
+        default=False,
+        action=&#39;store_true&#39;,
+        help=&#34;Load best from checkpoint&#34;
+    )
+    parser.add_argument(
+        &#34;--data-path&#34;,
+        type=str,
+        default=&#34;../data/&#34;,
+        help=&#34;Base root directory for the dataset.&#34;
+    )
+
+    parser.add_argument(
+        &#34;--compute-type&#34;,
+        type=str,
+        default=&#39;fp32&#39;,
+        choices=[&#34;bfp16&#34;, &#34;fp16&#34;, &#34;fp32&#34;, &#34;fp64&#34;],
+        help=&#34;Define the type for trainable parameters and for buffers used e.g. in Batch Normalization.&#34;
+    )
+
+    parser.add_argument(
+        &#34;--gpu&#34;,
+        type=str,
+        default=&#39;0&#39;,
+        help=&#34;Define on which GPU to run the model (comma-separated for multiple). If -1, use CPU.&#34;
+    )
+
+    parser.add_argument(
+        &#34;--log-gpu-usage&#34;,
+        default=False,
+        action=&#39;store_true&#39;,
+        help=&#34;Log GPU usage&#34;
+    )
+
+    parser.add_argument(
+        &#34;-n&#34;, &#34;--num-workers-train&#34;,
+        type=int,
+        default=0,
+        help=&#34;Num workers for train dataset loading&#34;
+    )
+    parser.add_argument(
+        &#34;-nt&#34;, &#34;--num-workers-test&#34;,
+        type=int,
+        default=0,
+        help=&#34;Num workers for test dataset loading&#34;
+    )
+    parser.add_argument(
+        &#34;--deterministic&#34;,
+        action=&#34;store_true&#34;,
+        default=False,
+        help=&#34;Run deterministically for reproducibility.&#34;
+    )
+
+    parser.add_argument(
+        &#34;--manual-init-seed&#34;,
+        type=int,
+        default=123,
+        help=&#34;Random seed to use for model initialization and data generation&#34;
+    )
+
+    parser.add_argument(
+        &#34;--manual-runtime-seed&#34;,
+        type=int,
+        default=123,
+        help=&#34;Random seed to use during runtime mostly for stochastic optimization algorithms&#34;
+    )
+
+    parser.add_argument(
+        &#34;--group-name&#34;,
+        type=str,
+        default=&#34;&#34;,
+        help=&#34;Name of the group which allow group experiments for statistics&#34;
+    )
+    parser.add_argument(
+        &#34;--comment&#34;,
+        type=str,
+        default=&#34;&#34;,
+        help=&#34;Extra arbitrarily comment during transferring experimental results&#34;
+    )
+    parser.add_argument(
+        &#34;--hostname&#34;,
+        type=str,
+        default=&#34;&#34;,
+        help=&#34;Name of the machine. If empty string is passed the name is determinate automatically.&#34;
+    )
+    parser.add_argument(
+        &#34;--eval-every&#34;,
+        type=int,
+        default=5,
+        help=&#34;How often to do validation.&#34;
+    )
+    parser.add_argument(
+        &#34;--eval-async-threads&#34;,
+        type=int,
+        default=0,
+        help=&#34;Thread pool size for perform evaluation checkpoint asynchronously&#34;
+    )
+    parser.add_argument(
+        &#34;--save-async-threads&#34;,
+        type=int,
+        default=0,
+        help=&#34;Thread pool size for perform serialization into filesystem asynchronously&#34;
+    )
+    parser.add_argument(
+        &#34;--threadpool-for-local-opt&#34;,
+        type=int,
+        default=0,
+        help=&#34;Perform local training within a pool of threads.&#34; 
+             &#34;Each one execute sequence of optimization for assigned clients in a serialized way.&#34;
+    )
+    parser.add_argument(
+        &#34;--run-id&#34;,
+        type=str,
+        default=str(time.time()),
+        help=&#34;Identifier for the current job&#34;
+    )
+    parser.add_argument(
+        &#34;--algorithm&#34;,
+        type=str,
+        default=&#34;dcgd&#34;,
+        help=&#34;Algorithm (marina, diana, dcgd, fedavg, scaffold, fedprox, ef21, cofig, frecon, ef21-pp, pp-marina)&#34;
+    )
+    parser.add_argument(
+        &#34;--algorithm-options&#34;,
+        type=str,
+        default=&#34;&#34;,
+        help=&#34;Extra option for pass into algorithm implementation to carry experiments (sgd:name-of-sgd)&#34;
+    )
+    parser.add_argument(
+        &#34;--client-compressor&#34;,
+        type=str,
+        default=&#34;ident&#34;,
+        help=&#34;Client compressor. ident, randk:k|&lt;percentage-of-D&gt;%, bernulli:p, natural, qsgd:levels, &#34;
+             &#34;nat.dithering:levels:norm, std.dithering:levels:norm, topk:k|topk:&lt;percentage-of-D&gt;%),&#34;
+             &#34;rank_k:k|rank_k:&lt;percentage-of-D&gt;%, terngrad&#34;
+    )
+    parser.add_argument(
+        &#34;--extra-track&#34;,
+        type=str,
+        default=&#34;&#34;,
+        help=&#34;Extra expensive comma separated tracking characterstics that should be collected&#34;
+             &#34;(full_gradient_norm_train,full_objective_value_train,full_gradient_norm_val,full_objective_value_val)&#34;
+    )
+    parser.add_argument(
+        &#34;--loss&#34;,
+        type=str,
+        default=&#34;crossentropy&#34;,
+        help=&#34;Name of the use loss function (crossentropy, mse, logistic)&#34;
+    )
+    parser.add_argument(
+        &#34;--global-regulizer&#34;,
+        type=str,
+        choices=[&#34;none&#34;, &#34;noncvx_robust_linear_regression&#34;, &#34;cvx_l2norm_square_div_2&#34;],
+        default=&#34;none&#34;,
+        help=&#34;Name of the extra global regulizer (default none)&#34;
+    )
+    parser.add_argument(
+        &#34;--global-regulizer-alpha&#34;,
+        type=float,
+        default=0.0,
+        help=&#34;Global regulizer scalar multiple (default value 0.0)&#34;
+    )
+    parser.add_argument(
+        &#34;--out&#34;,
+        type=str,
+        default=&#34;&#34;,
+        help=&#34;Name of the file for serialize results into filesystem&#34;
+    )
+
+    parser.add_argument(
+        &#34;--wandb-key&#34;,
+        type=str,
+        default=&#39;&#39;,
+        help=&#34;Personal Wandb key to wandb.ai online plotting tool&#34;
+    )
+
+    parser.add_argument(
+        &#34;--wandb-project-name&#34;,
+        type=str,
+        default=&#39;fl_pytorch_simulation&#39;,
+        help=&#34;Project name for wandb.ai online plotting tool in which plots will be generated&#34;
+    )
+
+    parser.add_argument(
+        &#34;--external-devices&#34;,
+        type=str,
+        default=&#39;&#39;,
+        help=&#34;List of external devices ip:port:device that can be used during simulation process&#34;
+    )
+
+    parser.add_argument(
+        &#34;--worker-listen-mode&#34;,
+        type=int,
+        default=-1,
+        help=&#34;This flag activate worker in local listener mode. For local worker mode only this flag is needed&#34;
+    )
+
+    parser.add_argument(
+        &#34;--loglevel&#34;,
+        type=str,
+        choices=[&#34;debug&#34;, &#34;info&#34;, &#34;warn&#34;, &#34;error&#34;, &#34;critical&#34;],
+        default=&#34;INFO&#34;
+    )
+    parser.add_argument(
+        &#34;--logfilter&#34;,
+        type=str,
+        default=&#39;.*&#39;,
+        help=&#34;Regular expression to filter logging strings in which we&#39;re interesting in during debugging&#34;
+    )
+    parser.add_argument(
+        &#34;--store-client-state-in-cpu&#34;,
+        action=&#34;store_true&#34;,
+        default=False,
+        help=&#34;Store client state in CPU DRAM memory. Useful when number of clients is relatively big&#34;
+    )
+    parser.add_argument(
+        &#34;--per-round-clean-torch-cache&#34;,
+        action=&#34;store_true&#34;,
+        default=False,
+        help=&#34;Force clean GPU PyTorch cache at the end of each communication round used internally by PyTorch.&#34;
+             &#34;Good to fix fragmentation issues.&#34;
+    )
+    parser.add_argument(
+        &#34;--allow-use-nv-tensorcores&#34;,
+        action=&#34;store_true&#34;,
+        default=False,
+        help=&#34;Allow to use NVIDIA Tensor Cores available from NVIDIA Ampere architecture&#34;
+    )
+    parser.add_argument(
+        &#34;--initialize-shifts-policy&#34;,
+        type=str,
+        choices=[&#34;zero&#34;, &#34;full_gradient_at_start&#34;],
+        default=&#34;zero&#34;,
+        help=&#34;Policy for initial shifts for opt. algorithms that contains notion of shifts&#34;
+    )
+    parser.add_argument(
+        &#34;--sort-dataset-by-class-before-split&#34;,
+        action=&#34;store_true&#34;,
+        default=False,
+        help=&#34;Sort train and test dataset by class label&#34;
+    )
+
+    now = datetime.now()
+    now = now.strftime(&#34;%Y%m%d%H%M%S&#34;)
+    os.makedirs(&#34;../logs/&#34;, exist_ok=True)
+    parser.add_argument(
+        &#34;--logfile&#34;,
+        type=str,
+        default=f&#34;../logs/log_{now}.txt&#34;
+    )
+
+    # Evaluation mode, do not run training
+    parser.add_argument(
+        &#34;--evaluate&#34;,
+        action=&#39;store_true&#39;, 
+        default=False, 
+        help=&#34;Evaluation or Training mode&#34;
+    )
+
+    # Parse cmdline arguments
+    args_dict = {}
+    i = 0
+    while True:
+        if i == len(args):
+            # Terminating the loop
+            break
+        if args[i].find(&#39;--&#39;) == 0 and (i + 1 == len(args) or args[i + 1].find(&#39;--&#39;) == 0):
+            # Flag
+            key = args[i][2:]
+            args_dict[key] = True
+            i += 1
+        else:
+            # Key-value pair
+            key = args[i][2:]
+            value = args[i+1]
+            args_dict[key] = value
+            i += 2
+
+    # Perform substitution
+    global gSimulationCounter
+    gSimulationCounter += 1
+
+    args_dict[&#34;simcounter&#34;] = gSimulationCounter     # Simulation counter
+    args_dict[&#34;now&#34;] = int(time.time())              # Time
+    args_dict[&#34;rnd-salt&#34;] = random.randint(0, 1024*1024)  # Any seeds are setting after parameters initialization
+
+    # Make substitution into arguments
+    for kNested in range(5):
+        for i in range(len(args)):
+            args[i] = str(args[i]).format(**args_dict).lower().strip()
+
+    args = parser.parse_args(args)
+
+    # Make args.gpu as a list of target devices
+    transform_gpu_args(args)
+    return args</code></pre>
+</details>
+</dd>
+<dt id="opts.transform_gpu_args"><code class="name flex">
+<span>def <span class="ident">transform_gpu_args</span></span>(<span>args)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def transform_gpu_args(args):
+    if args.gpu == &#34;-1&#34;:
+        args.gpu = [&#34;cpu&#34;]
+    else:
+        gpu_str_arg = args.gpu.split(&#39;,&#39;)
+        if len(gpu_str_arg) &gt; 1:
+            # args.gpu = sorted([int(card) for card in gpu_str_arg])
+            # Create a list of cuda(gpu) devices, followed at the end by cpu devices
+            args.gpu = sorted([gpu_utils.get_target_device_str(int(card)) for card in gpu_str_arg if int(card) &gt;= 0])
+            args.gpu += sorted([gpu_utils.get_target_device_str(int(card)) for card in gpu_str_arg if int(card) &lt; 0])
+        else:
+            args.gpu = [f&#34;cuda:{args.gpu}&#34;]</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="opts.initialise_arg_parser" href="#opts.initialise_arg_parser">initialise_arg_parser</a></code></li>
+<li><code><a title="opts.parse_args" href="#opts.parse_args">parse_args</a></code></li>
+<li><code><a title="opts.transform_gpu_args" href="#opts.transform_gpu_args">transform_gpu_args</a></code></li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+FL_PyTorch. The document generated 09-July-2022 23:02:49.
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>

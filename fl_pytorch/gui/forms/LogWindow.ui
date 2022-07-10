@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>LogWindow</class>
+ <widget class="QMainWindow" name="LogWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>677</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Log window</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../resources/resources.qrc">
+    <normaloff>:/root/journal.png</normaloff>:/root/journal.png</iconset>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QTextEdit" name="txtMain">
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+      <property name="html">
+       <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Ubuntu'; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg 2'; font-size:8.25pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="separator"/>
+   <addaction name="actionClean"/>
+   <addaction name="actionSysInfo"/>
+   <addaction name="actionTorchInfo"/>
+   <addaction name="actionGarbageCollector"/>
+   <addaction name="actionMemInfo"/>
+   <addaction name="actionCmdLineGeneration"/>
+   <addaction name="actionCmdLineSingleGeneration"/>
+   <addaction name="actionExperimentInfoGeneration"/>
+   <addaction name="actionExitLogWindow"/>
+  </widget>
+  <action name="actionClean">
+   <property name="icon">
+    <iconset resource="../resources/resources.qrc">
+     <normaloff>:/root/gnome_clear.png</normaloff>:/root/gnome_clear.png</iconset>
+   </property>
+   <property name="text">
+    <string>clean</string>
+   </property>
+  </action>
+  <action name="actionSysInfo">
+   <property name="icon">
+    <iconset resource="../resources/resources.qrc">
+     <normaloff>:/root/system_info.png</normaloff>:/root/system_info.png</iconset>
+   </property>
+   <property name="text">
+    <string>sysinfo</string>
+   </property>
+   <property name="toolTip">
+    <string>System information</string>
+   </property>
+  </action>
+  <action name="actionTorchInfo">
+   <property name="icon">
+    <iconset resource="../resources/resources.qrc">
+     <normaloff>:/root/pytorch_logo.png</normaloff>:/root/pytorch_logo.png</iconset>
+   </property>
+   <property name="text">
+    <string>torchinfo</string>
+   </property>
+   <property name="toolTip">
+    <string>PyTorch information</string>
+   </property>
+  </action>
+  <action name="actionGarbageCollector">
+   <property name="icon">
+    <iconset resource="../resources/resources.qrc">
+     <normaloff>:/root/garbage.png</normaloff>:/root/garbage.png</iconset>
+   </property>
+   <property name="text">
+    <string>gccollector</string>
+   </property>
+   <property name="toolTip">
+    <string>Launch garbage collector</string>
+   </property>
+  </action>
+  <action name="actionMemInfo">
+   <property name="icon">
+    <iconset resource="../resources/resources.qrc">
+     <normaloff>:/root/memory.png</normaloff>:/root/memory.png</iconset>
+   </property>
+   <property name="text">
+    <string>meminfo</string>
+   </property>
+   <property name="toolTip">
+    <string>Information about used CPU/GPU memory</string>
+   </property>
+  </action>
+  <action name="actionCmdLineGeneration">
+   <property name="icon">
+    <iconset resource="../resources/resources.qrc">
+     <normaloff>:/root/cmdline.png</normaloff>:/root/cmdline.png</iconset>
+   </property>
+   <property name="text">
+    <string>cmdline</string>
+   </property>
+   <property name="toolTip">
+    <string>Command line generation for experiments</string>
+   </property>
+  </action>
+  <action name="actionCmdLineSingleGeneration">
+   <property name="icon">
+    <iconset resource="../resources/resources.qrc">
+     <normaloff>:/root/cmdline_green.png</normaloff>:/root/cmdline_green.png</iconset>
+   </property>
+   <property name="text">
+    <string>cmdline</string>
+   </property>
+   <property name="toolTip">
+    <string>Single line command line generation for experiments</string>
+   </property>
+  </action>
+  <action name="actionExperimentInfoGeneration">
+   <property name="icon">
+    <iconset resource="../resources/resources.qrc">
+     <normaloff>:/root/experiment.png</normaloff>:/root/experiment.png</iconset>
+   </property>
+   <property name="text">
+    <string>experimentInfo</string>
+   </property>
+   <property name="toolTip">
+    <string>Configured experiment description generation</string>
+   </property>
+  </action>
+  <action name="actionExitLogWindow">
+   <property name="icon">
+    <iconset resource="../resources/resources.qrc">
+     <normaloff>:/root/exit.png</normaloff>:/root/exit.png</iconset>
+   </property>
+   <property name="text">
+    <string>exit</string>
+   </property>
+   <property name="toolTip">
+    <string>Exit from log window</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="../resources/resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>

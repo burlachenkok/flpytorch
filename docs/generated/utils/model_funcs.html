@@ -1,0 +1,2026 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>utils.model_funcs API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_CHTML" integrity="sha256-kZafAc6mZvK3W3v1pHOcUix30OHQN6pU/NO2oFkqZVw=" crossorigin></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>utils.model_funcs</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">#!/usr/bin/env python3
+
+# Import PyTorch root package import torch
+import torch
+import random
+
+from torch import nn
+from torch.nn import DataParallel
+import time
+import copy
+import math
+import os
+import json
+
+from collections import OrderedDict
+import numpy as np
+
+from copy import deepcopy
+import pickle
+
+from torch.optim.lr_scheduler import MultiStepLR, CosineAnnealingLR
+
+import models
+from utils.logger import Logger
+from utils.buffer import Buffer
+from utils.utils import init_metrics_meter, neg_perplexity_from_loss, log_epoch_info
+from data_preprocess.data_loader import get_num_classes
+
+from utils import algorithms, execution_context, gpu_utils
+from models import mutils
+
+CIFAR_MODELS = {
+    &#39;resnet&#39;: [18, 34, 50, 101, 152],
+    &#39;vgg&#39;: [11, 13, 16, 19],
+    &#39;wideresnet&#39;: [282, 284, 288]
+}
+
+CLIP_RNN_GRAD = 5
+
+
+def robustLinearRegulizers(model, alphaR):
+    value = None
+    for p in model.parameters():
+        xSqr = (p*p)
+
+        if value is None:
+            value = (xSqr / (xSqr + 1)).sum()
+        else:
+            value += (xSqr / (xSqr + 1)).sum()
+
+    return value * alphaR
+
+
+def noneRegulizer(model, alphaR):
+    return None
+
+
+def l2NormSquareRegulizer(model, alphaR):
+    xsqr = None
+    for p in model.parameters():
+        if xsqr is None:
+            xsqr = (p * p).sum()
+        else:
+            xsqr += (p * p).sum()
+
+    return xsqr * 0.5 * alphaR
+
+
+def get_global_regulizer(regul_name):
+    if regul_name == &#34;none&#34;:
+        return noneRegulizer
+    elif regul_name == &#34;noncvx_robust_linear_regression&#34;:
+        return robustLinearRegulizers
+    elif regul_name == &#34;cvx_l2norm_square_div_2&#34;:
+        return l2NormSquareRegulizer
+
+    return None
+
+
+def get_training_elements(model_name, dataset, dataset_ref, args, resume_from, load_best,
+                          gpu,
+                          loss,
+                          do_not_use_bn_and_dropout):
+    # Define the model
+    execution_context.torch_global_lock.acquire()
+    if args.deterministic:
+        if torch.cuda.device_count() &gt; 0:
+            torch.cuda.manual_seed(args.manual_init_seed)
+            torch.cuda.manual_seed_all(args.manual_init_seed)
+        torch.manual_seed(args.manual_init_seed)
+        random.seed(args.manual_init_seed)
+        np.random.seed(args.manual_init_seed)
+
+    model, current_round = initialise_model(model_name, dataset, dataset_ref, args, resume_from, load_best,
+                                            use_pretrained=args.use_pretrained)
+    execution_context.torch_global_lock.release()
+
+    # Convert model parameters and models buffers into compute type
+    if args.compute_type == &#39;fp16&#39;:
+        model = model.half()
+        model.fl_dtype = torch.float16
+    elif args.compute_type == &#39;fp32&#39;:
+        model = model.float()
+        model.fl_dtype = torch.float32
+    elif args.compute_type == &#39;fp64&#39;:
+        model = model.double()
+        model.fl_dtype = torch.float64
+    else:
+        raise Exception(f&#34;Undefined {args.compute_type}&#34;)
+
+    model = model_to_device(model, gpu)
+
+    criterion = None
+
+    if loss == &#34;crossentropy&#34;:
+        criterion = nn.CrossEntropyLoss(reduction=&#39;sum&#39;)
+    elif loss == &#34;logistic&#34;:
+        criterion = nn.BCELoss(reduction=&#39;sum&#39;)
+    elif loss == &#34;mse&#34;:
+        criterion = nn.MSELoss(reduction=&#39;sum&#39;)
+    else:
+        raise ValueError(f&#34;There are no registered loss for {loss}&#34;)
+
+    model.do_not_use_bn_and_dropout = do_not_use_bn_and_dropout
+
+    return model, criterion, current_round
+
+
+def initialise_model(model_name, dataset, dataset_ref, args, resume_from=None, load_best=None, use_pretrained=False):
+    logger = Logger.get(args.run_id)
+
+    model_prefix = [prefix for prefix in CIFAR_MODELS if model_name.startswith(prefix)]
+
+    if len(model_prefix) == 1 and dataset.startswith(&#39;cifar&#39;) and \
+            int(model_name.split(model_prefix[0])[1]) in CIFAR_MODELS[model_prefix[0]]:
+        logger.debug(&#34;Loading cifar version of model&#34;)
+        model_name = model_name + &#39;_cifar&#39;
+
+    model = None
+
+    if model_name == &#34;linear&#34;:
+        # Sample single sample to obtain information about data format
+        example, target = dataset_ref[0]
+
+        if not torch.is_tensor(example):
+            example = torch.Tensor(example)
+
+        if not torch.is_tensor(target):
+            target = torch.Tensor([target])
+
+        model = nn.Sequential(  # 0 index reserved for samples in the batch
+                                nn.Flatten(1),
+                                # Fully connected layer from example.numel() to target.numel() units
+                                nn.Linear(in_features=example.numel(), out_features=target.numel(), bias=False)
+                              )
+
+        # mutils.set_params_to_zero(model)
+
+    if model_name == &#34;logistic&#34;:
+        # Sample single sample to obtain information about data format
+        example, target = dataset_ref[0]
+
+        if not torch.is_tensor(example):
+            example = torch.Tensor(example)
+
+        if not torch.is_tensor(target):
+            target = torch.Tensor([target])
+
+        model = nn.Sequential(  # 0 index reserved for samples in the batch
+                                nn.Flatten(1),
+                                # Fully connected layer from example.numel() to target.numel() units
+                                nn.Linear(in_features=example.numel(), out_features=target.numel(), bias=False),
+                                # Apply sigmoid
+                                nn.Sigmoid()
+                              )
+        # mutils.set_params_to_zero(model)
+
+    if model_name.startswith(&#34;tv_&#34;):
+        # Models from torchvision
+        num_classes = get_num_classes(dataset)
+        backbone = getattr(models, model_name)(pretrained=use_pretrained)
+        backbone.train(False)
+
+        model = backbone
+        new_fc = torch.nn.Linear(in_features=model.fc.in_features,
+                                 out_features=num_classes,
+                                 bias=model.fc.bias is not None)
+        model.fc = new_fc
+
+        if args.train_last_layer:
+            # Freeze all weights
+            for p in model.parameters():
+                p.requires_grad_(False)
+            # Make last linear layer trainable
+            if model.fc.bias is not None:
+                model.fc.bias.requires_grad_(True)
+            model.fc.weight.requires_grad_(True)
+
+    if model is None:
+        # Own models
+        model = getattr(models, model_name)(pretrained=use_pretrained, num_classes=get_num_classes(dataset))
+
+    current_round = 0
+
+    if resume_from:
+        # We can not use load_checkpoint(resume_from, load_best) due to circular dependencies
+        # model, current_round = load_checkpoint(resume_from, load_best)
+        # ==============================================================================================================
+        if load_best:
+            model_filename = os.path.join(resume_from, &#39;model_best.pth.tar&#39;)
+            metric_filename = os.path.join(resume_from, &#39;best_metrics.json&#39;)
+        else:
+            model_filename = os.path.join(resume_from, &#39;model_last.pth.tar&#39;)
+            metric_filename = os.path.join(resume_from, &#39;last_metrics.json&#39;)
+    
+        logger.info(&#34;Loading checkpoint &#39;{}&#39;&#34;.format(model_filename))
+        state = torch.load(model_filename)
+        logger.info(&#34;Loaded checkpoint &#39;{}&#39;&#34;.format(model_filename))
+        with open(metric_filename, &#39;r&#39;) as f:
+            metrics = json.load(f)
+        model = state
+        current_round = metrics[&#39;round&#39;]
+        # ==============================================================================================================
+
+    return model, current_round
+
+
+def model_to_device(model, device):
+    if type(device) == list:                 # If to allocate on more than one GPU
+        model = model.to(device=device[0])   # Recursively convert parameters and buffers to device specific tensors
+
+        # Create data-parallel model across devices &#34;device&#34;
+        # Details: https://pytorch.org/docs/stable/generated/torch.nn.DataParallel.html
+        # Moment: The batch size should be larger than the number of GPUs used.
+        model = DataParallel(model, device_ids=device)
+
+    else:
+        model = model.to(device=device)      # Recursively convert parameters and buffers to device specific tensors
+    return model
+
+
+def set_model_weights(model, weights, strict=True):
+    &#34;&#34;&#34;
+    Sets the weight models in-place. To be used to integrate new updated weights.
+    :param model: The model to be updated
+    :param weights: (fl.common.Weights) List of np ndarrays representing the model weights
+    :param strict: To require 1-to-1 parameter to weights association.s
+    &#34;&#34;&#34;
+    state_dict = OrderedDict(
+        {
+            k: torch.Tensor(np.atleast_1d(v))
+            for k, v in zip(model.state_dict().keys(), weights)
+        }
+    )
+    model.load_state_dict(state_dict, strict=strict)
+
+
+def get_model_weights(model):
+    &#34;&#34;&#34;Get model weights as a list of NumPy ndarrays.&#34;&#34;&#34;
+
+    # Move vals&#39; data from GPU to CPU and then convert to numpy
+    return [val.cpu().numpy() for _, val in model.state_dict().items()]
+
+
+def get_lr_scheduler(optimiser, total_epochs, method=&#39;static&#39;):
+    &#34;&#34;&#34;
+    Implement learning rate scheduler.
+    :param optimiser: A reference to the optimiser being usd
+    :param total_epochs: The total number of epochs (from the args)
+    :param method: The strategy to adjust the learning rate (multistep, cosine or static)
+    :returns: scheduler on current step/epoch/policy
+    &#34;&#34;&#34;
+    if method == &#39;cosine&#39;:
+        return CosineAnnealingLR(optimiser, total_epochs)
+    elif method == &#39;static&#39;:
+        return MultiStepLR(optimiser, [total_epochs + 1])
+    if method == &#39;cifar_1&#39;:  # VGGs + ResNets
+        return MultiStepLR(optimiser, [int(0.5 * total_epochs), int(0.75 * total_epochs)], gamma=0.1)
+    if method == &#39;cifar_2&#39;:  # WideResNets
+        return MultiStepLR(optimiser, [int(0.3 * total_epochs), int(0.6 * total_epochs), int(0.8 * total_epochs)],
+                           gamma=0.2)
+    raise ValueError(f&#34;{method} is not defined as scheduler name.&#34;)
+
+
+def local_training(thread, client_state, client_id, msg, model_dict_original, optimiser_dict_original,
+                   model, train_loader, criterion, local_optimiser, device, round, run_local_iters,
+                   number_of_local_steps, is_rnn, print_freq, state_dicts, run_id):
+    logger = Logger.get(run_id)
+
+    # if thread is not None and hasattr(thread, &#34;worker_stream&#34;):
+    #    torch.cuda.Stream.wait_stream(torch.cuda.default_stream(device), thread.worker_stream)
+
+    # current_stream = torch.cuda.current_stream(device)
+    # blas_handle = torch.cuda.current_blas_handle()
+    # logger.info(f&#34;CUDA stream {current_stream} and BLAS handle {blas_handle}&#34;)
+
+    logger.info(msg)
+
+    # Use of specified parameters or get them from thread context
+    if thread is not None:
+        model = thread.model_copy
+        local_optimiser = thread.local_optimiser_copy
+        train_loader = thread.train_loader_copy
+
+    fed_dataset = train_loader.dataset
+
+    # Set current client
+    if fed_dataset.num_clients &gt; 1:
+        fed_dataset.set_client(client_id)
+
+    # Reconstruct model parameters
+    mutils.set_params(model, model_dict_original)
+
+    # Reconstruct optimizer parameters for client via using history
+    optimiser_dict_found = algorithms.findRecentRecord(client_state[&#39;H&#39;], client_id, &#34;optimiser&#34;)
+
+    if optimiser_dict_found is not None:
+        local_optimiser.load_state_dict(optimiser_dict_found)
+    else:
+        local_optimiser.load_state_dict(optimiser_dict_original)
+
+    # Reconstruct buffers in particular needed for batch normalization
+    buffers_found = algorithms.findRecentRecord(client_state[&#39;H&#39;], client_id, &#34;buffers&#34;)
+    if buffers_found is not None:
+        mutils.set_buffers(model, buffers_found)
+
+    metrics_meter = train_model(client_state, model, train_loader, criterion, local_optimiser, device, round, is_rnn,
+                                print_freq,
+                                run_local_iters=run_local_iters,
+                                iters_to_take=number_of_local_steps,
+                                run_id=run_id)
+
+    # save current local model
+    local_model_dict = mutils.get_params(model)
+
+    # get local optimizer dict
+    local_optimiser_dict = deepcopy(local_optimiser.state_dict())
+
+    # get model buffers (e.g. include running means for BatchNorm)
+    local_model_buffers = None
+    local_model_buffers = mutils.get_buffers(model)
+
+    #  Force all operations to be completed in that worker stream
+    #  so models are valid and can be accessed from another threads
+    if thread is not None and hasattr(thread, &#34;worker_stream&#34;):
+        torch.cuda.Stream.wait_stream(torch.cuda.default_stream(device), thread.worker_stream)
+
+    #  Add (model state, optimizer state, client_id, client_id, client_state) into into result
+    state_dicts.pushBack({&#39;model&#39;: local_model_dict,
+                          &#39;optimiser&#39;: copy.deepcopy(local_optimiser_dict),
+                          &#39;buffers&#39;: local_model_buffers,
+                          &#39;client_id&#39;: client_id,
+                          &#39;client_state&#39;: client_state})
+
+    return
+
+
+def non_local_training(thread, client_state, client_id, msg, model_dict_original, optimiser_dict_original,
+                       model, train_loader, criterion, local_optimiser, device, round, run_local_iters,
+                       number_of_local_steps, is_rnn, print_freq, state_dicts):
+
+    model_dict_original = model_dict_original.to(&#34;cpu&#34;)
+
+    args = (client_state, client_id, msg, model_dict_original, optimiser_dict_original,
+            model, train_loader, criterion, local_optimiser, device, round, run_local_iters,
+            number_of_local_steps, is_rnn, print_freq)
+
+    h = client_state[&#39;H&#39;]
+    client_state[&#39;H&#39;] = {}
+    for k, v in h.items():
+        if k == &#34;execution_context&#34;:
+            continue
+
+        if torch.is_tensor(v):
+            client_state[&#39;H&#39;][k] = v.cpu()
+            continue
+
+        if k == &#34;history&#34;:
+            client_state[&#39;H&#39;][k] = {}
+            for round in v.keys():
+                round_info = v[round]
+                composed_round_info = {}
+
+                client_state[&#39;H&#39;][k][round] = composed_round_info
+
+                for round_key, round_value in round_info.items():
+                    if torch.is_tensor(round_value):
+                        round_value = round_value.cpu()
+
+                    if round_key != &#34;client_states&#34;:
+                        composed_round_info[round_key] = round_value
+                    elif round_key == &#34;client_states&#34;:
+                        client_states_values = round_value
+
+                        composed_round_info[round_key] = {}
+                        if client_id in client_states_values:
+                            composed_round_info[round_key][&#39;client_id&#39;] = client_states_values[client_id][&#39;client_id&#39;]
+                            composed_round_info[round_key][&#39;client_state&#39;] = {}
+
+                            for hKey, hValue in client_states_values[client_id][&#39;client_state&#39;].items():
+                                if torch.is_tensor(hValue):
+                                    hValue = hValue.cpu()
+
+                                if hKey == &#39;H&#39;:
+                                    hValue = None
+                                composed_round_info[round_key][&#39;client_state&#39;][hKey] = hValue
+            continue
+
+        client_state[&#39;H&#39;][k] = v
+
+    serialized_args = pickle.dumps(args)
+    client_state[&#39;H&#39;] = h
+
+    thread.external_socket.rawSendString(&#34;non_local_training&#34;)
+    thread.external_socket.rawSend(serialized_args)
+    description = thread.external_socket.rawRecvString()
+
+    if description == &#34;result_of_local_training&#34;:
+        state_info = thread.external_socket.rawRecv()
+        # {&#39;model&#39;: local_model_dict, &#39;optimiser&#39;: copy.deepcopy(local_optimiser_dict), &#39;buffers&#39; : local_model_buffers,
+        # &#39;client_id&#39;: client_id, &#39;client_state&#39;: client_state})
+        state_info = pickle.loads(state_info)
+        state_info[&#39;client_state&#39;][&#39;H&#39;] = h
+        state_dicts.pushBack(state_info)
+
+
+def run_one_communication_round(H, model, train_loader, criterion, local_optimiser, optimiser_dict_original,
+                                global_optimiser, device, round, run_local_iters, number_of_local_steps,
+                                is_rnn=False, sampled_clients=None, print_freq=10):
+    logger = Logger.get(H[&#34;run_id&#34;])
+
+    metrics_meter = None
+    fed_dataset = train_loader.dataset
+    model_dict_original = mutils.get_params(model)
+
+    sampled_clients_round = None
+
+    # Feedback from algorithm: Possible information from underlying algorithm to use all clients in that round
+    if &#39;request_use_full_list_of_clients&#39; in H and H[&#39;request_use_full_list_of_clients&#39;]:
+        sampled_clients_round = np.arange(H[&#39;total_clients&#39;])
+        logger.info(f&#34;Sample all FL clients: {len(sampled_clients_round)}&#34;)
+    else:
+        sampled_clients_round = sampled_clients[round]
+        logger.info(f&#34;Sampled FL clients: {len(sampled_clients_round)}&#34;)
+
+    # Information from future regarding clients from a next round
+    sampled_clients_per_next_round = list()
+    if round + 1 &lt; len(sampled_clients):
+        sampled_clients_per_next_round = sampled_clients[round + 1]
+
+    clients_num_data = list()
+    for client_id in sampled_clients_round:
+        if fed_dataset.num_clients &gt; 1:
+            fed_dataset.set_client(client_id)
+        clients_num_data.append(len(fed_dataset))
+    clients_num_data = np.array(clients_num_data)
+
+    # Result buffer which is created from scratch at each communication round
+    state_dicts_thread_safe = Buffer(max_capacity=len(sampled_clients_round))
+
+    exec_ctx = H[&#34;execution_context&#34;]
+
+    # Make sure that &#34;model_dict_original&#34; has been obtained correctly
+    if gpu_utils.is_target_dev_gpu(device):
+        torch.cuda.default_stream(device).synchronize()
+
+    # Wait for all threads
+    i = 0
+    while i &lt; len(sampled_clients_round):
+        # Trainining in a serialized way locally
+        if exec_ctx.local_training_threads.workers() == 0:
+            client_id = sampled_clients_round[i]
+            client_data_samples = clients_num_data[i]
+
+            msg = f&#39;Running local epoch for client: {client_id}, [{i + 1}/{len(sampled_clients_round)}]&#39;
+            client_state = algorithms.clientState(H, client_id, client_data_samples, round, device)
+            res = local_training(None, client_state, client_id, msg, model_dict_original, optimiser_dict_original,
+                                 model, train_loader, criterion, local_optimiser, device, round, run_local_iters,
+                                 number_of_local_steps, is_rnn, print_freq, state_dicts_thread_safe, H[&#34;run_id&#34;])
+            i += 1
+        else:
+            client_id = sampled_clients_round[i]
+            client_data_samples = clients_num_data[i]
+
+            msg = f&#39;Running local epoch for client: {client_id}, [{i + 1}/{len(sampled_clients_round)}]&#39;
+            next_device = exec_ctx.local_training_threads.next_dispatched_thread().device
+            client_state = algorithms.clientState(H, client_id, client_data_samples, round, next_device)
+
+            args = (client_state, client_id, msg, model_dict_original, optimiser_dict_original,
+                    None, None, criterion, None, next_device, round, run_local_iters,
+                    number_of_local_steps, is_rnn, print_freq, state_dicts_thread_safe, H[&#34;run_id&#34;])
+
+            exec_ctx.local_training_threads.dispatch(local_training, args)
+            i += 1
+
+        if exec_ctx.remote_training_threads.workers() &gt; 0:
+            # Delegate half of the work for a remote computers
+            if i &gt;= len(sampled_clients_round):
+                continue
+
+            client_id = sampled_clients_round[i]
+            client_data_samples = clients_num_data[i]
+
+            msg = f&#39;Running local epoch for client: {client_id}, [{i + 1}/{len(sampled_clients_round)}]&#39;
+            next_device = exec_ctx.remote_training_threads.next_dispatched_thread().device
+            client_state = algorithms.clientState(H, client_id, client_data_samples, round, next_device)
+
+            args = (client_state, client_id, msg, model_dict_original, optimiser_dict_original,
+                    None, None, criterion, None, next_device, round, run_local_iters,
+                    number_of_local_steps, is_rnn, print_freq, state_dicts_thread_safe)
+
+            exec_ctx.remote_training_threads.dispatch(non_local_training, args)
+            i += 1
+
+    # Prepare for aggregation - weights based on the number of local data
+    # if len(sampled_clients_round) &gt;= 1:
+    #    # weights based on the number of local data
+    #    weights = torch.tensor(np.array(clients_num_data)/np.sum(clients_num_data)).to(device = device)
+
+    # NO AWAIT ONLY BECAUSE THERE IS A QUEUE FOR INTER-THREAD COMMUNICATION
+
+    # Aggregation
+    clients = len(sampled_clients_round)
+
+    if True:
+        # aggregate local models to global model
+        global_optimiser.zero_grad()
+        mutils.set_params(model, model_dict_original)
+
+        # compute gradient from main path
+        grad_server = algorithms.serverGradient(state_dicts_thread_safe, clients, model, model_dict_original, H)
+        mutils.set_gradient(model, grad_server)
+
+        # Experimental modification for select theoretical steps-size
+        if &#34;th_stepsize_cvx&#34; in H[&#34;execution_context&#34;].experimental_options or \
+                &#34;th_stepsize_noncvx&#34; in H[&#34;execution_context&#34;].experimental_options:
+
+            isStepSizeForNonConvexCase = (&#34;th_stepsize_noncvx&#34; in H[&#34;execution_context&#34;].experimental_options)
+
+            th_stepsize = algorithms.theoreticalStepSize(model_dict_original, grad_server, H, clients,
+                                                         state_dicts_thread_safe, isStepSizeForNonConvexCase)
+
+            for group in global_optimiser.param_groups:
+                group[&#39;lr&#39;] = th_stepsize
+            global_optimiser.step()
+
+            H = algorithms.serverGlobalStateUpdate(state_dicts_thread_safe, model, model_dict_original, round,
+                                                   grad_server, H, clients, sampled_clients_per_next_round)
+
+            if isStepSizeForNonConvexCase:
+                H[&#34;th_stepsize_noncvx&#34;] = th_stepsize
+            else:
+                H[&#34;th_stepsize_cvx&#34;] = th_stepsize
+
+        else:
+            global_optimiser.step()
+            H = algorithms.serverGlobalStateUpdate(state_dicts_thread_safe, model, model_dict_original, round,
+                                                   grad_server, H, clients, sampled_clients_per_next_round)
+            pass
+
+    # Make sure that &#34;model&#34; has been updated
+    if gpu_utils.is_target_dev_gpu(device):
+        torch.cuda.default_stream(device).synchronize()
+
+    return metrics_meter, sampled_clients_round
+
+
+def train_model(client_state, model, train_loader, criterion, local_optimiser, device, round,
+                is_rnn=False, print_freq=10, run_local_iters=True, iters_to_take=None, run_id=None):
+    logger = Logger.get(run_id)
+
+    metrics_meter = init_metrics_meter(round)
+    size_of_dataset_in_samples = len(train_loader.dataset)
+
+    model.train()
+    if model.do_not_use_bn_and_dropout:
+        mutils.turn_off_batch_normalization_and_dropout(model)
+
+    if iters_to_take is None:
+        iters_to_take = 1
+
+    experimental_options = client_state[&#39;H&#39;][&#39;execution_context&#39;].experimental_options
+
+    # Minibatch size for iterated-minibatch and sgd-nice
+    tau = len(train_loader.dataset)
+    if &#39;tau&#39; in experimental_options:
+        tau = experimental_options[&#39;tau&#39;]
+        if &#34;%&#34; in tau:
+            tau = float(tau.replace(&#34;%&#34;, &#34;&#34;)) / 100.0
+            tau = math.ceil(tau * len(train_loader.dataset))
+        else:
+            tau = int(tau)
+
+    # Save computed tau in client state
+    client_state[&#39;tau-samples&#39;] = tau
+
+    # Run_local_iters is False =&gt; We are run specific number of epochs
+    if run_local_iters == False:
+        # Finally calculate how much iterations do we need in case of using SGD
+        # Convert epochs into iterations
+        iters_to_take *= (math.ceil(len(train_loader.dataset) / float(tau)))
+
+    # Client specific pseudo - random generator
+    rndgen = np.random.RandomState(seed=client_state[&#34;seed&#34;])
+
+    # ==============================================================================================================
+    if experimental_options[&#34;internal_sgd&#34;] == &#34;iterated-minibatch&#34;:
+        if experimental_options[&#39;reshuffle&#39;] == &#34;each_round&#34;:
+            # Reshuffle between for each round
+            client_state[&#39;iterated-minibatch-indicies-full&#39;] = rndgen.permutation(len(train_loader.dataset))
+
+        elif experimental_options[&#39;reshuffle&#39;] == &#34;once_per_client&#34;:
+            # Reshuffle once per client for whole experiment
+            previous_indicies_full = algorithms.findRecentRecord(client_state[&#39;H&#39;],
+                                                                 client_state[&#39;client_id&#39;],
+                                                                 &#39;iterated-minibatch-indicies-full&#39;)
+            if previous_indicies_full is None:
+                client_state[&#39;iterated-minibatch-indicies-full&#39;] = rndgen.permutation(len(train_loader.dataset))
+            else:
+                client_state[&#39;iterated-minibatch-indicies-full&#39;] = previous_indicies_full
+
+        elif experimental_options[&#39;reshuffle&#39;] == &#34;until_exhausted&#34;:
+            # Reshuffle until permutation will not be exhausted
+            previous_indicies_full = algorithms.findRecentRecord(client_state[&#39;H&#39;],
+                                                                 client_state[&#39;client_id&#39;],
+                                                                 &#39;iterated-minibatch-indicies-full&#39;)
+            if previous_indicies_full is None:
+                client_state[&#39;iterated-minibatch-indicies-full&#39;] = rndgen.permutation(len(train_loader.dataset))
+            else:
+                client_state[&#39;iterated-minibatch-indicies-full&#39;] = previous_indicies_full[(iters_to_take * 1) * tau:]
+                if len(client_state[&#39;iterated-minibatch-indicies-full&#39;]) &lt; iters_to_take * tau:
+                    client_state[&#39;iterated-minibatch-indicies-full&#39;] = rndgen.permutation(len(train_loader.dataset))
+
+    # ==================================================================================================================
+
+    logger.info(f&#34;For round #{round} the exact number of iteration derived from iters_to_take is {iters_to_take}&#34;)
+
+    # Make local optimization
+    for i in range(iters_to_take):
+        # ==============================================================================================================
+        if experimental_options[&#34;internal_sgd&#34;] == &#34;iterated-minibatch&#34;:
+            s = (i*tau) % len(train_loader.dataset)
+            e = ((i+1)*tau) % len(train_loader.dataset)
+            client_state[&#39;iterated-minibatch-indicies&#39;] = client_state[&#39;iterated-minibatch-indicies-full&#39;][s:e]
+        elif experimental_options[&#34;internal_sgd&#34;] == &#34;sgd-us&#34;:
+            client_state[&#39;iterated-minibatch-indicies&#39;] = np.array([rndgen.randint(len(train_loader.dataset))])
+        elif experimental_options[&#34;internal_sgd&#34;] == &#34;sgd-nice&#34;:
+            client_state[&#39;iterated-minibatch-indicies&#39;] = rndgen.choice(len(train_loader.dataset), tau, replace=False)
+        elif experimental_options[&#34;internal_sgd&#34;] == &#34;sgd-multi&#34;:
+            client_state[&#39;iterated-minibatch-indicies&#39;] = rndgen.choice(len(train_loader.dataset), tau, replace=True)
+        # ==============================================================================================================
+
+        # Not necessary, but for safe
+        local_optimiser.zero_grad()
+
+        # Take local gradient
+        local_iteration_number = (i, iters_to_take)
+        approximate_f_value, local_grad = algorithms.localGradientEvaluation(client_state,
+                                                                             model,
+                                                                             train_loader,
+                                                                             criterion,
+                                                                             is_rnn,
+                                                                             local_iteration_number)
+        # Setup gradient
+        mutils.set_gradient(model, local_grad)
+        # Case when optimizer should work only after processing whole data
+        if is_rnn:
+            nn.utils.clip_grad_norm_(model.parameters(), CLIP_RNN_GRAD)
+
+        if &#34;local_gradients_per_iteration&#34; in client_state:
+            client_state[&#34;local_gradients_per_iteration&#34;].append(mutils.get_gradient(model))
+
+        client_state[&#34;approximate_f_value&#34;].append(approximate_f_value)
+        local_optimiser.step()
+
+    # Make evaluation
+    if not False:
+        for i, (data, label) in enumerate(train_loader):
+            batch_size = data.shape[0]
+            start_ts = time.time()
+
+            if str(data.device) != device or str(label.device) != device or \
+               data.dtype != model.fl_dtype or label.dtype != model.fl_dtype:
+
+                data = data.to(device=device, dtype=model.fl_dtype)
+                label = label.to(device=device, dtype=model.fl_dtype)
+
+            client_state[&#34;stats&#34;][&#34;dataload_duration&#34;] += (time.time() - start_ts)
+            input, label = get_train_inputs(data, label, model, batch_size, device, is_rnn)
+            output_full, _ = forward(client_state, model, criterion, input, label, batch_size,
+                                     size_of_dataset_in_samples, metrics_meter, is_rnn)
+
+            if i % print_freq == 0:
+                log_epoch_info(logger, i, train_loader, metrics_meter,
+                               client_state[&#34;stats&#34;][&#34;dataload_duration&#34;],
+                               client_state[&#34;stats&#34;][&#34;inference_duration&#34;],
+                               client_state[&#34;stats&#34;][&#34;backprop_duration&#34;],
+                               train=True)
+
+    return metrics_meter
+
+
+def get_train_inputs(data, label, model, batch_size, device, is_rnn):
+    if not is_rnn:
+        input = (data,)
+    else:
+        hidden = model.init_hidden(batch_size, device)
+        input = (data, hidden)
+        label = label.reshape(-1)
+    return input, label
+
+
+def evaluate_model(model, val_loader, criterion, device, round,
+                   print_freq=10, metric_to_optim=&#39;top_1&#39;, is_rnn=False):
+
+    logger = Logger.get(&#34;default&#34;)
+
+    metrics_meter = init_metrics_meter(round)
+    if is_rnn:
+        hidden = model.init_hidden(val_loader.batch_size, device)
+
+    model.eval()
+
+    # total_number_of_samples = len(val_loader.dataset)
+    # Code wrap that stops autograd from tracking tensor 
+    with torch.no_grad():
+        for i, (data, label) in enumerate(val_loader):
+            batch_size = data.shape[0]
+            start_ts = time.time()
+            if str(data.device) != device or str(label.device) != device or data.dtype != model.fl_dtype or label.dtype != model.fl_dtype:
+                data = data.to(device=device, dtype=model.fl_dtype)
+                label = label.to(device=device, dtype=model.fl_dtype)
+            if is_rnn:
+                label = label.reshape(-1)
+
+            dataload_duration = time.time() - start_ts
+            if is_rnn:
+                output, hidden = model(data, hidden)
+            else:
+                output = model(data)
+            inference_duration = time.time() - (start_ts + dataload_duration)
+
+            loss = compute_loss(model, criterion, output, label)
+            loss = loss * (1.0 / batch_size)
+
+            update_metrics(metrics_meter, loss, batch_size, output, label)
+
+            if i % print_freq == 0:
+                log_epoch_info(logger, i, val_loader, metrics_meter, dataload_duration,
+                               inference_duration, backprop_duration=0., train=False)
+
+    # Metric for avg/single model(s)
+    logger.info(f&#39;{metric_to_optim}: {metrics_meter[metric_to_optim].get_avg()}&#39;)
+
+    return metrics_meter
+
+
+def accuracy(output, label, topk=(1,)):
+    &#34;&#34;&#34;
+    Extract the accuracy of the model.
+    :param output: The output of the model
+    :param label: The correct target label
+    :param topk: Which accuracies to return (e.g. top1, top5)
+    :return: The accuracies requested
+    &#34;&#34;&#34;
+    maxk = max(topk)           # maximum k value in which we&#39;re interested in
+    batch_size = label.size(0)
+
+    if output.shape[1] == 1:
+        # Case when output of the model is single real value (as output of sigmoid).
+        # Pred by rows examples, by (a single) column it contains indices of most probable class.
+        pred = (output &gt; 0.5).int()
+    else:
+        # Case when output of the model are multiple real values.
+        # Pred by rows examples, by columns indices of most probable class.
+        _, pred = output.topk(maxk, 1, True, True)
+
+    if pred.size(0) != 1:
+        pred = pred.t()
+
+    if pred.size() == (1,):
+        correct = pred.eq(label)
+    else:
+        # Expand label as prediction. Labels by rows will contain duplicate information,
+        # but pred by definition contains different indices
+        correct = pred.eq(label.view(1, -1).expand_as(pred))
+
+    res = []
+    for k in topk:
+        # As more k - more chance to come into top-k classification statistics
+        correct_k = correct[:k].reshape(-1).float().sum(0)
+        res.append(correct_k.mul_(100.0 / batch_size).item())
+    return res
+
+
+def forward_backward(client_state, model, criterion, input, label, inference_duration, backprop_duration, batch_size,
+                     total_trainset_size, metrics_meter, is_rnn):
+    start_ts = time.time()
+    outputs = model(*input)
+    if not is_rnn:
+        hidden = None
+        output = outputs
+    else:
+        output, hidden = outputs
+
+    single_inference = time.time() - start_ts
+    inference_duration += single_inference
+
+    loss = compute_loss(model, criterion, output, label)
+    loss = loss * (1.0/total_trainset_size)
+    loss.backward()
+    backprop_duration += time.time() - (start_ts + single_inference)
+
+    # It&#39;s cheap to update loss,
+    # but because we slightly move model after each  batch processing -
+    # it&#39;s not the true train loss, instead of it it&#39;s running_loss
+    update_metrics(metrics_meter, loss, batch_size, output, label)
+    return inference_duration, backprop_duration, output, hidden
+
+
+def forward(client_state, model, criterion, input, label, batch_size, total_trainset_size, metrics_meter, is_rnn):
+    start_ts = time.time()
+    outputs = model(*input)
+    if not is_rnn:
+        hidden = None
+        output = outputs
+    else:
+        output, hidden = outputs
+    single_inference = time.time() - start_ts
+    client_state[&#34;stats&#34;][&#34;inference_duration&#34;] += single_inference
+
+    loss = compute_loss(model, criterion, output, label)
+    loss = loss * (1.0/total_trainset_size)
+
+    # It&#39;s cheap to update loss, but because we slightly move model after each  batch processing -
+    # it&#39;s not the true train loss, instead of it it&#39;s running_loss
+    update_metrics(metrics_meter, loss, batch_size, output, label)
+    return output, hidden
+
+def compute_loss(model, criterion, output, label):
+    if type(criterion) is torch.nn.MSELoss and not label.is_floating_point():
+        label = label.float()
+
+    if type(criterion) is torch.nn.BCELoss and not label.is_floating_point():
+        label = label.float()
+
+    if type(output) == list and len(output) &gt; 1:
+        if type(model).__name__.lower() == &#39;inception3&#39;:
+            loss = criterion(output[0], label) + 0.4 * criterion(output[1], label)
+        else:
+            loss = sum([criterion(out, label) for out in output])
+    else:
+        loss = criterion(output, label)
+
+    return loss
+
+
+def update_metrics(metrics_meter, loss, batch_size, output, label):
+    metrics_meter[&#39;loss&#39;].update(loss.item(), batch_size)
+    metrics_meter[&#39;neq_perplexity&#39;].update(neg_perplexity_from_loss(loss.item()), batch_size)
+
+    if output.shape[1] &gt;= 5:
+        acc = accuracy(output, label, (1, 5))
+        metrics_meter[&#39;top_1_acc&#39;].update(acc[0], batch_size)
+        metrics_meter[&#39;top_5_acc&#39;].update(acc[1], batch_size)
+    else:
+        acc = accuracy(output, label, (1,))
+        metrics_meter[&#39;top_1_acc&#39;].update(acc[0], batch_size)
+
+
+def get_optimiser(params_to_update, optimiser_name, lr, momentum, weight_decay):
+    if optimiser_name == &#39;sgd&#39;:
+        optimiser = torch.optim.SGD(params_to_update, lr,
+                                    momentum=momentum,
+                                    weight_decay=weight_decay)
+    elif optimiser_name == &#39;adam&#39;:
+        optimiser = torch.optim.Adam(params_to_update, lr, weight_decay=weight_decay)
+    elif optimiser_name == &#39;rmsprop&#39;:
+        optimiser = torch.optim.RMSprop(params_to_update, lr,
+                                        momentum=momentum,
+                                        weight_decay=weight_decay)
+    else:
+        raise ValueError(&#34;optimiser not supported&#34;)
+
+    return optimiser</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="utils.model_funcs.accuracy"><code class="name flex">
+<span>def <span class="ident">accuracy</span></span>(<span>output, label, topk=(1,))</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Extract the accuracy of the model.
+:param output: The output of the model
+:param label: The correct target label
+:param topk: Which accuracies to return (e.g. top1, top5)
+:return: The accuracies requested</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def accuracy(output, label, topk=(1,)):
+    &#34;&#34;&#34;
+    Extract the accuracy of the model.
+    :param output: The output of the model
+    :param label: The correct target label
+    :param topk: Which accuracies to return (e.g. top1, top5)
+    :return: The accuracies requested
+    &#34;&#34;&#34;
+    maxk = max(topk)           # maximum k value in which we&#39;re interested in
+    batch_size = label.size(0)
+
+    if output.shape[1] == 1:
+        # Case when output of the model is single real value (as output of sigmoid).
+        # Pred by rows examples, by (a single) column it contains indices of most probable class.
+        pred = (output &gt; 0.5).int()
+    else:
+        # Case when output of the model are multiple real values.
+        # Pred by rows examples, by columns indices of most probable class.
+        _, pred = output.topk(maxk, 1, True, True)
+
+    if pred.size(0) != 1:
+        pred = pred.t()
+
+    if pred.size() == (1,):
+        correct = pred.eq(label)
+    else:
+        # Expand label as prediction. Labels by rows will contain duplicate information,
+        # but pred by definition contains different indices
+        correct = pred.eq(label.view(1, -1).expand_as(pred))
+
+    res = []
+    for k in topk:
+        # As more k - more chance to come into top-k classification statistics
+        correct_k = correct[:k].reshape(-1).float().sum(0)
+        res.append(correct_k.mul_(100.0 / batch_size).item())
+    return res</code></pre>
+</details>
+</dd>
+<dt id="utils.model_funcs.compute_loss"><code class="name flex">
+<span>def <span class="ident">compute_loss</span></span>(<span>model, criterion, output, label)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def compute_loss(model, criterion, output, label):
+    if type(criterion) is torch.nn.MSELoss and not label.is_floating_point():
+        label = label.float()
+
+    if type(criterion) is torch.nn.BCELoss and not label.is_floating_point():
+        label = label.float()
+
+    if type(output) == list and len(output) &gt; 1:
+        if type(model).__name__.lower() == &#39;inception3&#39;:
+            loss = criterion(output[0], label) + 0.4 * criterion(output[1], label)
+        else:
+            loss = sum([criterion(out, label) for out in output])
+    else:
+        loss = criterion(output, label)
+
+    return loss</code></pre>
+</details>
+</dd>
+<dt id="utils.model_funcs.evaluate_model"><code class="name flex">
+<span>def <span class="ident">evaluate_model</span></span>(<span>model, val_loader, criterion, device, round, print_freq=10, metric_to_optim='top_1', is_rnn=False)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def evaluate_model(model, val_loader, criterion, device, round,
+                   print_freq=10, metric_to_optim=&#39;top_1&#39;, is_rnn=False):
+
+    logger = Logger.get(&#34;default&#34;)
+
+    metrics_meter = init_metrics_meter(round)
+    if is_rnn:
+        hidden = model.init_hidden(val_loader.batch_size, device)
+
+    model.eval()
+
+    # total_number_of_samples = len(val_loader.dataset)
+    # Code wrap that stops autograd from tracking tensor 
+    with torch.no_grad():
+        for i, (data, label) in enumerate(val_loader):
+            batch_size = data.shape[0]
+            start_ts = time.time()
+            if str(data.device) != device or str(label.device) != device or data.dtype != model.fl_dtype or label.dtype != model.fl_dtype:
+                data = data.to(device=device, dtype=model.fl_dtype)
+                label = label.to(device=device, dtype=model.fl_dtype)
+            if is_rnn:
+                label = label.reshape(-1)
+
+            dataload_duration = time.time() - start_ts
+            if is_rnn:
+                output, hidden = model(data, hidden)
+            else:
+                output = model(data)
+            inference_duration = time.time() - (start_ts + dataload_duration)
+
+            loss = compute_loss(model, criterion, output, label)
+            loss = loss * (1.0 / batch_size)
+
+            update_metrics(metrics_meter, loss, batch_size, output, label)
+
+            if i % print_freq == 0:
+                log_epoch_info(logger, i, val_loader, metrics_meter, dataload_duration,
+                               inference_duration, backprop_duration=0., train=False)
+
+    # Metric for avg/single model(s)
+    logger.info(f&#39;{metric_to_optim}: {metrics_meter[metric_to_optim].get_avg()}&#39;)
+
+    return metrics_meter</code></pre>
+</details>
+</dd>
+<dt id="utils.model_funcs.forward"><code class="name flex">
+<span>def <span class="ident">forward</span></span>(<span>client_state, model, criterion, input, label, batch_size, total_trainset_size, metrics_meter, is_rnn)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def forward(client_state, model, criterion, input, label, batch_size, total_trainset_size, metrics_meter, is_rnn):
+    start_ts = time.time()
+    outputs = model(*input)
+    if not is_rnn:
+        hidden = None
+        output = outputs
+    else:
+        output, hidden = outputs
+    single_inference = time.time() - start_ts
+    client_state[&#34;stats&#34;][&#34;inference_duration&#34;] += single_inference
+
+    loss = compute_loss(model, criterion, output, label)
+    loss = loss * (1.0/total_trainset_size)
+
+    # It&#39;s cheap to update loss, but because we slightly move model after each  batch processing -
+    # it&#39;s not the true train loss, instead of it it&#39;s running_loss
+    update_metrics(metrics_meter, loss, batch_size, output, label)
+    return output, hidden</code></pre>
+</details>
+</dd>
+<dt id="utils.model_funcs.forward_backward"><code class="name flex">
+<span>def <span class="ident">forward_backward</span></span>(<span>client_state, model, criterion, input, label, inference_duration, backprop_duration, batch_size, total_trainset_size, metrics_meter, is_rnn)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def forward_backward(client_state, model, criterion, input, label, inference_duration, backprop_duration, batch_size,
+                     total_trainset_size, metrics_meter, is_rnn):
+    start_ts = time.time()
+    outputs = model(*input)
+    if not is_rnn:
+        hidden = None
+        output = outputs
+    else:
+        output, hidden = outputs
+
+    single_inference = time.time() - start_ts
+    inference_duration += single_inference
+
+    loss = compute_loss(model, criterion, output, label)
+    loss = loss * (1.0/total_trainset_size)
+    loss.backward()
+    backprop_duration += time.time() - (start_ts + single_inference)
+
+    # It&#39;s cheap to update loss,
+    # but because we slightly move model after each  batch processing -
+    # it&#39;s not the true train loss, instead of it it&#39;s running_loss
+    update_metrics(metrics_meter, loss, batch_size, output, label)
+    return inference_duration, backprop_duration, output, hidden</code></pre>
+</details>
+</dd>
+<dt id="utils.model_funcs.get_global_regulizer"><code class="name flex">
+<span>def <span class="ident">get_global_regulizer</span></span>(<span>regul_name)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_global_regulizer(regul_name):
+    if regul_name == &#34;none&#34;:
+        return noneRegulizer
+    elif regul_name == &#34;noncvx_robust_linear_regression&#34;:
+        return robustLinearRegulizers
+    elif regul_name == &#34;cvx_l2norm_square_div_2&#34;:
+        return l2NormSquareRegulizer
+
+    return None</code></pre>
+</details>
+</dd>
+<dt id="utils.model_funcs.get_lr_scheduler"><code class="name flex">
+<span>def <span class="ident">get_lr_scheduler</span></span>(<span>optimiser, total_epochs, method='static')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Implement learning rate scheduler.
+:param optimiser: A reference to the optimiser being usd
+:param total_epochs: The total number of epochs (from the args)
+:param method: The strategy to adjust the learning rate (multistep, cosine or static)
+:returns: scheduler on current step/epoch/policy</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_lr_scheduler(optimiser, total_epochs, method=&#39;static&#39;):
+    &#34;&#34;&#34;
+    Implement learning rate scheduler.
+    :param optimiser: A reference to the optimiser being usd
+    :param total_epochs: The total number of epochs (from the args)
+    :param method: The strategy to adjust the learning rate (multistep, cosine or static)
+    :returns: scheduler on current step/epoch/policy
+    &#34;&#34;&#34;
+    if method == &#39;cosine&#39;:
+        return CosineAnnealingLR(optimiser, total_epochs)
+    elif method == &#39;static&#39;:
+        return MultiStepLR(optimiser, [total_epochs + 1])
+    if method == &#39;cifar_1&#39;:  # VGGs + ResNets
+        return MultiStepLR(optimiser, [int(0.5 * total_epochs), int(0.75 * total_epochs)], gamma=0.1)
+    if method == &#39;cifar_2&#39;:  # WideResNets
+        return MultiStepLR(optimiser, [int(0.3 * total_epochs), int(0.6 * total_epochs), int(0.8 * total_epochs)],
+                           gamma=0.2)
+    raise ValueError(f&#34;{method} is not defined as scheduler name.&#34;)</code></pre>
+</details>
+</dd>
+<dt id="utils.model_funcs.get_model_weights"><code class="name flex">
+<span>def <span class="ident">get_model_weights</span></span>(<span>model)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get model weights as a list of NumPy ndarrays.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_model_weights(model):
+    &#34;&#34;&#34;Get model weights as a list of NumPy ndarrays.&#34;&#34;&#34;
+
+    # Move vals&#39; data from GPU to CPU and then convert to numpy
+    return [val.cpu().numpy() for _, val in model.state_dict().items()]</code></pre>
+</details>
+</dd>
+<dt id="utils.model_funcs.get_optimiser"><code class="name flex">
+<span>def <span class="ident">get_optimiser</span></span>(<span>params_to_update, optimiser_name, lr, momentum, weight_decay)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_optimiser(params_to_update, optimiser_name, lr, momentum, weight_decay):
+    if optimiser_name == &#39;sgd&#39;:
+        optimiser = torch.optim.SGD(params_to_update, lr,
+                                    momentum=momentum,
+                                    weight_decay=weight_decay)
+    elif optimiser_name == &#39;adam&#39;:
+        optimiser = torch.optim.Adam(params_to_update, lr, weight_decay=weight_decay)
+    elif optimiser_name == &#39;rmsprop&#39;:
+        optimiser = torch.optim.RMSprop(params_to_update, lr,
+                                        momentum=momentum,
+                                        weight_decay=weight_decay)
+    else:
+        raise ValueError(&#34;optimiser not supported&#34;)
+
+    return optimiser</code></pre>
+</details>
+</dd>
+<dt id="utils.model_funcs.get_train_inputs"><code class="name flex">
+<span>def <span class="ident">get_train_inputs</span></span>(<span>data, label, model, batch_size, device, is_rnn)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_train_inputs(data, label, model, batch_size, device, is_rnn):
+    if not is_rnn:
+        input = (data,)
+    else:
+        hidden = model.init_hidden(batch_size, device)
+        input = (data, hidden)
+        label = label.reshape(-1)
+    return input, label</code></pre>
+</details>
+</dd>
+<dt id="utils.model_funcs.get_training_elements"><code class="name flex">
+<span>def <span class="ident">get_training_elements</span></span>(<span>model_name, dataset, dataset_ref, args, resume_from, load_best, gpu, loss, do_not_use_bn_and_dropout)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_training_elements(model_name, dataset, dataset_ref, args, resume_from, load_best,
+                          gpu,
+                          loss,
+                          do_not_use_bn_and_dropout):
+    # Define the model
+    execution_context.torch_global_lock.acquire()
+    if args.deterministic:
+        if torch.cuda.device_count() &gt; 0:
+            torch.cuda.manual_seed(args.manual_init_seed)
+            torch.cuda.manual_seed_all(args.manual_init_seed)
+        torch.manual_seed(args.manual_init_seed)
+        random.seed(args.manual_init_seed)
+        np.random.seed(args.manual_init_seed)
+
+    model, current_round = initialise_model(model_name, dataset, dataset_ref, args, resume_from, load_best,
+                                            use_pretrained=args.use_pretrained)
+    execution_context.torch_global_lock.release()
+
+    # Convert model parameters and models buffers into compute type
+    if args.compute_type == &#39;fp16&#39;:
+        model = model.half()
+        model.fl_dtype = torch.float16
+    elif args.compute_type == &#39;fp32&#39;:
+        model = model.float()
+        model.fl_dtype = torch.float32
+    elif args.compute_type == &#39;fp64&#39;:
+        model = model.double()
+        model.fl_dtype = torch.float64
+    else:
+        raise Exception(f&#34;Undefined {args.compute_type}&#34;)
+
+    model = model_to_device(model, gpu)
+
+    criterion = None
+
+    if loss == &#34;crossentropy&#34;:
+        criterion = nn.CrossEntropyLoss(reduction=&#39;sum&#39;)
+    elif loss == &#34;logistic&#34;:
+        criterion = nn.BCELoss(reduction=&#39;sum&#39;)
+    elif loss == &#34;mse&#34;:
+        criterion = nn.MSELoss(reduction=&#39;sum&#39;)
+    else:
+        raise ValueError(f&#34;There are no registered loss for {loss}&#34;)
+
+    model.do_not_use_bn_and_dropout = do_not_use_bn_and_dropout
+
+    return model, criterion, current_round</code></pre>
+</details>
+</dd>
+<dt id="utils.model_funcs.initialise_model"><code class="name flex">
+<span>def <span class="ident">initialise_model</span></span>(<span>model_name, dataset, dataset_ref, args, resume_from=None, load_best=None, use_pretrained=False)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def initialise_model(model_name, dataset, dataset_ref, args, resume_from=None, load_best=None, use_pretrained=False):
+    logger = Logger.get(args.run_id)
+
+    model_prefix = [prefix for prefix in CIFAR_MODELS if model_name.startswith(prefix)]
+
+    if len(model_prefix) == 1 and dataset.startswith(&#39;cifar&#39;) and \
+            int(model_name.split(model_prefix[0])[1]) in CIFAR_MODELS[model_prefix[0]]:
+        logger.debug(&#34;Loading cifar version of model&#34;)
+        model_name = model_name + &#39;_cifar&#39;
+
+    model = None
+
+    if model_name == &#34;linear&#34;:
+        # Sample single sample to obtain information about data format
+        example, target = dataset_ref[0]
+
+        if not torch.is_tensor(example):
+            example = torch.Tensor(example)
+
+        if not torch.is_tensor(target):
+            target = torch.Tensor([target])
+
+        model = nn.Sequential(  # 0 index reserved for samples in the batch
+                                nn.Flatten(1),
+                                # Fully connected layer from example.numel() to target.numel() units
+                                nn.Linear(in_features=example.numel(), out_features=target.numel(), bias=False)
+                              )
+
+        # mutils.set_params_to_zero(model)
+
+    if model_name == &#34;logistic&#34;:
+        # Sample single sample to obtain information about data format
+        example, target = dataset_ref[0]
+
+        if not torch.is_tensor(example):
+            example = torch.Tensor(example)
+
+        if not torch.is_tensor(target):
+            target = torch.Tensor([target])
+
+        model = nn.Sequential(  # 0 index reserved for samples in the batch
+                                nn.Flatten(1),
+                                # Fully connected layer from example.numel() to target.numel() units
+                                nn.Linear(in_features=example.numel(), out_features=target.numel(), bias=False),
+                                # Apply sigmoid
+                                nn.Sigmoid()
+                              )
+        # mutils.set_params_to_zero(model)
+
+    if model_name.startswith(&#34;tv_&#34;):
+        # Models from torchvision
+        num_classes = get_num_classes(dataset)
+        backbone = getattr(models, model_name)(pretrained=use_pretrained)
+        backbone.train(False)
+
+        model = backbone
+        new_fc = torch.nn.Linear(in_features=model.fc.in_features,
+                                 out_features=num_classes,
+                                 bias=model.fc.bias is not None)
+        model.fc = new_fc
+
+        if args.train_last_layer:
+            # Freeze all weights
+            for p in model.parameters():
+                p.requires_grad_(False)
+            # Make last linear layer trainable
+            if model.fc.bias is not None:
+                model.fc.bias.requires_grad_(True)
+            model.fc.weight.requires_grad_(True)
+
+    if model is None:
+        # Own models
+        model = getattr(models, model_name)(pretrained=use_pretrained, num_classes=get_num_classes(dataset))
+
+    current_round = 0
+
+    if resume_from:
+        # We can not use load_checkpoint(resume_from, load_best) due to circular dependencies
+        # model, current_round = load_checkpoint(resume_from, load_best)
+        # ==============================================================================================================
+        if load_best:
+            model_filename = os.path.join(resume_from, &#39;model_best.pth.tar&#39;)
+            metric_filename = os.path.join(resume_from, &#39;best_metrics.json&#39;)
+        else:
+            model_filename = os.path.join(resume_from, &#39;model_last.pth.tar&#39;)
+            metric_filename = os.path.join(resume_from, &#39;last_metrics.json&#39;)
+    
+        logger.info(&#34;Loading checkpoint &#39;{}&#39;&#34;.format(model_filename))
+        state = torch.load(model_filename)
+        logger.info(&#34;Loaded checkpoint &#39;{}&#39;&#34;.format(model_filename))
+        with open(metric_filename, &#39;r&#39;) as f:
+            metrics = json.load(f)
+        model = state
+        current_round = metrics[&#39;round&#39;]
+        # ==============================================================================================================
+
+    return model, current_round</code></pre>
+</details>
+</dd>
+<dt id="utils.model_funcs.l2NormSquareRegulizer"><code class="name flex">
+<span>def <span class="ident">l2NormSquareRegulizer</span></span>(<span>model, alphaR)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def l2NormSquareRegulizer(model, alphaR):
+    xsqr = None
+    for p in model.parameters():
+        if xsqr is None:
+            xsqr = (p * p).sum()
+        else:
+            xsqr += (p * p).sum()
+
+    return xsqr * 0.5 * alphaR</code></pre>
+</details>
+</dd>
+<dt id="utils.model_funcs.local_training"><code class="name flex">
+<span>def <span class="ident">local_training</span></span>(<span>thread, client_state, client_id, msg, model_dict_original, optimiser_dict_original, model, train_loader, criterion, local_optimiser, device, round, run_local_iters, number_of_local_steps, is_rnn, print_freq, state_dicts, run_id)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def local_training(thread, client_state, client_id, msg, model_dict_original, optimiser_dict_original,
+                   model, train_loader, criterion, local_optimiser, device, round, run_local_iters,
+                   number_of_local_steps, is_rnn, print_freq, state_dicts, run_id):
+    logger = Logger.get(run_id)
+
+    # if thread is not None and hasattr(thread, &#34;worker_stream&#34;):
+    #    torch.cuda.Stream.wait_stream(torch.cuda.default_stream(device), thread.worker_stream)
+
+    # current_stream = torch.cuda.current_stream(device)
+    # blas_handle = torch.cuda.current_blas_handle()
+    # logger.info(f&#34;CUDA stream {current_stream} and BLAS handle {blas_handle}&#34;)
+
+    logger.info(msg)
+
+    # Use of specified parameters or get them from thread context
+    if thread is not None:
+        model = thread.model_copy
+        local_optimiser = thread.local_optimiser_copy
+        train_loader = thread.train_loader_copy
+
+    fed_dataset = train_loader.dataset
+
+    # Set current client
+    if fed_dataset.num_clients &gt; 1:
+        fed_dataset.set_client(client_id)
+
+    # Reconstruct model parameters
+    mutils.set_params(model, model_dict_original)
+
+    # Reconstruct optimizer parameters for client via using history
+    optimiser_dict_found = algorithms.findRecentRecord(client_state[&#39;H&#39;], client_id, &#34;optimiser&#34;)
+
+    if optimiser_dict_found is not None:
+        local_optimiser.load_state_dict(optimiser_dict_found)
+    else:
+        local_optimiser.load_state_dict(optimiser_dict_original)
+
+    # Reconstruct buffers in particular needed for batch normalization
+    buffers_found = algorithms.findRecentRecord(client_state[&#39;H&#39;], client_id, &#34;buffers&#34;)
+    if buffers_found is not None:
+        mutils.set_buffers(model, buffers_found)
+
+    metrics_meter = train_model(client_state, model, train_loader, criterion, local_optimiser, device, round, is_rnn,
+                                print_freq,
+                                run_local_iters=run_local_iters,
+                                iters_to_take=number_of_local_steps,
+                                run_id=run_id)
+
+    # save current local model
+    local_model_dict = mutils.get_params(model)
+
+    # get local optimizer dict
+    local_optimiser_dict = deepcopy(local_optimiser.state_dict())
+
+    # get model buffers (e.g. include running means for BatchNorm)
+    local_model_buffers = None
+    local_model_buffers = mutils.get_buffers(model)
+
+    #  Force all operations to be completed in that worker stream
+    #  so models are valid and can be accessed from another threads
+    if thread is not None and hasattr(thread, &#34;worker_stream&#34;):
+        torch.cuda.Stream.wait_stream(torch.cuda.default_stream(device), thread.worker_stream)
+
+    #  Add (model state, optimizer state, client_id, client_id, client_state) into into result
+    state_dicts.pushBack({&#39;model&#39;: local_model_dict,
+                          &#39;optimiser&#39;: copy.deepcopy(local_optimiser_dict),
+                          &#39;buffers&#39;: local_model_buffers,
+                          &#39;client_id&#39;: client_id,
+                          &#39;client_state&#39;: client_state})
+
+    return</code></pre>
+</details>
+</dd>
+<dt id="utils.model_funcs.model_to_device"><code class="name flex">
+<span>def <span class="ident">model_to_device</span></span>(<span>model, device)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def model_to_device(model, device):
+    if type(device) == list:                 # If to allocate on more than one GPU
+        model = model.to(device=device[0])   # Recursively convert parameters and buffers to device specific tensors
+
+        # Create data-parallel model across devices &#34;device&#34;
+        # Details: https://pytorch.org/docs/stable/generated/torch.nn.DataParallel.html
+        # Moment: The batch size should be larger than the number of GPUs used.
+        model = DataParallel(model, device_ids=device)
+
+    else:
+        model = model.to(device=device)      # Recursively convert parameters and buffers to device specific tensors
+    return model</code></pre>
+</details>
+</dd>
+<dt id="utils.model_funcs.non_local_training"><code class="name flex">
+<span>def <span class="ident">non_local_training</span></span>(<span>thread, client_state, client_id, msg, model_dict_original, optimiser_dict_original, model, train_loader, criterion, local_optimiser, device, round, run_local_iters, number_of_local_steps, is_rnn, print_freq, state_dicts)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def non_local_training(thread, client_state, client_id, msg, model_dict_original, optimiser_dict_original,
+                       model, train_loader, criterion, local_optimiser, device, round, run_local_iters,
+                       number_of_local_steps, is_rnn, print_freq, state_dicts):
+
+    model_dict_original = model_dict_original.to(&#34;cpu&#34;)
+
+    args = (client_state, client_id, msg, model_dict_original, optimiser_dict_original,
+            model, train_loader, criterion, local_optimiser, device, round, run_local_iters,
+            number_of_local_steps, is_rnn, print_freq)
+
+    h = client_state[&#39;H&#39;]
+    client_state[&#39;H&#39;] = {}
+    for k, v in h.items():
+        if k == &#34;execution_context&#34;:
+            continue
+
+        if torch.is_tensor(v):
+            client_state[&#39;H&#39;][k] = v.cpu()
+            continue
+
+        if k == &#34;history&#34;:
+            client_state[&#39;H&#39;][k] = {}
+            for round in v.keys():
+                round_info = v[round]
+                composed_round_info = {}
+
+                client_state[&#39;H&#39;][k][round] = composed_round_info
+
+                for round_key, round_value in round_info.items():
+                    if torch.is_tensor(round_value):
+                        round_value = round_value.cpu()
+
+                    if round_key != &#34;client_states&#34;:
+                        composed_round_info[round_key] = round_value
+                    elif round_key == &#34;client_states&#34;:
+                        client_states_values = round_value
+
+                        composed_round_info[round_key] = {}
+                        if client_id in client_states_values:
+                            composed_round_info[round_key][&#39;client_id&#39;] = client_states_values[client_id][&#39;client_id&#39;]
+                            composed_round_info[round_key][&#39;client_state&#39;] = {}
+
+                            for hKey, hValue in client_states_values[client_id][&#39;client_state&#39;].items():
+                                if torch.is_tensor(hValue):
+                                    hValue = hValue.cpu()
+
+                                if hKey == &#39;H&#39;:
+                                    hValue = None
+                                composed_round_info[round_key][&#39;client_state&#39;][hKey] = hValue
+            continue
+
+        client_state[&#39;H&#39;][k] = v
+
+    serialized_args = pickle.dumps(args)
+    client_state[&#39;H&#39;] = h
+
+    thread.external_socket.rawSendString(&#34;non_local_training&#34;)
+    thread.external_socket.rawSend(serialized_args)
+    description = thread.external_socket.rawRecvString()
+
+    if description == &#34;result_of_local_training&#34;:
+        state_info = thread.external_socket.rawRecv()
+        # {&#39;model&#39;: local_model_dict, &#39;optimiser&#39;: copy.deepcopy(local_optimiser_dict), &#39;buffers&#39; : local_model_buffers,
+        # &#39;client_id&#39;: client_id, &#39;client_state&#39;: client_state})
+        state_info = pickle.loads(state_info)
+        state_info[&#39;client_state&#39;][&#39;H&#39;] = h
+        state_dicts.pushBack(state_info)</code></pre>
+</details>
+</dd>
+<dt id="utils.model_funcs.noneRegulizer"><code class="name flex">
+<span>def <span class="ident">noneRegulizer</span></span>(<span>model, alphaR)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def noneRegulizer(model, alphaR):
+    return None</code></pre>
+</details>
+</dd>
+<dt id="utils.model_funcs.robustLinearRegulizers"><code class="name flex">
+<span>def <span class="ident">robustLinearRegulizers</span></span>(<span>model, alphaR)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def robustLinearRegulizers(model, alphaR):
+    value = None
+    for p in model.parameters():
+        xSqr = (p*p)
+
+        if value is None:
+            value = (xSqr / (xSqr + 1)).sum()
+        else:
+            value += (xSqr / (xSqr + 1)).sum()
+
+    return value * alphaR</code></pre>
+</details>
+</dd>
+<dt id="utils.model_funcs.run_one_communication_round"><code class="name flex">
+<span>def <span class="ident">run_one_communication_round</span></span>(<span>H, model, train_loader, criterion, local_optimiser, optimiser_dict_original, global_optimiser, device, round, run_local_iters, number_of_local_steps, is_rnn=False, sampled_clients=None, print_freq=10)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def run_one_communication_round(H, model, train_loader, criterion, local_optimiser, optimiser_dict_original,
+                                global_optimiser, device, round, run_local_iters, number_of_local_steps,
+                                is_rnn=False, sampled_clients=None, print_freq=10):
+    logger = Logger.get(H[&#34;run_id&#34;])
+
+    metrics_meter = None
+    fed_dataset = train_loader.dataset
+    model_dict_original = mutils.get_params(model)
+
+    sampled_clients_round = None
+
+    # Feedback from algorithm: Possible information from underlying algorithm to use all clients in that round
+    if &#39;request_use_full_list_of_clients&#39; in H and H[&#39;request_use_full_list_of_clients&#39;]:
+        sampled_clients_round = np.arange(H[&#39;total_clients&#39;])
+        logger.info(f&#34;Sample all FL clients: {len(sampled_clients_round)}&#34;)
+    else:
+        sampled_clients_round = sampled_clients[round]
+        logger.info(f&#34;Sampled FL clients: {len(sampled_clients_round)}&#34;)
+
+    # Information from future regarding clients from a next round
+    sampled_clients_per_next_round = list()
+    if round + 1 &lt; len(sampled_clients):
+        sampled_clients_per_next_round = sampled_clients[round + 1]
+
+    clients_num_data = list()
+    for client_id in sampled_clients_round:
+        if fed_dataset.num_clients &gt; 1:
+            fed_dataset.set_client(client_id)
+        clients_num_data.append(len(fed_dataset))
+    clients_num_data = np.array(clients_num_data)
+
+    # Result buffer which is created from scratch at each communication round
+    state_dicts_thread_safe = Buffer(max_capacity=len(sampled_clients_round))
+
+    exec_ctx = H[&#34;execution_context&#34;]
+
+    # Make sure that &#34;model_dict_original&#34; has been obtained correctly
+    if gpu_utils.is_target_dev_gpu(device):
+        torch.cuda.default_stream(device).synchronize()
+
+    # Wait for all threads
+    i = 0
+    while i &lt; len(sampled_clients_round):
+        # Trainining in a serialized way locally
+        if exec_ctx.local_training_threads.workers() == 0:
+            client_id = sampled_clients_round[i]
+            client_data_samples = clients_num_data[i]
+
+            msg = f&#39;Running local epoch for client: {client_id}, [{i + 1}/{len(sampled_clients_round)}]&#39;
+            client_state = algorithms.clientState(H, client_id, client_data_samples, round, device)
+            res = local_training(None, client_state, client_id, msg, model_dict_original, optimiser_dict_original,
+                                 model, train_loader, criterion, local_optimiser, device, round, run_local_iters,
+                                 number_of_local_steps, is_rnn, print_freq, state_dicts_thread_safe, H[&#34;run_id&#34;])
+            i += 1
+        else:
+            client_id = sampled_clients_round[i]
+            client_data_samples = clients_num_data[i]
+
+            msg = f&#39;Running local epoch for client: {client_id}, [{i + 1}/{len(sampled_clients_round)}]&#39;
+            next_device = exec_ctx.local_training_threads.next_dispatched_thread().device
+            client_state = algorithms.clientState(H, client_id, client_data_samples, round, next_device)
+
+            args = (client_state, client_id, msg, model_dict_original, optimiser_dict_original,
+                    None, None, criterion, None, next_device, round, run_local_iters,
+                    number_of_local_steps, is_rnn, print_freq, state_dicts_thread_safe, H[&#34;run_id&#34;])
+
+            exec_ctx.local_training_threads.dispatch(local_training, args)
+            i += 1
+
+        if exec_ctx.remote_training_threads.workers() &gt; 0:
+            # Delegate half of the work for a remote computers
+            if i &gt;= len(sampled_clients_round):
+                continue
+
+            client_id = sampled_clients_round[i]
+            client_data_samples = clients_num_data[i]
+
+            msg = f&#39;Running local epoch for client: {client_id}, [{i + 1}/{len(sampled_clients_round)}]&#39;
+            next_device = exec_ctx.remote_training_threads.next_dispatched_thread().device
+            client_state = algorithms.clientState(H, client_id, client_data_samples, round, next_device)
+
+            args = (client_state, client_id, msg, model_dict_original, optimiser_dict_original,
+                    None, None, criterion, None, next_device, round, run_local_iters,
+                    number_of_local_steps, is_rnn, print_freq, state_dicts_thread_safe)
+
+            exec_ctx.remote_training_threads.dispatch(non_local_training, args)
+            i += 1
+
+    # Prepare for aggregation - weights based on the number of local data
+    # if len(sampled_clients_round) &gt;= 1:
+    #    # weights based on the number of local data
+    #    weights = torch.tensor(np.array(clients_num_data)/np.sum(clients_num_data)).to(device = device)
+
+    # NO AWAIT ONLY BECAUSE THERE IS A QUEUE FOR INTER-THREAD COMMUNICATION
+
+    # Aggregation
+    clients = len(sampled_clients_round)
+
+    if True:
+        # aggregate local models to global model
+        global_optimiser.zero_grad()
+        mutils.set_params(model, model_dict_original)
+
+        # compute gradient from main path
+        grad_server = algorithms.serverGradient(state_dicts_thread_safe, clients, model, model_dict_original, H)
+        mutils.set_gradient(model, grad_server)
+
+        # Experimental modification for select theoretical steps-size
+        if &#34;th_stepsize_cvx&#34; in H[&#34;execution_context&#34;].experimental_options or \
+                &#34;th_stepsize_noncvx&#34; in H[&#34;execution_context&#34;].experimental_options:
+
+            isStepSizeForNonConvexCase = (&#34;th_stepsize_noncvx&#34; in H[&#34;execution_context&#34;].experimental_options)
+
+            th_stepsize = algorithms.theoreticalStepSize(model_dict_original, grad_server, H, clients,
+                                                         state_dicts_thread_safe, isStepSizeForNonConvexCase)
+
+            for group in global_optimiser.param_groups:
+                group[&#39;lr&#39;] = th_stepsize
+            global_optimiser.step()
+
+            H = algorithms.serverGlobalStateUpdate(state_dicts_thread_safe, model, model_dict_original, round,
+                                                   grad_server, H, clients, sampled_clients_per_next_round)
+
+            if isStepSizeForNonConvexCase:
+                H[&#34;th_stepsize_noncvx&#34;] = th_stepsize
+            else:
+                H[&#34;th_stepsize_cvx&#34;] = th_stepsize
+
+        else:
+            global_optimiser.step()
+            H = algorithms.serverGlobalStateUpdate(state_dicts_thread_safe, model, model_dict_original, round,
+                                                   grad_server, H, clients, sampled_clients_per_next_round)
+            pass
+
+    # Make sure that &#34;model&#34; has been updated
+    if gpu_utils.is_target_dev_gpu(device):
+        torch.cuda.default_stream(device).synchronize()
+
+    return metrics_meter, sampled_clients_round</code></pre>
+</details>
+</dd>
+<dt id="utils.model_funcs.set_model_weights"><code class="name flex">
+<span>def <span class="ident">set_model_weights</span></span>(<span>model, weights, strict=True)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Sets the weight models in-place. To be used to integrate new updated weights.
+:param model: The model to be updated
+:param weights: (fl.common.Weights) List of np ndarrays representing the model weights
+:param strict: To require 1-to-1 parameter to weights association.s</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_model_weights(model, weights, strict=True):
+    &#34;&#34;&#34;
+    Sets the weight models in-place. To be used to integrate new updated weights.
+    :param model: The model to be updated
+    :param weights: (fl.common.Weights) List of np ndarrays representing the model weights
+    :param strict: To require 1-to-1 parameter to weights association.s
+    &#34;&#34;&#34;
+    state_dict = OrderedDict(
+        {
+            k: torch.Tensor(np.atleast_1d(v))
+            for k, v in zip(model.state_dict().keys(), weights)
+        }
+    )
+    model.load_state_dict(state_dict, strict=strict)</code></pre>
+</details>
+</dd>
+<dt id="utils.model_funcs.train_model"><code class="name flex">
+<span>def <span class="ident">train_model</span></span>(<span>client_state, model, train_loader, criterion, local_optimiser, device, round, is_rnn=False, print_freq=10, run_local_iters=True, iters_to_take=None, run_id=None)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def train_model(client_state, model, train_loader, criterion, local_optimiser, device, round,
+                is_rnn=False, print_freq=10, run_local_iters=True, iters_to_take=None, run_id=None):
+    logger = Logger.get(run_id)
+
+    metrics_meter = init_metrics_meter(round)
+    size_of_dataset_in_samples = len(train_loader.dataset)
+
+    model.train()
+    if model.do_not_use_bn_and_dropout:
+        mutils.turn_off_batch_normalization_and_dropout(model)
+
+    if iters_to_take is None:
+        iters_to_take = 1
+
+    experimental_options = client_state[&#39;H&#39;][&#39;execution_context&#39;].experimental_options
+
+    # Minibatch size for iterated-minibatch and sgd-nice
+    tau = len(train_loader.dataset)
+    if &#39;tau&#39; in experimental_options:
+        tau = experimental_options[&#39;tau&#39;]
+        if &#34;%&#34; in tau:
+            tau = float(tau.replace(&#34;%&#34;, &#34;&#34;)) / 100.0
+            tau = math.ceil(tau * len(train_loader.dataset))
+        else:
+            tau = int(tau)
+
+    # Save computed tau in client state
+    client_state[&#39;tau-samples&#39;] = tau
+
+    # Run_local_iters is False =&gt; We are run specific number of epochs
+    if run_local_iters == False:
+        # Finally calculate how much iterations do we need in case of using SGD
+        # Convert epochs into iterations
+        iters_to_take *= (math.ceil(len(train_loader.dataset) / float(tau)))
+
+    # Client specific pseudo - random generator
+    rndgen = np.random.RandomState(seed=client_state[&#34;seed&#34;])
+
+    # ==============================================================================================================
+    if experimental_options[&#34;internal_sgd&#34;] == &#34;iterated-minibatch&#34;:
+        if experimental_options[&#39;reshuffle&#39;] == &#34;each_round&#34;:
+            # Reshuffle between for each round
+            client_state[&#39;iterated-minibatch-indicies-full&#39;] = rndgen.permutation(len(train_loader.dataset))
+
+        elif experimental_options[&#39;reshuffle&#39;] == &#34;once_per_client&#34;:
+            # Reshuffle once per client for whole experiment
+            previous_indicies_full = algorithms.findRecentRecord(client_state[&#39;H&#39;],
+                                                                 client_state[&#39;client_id&#39;],
+                                                                 &#39;iterated-minibatch-indicies-full&#39;)
+            if previous_indicies_full is None:
+                client_state[&#39;iterated-minibatch-indicies-full&#39;] = rndgen.permutation(len(train_loader.dataset))
+            else:
+                client_state[&#39;iterated-minibatch-indicies-full&#39;] = previous_indicies_full
+
+        elif experimental_options[&#39;reshuffle&#39;] == &#34;until_exhausted&#34;:
+            # Reshuffle until permutation will not be exhausted
+            previous_indicies_full = algorithms.findRecentRecord(client_state[&#39;H&#39;],
+                                                                 client_state[&#39;client_id&#39;],
+                                                                 &#39;iterated-minibatch-indicies-full&#39;)
+            if previous_indicies_full is None:
+                client_state[&#39;iterated-minibatch-indicies-full&#39;] = rndgen.permutation(len(train_loader.dataset))
+            else:
+                client_state[&#39;iterated-minibatch-indicies-full&#39;] = previous_indicies_full[(iters_to_take * 1) * tau:]
+                if len(client_state[&#39;iterated-minibatch-indicies-full&#39;]) &lt; iters_to_take * tau:
+                    client_state[&#39;iterated-minibatch-indicies-full&#39;] = rndgen.permutation(len(train_loader.dataset))
+
+    # ==================================================================================================================
+
+    logger.info(f&#34;For round #{round} the exact number of iteration derived from iters_to_take is {iters_to_take}&#34;)
+
+    # Make local optimization
+    for i in range(iters_to_take):
+        # ==============================================================================================================
+        if experimental_options[&#34;internal_sgd&#34;] == &#34;iterated-minibatch&#34;:
+            s = (i*tau) % len(train_loader.dataset)
+            e = ((i+1)*tau) % len(train_loader.dataset)
+            client_state[&#39;iterated-minibatch-indicies&#39;] = client_state[&#39;iterated-minibatch-indicies-full&#39;][s:e]
+        elif experimental_options[&#34;internal_sgd&#34;] == &#34;sgd-us&#34;:
+            client_state[&#39;iterated-minibatch-indicies&#39;] = np.array([rndgen.randint(len(train_loader.dataset))])
+        elif experimental_options[&#34;internal_sgd&#34;] == &#34;sgd-nice&#34;:
+            client_state[&#39;iterated-minibatch-indicies&#39;] = rndgen.choice(len(train_loader.dataset), tau, replace=False)
+        elif experimental_options[&#34;internal_sgd&#34;] == &#34;sgd-multi&#34;:
+            client_state[&#39;iterated-minibatch-indicies&#39;] = rndgen.choice(len(train_loader.dataset), tau, replace=True)
+        # ==============================================================================================================
+
+        # Not necessary, but for safe
+        local_optimiser.zero_grad()
+
+        # Take local gradient
+        local_iteration_number = (i, iters_to_take)
+        approximate_f_value, local_grad = algorithms.localGradientEvaluation(client_state,
+                                                                             model,
+                                                                             train_loader,
+                                                                             criterion,
+                                                                             is_rnn,
+                                                                             local_iteration_number)
+        # Setup gradient
+        mutils.set_gradient(model, local_grad)
+        # Case when optimizer should work only after processing whole data
+        if is_rnn:
+            nn.utils.clip_grad_norm_(model.parameters(), CLIP_RNN_GRAD)
+
+        if &#34;local_gradients_per_iteration&#34; in client_state:
+            client_state[&#34;local_gradients_per_iteration&#34;].append(mutils.get_gradient(model))
+
+        client_state[&#34;approximate_f_value&#34;].append(approximate_f_value)
+        local_optimiser.step()
+
+    # Make evaluation
+    if not False:
+        for i, (data, label) in enumerate(train_loader):
+            batch_size = data.shape[0]
+            start_ts = time.time()
+
+            if str(data.device) != device or str(label.device) != device or \
+               data.dtype != model.fl_dtype or label.dtype != model.fl_dtype:
+
+                data = data.to(device=device, dtype=model.fl_dtype)
+                label = label.to(device=device, dtype=model.fl_dtype)
+
+            client_state[&#34;stats&#34;][&#34;dataload_duration&#34;] += (time.time() - start_ts)
+            input, label = get_train_inputs(data, label, model, batch_size, device, is_rnn)
+            output_full, _ = forward(client_state, model, criterion, input, label, batch_size,
+                                     size_of_dataset_in_samples, metrics_meter, is_rnn)
+
+            if i % print_freq == 0:
+                log_epoch_info(logger, i, train_loader, metrics_meter,
+                               client_state[&#34;stats&#34;][&#34;dataload_duration&#34;],
+                               client_state[&#34;stats&#34;][&#34;inference_duration&#34;],
+                               client_state[&#34;stats&#34;][&#34;backprop_duration&#34;],
+                               train=True)
+
+    return metrics_meter</code></pre>
+</details>
+</dd>
+<dt id="utils.model_funcs.update_metrics"><code class="name flex">
+<span>def <span class="ident">update_metrics</span></span>(<span>metrics_meter, loss, batch_size, output, label)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def update_metrics(metrics_meter, loss, batch_size, output, label):
+    metrics_meter[&#39;loss&#39;].update(loss.item(), batch_size)
+    metrics_meter[&#39;neq_perplexity&#39;].update(neg_perplexity_from_loss(loss.item()), batch_size)
+
+    if output.shape[1] &gt;= 5:
+        acc = accuracy(output, label, (1, 5))
+        metrics_meter[&#39;top_1_acc&#39;].update(acc[0], batch_size)
+        metrics_meter[&#39;top_5_acc&#39;].update(acc[1], batch_size)
+    else:
+        acc = accuracy(output, label, (1,))
+        metrics_meter[&#39;top_1_acc&#39;].update(acc[0], batch_size)</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="utils.model_funcs.accuracy" href="#utils.model_funcs.accuracy">accuracy</a></code></li>
+<li><code><a title="utils.model_funcs.compute_loss" href="#utils.model_funcs.compute_loss">compute_loss</a></code></li>
+<li><code><a title="utils.model_funcs.evaluate_model" href="#utils.model_funcs.evaluate_model">evaluate_model</a></code></li>
+<li><code><a title="utils.model_funcs.forward" href="#utils.model_funcs.forward">forward</a></code></li>
+<li><code><a title="utils.model_funcs.forward_backward" href="#utils.model_funcs.forward_backward">forward_backward</a></code></li>
+<li><code><a title="utils.model_funcs.get_global_regulizer" href="#utils.model_funcs.get_global_regulizer">get_global_regulizer</a></code></li>
+<li><code><a title="utils.model_funcs.get_lr_scheduler" href="#utils.model_funcs.get_lr_scheduler">get_lr_scheduler</a></code></li>
+<li><code><a title="utils.model_funcs.get_model_weights" href="#utils.model_funcs.get_model_weights">get_model_weights</a></code></li>
+<li><code><a title="utils.model_funcs.get_optimiser" href="#utils.model_funcs.get_optimiser">get_optimiser</a></code></li>
+<li><code><a title="utils.model_funcs.get_train_inputs" href="#utils.model_funcs.get_train_inputs">get_train_inputs</a></code></li>
+<li><code><a title="utils.model_funcs.get_training_elements" href="#utils.model_funcs.get_training_elements">get_training_elements</a></code></li>
+<li><code><a title="utils.model_funcs.initialise_model" href="#utils.model_funcs.initialise_model">initialise_model</a></code></li>
+<li><code><a title="utils.model_funcs.l2NormSquareRegulizer" href="#utils.model_funcs.l2NormSquareRegulizer">l2NormSquareRegulizer</a></code></li>
+<li><code><a title="utils.model_funcs.local_training" href="#utils.model_funcs.local_training">local_training</a></code></li>
+<li><code><a title="utils.model_funcs.model_to_device" href="#utils.model_funcs.model_to_device">model_to_device</a></code></li>
+<li><code><a title="utils.model_funcs.non_local_training" href="#utils.model_funcs.non_local_training">non_local_training</a></code></li>
+<li><code><a title="utils.model_funcs.noneRegulizer" href="#utils.model_funcs.noneRegulizer">noneRegulizer</a></code></li>
+<li><code><a title="utils.model_funcs.robustLinearRegulizers" href="#utils.model_funcs.robustLinearRegulizers">robustLinearRegulizers</a></code></li>
+<li><code><a title="utils.model_funcs.run_one_communication_round" href="#utils.model_funcs.run_one_communication_round">run_one_communication_round</a></code></li>
+<li><code><a title="utils.model_funcs.set_model_weights" href="#utils.model_funcs.set_model_weights">set_model_weights</a></code></li>
+<li><code><a title="utils.model_funcs.train_model" href="#utils.model_funcs.train_model">train_model</a></code></li>
+<li><code><a title="utils.model_funcs.update_metrics" href="#utils.model_funcs.update_metrics">update_metrics</a></code></li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+FL_PyTorch. The document generated 09-July-2022 23:03:31.
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>

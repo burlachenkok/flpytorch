@@ -1,0 +1,2230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ConfigWidget</class>
+ <widget class="QWidget" name="ConfigWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1055</width>
+    <height>951</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Experiment Config</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_3">
+   <property name="sizeConstraint">
+    <enum>QLayout::SetDefaultConstraint</enum>
+   </property>
+   <property name="leftMargin">
+    <number>4</number>
+   </property>
+   <property name="topMargin">
+    <number>4</number>
+   </property>
+   <property name="rightMargin">
+    <number>4</number>
+   </property>
+   <property name="bottomMargin">
+    <number>4</number>
+   </property>
+   <item>
+    <widget class="QWidget" name="widget" native="true">
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <item>
+       <layout class="QVBoxLayout" name="loVertical">
+        <property name="spacing">
+         <number>6</number>
+        </property>
+        <item>
+         <widget class="QToolBox" name="tbx">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>250</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true"/>
+          </property>
+          <widget class="QWidget" name="tabExeprimentConfig">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>-105</y>
+             <width>1028</width>
+             <height>883</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <attribute name="label">
+            <string>Experiment Configuration</string>
+           </attribute>
+           <layout class="QVBoxLayout" name="verticalLayout_9">
+            <item>
+             <widget class="QFrame" name="frameExperimentConfig">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="frameShape">
+               <enum>QFrame::StyledPanel</enum>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Raised</enum>
+              </property>
+              <layout class="QFormLayout" name="formLayout">
+               <property name="labelAlignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+               <property name="verticalSpacing">
+                <number>4</number>
+               </property>
+               <property name="leftMargin">
+                <number>4</number>
+               </property>
+               <property name="topMargin">
+                <number>4</number>
+               </property>
+               <property name="rightMargin">
+                <number>4</number>
+               </property>
+               <property name="bottomMargin">
+                <number>4</number>
+               </property>
+               <item row="4" column="0">
+                <widget class="QLabel" name="lblOptAlgo">
+                 <property name="styleSheet">
+                  <string notr="true"/>
+                 </property>
+                 <property name="text">
+                  <string>Optimization Algorithm</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="1">
+                <widget class="QComboBox" name="cbxOptAlgo">
+                 <property name="currentIndex">
+                  <number>-1</number>
+                 </property>
+                </widget>
+               </item>
+               <item row="5" column="0">
+                <widget class="QLabel" name="lblComRounds">
+                 <property name="toolTip">
+                  <string>Number of rounds of federated learning</string>
+                 </property>
+                 <property name="text">
+                  <string>Communication Rounds</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="5" column="1">
+                <widget class="QLineEdit" name="edtComRounds">
+                 <property name="text">
+                  <string>3000</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="6" column="0">
+                <widget class="QLabel" name="lblClientSamlingType">
+                 <property name="text">
+                  <string>Client Sampling Type</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="6" column="1">
+                <widget class="QComboBox" name="cbxClientSamlingType">
+                 <item>
+                  <property name="text">
+                   <string>Uniform sampling</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Poisson sampling</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Poisson sampling with no empty sample</string>
+                  </property>
+                 </item>
+                </widget>
+               </item>
+               <item row="7" column="0">
+                <widget class="QLabel" name="lblInitializeShiftPolicy">
+                 <property name="text">
+                  <string>Initialize policy for initial shifts</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="7" column="1">
+                <widget class="QComboBox" name="cbxInitializeShiftsPolicy">
+                 <property name="currentIndex">
+                  <number>0</number>
+                 </property>
+                 <item>
+                  <property name="text">
+                   <string>ZERO</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>FULL_GRADIENT_AT_START</string>
+                  </property>
+                 </item>
+                </widget>
+               </item>
+               <item row="8" column="0">
+                <widget class="QLabel" name="lblNumClientsPerRound">
+                 <property name="toolTip">
+                  <string>Number of available clients used for one communication round</string>
+                 </property>
+                 <property name="text">
+                  <string>Number of clients per round</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="8" column="1">
+                <widget class="QLineEdit" name="edtNumClientsPerRound">
+                 <property name="text">
+                  <string>10</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="9" column="0">
+                <widget class="QLabel" name="lblPoissonSampling">
+                 <property name="text">
+                  <string>Probability to include client in round</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="9" column="1">
+                <widget class="QLineEdit" name="edtPoissonSampling">
+                 <property name="enabled">
+                  <bool>true</bool>
+                 </property>
+                 <property name="text">
+                  <string>1.0</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="10" column="0">
+                <widget class="QLabel" name="lblGlbInitLearningRate">
+                 <property name="text">
+                  <string>Global initial learning rate</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="10" column="1">
+                <widget class="QLineEdit" name="edtGlbInitLearningRate">
+                 <property name="text">
+                  <string>0.1</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="12" column="0">
+                <widget class="QLabel" name="lblGlobalOptimizer">
+                 <property name="text">
+                  <string>Global optimizer</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="12" column="1">
+                <widget class="QComboBox" name="cbxGlobalOptimizer">
+                 <item>
+                  <property name="text">
+                   <string>SGD</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>ADAM</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>RMSPROP</string>
+                  </property>
+                 </item>
+                </widget>
+               </item>
+               <item row="15" column="0">
+                <widget class="QLabel" name="lblGlobalWeightDecay">
+                 <property name="toolTip">
+                  <string>Global weight decay</string>
+                 </property>
+                 <property name="text">
+                  <string>Global weight decay</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="15" column="1">
+                <widget class="QLineEdit" name="edtGlobalWeightDecay">
+                 <property name="text">
+                  <string>0.0</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="16" column="0">
+                <widget class="QLabel" name="lblLocalInitialLr">
+                 <property name="text">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Local initial local learning rate&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="16" column="1">
+                <widget class="QLineEdit" name="edtLocalInitialLr">
+                 <property name="text">
+                  <string>0.01</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="17" column="0">
+                <widget class="QLabel" name="lblLocalOpt">
+                 <property name="text">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Local optimizer to use&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="17" column="1">
+                <widget class="QComboBox" name="cbxLocalOpt">
+                 <item>
+                  <property name="text">
+                   <string>SGD</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>ADAM</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>RMSPROP</string>
+                  </property>
+                 </item>
+                </widget>
+               </item>
+               <item row="18" column="0">
+                <widget class="QLabel" name="lblClientCompressor">
+                 <property name="text">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Client compressor&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="18" column="1">
+                <widget class="QComboBox" name="cbxClientCompressor">
+                 <property name="currentIndex">
+                  <number>0</number>
+                 </property>
+                 <item>
+                  <property name="text">
+                   <string>Identity</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Rand-K</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Bernulli</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Natural</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>QSGD</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Natural Dithering</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Standart dithering</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Top-K (biased)</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Rank-K (biased)</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>TernGrad</string>
+                  </property>
+                 </item>
+                </widget>
+               </item>
+               <item row="19" column="0">
+                <widget class="QLabel" name="lblClientCompressorFormat">
+                 <property name="text">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Compressor config format&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="19" column="1">
+                <widget class="QLineEdit" name="edtClientCompressorFormat">
+                 <property name="enabled">
+                  <bool>true</bool>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">background-color: rgb(233, 185, 110);</string>
+                 </property>
+                 <property name="readOnly">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="20" column="0">
+                <widget class="QLabel" name="lblClientCompressorConfig">
+                 <property name="text">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Clients compressor configuration&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="20" column="1">
+                <widget class="QLineEdit" name="edtClientCompressorConfig">
+                 <property name="text">
+                  <string>5%</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="21" column="0">
+                <widget class="QLabel" name="lblLocalIterations">
+                 <property name="toolTip">
+                  <string>Static number of local steps to run training</string>
+                 </property>
+                 <property name="text">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Number of Local Iterations&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="21" column="1">
+                <widget class="QLineEdit" name="edtLocalIterations">
+                 <property name="toolTip">
+                  <string>Static number of local steps to run training</string>
+                 </property>
+                 <property name="text">
+                  <string>1</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="22" column="0">
+                <widget class="QLabel" name="lblLocalIterationsType">
+                 <property name="font">
+                  <font>
+                   <weight>75</weight>
+                   <bold>true</bold>
+                  </font>
+                 </property>
+                 <property name="text">
+                  <string>Local iterations type</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="22" column="1">
+                <widget class="QComboBox" name="cbxLocalIterationsType">
+                 <property name="currentIndex">
+                  <number>0</number>
+                 </property>
+                 <item>
+                  <property name="text">
+                   <string>epochs</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>local-steps</string>
+                  </property>
+                 </item>
+                </widget>
+               </item>
+               <item row="23" column="0">
+                <widget class="QLabel" name="lblGradCalculation">
+                 <property name="font">
+                  <font>
+                   <weight>75</weight>
+                   <bold>true</bold>
+                  </font>
+                 </property>
+                 <property name="text">
+                  <string>Try SGD inside local optimization</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="23" column="1">
+                <widget class="QComboBox" name="cbxGradCalculation">
+                 <property name="currentIndex">
+                  <number>0</number>
+                 </property>
+                 <item>
+                  <property name="text">
+                   <string>full-gradient</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>sgd-us, tau:1 local.samples</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>sgd-nice, tau:2% local.samples (no repeat)</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>sgd-nice, tau:10% local.samples</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>sgd-nice, tau:20% local.samples</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>sgd-nice, tau:30% local.samples</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>sgd-nice, tau:40% local.samples</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>sgd-nice, tau:50% local.samples</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>sgd-nice, tau:60% local.samples</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>sgd-nice, tau:70% local.samples</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>sgd-nice, tau:80% local.samples</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>sgd-nice, tau:90% local.samples</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>sgd-nice, tau:100% local.samples</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>sgd-multi, tau:2% local.samples (with repeat)</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>sgd-multi, tau:10% local.samples</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>sgd-multi, tau:20% local.samples</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>sgd-multi, tau:30% local.samples</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>sgd-multi, tau:40% local.samples</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>sgd-multi, tau:50% local.samples</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>sgd-multi, tau:60% local.samples</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>sgd-multi, tau:70% local.samples</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>sgd-multi, tau:80% local.samples</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>sgd-multi, tau:90% local.samples</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>sgd-multi, tau:100% local.samples</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>iterated-minibatch, reshuffle:once_per_client, tau:1% local.samples</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>iterated-minibatch, reshuffle:once_per_client, tau:5% local.samples</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>iterated-minibatch, reshuffle:once_per_client, tau:10% local.samples</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>iterated-minibatch, reshuffle:once_per_client, tau:25% local.samples</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>iterated-minibatch, reshuffle:once_per_client, tau:50% local.samples</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>iterated-minibatch, reshuffle:each_round, tau:1% local.samples</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>iterated-minibatch, reshuffle:each_round, tau:5% local.samples</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>iterated-minibatch, reshuffle:each_round, tau:10% local.samples</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>iterated-minibatch, reshuffle:each_round, tau:25% local.samples</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>iterated-minibatch, reshuffle:each_round, tau:50% local.samples</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>iterated-minibatch, reshuffle:until_exhausted, tau:1% local.samples</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>iterated-minibatch, reshuffle:until_exhausted, tau:5% local.samples</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>iterated-minibatch, reshuffle:until_exhausted, tau:10% local.samples</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>iterated-minibatch, reshuffle:until_exhausted, tau:25% local.samples</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>iterated-minibatch, reshuffle:until_exhausted, tau:50% local.samples</string>
+                  </property>
+                 </item>
+                </widget>
+               </item>
+               <item row="24" column="0">
+                <widget class="QLabel" name="lblExperimentalExtraOpts">
+                 <property name="font">
+                  <font>
+                   <weight>75</weight>
+                   <bold>true</bold>
+                  </font>
+                 </property>
+                 <property name="toolTip">
+                  <string>name:value,name:value,...</string>
+                 </property>
+                 <property name="text">
+                  <string>Try extra experimental options</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="24" column="1">
+                <widget class="QLineEdit" name="edtExperimentalExtraOpts">
+                 <property name="text">
+                  <string/>
+                 </property>
+                </widget>
+               </item>
+               <item row="25" column="0">
+                <widget class="QLabel" name="lblLocalWeightDecay">
+                 <property name="text">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Local weight decay&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="25" column="1">
+                <widget class="QLineEdit" name="edtLocalWeightDecay">
+                 <property name="text">
+                  <string>0.0</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="27" column="0">
+                <widget class="QLabel" name="lblDataset">
+                 <property name="text">
+                  <string>Dataset</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="27" column="1">
+                <widget class="QComboBox" name="cbxDataset">
+                 <property name="currentIndex">
+                  <number>4</number>
+                 </property>
+                 <item>
+                  <property name="text">
+                   <string>CIFAR10</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>CIFAR100</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>EMNIST</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>FULL_SHAKESPEARE</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>CIFAR10_FL</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>CIFAR10_FL_BY_CLASS</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>CIFAR100_fl</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>SHAKESPEARE</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>FEMNIST</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>GENERATED_FOR_QUADRATIC_MINIMIZATION</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>W9A</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>W8A</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>W7A</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>W6A</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>W5A</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>W4A</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>W3A</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>W2A</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>W1A</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>A1A</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>A2A</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>A3A</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>A4A</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>A5A</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>A6A</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>A7A</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>A8A</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>A9A</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Mushrooms</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Phishing</string>
+                  </property>
+                 </item>
+                </widget>
+               </item>
+               <item row="28" column="0">
+                <widget class="QLabel" name="label_2">
+                 <property name="text">
+                  <string>Sort dataset(s) by class before split</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="28" column="1">
+                <widget class="QCheckBox" name="cbxSortDatasetByClassBeforeSplit">
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="checked">
+                  <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="29" column="0">
+                <widget class="QLabel" name="lblMu">
+                 <property name="text">
+                  <string>Strong Convex Parameter mu</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="29" column="1">
+                <widget class="QLineEdit" name="edtMu">
+                 <property name="text">
+                  <string>1.0</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="31" column="0">
+                <widget class="QLabel" name="lblL">
+                 <property name="text">
+                  <string>Smooth coefficient L</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="31" column="1">
+                <widget class="QLineEdit" name="edtL">
+                 <property name="text">
+                  <string>2.0</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="32" column="0">
+                <widget class="QLabel" name="lblSamplesPerClient">
+                 <property name="text">
+                  <string>Number of samples per client</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="32" column="1">
+                <widget class="QLineEdit" name="edtSamplesPerClient">
+                 <property name="text">
+                  <string>12</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="33" column="0">
+                <widget class="QLabel" name="lblVarsInOpt">
+                 <property name="text">
+                  <string>Variables in optimization problem</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="33" column="1">
+                <widget class="QLineEdit" name="edtVarsInOpt">
+                 <property name="text">
+                  <string>10</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="34" column="0">
+                <widget class="QLabel" name="lblHomogeneousDS">
+                 <property name="text">
+                  <string>Homogeneous datasets in clients</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="34" column="1">
+                <widget class="QCheckBox" name="cbxHomogeneousDS">
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="checked">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="35" column="0">
+                <widget class="QLabel" name="lblNumberOfClients">
+                 <property name="text">
+                  <string>Total number of clients for dataset</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="35" column="1">
+                <widget class="QLineEdit" name="edtNumberOfClients">
+                 <property name="styleSheet">
+                  <string notr="true">background-color: rgb(233, 185, 110);</string>
+                 </property>
+                 <property name="readOnly">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="37" column="0">
+                <widget class="QLabel" name="lblGlobalModel">
+                 <property name="text">
+                  <string>Global model</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="37" column="1">
+                <widget class="QComboBox" name="cbxGlobalModel">
+                 <property name="currentIndex">
+                  <number>0</number>
+                 </property>
+                 <item>
+                  <property name="text">
+                   <string>tv_resnet18</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>resnet18</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>resnet34</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>resnet50</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>resnet101</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>resnet152</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>vgg11</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>vgg13</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>vgg16</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>vgg19</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Wideresnet282</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Wideresnet284</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Wideresnet288</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>linear</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>logistic</string>
+                  </property>
+                 </item>
+                </widget>
+               </item>
+               <item row="38" column="0">
+                <widget class="QLabel" name="lblLossFunctionForGlobalModel">
+                 <property name="text">
+                  <string>Loss function for a global model</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="38" column="1">
+                <widget class="QComboBox" name="cbxLossFunctionForGlobalModel">
+                 <property name="currentIndex">
+                  <number>0</number>
+                 </property>
+                 <item>
+                  <property name="text">
+                   <string>CROSSENTROPY</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>MSE</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>LOGISTIC</string>
+                  </property>
+                 </item>
+                </widget>
+               </item>
+               <item row="40" column="0">
+                <widget class="QLabel" name="lblExtraRegulizer">
+                 <property name="font">
+                  <font>
+                   <weight>75</weight>
+                   <bold>true</bold>
+                  </font>
+                 </property>
+                 <property name="text">
+                  <string>Global Extra Regulizer</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="40" column="1">
+                <layout class="QHBoxLayout" name="horizontalLayout_5">
+                 <item>
+                  <widget class="QComboBox" name="cbxGlobalLossRegulizer">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>300</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <property name="currentIndex">
+                    <number>0</number>
+                   </property>
+                   <item>
+                    <property name="text">
+                     <string>none</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>noncvx_robust_linear_regression</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>cvx_l2norm_square_div_2</string>
+                    </property>
+                   </item>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="lblGlobalRegulizerCoefficent">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <weight>75</weight>
+                     <bold>true</bold>
+                    </font>
+                   </property>
+                   <property name="text">
+                    <string>Multiplicative regulizer coefficient aRegulGlobal:</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="edtGlobalRegulizerCoefficent">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                     <horstretch>90</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="text">
+                    <string>0.0</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item row="43" column="0">
+                <widget class="QLabel" name="lblValidationOptMetric">
+                 <property name="toolTip">
+                  <string>Define which metric to optimize</string>
+                 </property>
+                 <property name="text">
+                  <string>Validation metric to optimize</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="43" column="1">
+                <widget class="QComboBox" name="cbxValidationOptMetric">
+                 <item>
+                  <property name="text">
+                   <string>top_1_acc</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>top_5_acc</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>neg_perplexity</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>loss</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>none</string>
+                  </property>
+                 </item>
+                </widget>
+               </item>
+               <item row="44" column="0">
+                <widget class="QLabel" name="lblValidationAssementFreq">
+                 <property name="text">
+                  <string>Model validation asses frequency</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="44" column="1">
+                <widget class="QLineEdit" name="edtValidationAssementFreq">
+                 <property name="text">
+                  <string>100</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="45" column="0">
+                <widget class="QLabel" name="lblTrackQuantities">
+                 <property name="text">
+                  <string>Extra assess tracking quantities</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="45" column="1">
+                <widget class="QWidget" name="widget_2" native="true">
+                 <layout class="QHBoxLayout" name="horizontalLayout">
+                  <item>
+                   <widget class="QPushButton" name="btnTrackAll">
+                    <property name="text">
+                     <string>All</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QCheckBox" name="cbxTrackObjectiveFunctionValueTrain">
+                    <property name="text">
+                     <string>Objective value</string>
+                    </property>
+                    <property name="checked">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QCheckBox" name="cbxTrackNormFullGradientTrain">
+                    <property name="text">
+                     <string>Norm of full gradient on train</string>
+                    </property>
+                    <property name="checked">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QCheckBox" name="cbxTrackObjectiveFunctionValueVal">
+                    <property name="text">
+                     <string>Objective value on val.</string>
+                    </property>
+                    <property name="checked">
+                     <bool>false</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QCheckBox" name="cbxTrackNormFullGradientVal">
+                    <property name="text">
+                     <string>Norm of full gradient on val.</string>
+                    </property>
+                    <property name="checked">
+                     <bool>false</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <spacer name="horizontalSpacer">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>40</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <spacer name="verticalSpacer">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="tabSystemAspects">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>1045</width>
+             <height>778</height>
+            </rect>
+           </property>
+           <attribute name="label">
+            <string>Systems aspects</string>
+           </attribute>
+           <layout class="QVBoxLayout" name="verticalLayout_2">
+            <property name="spacing">
+             <number>6</number>
+            </property>
+            <item>
+             <layout class="QVBoxLayout" name="loSystem">
+              <item>
+               <widget class="QFrame" name="frameSystemConfig">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="frameShape">
+                 <enum>QFrame::StyledPanel</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Raised</enum>
+                </property>
+                <layout class="QFormLayout" name="formLayout_4">
+                 <property name="labelAlignment">
+                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                 </property>
+                 <property name="verticalSpacing">
+                  <number>4</number>
+                 </property>
+                 <property name="leftMargin">
+                  <number>4</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>4</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>4</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>4</number>
+                 </property>
+                 <item row="3" column="0">
+                  <widget class="QLabel" name="lblJobId">
+                   <property name="text">
+                    <string>Identifier for the current job</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="3" column="1">
+                  <widget class="QLineEdit" name="edtJobId">
+                   <property name="toolTip">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;All this constants can be used in parameters for purpose of substitution:&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;{now}&lt;/span&gt; - number of second since unix epoch&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;{compressor}&lt;/span&gt; - type of used compressor&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;{algorithm}&lt;/span&gt; - optimization algorithm&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
+                   <property name="text">
+                    <string>{simcounter}_job_id_{now}</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="4" column="0">
+                  <widget class="QLabel" name="lblNumWorkersForTrainDataLoad">
+                   <property name="toolTip">
+                    <string>Number of rounds of federated learning</string>
+                   </property>
+                   <property name="text">
+                    <string>Num workers for train set loading</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="4" column="1">
+                  <widget class="QLineEdit" name="edtNumWorkersForTrainDataLoad">
+                   <property name="text">
+                    <string>0</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="5" column="0">
+                  <widget class="QLabel" name="lblNumWorkersForValDataLoad">
+                   <property name="toolTip">
+                    <string>Number of available clients used for one communication round</string>
+                   </property>
+                   <property name="text">
+                    <string>Num workers for validation set loading</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="5" column="1">
+                  <widget class="QLineEdit" name="edtNumWorkersForValDataLoad">
+                   <property name="text">
+                    <string>0</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="6" column="0">
+                  <widget class="QLabel" name="lblLog">
+                   <property name="text">
+                    <string>Log GPU usage</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="6" column="1">
+                  <widget class="QCheckBox" name="cbxLogGPUusage">
+                   <property name="text">
+                    <string/>
+                   </property>
+                   <property name="checked">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="8" column="0">
+                  <widget class="QLabel" name="lblRunDeterministically">
+                   <property name="text">
+                    <string>Run deterministically for reproducibility</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="8" column="1">
+                  <widget class="QCheckBox" name="cbxRunDeterministically">
+                   <property name="text">
+                    <string/>
+                   </property>
+                   <property name="checked">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="10" column="0">
+                  <widget class="QLabel" name="label">
+                   <property name="text">
+                    <string>Allow use NVIDIA Ampere Tensor Cores</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="10" column="1">
+                  <widget class="QCheckBox" name="cbxAllowUseNvTensorCores">
+                   <property name="text">
+                    <string/>
+                   </property>
+                   <property name="checked">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="13" column="0">
+                  <widget class="QLabel" name="lblManualRandomInitSeed">
+                   <property name="toolTip">
+                    <string>Global weight decay</string>
+                   </property>
+                   <property name="text">
+                    <string>Manual random (init) seed to use</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="13" column="1">
+                  <layout class="QHBoxLayout" name="horizontalLayout_3">
+                   <item>
+                    <widget class="QPushButton" name="btnGenerateInitSeed">
+                     <property name="text">
+                      <string> Generate Seed</string>
+                     </property>
+                     <property name="icon">
+                      <iconset resource="../resources/resources.qrc">
+                       <normaloff>:/root/random.png</normaloff>:/root/random.png</iconset>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QCheckBox" name="cbxGenerateInitSeedAuto">
+                     <property name="text">
+                      <string>Automatically generate on experiment launch</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLineEdit" name="edtRandomInitSeed">
+                     <property name="text">
+                      <string>123</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                 <item row="15" column="0">
+                  <widget class="QLabel" name="lblManualRandomRunSeed">
+                   <property name="text">
+                    <string>Manual random (runtime) seed to use</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="15" column="1">
+                  <layout class="QHBoxLayout" name="horizontalLayout_4">
+                   <item>
+                    <widget class="QPushButton" name="btnGenerateRunSeed">
+                     <property name="text">
+                      <string> Generate Seed</string>
+                     </property>
+                     <property name="icon">
+                      <iconset resource="../resources/resources.qrc">
+                       <normaloff>:/root/random.png</normaloff>:/root/random.png</iconset>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QCheckBox" name="cbxGenerateRunSeedAuto">
+                     <property name="text">
+                      <string>Automatically generate on experiment launch</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLineEdit" name="edtRandomRunSeed">
+                     <property name="text">
+                      <string>456</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                 <item row="16" column="0">
+                  <widget class="QLabel" name="lblGroupName">
+                   <property name="text">
+                    <string>Group name (for aggregation)</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="16" column="1">
+                  <widget class="QLineEdit" name="edtGroupName"/>
+                 </item>
+                 <item row="18" column="0">
+                  <widget class="QLabel" name="lblCommentForExperiment">
+                   <property name="text">
+                    <string>Comment for experiment</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="18" column="1">
+                  <widget class="QLineEdit" name="edtCommentForExperiment"/>
+                 </item>
+                 <item row="19" column="0">
+                  <widget class="QLabel" name="lblUsedComputeDevice">
+                   <property name="text">
+                    <string>Compute device</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="19" column="1">
+                  <widget class="QComboBox" name="cbxComputeDevice"/>
+                 </item>
+                 <item row="21" column="1">
+                  <widget class="QWidget" name="loComputeDevicesWidget" native="true">
+                   <layout class="QVBoxLayout" name="loComputeDevices"/>
+                  </widget>
+                 </item>
+                 <item row="22" column="1">
+                  <layout class="QHBoxLayout" name="loSelectAllGpus">
+                   <item>
+                    <widget class="QPushButton" name="btnSelectAllGpus">
+                     <property name="text">
+                      <string>Select all GPU devices</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <spacer name="horizontalSpacer_2">
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>40</width>
+                       <height>20</height>
+                      </size>
+                     </property>
+                    </spacer>
+                   </item>
+                  </layout>
+                 </item>
+                 <item row="23" column="0">
+                  <widget class="QLabel" name="lblLoggingLevel">
+                   <property name="text">
+                    <string>Logging level</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="23" column="1">
+                  <widget class="QComboBox" name="cbxLoggingLevels">
+                   <item>
+                    <property name="text">
+                     <string>DEBUG</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>INFO</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>WARN</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>ERROR</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>CRITICAL</string>
+                    </property>
+                   </item>
+                  </widget>
+                 </item>
+                 <item row="25" column="0">
+                  <widget class="QLabel" name="lblLoggingFilter">
+                   <property name="text">
+                    <string>Logging regular expression filter</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="25" column="1">
+                  <widget class="QLineEdit" name="edtLoggingFilter">
+                   <property name="text">
+                    <string>.*</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="26" column="0">
+                  <widget class="QLabel" name="lblLoggingFile">
+                   <property name="text">
+                    <string>Logging file</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="26" column="1">
+                  <widget class="QLineEdit" name="edtLogFile">
+                   <property name="text">
+                    <string>../logs/{simcounter}_log_{now}.txt</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="27" column="0">
+                  <widget class="QLabel" name="lblDataPath">
+                   <property name="toolTip">
+                    <string>Base root directory for the dataset</string>
+                   </property>
+                   <property name="text">
+                    <string>Data path</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="27" column="1">
+                  <widget class="QLineEdit" name="edtDataPath">
+                   <property name="toolTip">
+                    <string>Base root directory for the dataset</string>
+                   </property>
+                   <property name="text">
+                    <string>../data/</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="28" column="0">
+                  <widget class="QLabel" name="lblCheckpointDir">
+                   <property name="toolTip">
+                    <string>Directory to persist run meta data_preprocess, e.g. best/last models</string>
+                   </property>
+                   <property name="text">
+                    <string>Checkpoint Directory</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="28" column="1">
+                  <widget class="QLineEdit" name="edtCheckpointDir">
+                   <property name="text">
+                    <string>../check_points</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="29" column="0">
+                  <widget class="QLabel" name="lblEvalThreadPool">
+                   <property name="toolTip">
+                    <string>Thread pool size for perform evalutation checkpoint asyncronously</string>
+                   </property>
+                   <property name="text">
+                    <string>Evaluation thread pool size</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="29" column="1">
+                  <widget class="QLineEdit" name="edtEvalThreadPool">
+                   <property name="text">
+                    <string>0</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="30" column="0">
+                  <widget class="QLabel" name="lblSerializingThreadPool">
+                   <property name="toolTip">
+                    <string>Thread pool size for perform serialization into filesystem asyncronously</string>
+                   </property>
+                   <property name="text">
+                    <string>Serializing thread pool size</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="30" column="1">
+                  <widget class="QLineEdit" name="edtSerializingThreadPool">
+                   <property name="text">
+                    <string>0</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="31" column="0">
+                  <widget class="QLabel" name="lblLocalTrainingThreadPool">
+                   <property name="toolTip">
+                    <string>Perform local training within a pool of threads. Each one execute sequence of optimization for assigned clients in a serialized way</string>
+                   </property>
+                   <property name="text">
+                    <string>Local training thread pool size</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="31" column="1">
+                  <widget class="QLineEdit" name="edtLocalTraininThreadPool">
+                   <property name="text">
+                    <string>0</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="34" column="0">
+                  <widget class="QLabel" name="lblDataLoadBatchSize">
+                   <property name="toolTip">
+                    <string>Static batch size for data loading</string>
+                   </property>
+                   <property name="text">
+                    <string>Data loading batch size</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="34" column="1">
+                  <widget class="QLineEdit" name="edtDataLoadBatchSize">
+                   <property name="text">
+                    <string>500</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="35" column="0">
+                  <widget class="QLabel" name="lblStoreClientStateInCPU">
+                   <property name="text">
+                    <string>Store client state in CPU DRAM Memory</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="35" column="1">
+                  <widget class="QCheckBox" name="cbxStoreClientStateInCPU">
+                   <property name="text">
+                    <string/>
+                   </property>
+                   <property name="checked">
+                    <bool>false</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="36" column="0">
+                  <widget class="QLabel" name="lblEmptyGPUTorchCache">
+                   <property name="text">
+                    <string>Empty PyTorch cache at the end of round</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="36" column="1">
+                  <widget class="QCheckBox" name="cbxEmptyGPUTorchCache">
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="37" column="0">
+                  <widget class="QLabel" name="lblDoNotSaveEvalCheckpoints">
+                   <property name="text">
+                    <string>Do not save eval checkpoints</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="37" column="1">
+                  <widget class="QCheckBox" name="cbxDoNotSaveEvalCheckpoints">
+                   <property name="text">
+                    <string/>
+                   </property>
+                   <property name="checked">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="43" column="0">
+                  <widget class="QLabel" name="lblWandbKey">
+                   <property name="text">
+                    <string>Wandb API Key</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="43" column="1">
+                  <widget class="QLineEdit" name="edtWandbKey">
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="44" column="0">
+                  <widget class="QLabel" name="lblWandbProjectName">
+                   <property name="text">
+                    <string>Wandb Project Name</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="44" column="1">
+                  <widget class="QLineEdit" name="edtWandbProjectName">
+                   <property name="text">
+                    <string>fl_pytorch_simulation</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="20" column="1">
+                  <widget class="QComboBox" name="cbxParamsType">
+                   <item>
+                    <property name="text">
+                     <string>fp64</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>fp32</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>fp16</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>bfp16</string>
+                    </property>
+                   </item>
+                  </widget>
+                 </item>
+                 <item row="20" column="0">
+                  <widget class="QLabel" name="label_3">
+                   <property name="text">
+                    <string>Trainable parameters type</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <spacer name="verticalSpacer_4">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="tabNN">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>1045</width>
+             <height>778</height>
+            </rect>
+           </property>
+           <attribute name="label">
+            <string>Specific Settings for Neural Nets</string>
+           </attribute>
+           <layout class="QVBoxLayout" name="verticalLayoutz">
+            <item>
+             <layout class="QFormLayout" name="formLayout_2z">
+              <item row="0" column="0">
+               <widget class="QLabel" name="lblShowGpuInfoz">
+                <property name="text">
+                 <string>Use pretrained model</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="1">
+               <widget class="QCheckBox" name="cbxPretrained">
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="checked">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="0">
+               <widget class="QLabel" name="lblShowNumberOfWorksz">
+                <property name="text">
+                 <string>Train only last linear layer</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="1">
+               <widget class="QCheckBox" name="cbxTrainLastLayerOnly">
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="checked">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="0">
+               <widget class="QLabel" name="label_4">
+                <property name="text">
+                 <string>Turn off Batch Normalization and Dropout</string>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="1">
+               <widget class="QCheckBox" name="cbxTurnOffBatchNormAndDropOut">
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="checked">
+                 <bool>false</bool>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="tabGuiSettings">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>1045</width>
+             <height>778</height>
+            </rect>
+           </property>
+           <attribute name="label">
+            <string>Graphical User Interface Settings</string>
+           </attribute>
+           <layout class="QVBoxLayout" name="verticalLayout">
+            <item>
+             <layout class="QFormLayout" name="formLayout_2">
+              <item row="0" column="0">
+               <widget class="QLabel" name="lblShowCpuInfo">
+                <property name="text">
+                 <string>Show CPU info in the top bar</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="1">
+               <widget class="QCheckBox" name="cbxShowCpuInfo">
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="checked">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="0">
+               <widget class="QLabel" name="lblShowGpuInfo">
+                <property name="text">
+                 <string>Show GPU info in the top bar</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="1">
+               <widget class="QCheckBox" name="cbxShowGpuInfo">
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="checked">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="0">
+               <widget class="QLabel" name="lblShowNumberOfWorks">
+                <property name="text">
+                 <string>Show number of works in progress and in the queue in the top bar</string>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="1">
+               <widget class="QCheckBox" name="cbxShowNumberOfWorks">
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="checked">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="0">
+               <widget class="QLabel" name="lblParallelSimulations">
+                <property name="text">
+                 <string>Maximum number of parallel simulations</string>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="1">
+               <widget class="QSpinBox" name="spbParallelSimulations">
+                <property name="minimum">
+                 <number>1</number>
+                </property>
+                <property name="maximum">
+                 <number>200</number>
+                </property>
+                <property name="value">
+                 <number>30</number>
+                </property>
+               </widget>
+              </item>
+              <item row="4" column="0">
+               <widget class="QLabel" name="lblLoadNameMangling">
+                <property name="text">
+                 <string>During loading experimental results files perform name mangling</string>
+                </property>
+               </widget>
+              </item>
+              <item row="4" column="1">
+               <widget class="QCheckBox" name="cbxLoadNameMangling">
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="checked">
+                 <bool>false</bool>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+        <item>
+         <widget class="Line" name="line">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnLaunchSimulation">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>40</height>
+           </size>
+          </property>
+          <property name="toolTip">
+           <string>Press F5 for laucnh simulation</string>
+          </property>
+          <property name="text">
+           <string>Launch simulation</string>
+          </property>
+          <property name="icon">
+           <iconset resource="../resources/resources.qrc">
+            <normaloff>:/root/edit.png</normaloff>:/root/edit.png</iconset>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <tabstops>
+  <tabstop>cbxOptAlgo</tabstop>
+  <tabstop>edtComRounds</tabstop>
+  <tabstop>edtNumClientsPerRound</tabstop>
+  <tabstop>edtGlbInitLearningRate</tabstop>
+  <tabstop>cbxGlobalOptimizer</tabstop>
+  <tabstop>edtGlobalWeightDecay</tabstop>
+  <tabstop>edtLocalInitialLr</tabstop>
+  <tabstop>cbxLocalOpt</tabstop>
+  <tabstop>cbxClientCompressor</tabstop>
+  <tabstop>edtClientCompressorFormat</tabstop>
+  <tabstop>edtClientCompressorConfig</tabstop>
+  <tabstop>edtLocalIterations</tabstop>
+  <tabstop>edtLocalWeightDecay</tabstop>
+  <tabstop>cbxDataset</tabstop>
+  <tabstop>cbxGlobalModel</tabstop>
+  <tabstop>cbxLossFunctionForGlobalModel</tabstop>
+  <tabstop>cbxValidationOptMetric</tabstop>
+  <tabstop>edtValidationAssementFreq</tabstop>
+  <tabstop>edtNumWorkersForTrainDataLoad</tabstop>
+  <tabstop>edtNumWorkersForValDataLoad</tabstop>
+  <tabstop>cbxRunDeterministically</tabstop>
+  <tabstop>cbxComputeDevice</tabstop>
+  <tabstop>cbxLoggingLevels</tabstop>
+  <tabstop>edtLogFile</tabstop>
+  <tabstop>edtDataPath</tabstop>
+  <tabstop>edtCheckpointDir</tabstop>
+  <tabstop>edtEvalThreadPool</tabstop>
+  <tabstop>edtSerializingThreadPool</tabstop>
+  <tabstop>edtLocalTraininThreadPool</tabstop>
+  <tabstop>edtDataLoadBatchSize</tabstop>
+ </tabstops>
+ <resources>
+  <include location="../resources/resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>

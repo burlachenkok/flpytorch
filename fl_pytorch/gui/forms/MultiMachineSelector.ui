@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MultiMachineSelector</class>
+ <widget class="QMainWindow" name="MultiMachineSelector">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>797</width>
+    <height>666</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Extra machines resource selector</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../resources/resources.qrc">
+    <normaloff>:/root/network.png</normaloff>:/root/network.png</iconset>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout_3">
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <layout class="QHBoxLayout" name="loHorB">
+        <item>
+         <widget class="QLineEdit" name="edtMachine">
+          <property name="toolTip">
+           <string>Please insert &lt;hostname|ip&gt;:port into machine name field</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnAddMachine">
+          <property name="text">
+           <string>Add Machine</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <widget class="QTableWidget" name="tblMachines">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="editTriggers">
+           <set>QAbstractItemView::NoEditTriggers</set>
+          </property>
+          <property name="selectionBehavior">
+           <enum>QAbstractItemView::SelectItems</enum>
+          </property>
+          <column>
+           <property name="text">
+            <string>Host</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Ip</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Port</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>#GPUs</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Use CPU:-1</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Use GPU:0</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Use GPU:1</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Use GPU:2</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Use GPU:3</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Online</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="loHorB_2">
+        <item>
+         <widget class="QPushButton" name="btnRefreshMachineStatus">
+          <property name="text">
+           <string>Refresh machine status</string>
+          </property>
+          <property name="icon">
+           <iconset resource="../resources/resources.qrc">
+            <normaloff>:/root/refresh.png</normaloff>:/root/refresh.png</iconset>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnCleanAll">
+          <property name="text">
+           <string>Remove all machines</string>
+          </property>
+          <property name="icon">
+           <iconset resource="../resources/resources.qrc">
+            <normaloff>:/root/gnome_clear.png</normaloff>:/root/gnome_clear.png</iconset>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnRemoveSelected">
+          <property name="text">
+           <string>Remove selected machines</string>
+          </property>
+          <property name="icon">
+           <iconset resource="../resources/resources.qrc">
+            <normaloff>:/root/delete.png</normaloff>:/root/delete.png</iconset>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnExit">
+          <property name="text">
+           <string>Close window</string>
+          </property>
+          <property name="icon">
+           <iconset resource="../resources/resources.qrc">
+            <normaloff>:/root/exit.png</normaloff>:/root/exit.png</iconset>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources>
+  <include location="../resources/resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>

@@ -1,0 +1,1091 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AnalysisWidget</class>
+ <widget class="QWidget" name="AnalysisWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1123</width>
+    <height>714</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_3">
+   <item>
+    <widget class="QSplitter" name="splitter">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QSplitter::handle{background:black}</string>
+     </property>
+     <property name="lineWidth">
+      <number>1</number>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="handleWidth">
+      <number>6</number>
+     </property>
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="tabletTracking">
+       <bool>false</bool>
+      </property>
+      <property name="tabPosition">
+       <enum>QTabWidget::West</enum>
+      </property>
+      <property name="tabShape">
+       <enum>QTabWidget::Rounded</enum>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="tabCustomPlot1">
+       <attribute name="title">
+        <string>Plot-1</string>
+       </attribute>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <layout class="QVBoxLayout" name="loCustomPlot_1"/>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tabCustomPlot2">
+       <attribute name="title">
+        <string>Plot-2</string>
+       </attribute>
+       <layout class="QHBoxLayout" name="horizontalLayout_6">
+        <item>
+         <layout class="QVBoxLayout" name="loCustomPlot_2"/>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tabCustomPlot3">
+       <attribute name="title">
+        <string>Plot-3</string>
+       </attribute>
+       <layout class="QHBoxLayout" name="horizontalLayout_4">
+        <item>
+         <layout class="QVBoxLayout" name="loCustomPlot_3"/>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tabCustomPlot4">
+       <attribute name="title">
+        <string>Plot-4</string>
+       </attribute>
+       <layout class="QHBoxLayout" name="horizontalLayout_5">
+        <item>
+         <layout class="QVBoxLayout" name="loCustomPlot_4"/>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tabCustomPlot5">
+       <attribute name="title">
+        <string>Plot-5</string>
+       </attribute>
+       <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <item>
+         <layout class="QVBoxLayout" name="loCustomPlot_5"/>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tabCustomPlot6">
+       <attribute name="title">
+        <string>Plot-6</string>
+       </attribute>
+       <layout class="QHBoxLayout" name="horizontalLayout_4">
+        <item>
+         <layout class="QVBoxLayout" name="loCustomPlot_6"/>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tabCustomPlot7">
+       <attribute name="title">
+        <string>Plot-7</string>
+       </attribute>
+       <layout class="QHBoxLayout" name="horizontalLayout_5">
+        <item>
+         <layout class="QVBoxLayout" name="loCustomPlot_7"/>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="layoutWidget">
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout">
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_17">
+           <item>
+            <widget class="QPushButton" name="btnCleanExperimentsColumns">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>20</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>Remove all columns</string>
+             </property>
+             <property name="icon">
+              <iconset resource="../resources/resources.qrc">
+               <normaloff>:/root/remove.png</normaloff>:/root/remove.png</iconset>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="btnAddExperimentsColumn">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>40</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>Add the following column</string>
+             </property>
+             <property name="icon">
+              <iconset resource="../resources/resources.qrc">
+               <normaloff>:/root/button_plus_green.png</normaloff>:/root/button_plus_green.png</iconset>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="cbxbAddExperimentColumn">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>20</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true"/>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="QTableWidget" name="tblExperiments">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="selectionBehavior">
+            <enum>QAbstractItemView::SelectRows</enum>
+           </property>
+           <column>
+            <property name="text">
+             <string>run_id</string>
+            </property>
+           </column>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <property name="spacing">
+          <number>0</number>
+         </property>
+         <property name="sizeConstraint">
+          <enum>QLayout::SetMinAndMaxSize</enum>
+         </property>
+         <item>
+          <widget class="QPushButton" name="btnMoveSimulationUp">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>40</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="toolTip">
+            <string>Move selected experiments up</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset resource="../resources/resources.qrc">
+             <normaloff>:/root/arrow_up_double.png</normaloff>:/root/arrow_up_double.png</iconset>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btnMoveSimulationDown">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>40</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="toolTip">
+            <string>Move selected experiments down</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset resource="../resources/resources.qrc">
+             <normaloff>:/root/arrow_down_double.png</normaloff>:/root/arrow_down_double.png</iconset>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="Line" name="line">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QGridLayout" name="gridLayout">
+         <item row="11" column="1">
+          <widget class="QCheckBox" name="cbxDrawMarkers">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>Draw markers in the plots</string>
+           </property>
+           <property name="checked">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="9" column="3">
+          <widget class="QPushButton" name="btnUpdateTable">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="text">
+            <string> Update table with ready experiments</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../resources/resources.qrc">
+             <normaloff>:/root/refresh.png</normaloff>:/root/refresh.png</iconset>
+           </property>
+          </widget>
+         </item>
+         <item row="16" column="1">
+          <layout class="QHBoxLayout" name="horizontalLayout_14">
+           <item>
+            <widget class="QLabel" name="lblTypeAggregation">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Maximum" vsizetype="Minimum">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="text">
+              <string>Type of aggregation:</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="cbxAggregateCurves">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <item>
+              <property name="text">
+               <string>do not aggregate curves</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>aggregate curves by experiment group</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>aggregate curves by algorithm name</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item row="27" column="3">
+          <spacer name="verticalSpacer">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item row="21" column="1">
+          <layout class="QHBoxLayout" name="horizontalLayout_12">
+           <item>
+            <widget class="QLabel" name="lblLegendFormat">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="font">
+              <font>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="text">
+              <string>Legend format</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item row="6" column="1" rowspan="2" colspan="3">
+          <widget class="QPushButton" name="btnPlotAndExportLegend">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="text">
+            <string> Plot graphics  for selected experiments and export legend</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../resources/resources.qrc">
+             <normaloff>:/root/plots.png</normaloff>:/root/plots.png</iconset>
+           </property>
+          </widget>
+         </item>
+         <item row="24" column="3">
+          <layout class="QHBoxLayout" name="horizontalLayout_8">
+           <item>
+            <widget class="QLabel" name="lblFontSize">
+             <property name="text">
+              <string>    Default font sizes in generated plot</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="sbxFontSizes">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimum">
+              <number>1</number>
+             </property>
+             <property name="maximum">
+              <number>100</number>
+             </property>
+             <property name="value">
+              <number>16</number>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item row="20" column="3">
+          <layout class="QHBoxLayout" name="horizontalLayout_7">
+           <item>
+            <widget class="QLabel" name="lbLineWidthSize">
+             <property name="text">
+              <string>   Default line width in generated plots</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="sbxLineWidthSize">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimum">
+              <number>1</number>
+             </property>
+             <property name="value">
+              <number>2</number>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item row="0" column="3">
+          <widget class="QLabel" name="lblYAxis">
+           <property name="font">
+            <font>
+             <pointsize>14</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>Y Axis</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="20" column="1">
+          <layout class="QHBoxLayout" name="horizontalLayout_10">
+           <item>
+            <widget class="QLabel" name="lblIncludeToLegend">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="text">
+              <string>    Include to legend:</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="cbxIncludeToLegend">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <item>
+              <property name="text">
+               <string>job id</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>compressors schema</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>algorithm name</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>algorithm options</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>number of local iterations</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>global step size</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>local step size</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>comment</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>group name</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>total rounds</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>completed rounds</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>dimension of x</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>total number of clients</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>start time for simulation</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>aggregated experiments</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="btnIncludeToLegend">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="text">
+              <string>Add</string>
+             </property>
+             <property name="icon">
+              <iconset resource="../resources/resources.qrc">
+               <normaloff>:/root/add.png</normaloff>:/root/add.png</iconset>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item row="11" column="3">
+          <widget class="QCheckBox" name="cbxDrawErrorBars">
+           <property name="text">
+            <string>Draw error bars in aggregate mode</string>
+           </property>
+          </widget>
+         </item>
+         <item row="10" column="1">
+          <widget class="QCheckBox" name="cbxLegendLogScalingY">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>Log scaling in Y-axis</string>
+           </property>
+           <property name="checked">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLabel" name="lblXAxis">
+           <property name="font">
+            <font>
+             <pointsize>14</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>X Axis</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="1" colspan="3">
+          <widget class="QPushButton" name="btnPlot">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="toolTip">
+            <string>Plot graphics (F8)</string>
+           </property>
+           <property name="text">
+            <string> Plot graphics for selected experiments</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../resources/resources.qrc">
+             <normaloff>:/root/plots.png</normaloff>:/root/plots.png</iconset>
+           </property>
+           <property name="shortcut">
+            <string>F8</string>
+           </property>
+          </widget>
+         </item>
+         <item row="9" column="1">
+          <widget class="QPushButton" name="btnCleanPlot">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Clean plot</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../resources/resources.qrc">
+             <normaloff>:/root/gnome_clear.png</normaloff>:/root/gnome_clear.png</iconset>
+           </property>
+          </widget>
+         </item>
+         <item row="21" column="3">
+          <layout class="QHBoxLayout" name="horizontalLayout_9">
+           <item>
+            <widget class="QLabel" name="lblDefaultMarkerSizes">
+             <property name="text">
+              <string>Default marker size in generated plots</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="sbxDefaultMarkerSizes">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimum">
+              <number>0</number>
+             </property>
+             <property name="value">
+              <number>20</number>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item row="24" column="1">
+          <widget class="QLineEdit" name="edtLegendFormatString">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QComboBox" name="cbxXaxis">
+           <property name="font">
+            <font>
+             <weight>50</weight>
+             <bold>false</bold>
+            </font>
+           </property>
+           <item>
+            <property name="text">
+             <string>Rounds</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Time (minutes)</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Time per one communication round (minutes)</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Norm of server stochastic gradient (proxy train)</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Running function value (proxy train)</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Norm of function gradient square(train)</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Function value (train)</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Distance to solution squared (train)</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Norm of iterate at round start (train)</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Norm of function gradient square(validation)</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Function value (validation)</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>GPU Memory (Megabytes)</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>GPU Memory (Gigabytes)</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string># of bits from clients/#workers</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string># of bits from clients/#total workers</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string># of bits from clients</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Full gradient oracles (train)</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Sample gradient oracles (train)</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Loss (validation)</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Top1 acc (validation)</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Top5 acc (validation)</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Number of compute devices</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="2" column="3">
+          <widget class="QComboBox" name="cbxYaxis">
+           <item>
+            <property name="text">
+             <string>Rounds</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Time (minutes)</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Time per one communication round (minutes)</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Norm of server stochastic gradient (proxy train)</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Running function value (proxy train)</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Norm of function gradient square(train)</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Function value (train)</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Distance to solution squared (train)</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Norm of iterate at round start (train)</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Norm of function gradient square(validation)</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Function value (validation)</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>GPU Memory (Megabytes)</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>GPU Memory (Gigabytes)</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string># of bits from clients/#workers</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string># of bits from clients/#total workers</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string># of bits from clients</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Full gradient oracles (train)</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Sample gradient oracles (train)</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Loss (validation)</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Top1 acc (validation)</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Top5 acc (validation)</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Number of compute devices</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="10" column="3">
+          <widget class="QCheckBox" name="cbxSyncTitleWithTabName">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>Synchronize tab name with plot title</string>
+           </property>
+          </widget>
+         </item>
+         <item row="16" column="3">
+          <layout class="QHBoxLayout" name="horizontalLayout_13">
+           <item>
+            <widget class="QLabel" name="lblLegendFormatInPlot">
+             <property name="text">
+              <string>Legend format:</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="cbxLegendFormat">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="currentIndex">
+              <number>1</number>
+             </property>
+             <item>
+              <property name="text">
+               <string>no legend</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>show vertical</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>show horizontal</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item row="30" column="1">
+          <layout class="QHBoxLayout" name="horizontalLayout_11"/>
+         </item>
+         <item row="25" column="3">
+          <widget class="QComboBox" name="cbxLineStyle">
+           <item>
+            <property name="text">
+             <string>line style: solid, solid, ....</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>line style: dashed, dashed, ...</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>line style: solid,..., dashed, ...</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>line style: dashed,..., solid, ...</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="27" column="1">
+          <spacer name="verticalSpacer_2">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="../resources/resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>

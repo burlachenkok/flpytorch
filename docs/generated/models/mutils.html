@@ -1,0 +1,1384 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>models.mutils API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_CHTML" integrity="sha256-kZafAc6mZvK3W3v1pHOcUix30OHQN6pU/NO2oFkqZVw=" crossorigin></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>models.mutils</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">#!/usr/bin/env python3
+
+# Import PyTorch root package
+import torch                        
+
+# Import PyTorch layers, activations and more
+# import torch.nn.functional as F
+
+from utils.logger import Logger
+
+
+def torch_layers_info(model: torch.nn.Module):
+    &#34;&#34;&#34;
+        Args:
+            model (nn.Module): Neural Network model
+
+        Returns:
+            dict: Statistics about used standard torch modules inside. key: &lt;module name&gt; value: &lt;used number&gt; 
+    &#34;&#34;&#34;
+    max_string_length = 0
+    basic_modules = {}
+
+    for module in model.modules():
+        class_name = str(type(module)).replace(&#34;class &#34;, &#34;&#34;).replace(&#34;&lt;&#39;&#34;, &#34;&#34;).replace(&#34;&#39;&gt;&#34;, &#34;&#34;)
+
+        # Skip Sequential models
+        if class_name.find(&#34;torch.nn.modules.container.Sequential&#34;) == 0:
+            continue
+
+        max_string_length = max(max_string_length, len(class_name))
+        if class_name not in basic_modules:
+            basic_modules[class_name] = dict()
+            basic_modules[class_name][&#34;count&#34;] = 0
+            basic_modules[class_name][&#34;parameters_size_bytes_cpu_train&#34;] = 0
+            basic_modules[class_name][&#34;parameters_size_bytes_gpu_train&#34;] = 0
+            basic_modules[class_name][&#34;parameters_size_bytes_cpu_frozen&#34;] = 0
+            basic_modules[class_name][&#34;parameters_size_bytes_gpu_frozen&#34;] = 0
+
+            basic_modules[class_name][&#34;parameters_size_numel_cpu_train&#34;] = 0
+            basic_modules[class_name][&#34;parameters_size_numel_gpu_train&#34;] = 0
+            basic_modules[class_name][&#34;parameters_size_numel_cpu_frozen&#34;] = 0
+            basic_modules[class_name][&#34;parameters_size_numel_gpu_frozen&#34;] = 0
+
+        basic_modules[class_name][&#34;count&#34;] += 1
+        size_in_bytes_cpu_train = 0
+        size_in_bytes_gpu_train = 0
+        size_in_bytes_cpu_frozen = 0
+        size_in_bytes_gpu_frozen = 0
+
+        size_in_numel_cpu_train = 0
+        size_in_numel_gpu_train = 0
+        size_in_numel_cpu_frozen = 0
+        size_in_numel_gpu_frozen = 0
+
+        for param in module.parameters():
+            size_in_bytes = param.numel() * param.element_size()
+            size_in_elements = param.numel()
+
+            if param.device.type == &#34;cpu&#34;:
+                if param.requires_grad:
+                    size_in_bytes_cpu_train += size_in_bytes
+                    size_in_numel_cpu_train += size_in_elements
+                else:
+                    size_in_bytes_cpu_frozen += size_in_bytes
+                    size_in_numel_cpu_frozen += size_in_elements
+
+            else:
+                if param.requires_grad:
+                    size_in_bytes_gpu_train += size_in_bytes
+                    size_in_numel_gpu_train += size_in_elements
+                else:
+                    size_in_bytes_gpu_frozen += size_in_bytes
+                    size_in_numel_gpu_frozen += size_in_elements
+
+        basic_modules[class_name][&#34;parameters_size_bytes_cpu_train&#34;] += size_in_bytes_cpu_train
+        basic_modules[class_name][&#34;parameters_size_bytes_gpu_train&#34;] += size_in_bytes_gpu_train
+        basic_modules[class_name][&#34;parameters_size_bytes_cpu_frozen&#34;] += size_in_bytes_cpu_frozen
+        basic_modules[class_name][&#34;parameters_size_bytes_gpu_frozen&#34;] += size_in_bytes_gpu_frozen
+
+        basic_modules[class_name][&#34;parameters_size_numel_cpu_train&#34;] += size_in_numel_cpu_train
+        basic_modules[class_name][&#34;parameters_size_numel_gpu_train&#34;] += size_in_numel_gpu_train
+        basic_modules[class_name][&#34;parameters_size_numel_cpu_frozen&#34;] += size_in_numel_cpu_frozen
+        basic_modules[class_name][&#34;parameters_size_numel_gpu_frozen&#34;] += size_in_numel_gpu_frozen
+
+    return basic_modules
+
+
+def print_current_gpu_context(device, args):
+    &#34;&#34;&#34;Print current stream and blas handle for specific device&#34;&#34;&#34;
+    if device == &#34;cpu&#34;:
+        return
+
+    logger = Logger.get(args.run_id)
+    current_stream = torch.cuda.current_stream(device)
+    blas_handle = torch.cuda.current_blas_handle()
+    logger.info(f&#34;Current Steam: {current_stream}, BLAS handle: {hex(blas_handle)}&#34;)
+
+
+def print_models_info(model: torch.nn.Module, args):
+    &#34;&#34;&#34;
+        Args:
+            model (nn.Module): Neural Network model
+            args: Command line arguments
+
+        Returns:
+            None. All information is printed into stdout
+    &#34;&#34;&#34;
+    logger = Logger.get(args.run_id)
+
+    logger.info(&#34;----------------- Information about the model start ---------------------------------------------&#34;)
+    logger.info(&#39;{0:44s} | {1:3s} | {2:s} | {3:s}&#39;.format(&#34;Name&#34;,
+                                                          &#34;Layers&#34;,
+                                                          &#34;Learnable Parameters(Frozen)&#34;,
+                                                          &#34;Learnable Parameters(Train)&#34;))
+    logger.info(&#34;-------------------------------------------------------------------------------------------------&#34;)
+
+    layers_info = torch_layers_info(model)
+    for layer, info in layers_info.items():
+        logger.info(f&#39;{layer:44s} | {info[&#34;count&#34;]:6d} | {( (info[&#34;parameters_size_bytes_cpu_frozen&#34;] + info[&#34;parameters_size_bytes_gpu_frozen&#34;])/1024.0):8g} KBytes / {(info[&#34;parameters_size_numel_cpu_frozen&#34;] + info[&#34;parameters_size_numel_gpu_frozen&#34;])} elements&#39;
+                    +
+                    f&#39;| {((info[&#34;parameters_size_bytes_cpu_train&#34;] + info[&#34;parameters_size_bytes_gpu_train&#34;])/1024.0):8g} KBytes / {(info[&#34;parameters_size_numel_cpu_train&#34;] + info[&#34;parameters_size_numel_gpu_train&#34;])} elements&#39;)
+
+    logger.info(&#34;-------------------------------------------------------------------------------------------------&#34;)
+    logger.info(&#34;    Model class:&#34; + str(type(model)).replace(&#34;class &#34;, &#34;&#34;).replace(&#34;&lt;&#39;&#34;, &#34;&#34;).replace(&#34;&#39;&gt;&#34;, &#34;&#34;))
+    logger.info(&#34;-------------------------------------------------------------------------------------------------&#34;)
+
+
+def number_of_params(model: torch.nn.Module, skipFrozen: bool = True) -&gt; int:
+    &#34;&#34;&#34;
+        Args:
+            model (torch.nn.Module): Neural Network model
+
+        Returns:
+            integer: number of scalar parameters in the network to learn
+    &#34;&#34;&#34;
+    total_number_of_scalar_parameters = 0
+    for p in model.parameters():
+        if skipFrozen and not p.requires_grad:
+            continue
+
+        total_items_in_param = 1
+        for i in range(p.dim()):
+            total_items_in_param = total_items_in_param * p.size(i)
+        total_number_of_scalar_parameters += total_items_in_param
+    return total_number_of_scalar_parameters
+
+
+def set_params_to_zero(model, skipFrozen: bool = True, param_predicate=None):
+    &#34;&#34;&#34;
+    Setup all model parameter to zero without tracking by autograd.
+
+    This setup process is not tracking by autograd.
+
+    Args:
+        model (torch.nn.Module): Neural Network model
+        param_predicate(function(i,param)): If none this function is used to understand should be setup this parameter or not
+    &#34;&#34;&#34;
+    with torch.no_grad():
+        if param_predicate is None:
+            for p in model.parameters():
+
+                if skipFrozen and not p.requires_grad:
+                    continue
+
+                p.zero_()
+        else:
+            for i, p in enumerate(model.parameters()):
+
+                if skipFrozen and not p.requires_grad:
+                    continue
+
+                if param_predicate(i, p):
+                    p.zero_()
+
+
+# Currently used. Once it will be, please be carefully with random generators states
+def set_params_uniform_random(model, a=0.0, b=1.0, skipFrozen: bool = True, param_predicate=None):
+    &#34;&#34;&#34;
+    Setup all model parameter independently uniformly at random U(a,b).
+
+    This setup process is not tracking by autograd.
+
+    Args:
+        model (torch.nn.Module): Neural Network model
+        a(float): &#39;a&#39; parameter of distribution
+        b(float): &#39;b&#39; parameter of distribution
+        param_predicate(function(i,param)): If none this function is used to understand should be setup this parameter or not
+    &#34;&#34;&#34;
+    with torch.no_grad():
+        if param_predicate is None:
+            for p in model.parameters():
+                if skipFrozen and not p.requires_grad:
+                    continue
+                p[:] = a + (b-a) * torch.rand_like(p)
+        else:
+            for i, p in enumerate(model.parameters()):
+                if skipFrozen and not p.requires_grad:
+                    continue
+
+                if param_predicate(i, p) == True:
+                    p[:] = a + (b-a) * torch.rand_like(p)
+
+
+def get_buffers(model: torch.nn.Module):
+    local_model_buffers = list()
+    for buf in model.buffers(): 
+        local_model_buffers.append(buf.detach().clone())
+    return local_model_buffers
+
+
+def set_buffers(model: torch.nn.Module, buffer_list: list):
+    with torch.no_grad():
+        local_model_buffers = list()
+        for index, buf in enumerate(model.buffers()):
+            buf.flatten(0)[:] = buffer_list[index].flatten(0)[:]
+
+
+def get_params(model: torch.nn.Module, skipFrozen: bool=True, param_predicate=None):
+    &#34;&#34;&#34;
+    Get all model parameters as a single dense vector.
+
+    Get all model parameters as a single dense vector, 
+    if you are interesting only on a subset of parameter use param_predicate.
+
+    Args:
+        model (torch.nn.Module): Neural Network model
+        param_predicate(function(i,param)): If none this function is used to understand 
+                                            should be setup this parameter or not
+
+    Returns:
+        torch.Tensor: all parameters in a form of a tensor
+    &#34;&#34;&#34;
+    params = []
+
+    # For optimization do not perform copy on each tensor, intead of it make light copy of data. 
+    # torch.cat(...) will produce new tensors
+
+    if param_predicate is None:
+        for p in model.parameters():
+            if skipFrozen and not p.requires_grad:
+                continue
+
+            params.append(p.flatten(0).detach())      # Remove clone()
+    else:
+        for i, p in enumerate(model.parameters()):
+            if skipFrozen and not p.requires_grad:
+                continue
+
+            if param_predicate(i, p) == True:
+                params.append(p.flatten(0).detach())  # Remove clone()
+
+    # Concatenates tensors along dim=0
+    params_vector = torch.cat(tuple(params))
+
+    return params_vector
+
+
+def set_params(model: torch.nn.Module, parameters, skipFrozen: bool = True, param_predicate=None):
+    &#34;&#34;&#34;
+    Set model parameters from a single dense vector.
+
+    Set all model parameters from a single dense vector, 
+    if you are interesting only on a subset of parameter use param_predicate. 
+    This setup process is not tracking by autograd.
+
+    Args:
+        model (torch.nn.Module): Neural Network model
+        parameters(torch.Tensor): Dense vector with parameters
+        param_predicate(function(i,param)): If none this function is used to understand should be setup this parameter or not
+    &#34;&#34;&#34;
+    with torch.no_grad():
+        offset = 0
+        if param_predicate is None:
+            for i, p in enumerate(model.parameters()):
+                if skipFrozen and not p.requires_grad:
+                    continue
+
+                sz = p.numel()
+                p.flatten(0)[:] = parameters[offset:(offset+sz)]
+                offset += sz
+        else:
+            for i, p in enumerate(model.parameters()):
+                if skipFrozen and not p.requires_grad:
+                    continue
+
+                if param_predicate(i, p) == True:
+                    sz = p.numel()
+                    p.flatten(0)[:] = parameters[offset:(offset+sz)]
+                    offset += sz
+
+
+def get_gradient(model: torch.nn.Module, skipFrozen: bool = True):
+    &#34;&#34;&#34;
+    Get all model gradient data as a single dense vector.
+
+    Args:
+        model (torch.nn.Module): Neural Network model
+
+    Returns:
+        torch.Tensor: all parameters in a form of a tensor
+    &#34;&#34;&#34;
+    grads = []
+    for p in model.parameters():
+        if skipFrozen and not p.requires_grad:
+            continue
+
+        if p.grad is not None:
+            grads.append(p.grad.flatten(0).detach())     # Remove clone()
+        else:
+            grads.append(torch.zeros_like(p).flatten(0))
+
+    # Concatenates tensors along dim = 0
+    grad_vec = torch.cat(tuple(grads))
+
+    return grad_vec
+
+
+def get_zero_gradient_compatible_with_model(model: torch.nn.Module, skipFrozen: bool = True):
+    &#34;&#34;&#34;
+    Get zero vector with shape compatible with gradient data in a form of a single dense vector.
+
+    Args:
+        model (torch.nn.Module): Neural Network model
+
+    Returns:
+        torch.Tensor: zero vector with compatible shape
+    &#34;&#34;&#34;
+    grads = []
+    for p in model.parameters():
+        if skipFrozen and not p.requires_grad:
+            continue
+
+        grads.append(torch.zeros_like(p).flatten(0))
+
+    grad_vec = torch.cat(tuple(grads))
+    return grad_vec
+
+
+def add_to_gradient(model: torch.nn.Module, extra_grad, skipFrozen: bool = True):
+    &#34;&#34;&#34;
+    Add to model gradient extra vector
+
+    Args:
+        model (nn.Module): Neural Network model
+        extra_grad (torch.Tensor): Dense vector with gradients for all components
+    &#34;&#34;&#34;
+    with torch.no_grad():
+        offset = 0
+        for i, p in enumerate(model.parameters()):
+
+            if skipFrozen and not p.requires_grad:
+                continue
+
+            if p.grad is None:
+                p.grad = torch.zeros_like(p)
+
+            sz = p.grad.numel()
+            p.grad.flatten(0)[:] += extra_grad[offset:(offset+sz)]
+            offset += sz
+
+
+def set_gradient(model: torch.nn.Module, grad, skipFrozen: bool = True):
+    &#34;&#34;&#34;
+    Set model gradient
+
+    Args:
+        model (nn.Module): Neural Network model
+        grad (torch.Tensor): Dense vector with gradients for all components
+    &#34;&#34;&#34;
+    with torch.no_grad():
+        offset = 0
+        for i, p in enumerate(model.parameters()):
+            if skipFrozen and not p.requires_grad:
+                continue
+
+            if p.grad is None:
+                p.grad = torch.empty_like(p)
+
+            sz = p.grad.numel()
+            p.grad.flatten(0)[:] = grad[offset:(offset+sz)]
+            offset += sz
+
+
+def l2_norm_of_gradient_m(model: torch.nn.Module, skipFrozen: bool = True):
+    value = 0.0
+    for p in model.parameters():
+        if skipFrozen and not p.requires_grad:
+            continue
+
+        if p.grad is not None:
+            value += (p.grad**2).sum().item()
+    return value**0.5
+
+
+def l2_norm_of_vec(grad):
+    return ((grad**2).sum().item())**0.5
+
+
+def turn_off_batch_normalization_and_dropout(model: torch.nn.Module):
+    for m in model.modules():
+        if isinstance(m, torch.nn.BatchNorm1d) or \
+           isinstance(m, torch.nn.BatchNorm2d) or \
+           isinstance(m, torch.nn.BatchNorm3d) or \
+           isinstance(m, torch.nn.Dropout):
+            m.eval()
+# ======================================================================================================================
+# Unittests for launch please use: &#34;pytest -v mutils.py&#34; 
+# https://docs.pytest.org/en/stable/getting-started.html
+
+
+def test_get_set_for_model():
+    hidden_features_layer_1 = 20
+    hidden_features_layer_2 = 22
+    model = torch.nn.Sequential(
+        torch.nn.Linear(in_features=1, out_features=hidden_features_layer_1, bias=False),
+        torch.nn.Linear(in_features=hidden_features_layer_1, out_features=hidden_features_layer_2, bias=False),
+        torch.nn.Linear(in_features=hidden_features_layer_2, out_features=1, bias=False),
+    )
+
+    assert number_of_params(model) == hidden_features_layer_1 + \
+                                      hidden_features_layer_1 * hidden_features_layer_2 + \
+                                      hidden_features_layer_2
+    
+    class Empty: 
+        pass
+    
+    args = Empty()
+    args.run_id = &#34;test&#34;
+    Logger.setup_logging()
+
+    print_models_info(model, args)
+
+    model.train(True)
+    for p in model.parameters():
+        assert p.grad is None
+
+    z = (10.0 - model(torch.Tensor([[3]])))**2
+    z.backward()
+    for p in model.parameters():
+        assert p.grad is not None
+        assert p.grad.shape == p.shape
+
+    g = get_gradient(model)
+    assert abs(l2_norm_of_gradient_m(model) - l2_norm_of_vec(g)) &lt; 1.0e-4
+    assert g.numel() == number_of_params(model)
+    set_gradient(model, 2.0 * g)
+
+    assert abs(l2_norm_of_gradient_m(model) - 2.0 * l2_norm_of_vec(g)) &lt; 1.0e-4
+
+
+def test_grad_addition_for_model():
+    hidden_features_layer_1 = 20
+    hidden_features_layer_2 = 22
+    model = torch.nn.Sequential(
+        torch.nn.Linear(in_features=1, out_features=hidden_features_layer_1, bias=False),
+        torch.nn.Linear(in_features=hidden_features_layer_1, out_features=hidden_features_layer_2, bias=True),
+        torch.nn.Linear(in_features=hidden_features_layer_2, out_features=1, bias=True),
+    )
+    n1 = number_of_params(model, skipFrozen=False)
+    model[0].requires_grad_(False)
+    n2 = number_of_params(model, skipFrozen=False)
+    assert n1 == n2
+    z = (10.0 - model(torch.Tensor([[3]])))**2
+    z.backward()
+    g = get_gradient(model, skipFrozen=False)
+    # Verify that requires_grad_(False) is correctly working with get_gradient() functionality
+    assert l2_norm_of_vec(g[0:hidden_features_layer_1]) &lt; 1.0e-4
+
+    # Verify that gradient has correct number of items
+    assert g.numel() == 1*hidden_features_layer_1 + \
+                        hidden_features_layer_1 * hidden_features_layer_2 + \
+                        hidden_features_layer_2 * 1 + \
+                        hidden_features_layer_2 + 1
+    
+    assert g.dim() == 1
+    get_zero_gradient_compatible_with_model(model, skipFrozen=False)
+
+    assert abs(l2_norm_of_gradient_m(model, skipFrozen=False) - l2_norm_of_vec(g)) &lt; 1.0e-4
+    set_gradient(model, g, skipFrozen=False)
+    add_to_gradient(model, torch.ones(n1), skipFrozen=False)
+    g1 = get_gradient(model, skipFrozen=False)
+    assert g1[0].item() == 1.0
+    add_to_gradient(model, -torch.ones(n1),skipFrozen=False)
+    g2 = get_gradient(model,skipFrozen=False)
+    assert l2_norm_of_vec(g2 - g) &lt; 1.0e-5
+    assert l2_norm_of_vec(g2 - g1) &gt; 1.0e-5
+
+    assert len(torch_layers_info(model)) == 1
+
+def test_get_set_params_and_grad_inf():
+    hidden_features_layer_1 = 20
+    hidden_features_layer_2 = 22
+    model = torch.nn.Sequential(
+        torch.nn.Linear(in_features=1, out_features=hidden_features_layer_1, bias=False),
+        torch.nn.Linear(in_features=hidden_features_layer_1, out_features=hidden_features_layer_2, bias=True),
+        torch.nn.Linear(in_features=hidden_features_layer_2, out_features=1, bias=True),
+    )
+    model[0].requires_grad_(False)
+    z = (10.0 - model(torch.Tensor([[3]])))**2
+    z.backward()
+    g1 = get_gradient(model, skipFrozen=False)
+    add_to_gradient(model, g1, skipFrozen=False)
+    g2 = get_gradient(model, skipFrozen=False)
+    assert l2_norm_of_vec(g2 - 2*g1) &lt; 1.0e-5
+    
+    g3 = get_zero_gradient_compatible_with_model(model, skipFrozen=False)
+    assert l2_norm_of_vec(g3) &lt; 1.0e-5
+    assert g3.size() == g2.size()
+    set_params_to_zero(model, skipFrozen=False)
+    assert l2_norm_of_vec(get_params(model, skipFrozen=False)) &lt; 1.0e-5
+    set_params_uniform_random(model, skipFrozen=False)
+    assert l2_norm_of_vec(get_params(model, skipFrozen=False)) &gt; 1.0
+    set_params_to_zero(model, skipFrozen=False)
+    z = (10.0 - model(torch.Tensor([[0]])))**2
+    z.backward()
+    assert z.item() == 100.0
+
+# ======================================================================================================================</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="models.mutils.add_to_gradient"><code class="name flex">
+<span>def <span class="ident">add_to_gradient</span></span>(<span>model: torch.nn.modules.module.Module, extra_grad, skipFrozen: bool = True)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Add to model gradient extra vector</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>model</code></strong> :&ensp;<code>nn.Module</code></dt>
+<dd>Neural Network model</dd>
+<dt><strong><code>extra_grad</code></strong> :&ensp;<code>torch.Tensor</code></dt>
+<dd>Dense vector with gradients for all components</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def add_to_gradient(model: torch.nn.Module, extra_grad, skipFrozen: bool = True):
+    &#34;&#34;&#34;
+    Add to model gradient extra vector
+
+    Args:
+        model (nn.Module): Neural Network model
+        extra_grad (torch.Tensor): Dense vector with gradients for all components
+    &#34;&#34;&#34;
+    with torch.no_grad():
+        offset = 0
+        for i, p in enumerate(model.parameters()):
+
+            if skipFrozen and not p.requires_grad:
+                continue
+
+            if p.grad is None:
+                p.grad = torch.zeros_like(p)
+
+            sz = p.grad.numel()
+            p.grad.flatten(0)[:] += extra_grad[offset:(offset+sz)]
+            offset += sz</code></pre>
+</details>
+</dd>
+<dt id="models.mutils.get_buffers"><code class="name flex">
+<span>def <span class="ident">get_buffers</span></span>(<span>model: torch.nn.modules.module.Module)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_buffers(model: torch.nn.Module):
+    local_model_buffers = list()
+    for buf in model.buffers(): 
+        local_model_buffers.append(buf.detach().clone())
+    return local_model_buffers</code></pre>
+</details>
+</dd>
+<dt id="models.mutils.get_gradient"><code class="name flex">
+<span>def <span class="ident">get_gradient</span></span>(<span>model: torch.nn.modules.module.Module, skipFrozen: bool = True)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get all model gradient data as a single dense vector.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>model</code></strong> :&ensp;<code>torch.nn.Module</code></dt>
+<dd>Neural Network model</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>torch.Tensor</code></dt>
+<dd>all parameters in a form of a tensor</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_gradient(model: torch.nn.Module, skipFrozen: bool = True):
+    &#34;&#34;&#34;
+    Get all model gradient data as a single dense vector.
+
+    Args:
+        model (torch.nn.Module): Neural Network model
+
+    Returns:
+        torch.Tensor: all parameters in a form of a tensor
+    &#34;&#34;&#34;
+    grads = []
+    for p in model.parameters():
+        if skipFrozen and not p.requires_grad:
+            continue
+
+        if p.grad is not None:
+            grads.append(p.grad.flatten(0).detach())     # Remove clone()
+        else:
+            grads.append(torch.zeros_like(p).flatten(0))
+
+    # Concatenates tensors along dim = 0
+    grad_vec = torch.cat(tuple(grads))
+
+    return grad_vec</code></pre>
+</details>
+</dd>
+<dt id="models.mutils.get_params"><code class="name flex">
+<span>def <span class="ident">get_params</span></span>(<span>model: torch.nn.modules.module.Module, skipFrozen: bool = True, param_predicate=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get all model parameters as a single dense vector.</p>
+<p>Get all model parameters as a single dense vector,
+if you are interesting only on a subset of parameter use param_predicate.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>model</code></strong> :&ensp;<code>torch.nn.Module</code></dt>
+<dd>Neural Network model</dd>
+</dl>
+<p>param_predicate(function(i,param)): If none this function is used to understand
+should be setup this parameter or not</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>torch.Tensor</code></dt>
+<dd>all parameters in a form of a tensor</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_params(model: torch.nn.Module, skipFrozen: bool=True, param_predicate=None):
+    &#34;&#34;&#34;
+    Get all model parameters as a single dense vector.
+
+    Get all model parameters as a single dense vector, 
+    if you are interesting only on a subset of parameter use param_predicate.
+
+    Args:
+        model (torch.nn.Module): Neural Network model
+        param_predicate(function(i,param)): If none this function is used to understand 
+                                            should be setup this parameter or not
+
+    Returns:
+        torch.Tensor: all parameters in a form of a tensor
+    &#34;&#34;&#34;
+    params = []
+
+    # For optimization do not perform copy on each tensor, intead of it make light copy of data. 
+    # torch.cat(...) will produce new tensors
+
+    if param_predicate is None:
+        for p in model.parameters():
+            if skipFrozen and not p.requires_grad:
+                continue
+
+            params.append(p.flatten(0).detach())      # Remove clone()
+    else:
+        for i, p in enumerate(model.parameters()):
+            if skipFrozen and not p.requires_grad:
+                continue
+
+            if param_predicate(i, p) == True:
+                params.append(p.flatten(0).detach())  # Remove clone()
+
+    # Concatenates tensors along dim=0
+    params_vector = torch.cat(tuple(params))
+
+    return params_vector</code></pre>
+</details>
+</dd>
+<dt id="models.mutils.get_zero_gradient_compatible_with_model"><code class="name flex">
+<span>def <span class="ident">get_zero_gradient_compatible_with_model</span></span>(<span>model: torch.nn.modules.module.Module, skipFrozen: bool = True)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get zero vector with shape compatible with gradient data in a form of a single dense vector.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>model</code></strong> :&ensp;<code>torch.nn.Module</code></dt>
+<dd>Neural Network model</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>torch.Tensor</code></dt>
+<dd>zero vector with compatible shape</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_zero_gradient_compatible_with_model(model: torch.nn.Module, skipFrozen: bool = True):
+    &#34;&#34;&#34;
+    Get zero vector with shape compatible with gradient data in a form of a single dense vector.
+
+    Args:
+        model (torch.nn.Module): Neural Network model
+
+    Returns:
+        torch.Tensor: zero vector with compatible shape
+    &#34;&#34;&#34;
+    grads = []
+    for p in model.parameters():
+        if skipFrozen and not p.requires_grad:
+            continue
+
+        grads.append(torch.zeros_like(p).flatten(0))
+
+    grad_vec = torch.cat(tuple(grads))
+    return grad_vec</code></pre>
+</details>
+</dd>
+<dt id="models.mutils.l2_norm_of_gradient_m"><code class="name flex">
+<span>def <span class="ident">l2_norm_of_gradient_m</span></span>(<span>model: torch.nn.modules.module.Module, skipFrozen: bool = True)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def l2_norm_of_gradient_m(model: torch.nn.Module, skipFrozen: bool = True):
+    value = 0.0
+    for p in model.parameters():
+        if skipFrozen and not p.requires_grad:
+            continue
+
+        if p.grad is not None:
+            value += (p.grad**2).sum().item()
+    return value**0.5</code></pre>
+</details>
+</dd>
+<dt id="models.mutils.l2_norm_of_vec"><code class="name flex">
+<span>def <span class="ident">l2_norm_of_vec</span></span>(<span>grad)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def l2_norm_of_vec(grad):
+    return ((grad**2).sum().item())**0.5</code></pre>
+</details>
+</dd>
+<dt id="models.mutils.number_of_params"><code class="name flex">
+<span>def <span class="ident">number_of_params</span></span>(<span>model: torch.nn.modules.module.Module, skipFrozen: bool = True) ‑> int</span>
+</code></dt>
+<dd>
+<div class="desc"><h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>model</code></strong> :&ensp;<code>torch.nn.Module</code></dt>
+<dd>Neural Network model</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>integer</code></dt>
+<dd>number of scalar parameters in the network to learn</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def number_of_params(model: torch.nn.Module, skipFrozen: bool = True) -&gt; int:
+    &#34;&#34;&#34;
+        Args:
+            model (torch.nn.Module): Neural Network model
+
+        Returns:
+            integer: number of scalar parameters in the network to learn
+    &#34;&#34;&#34;
+    total_number_of_scalar_parameters = 0
+    for p in model.parameters():
+        if skipFrozen and not p.requires_grad:
+            continue
+
+        total_items_in_param = 1
+        for i in range(p.dim()):
+            total_items_in_param = total_items_in_param * p.size(i)
+        total_number_of_scalar_parameters += total_items_in_param
+    return total_number_of_scalar_parameters</code></pre>
+</details>
+</dd>
+<dt id="models.mutils.print_current_gpu_context"><code class="name flex">
+<span>def <span class="ident">print_current_gpu_context</span></span>(<span>device, args)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Print current stream and blas handle for specific device</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def print_current_gpu_context(device, args):
+    &#34;&#34;&#34;Print current stream and blas handle for specific device&#34;&#34;&#34;
+    if device == &#34;cpu&#34;:
+        return
+
+    logger = Logger.get(args.run_id)
+    current_stream = torch.cuda.current_stream(device)
+    blas_handle = torch.cuda.current_blas_handle()
+    logger.info(f&#34;Current Steam: {current_stream}, BLAS handle: {hex(blas_handle)}&#34;)</code></pre>
+</details>
+</dd>
+<dt id="models.mutils.print_models_info"><code class="name flex">
+<span>def <span class="ident">print_models_info</span></span>(<span>model: torch.nn.modules.module.Module, args)</span>
+</code></dt>
+<dd>
+<div class="desc"><h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>model</code></strong> :&ensp;<code>nn.Module</code></dt>
+<dd>Neural Network model</dd>
+<dt><strong><code>args</code></strong></dt>
+<dd>Command line arguments</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>None. All information is printed into stdout</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def print_models_info(model: torch.nn.Module, args):
+    &#34;&#34;&#34;
+        Args:
+            model (nn.Module): Neural Network model
+            args: Command line arguments
+
+        Returns:
+            None. All information is printed into stdout
+    &#34;&#34;&#34;
+    logger = Logger.get(args.run_id)
+
+    logger.info(&#34;----------------- Information about the model start ---------------------------------------------&#34;)
+    logger.info(&#39;{0:44s} | {1:3s} | {2:s} | {3:s}&#39;.format(&#34;Name&#34;,
+                                                          &#34;Layers&#34;,
+                                                          &#34;Learnable Parameters(Frozen)&#34;,
+                                                          &#34;Learnable Parameters(Train)&#34;))
+    logger.info(&#34;-------------------------------------------------------------------------------------------------&#34;)
+
+    layers_info = torch_layers_info(model)
+    for layer, info in layers_info.items():
+        logger.info(f&#39;{layer:44s} | {info[&#34;count&#34;]:6d} | {( (info[&#34;parameters_size_bytes_cpu_frozen&#34;] + info[&#34;parameters_size_bytes_gpu_frozen&#34;])/1024.0):8g} KBytes / {(info[&#34;parameters_size_numel_cpu_frozen&#34;] + info[&#34;parameters_size_numel_gpu_frozen&#34;])} elements&#39;
+                    +
+                    f&#39;| {((info[&#34;parameters_size_bytes_cpu_train&#34;] + info[&#34;parameters_size_bytes_gpu_train&#34;])/1024.0):8g} KBytes / {(info[&#34;parameters_size_numel_cpu_train&#34;] + info[&#34;parameters_size_numel_gpu_train&#34;])} elements&#39;)
+
+    logger.info(&#34;-------------------------------------------------------------------------------------------------&#34;)
+    logger.info(&#34;    Model class:&#34; + str(type(model)).replace(&#34;class &#34;, &#34;&#34;).replace(&#34;&lt;&#39;&#34;, &#34;&#34;).replace(&#34;&#39;&gt;&#34;, &#34;&#34;))
+    logger.info(&#34;-------------------------------------------------------------------------------------------------&#34;)</code></pre>
+</details>
+</dd>
+<dt id="models.mutils.set_buffers"><code class="name flex">
+<span>def <span class="ident">set_buffers</span></span>(<span>model: torch.nn.modules.module.Module, buffer_list: list)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_buffers(model: torch.nn.Module, buffer_list: list):
+    with torch.no_grad():
+        local_model_buffers = list()
+        for index, buf in enumerate(model.buffers()):
+            buf.flatten(0)[:] = buffer_list[index].flatten(0)[:]</code></pre>
+</details>
+</dd>
+<dt id="models.mutils.set_gradient"><code class="name flex">
+<span>def <span class="ident">set_gradient</span></span>(<span>model: torch.nn.modules.module.Module, grad, skipFrozen: bool = True)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Set model gradient</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>model</code></strong> :&ensp;<code>nn.Module</code></dt>
+<dd>Neural Network model</dd>
+<dt><strong><code>grad</code></strong> :&ensp;<code>torch.Tensor</code></dt>
+<dd>Dense vector with gradients for all components</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_gradient(model: torch.nn.Module, grad, skipFrozen: bool = True):
+    &#34;&#34;&#34;
+    Set model gradient
+
+    Args:
+        model (nn.Module): Neural Network model
+        grad (torch.Tensor): Dense vector with gradients for all components
+    &#34;&#34;&#34;
+    with torch.no_grad():
+        offset = 0
+        for i, p in enumerate(model.parameters()):
+            if skipFrozen and not p.requires_grad:
+                continue
+
+            if p.grad is None:
+                p.grad = torch.empty_like(p)
+
+            sz = p.grad.numel()
+            p.grad.flatten(0)[:] = grad[offset:(offset+sz)]
+            offset += sz</code></pre>
+</details>
+</dd>
+<dt id="models.mutils.set_params"><code class="name flex">
+<span>def <span class="ident">set_params</span></span>(<span>model: torch.nn.modules.module.Module, parameters, skipFrozen: bool = True, param_predicate=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Set model parameters from a single dense vector.</p>
+<p>Set all model parameters from a single dense vector,
+if you are interesting only on a subset of parameter use param_predicate.
+This setup process is not tracking by autograd.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>model</code></strong> :&ensp;<code>torch.nn.Module</code></dt>
+<dd>Neural Network model</dd>
+</dl>
+<p>parameters(torch.Tensor): Dense vector with parameters
+param_predicate(function(i,param)): If none this function is used to understand should be setup this parameter or not</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_params(model: torch.nn.Module, parameters, skipFrozen: bool = True, param_predicate=None):
+    &#34;&#34;&#34;
+    Set model parameters from a single dense vector.
+
+    Set all model parameters from a single dense vector, 
+    if you are interesting only on a subset of parameter use param_predicate. 
+    This setup process is not tracking by autograd.
+
+    Args:
+        model (torch.nn.Module): Neural Network model
+        parameters(torch.Tensor): Dense vector with parameters
+        param_predicate(function(i,param)): If none this function is used to understand should be setup this parameter or not
+    &#34;&#34;&#34;
+    with torch.no_grad():
+        offset = 0
+        if param_predicate is None:
+            for i, p in enumerate(model.parameters()):
+                if skipFrozen and not p.requires_grad:
+                    continue
+
+                sz = p.numel()
+                p.flatten(0)[:] = parameters[offset:(offset+sz)]
+                offset += sz
+        else:
+            for i, p in enumerate(model.parameters()):
+                if skipFrozen and not p.requires_grad:
+                    continue
+
+                if param_predicate(i, p) == True:
+                    sz = p.numel()
+                    p.flatten(0)[:] = parameters[offset:(offset+sz)]
+                    offset += sz</code></pre>
+</details>
+</dd>
+<dt id="models.mutils.set_params_to_zero"><code class="name flex">
+<span>def <span class="ident">set_params_to_zero</span></span>(<span>model, skipFrozen: bool = True, param_predicate=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Setup all model parameter to zero without tracking by autograd.</p>
+<p>This setup process is not tracking by autograd.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>model</code></strong> :&ensp;<code>torch.nn.Module</code></dt>
+<dd>Neural Network model</dd>
+</dl>
+<p>param_predicate(function(i,param)): If none this function is used to understand should be setup this parameter or not</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_params_to_zero(model, skipFrozen: bool = True, param_predicate=None):
+    &#34;&#34;&#34;
+    Setup all model parameter to zero without tracking by autograd.
+
+    This setup process is not tracking by autograd.
+
+    Args:
+        model (torch.nn.Module): Neural Network model
+        param_predicate(function(i,param)): If none this function is used to understand should be setup this parameter or not
+    &#34;&#34;&#34;
+    with torch.no_grad():
+        if param_predicate is None:
+            for p in model.parameters():
+
+                if skipFrozen and not p.requires_grad:
+                    continue
+
+                p.zero_()
+        else:
+            for i, p in enumerate(model.parameters()):
+
+                if skipFrozen and not p.requires_grad:
+                    continue
+
+                if param_predicate(i, p):
+                    p.zero_()</code></pre>
+</details>
+</dd>
+<dt id="models.mutils.set_params_uniform_random"><code class="name flex">
+<span>def <span class="ident">set_params_uniform_random</span></span>(<span>model, a=0.0, b=1.0, skipFrozen: bool = True, param_predicate=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Setup all model parameter independently uniformly at random U(a,b).</p>
+<p>This setup process is not tracking by autograd.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>model</code></strong> :&ensp;<code>torch.nn.Module</code></dt>
+<dd>Neural Network model</dd>
+</dl>
+<p>a(float): 'a' parameter of distribution
+b(float): 'b' parameter of distribution
+param_predicate(function(i,param)): If none this function is used to understand should be setup this parameter or not</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_params_uniform_random(model, a=0.0, b=1.0, skipFrozen: bool = True, param_predicate=None):
+    &#34;&#34;&#34;
+    Setup all model parameter independently uniformly at random U(a,b).
+
+    This setup process is not tracking by autograd.
+
+    Args:
+        model (torch.nn.Module): Neural Network model
+        a(float): &#39;a&#39; parameter of distribution
+        b(float): &#39;b&#39; parameter of distribution
+        param_predicate(function(i,param)): If none this function is used to understand should be setup this parameter or not
+    &#34;&#34;&#34;
+    with torch.no_grad():
+        if param_predicate is None:
+            for p in model.parameters():
+                if skipFrozen and not p.requires_grad:
+                    continue
+                p[:] = a + (b-a) * torch.rand_like(p)
+        else:
+            for i, p in enumerate(model.parameters()):
+                if skipFrozen and not p.requires_grad:
+                    continue
+
+                if param_predicate(i, p) == True:
+                    p[:] = a + (b-a) * torch.rand_like(p)</code></pre>
+</details>
+</dd>
+<dt id="models.mutils.test_get_set_for_model"><code class="name flex">
+<span>def <span class="ident">test_get_set_for_model</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def test_get_set_for_model():
+    hidden_features_layer_1 = 20
+    hidden_features_layer_2 = 22
+    model = torch.nn.Sequential(
+        torch.nn.Linear(in_features=1, out_features=hidden_features_layer_1, bias=False),
+        torch.nn.Linear(in_features=hidden_features_layer_1, out_features=hidden_features_layer_2, bias=False),
+        torch.nn.Linear(in_features=hidden_features_layer_2, out_features=1, bias=False),
+    )
+
+    assert number_of_params(model) == hidden_features_layer_1 + \
+                                      hidden_features_layer_1 * hidden_features_layer_2 + \
+                                      hidden_features_layer_2
+    
+    class Empty: 
+        pass
+    
+    args = Empty()
+    args.run_id = &#34;test&#34;
+    Logger.setup_logging()
+
+    print_models_info(model, args)
+
+    model.train(True)
+    for p in model.parameters():
+        assert p.grad is None
+
+    z = (10.0 - model(torch.Tensor([[3]])))**2
+    z.backward()
+    for p in model.parameters():
+        assert p.grad is not None
+        assert p.grad.shape == p.shape
+
+    g = get_gradient(model)
+    assert abs(l2_norm_of_gradient_m(model) - l2_norm_of_vec(g)) &lt; 1.0e-4
+    assert g.numel() == number_of_params(model)
+    set_gradient(model, 2.0 * g)
+
+    assert abs(l2_norm_of_gradient_m(model) - 2.0 * l2_norm_of_vec(g)) &lt; 1.0e-4</code></pre>
+</details>
+</dd>
+<dt id="models.mutils.test_get_set_params_and_grad_inf"><code class="name flex">
+<span>def <span class="ident">test_get_set_params_and_grad_inf</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def test_get_set_params_and_grad_inf():
+    hidden_features_layer_1 = 20
+    hidden_features_layer_2 = 22
+    model = torch.nn.Sequential(
+        torch.nn.Linear(in_features=1, out_features=hidden_features_layer_1, bias=False),
+        torch.nn.Linear(in_features=hidden_features_layer_1, out_features=hidden_features_layer_2, bias=True),
+        torch.nn.Linear(in_features=hidden_features_layer_2, out_features=1, bias=True),
+    )
+    model[0].requires_grad_(False)
+    z = (10.0 - model(torch.Tensor([[3]])))**2
+    z.backward()
+    g1 = get_gradient(model, skipFrozen=False)
+    add_to_gradient(model, g1, skipFrozen=False)
+    g2 = get_gradient(model, skipFrozen=False)
+    assert l2_norm_of_vec(g2 - 2*g1) &lt; 1.0e-5
+    
+    g3 = get_zero_gradient_compatible_with_model(model, skipFrozen=False)
+    assert l2_norm_of_vec(g3) &lt; 1.0e-5
+    assert g3.size() == g2.size()
+    set_params_to_zero(model, skipFrozen=False)
+    assert l2_norm_of_vec(get_params(model, skipFrozen=False)) &lt; 1.0e-5
+    set_params_uniform_random(model, skipFrozen=False)
+    assert l2_norm_of_vec(get_params(model, skipFrozen=False)) &gt; 1.0
+    set_params_to_zero(model, skipFrozen=False)
+    z = (10.0 - model(torch.Tensor([[0]])))**2
+    z.backward()
+    assert z.item() == 100.0</code></pre>
+</details>
+</dd>
+<dt id="models.mutils.test_grad_addition_for_model"><code class="name flex">
+<span>def <span class="ident">test_grad_addition_for_model</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def test_grad_addition_for_model():
+    hidden_features_layer_1 = 20
+    hidden_features_layer_2 = 22
+    model = torch.nn.Sequential(
+        torch.nn.Linear(in_features=1, out_features=hidden_features_layer_1, bias=False),
+        torch.nn.Linear(in_features=hidden_features_layer_1, out_features=hidden_features_layer_2, bias=True),
+        torch.nn.Linear(in_features=hidden_features_layer_2, out_features=1, bias=True),
+    )
+    n1 = number_of_params(model, skipFrozen=False)
+    model[0].requires_grad_(False)
+    n2 = number_of_params(model, skipFrozen=False)
+    assert n1 == n2
+    z = (10.0 - model(torch.Tensor([[3]])))**2
+    z.backward()
+    g = get_gradient(model, skipFrozen=False)
+    # Verify that requires_grad_(False) is correctly working with get_gradient() functionality
+    assert l2_norm_of_vec(g[0:hidden_features_layer_1]) &lt; 1.0e-4
+
+    # Verify that gradient has correct number of items
+    assert g.numel() == 1*hidden_features_layer_1 + \
+                        hidden_features_layer_1 * hidden_features_layer_2 + \
+                        hidden_features_layer_2 * 1 + \
+                        hidden_features_layer_2 + 1
+    
+    assert g.dim() == 1
+    get_zero_gradient_compatible_with_model(model, skipFrozen=False)
+
+    assert abs(l2_norm_of_gradient_m(model, skipFrozen=False) - l2_norm_of_vec(g)) &lt; 1.0e-4
+    set_gradient(model, g, skipFrozen=False)
+    add_to_gradient(model, torch.ones(n1), skipFrozen=False)
+    g1 = get_gradient(model, skipFrozen=False)
+    assert g1[0].item() == 1.0
+    add_to_gradient(model, -torch.ones(n1),skipFrozen=False)
+    g2 = get_gradient(model,skipFrozen=False)
+    assert l2_norm_of_vec(g2 - g) &lt; 1.0e-5
+    assert l2_norm_of_vec(g2 - g1) &gt; 1.0e-5
+
+    assert len(torch_layers_info(model)) == 1</code></pre>
+</details>
+</dd>
+<dt id="models.mutils.torch_layers_info"><code class="name flex">
+<span>def <span class="ident">torch_layers_info</span></span>(<span>model: torch.nn.modules.module.Module)</span>
+</code></dt>
+<dd>
+<div class="desc"><h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>model</code></strong> :&ensp;<code>nn.Module</code></dt>
+<dd>Neural Network model</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>dict</code></dt>
+<dd>Statistics about used standard torch modules inside. key: <module name> value: <used number></dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def torch_layers_info(model: torch.nn.Module):
+    &#34;&#34;&#34;
+        Args:
+            model (nn.Module): Neural Network model
+
+        Returns:
+            dict: Statistics about used standard torch modules inside. key: &lt;module name&gt; value: &lt;used number&gt; 
+    &#34;&#34;&#34;
+    max_string_length = 0
+    basic_modules = {}
+
+    for module in model.modules():
+        class_name = str(type(module)).replace(&#34;class &#34;, &#34;&#34;).replace(&#34;&lt;&#39;&#34;, &#34;&#34;).replace(&#34;&#39;&gt;&#34;, &#34;&#34;)
+
+        # Skip Sequential models
+        if class_name.find(&#34;torch.nn.modules.container.Sequential&#34;) == 0:
+            continue
+
+        max_string_length = max(max_string_length, len(class_name))
+        if class_name not in basic_modules:
+            basic_modules[class_name] = dict()
+            basic_modules[class_name][&#34;count&#34;] = 0
+            basic_modules[class_name][&#34;parameters_size_bytes_cpu_train&#34;] = 0
+            basic_modules[class_name][&#34;parameters_size_bytes_gpu_train&#34;] = 0
+            basic_modules[class_name][&#34;parameters_size_bytes_cpu_frozen&#34;] = 0
+            basic_modules[class_name][&#34;parameters_size_bytes_gpu_frozen&#34;] = 0
+
+            basic_modules[class_name][&#34;parameters_size_numel_cpu_train&#34;] = 0
+            basic_modules[class_name][&#34;parameters_size_numel_gpu_train&#34;] = 0
+            basic_modules[class_name][&#34;parameters_size_numel_cpu_frozen&#34;] = 0
+            basic_modules[class_name][&#34;parameters_size_numel_gpu_frozen&#34;] = 0
+
+        basic_modules[class_name][&#34;count&#34;] += 1
+        size_in_bytes_cpu_train = 0
+        size_in_bytes_gpu_train = 0
+        size_in_bytes_cpu_frozen = 0
+        size_in_bytes_gpu_frozen = 0
+
+        size_in_numel_cpu_train = 0
+        size_in_numel_gpu_train = 0
+        size_in_numel_cpu_frozen = 0
+        size_in_numel_gpu_frozen = 0
+
+        for param in module.parameters():
+            size_in_bytes = param.numel() * param.element_size()
+            size_in_elements = param.numel()
+
+            if param.device.type == &#34;cpu&#34;:
+                if param.requires_grad:
+                    size_in_bytes_cpu_train += size_in_bytes
+                    size_in_numel_cpu_train += size_in_elements
+                else:
+                    size_in_bytes_cpu_frozen += size_in_bytes
+                    size_in_numel_cpu_frozen += size_in_elements
+
+            else:
+                if param.requires_grad:
+                    size_in_bytes_gpu_train += size_in_bytes
+                    size_in_numel_gpu_train += size_in_elements
+                else:
+                    size_in_bytes_gpu_frozen += size_in_bytes
+                    size_in_numel_gpu_frozen += size_in_elements
+
+        basic_modules[class_name][&#34;parameters_size_bytes_cpu_train&#34;] += size_in_bytes_cpu_train
+        basic_modules[class_name][&#34;parameters_size_bytes_gpu_train&#34;] += size_in_bytes_gpu_train
+        basic_modules[class_name][&#34;parameters_size_bytes_cpu_frozen&#34;] += size_in_bytes_cpu_frozen
+        basic_modules[class_name][&#34;parameters_size_bytes_gpu_frozen&#34;] += size_in_bytes_gpu_frozen
+
+        basic_modules[class_name][&#34;parameters_size_numel_cpu_train&#34;] += size_in_numel_cpu_train
+        basic_modules[class_name][&#34;parameters_size_numel_gpu_train&#34;] += size_in_numel_gpu_train
+        basic_modules[class_name][&#34;parameters_size_numel_cpu_frozen&#34;] += size_in_numel_cpu_frozen
+        basic_modules[class_name][&#34;parameters_size_numel_gpu_frozen&#34;] += size_in_numel_gpu_frozen
+
+    return basic_modules</code></pre>
+</details>
+</dd>
+<dt id="models.mutils.turn_off_batch_normalization_and_dropout"><code class="name flex">
+<span>def <span class="ident">turn_off_batch_normalization_and_dropout</span></span>(<span>model: torch.nn.modules.module.Module)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def turn_off_batch_normalization_and_dropout(model: torch.nn.Module):
+    for m in model.modules():
+        if isinstance(m, torch.nn.BatchNorm1d) or \
+           isinstance(m, torch.nn.BatchNorm2d) or \
+           isinstance(m, torch.nn.BatchNorm3d) or \
+           isinstance(m, torch.nn.Dropout):
+            m.eval()</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="models.mutils.add_to_gradient" href="#models.mutils.add_to_gradient">add_to_gradient</a></code></li>
+<li><code><a title="models.mutils.get_buffers" href="#models.mutils.get_buffers">get_buffers</a></code></li>
+<li><code><a title="models.mutils.get_gradient" href="#models.mutils.get_gradient">get_gradient</a></code></li>
+<li><code><a title="models.mutils.get_params" href="#models.mutils.get_params">get_params</a></code></li>
+<li><code><a title="models.mutils.get_zero_gradient_compatible_with_model" href="#models.mutils.get_zero_gradient_compatible_with_model">get_zero_gradient_compatible_with_model</a></code></li>
+<li><code><a title="models.mutils.l2_norm_of_gradient_m" href="#models.mutils.l2_norm_of_gradient_m">l2_norm_of_gradient_m</a></code></li>
+<li><code><a title="models.mutils.l2_norm_of_vec" href="#models.mutils.l2_norm_of_vec">l2_norm_of_vec</a></code></li>
+<li><code><a title="models.mutils.number_of_params" href="#models.mutils.number_of_params">number_of_params</a></code></li>
+<li><code><a title="models.mutils.print_current_gpu_context" href="#models.mutils.print_current_gpu_context">print_current_gpu_context</a></code></li>
+<li><code><a title="models.mutils.print_models_info" href="#models.mutils.print_models_info">print_models_info</a></code></li>
+<li><code><a title="models.mutils.set_buffers" href="#models.mutils.set_buffers">set_buffers</a></code></li>
+<li><code><a title="models.mutils.set_gradient" href="#models.mutils.set_gradient">set_gradient</a></code></li>
+<li><code><a title="models.mutils.set_params" href="#models.mutils.set_params">set_params</a></code></li>
+<li><code><a title="models.mutils.set_params_to_zero" href="#models.mutils.set_params_to_zero">set_params_to_zero</a></code></li>
+<li><code><a title="models.mutils.set_params_uniform_random" href="#models.mutils.set_params_uniform_random">set_params_uniform_random</a></code></li>
+<li><code><a title="models.mutils.test_get_set_for_model" href="#models.mutils.test_get_set_for_model">test_get_set_for_model</a></code></li>
+<li><code><a title="models.mutils.test_get_set_params_and_grad_inf" href="#models.mutils.test_get_set_params_and_grad_inf">test_get_set_params_and_grad_inf</a></code></li>
+<li><code><a title="models.mutils.test_grad_addition_for_model" href="#models.mutils.test_grad_addition_for_model">test_grad_addition_for_model</a></code></li>
+<li><code><a title="models.mutils.torch_layers_info" href="#models.mutils.torch_layers_info">torch_layers_info</a></code></li>
+<li><code><a title="models.mutils.turn_off_batch_normalization_and_dropout" href="#models.mutils.turn_off_batch_normalization_and_dropout">turn_off_batch_normalization_and_dropout</a></code></li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+FL_PyTorch. The document generated 09-July-2022 23:03:07.
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>

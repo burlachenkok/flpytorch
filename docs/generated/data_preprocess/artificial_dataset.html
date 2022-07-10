@@ -1,0 +1,573 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>data_preprocess.artificial_dataset API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_CHTML" integrity="sha256-kZafAc6mZvK3W3v1pHOcUix30OHQN6pU/NO2oFkqZVw=" crossorigin></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>data_preprocess.artificial_dataset</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">#!/usr/bin/env python3
+
+from .read_file_cache import cacheItemThreadUnsafe, cacheMakeKey, cacheGetItem, cacheHasItem
+from .fl_dataset import FLDataset
+import numpy as np
+
+# Import PyTorch root package import torch
+import torch
+import math
+
+
+class ArificialDataset(FLDataset):
+    &#34;&#34;&#34;
+    Based FL class that loads H5 type data_preprocess.
+    &#34;&#34;&#34;
+    def __init__(self, exec_ctx, args, train=None, client_id=None, transform=None, target_transform=None):
+        &#34;&#34;&#34;
+        The constructor for a synthetic dataset.
+
+        Args:
+            exec_ctx: execution context from which random number generator should be use
+            args: command-line argument with generation specification
+            train(bool): True if we&#39;re in training mode
+            client_id (int): make the view of the dataset as we work from the point of view of client client_id
+            transform: input transformation applied to input attributes before feeding input into the compute of loss
+            target_transform: output or label transformation applied to response variable before computation of loss
+        &#34;&#34;&#34;
+        genSpecList = args.dataset_generation_spec.split(&#34;,&#34;)
+        genSpec = {}
+        for item in genSpecList:
+            k, v = item.split(&#39;:&#39;)
+            genSpec[k] = v
+
+        self.transform = transform
+        self.target_transform = target_transform
+
+        self.num_clients = int(genSpec[&#39;clients&#39;])
+        self.n_client_samples = int(genSpec[&#39;samples_per_client&#39;])
+
+        d = int(genSpec[&#39;variables&#39;])
+
+        rows = self.num_clients * self.n_client_samples
+        cols = d
+
+        if train is None or train == True:
+            pass
+        else:
+            pass
+
+        xSoltMultiplier = 10.0
+        xSolution = np.ones(d) * xSoltMultiplier
+        b_perurbation = 0.0
+
+        if int(genSpec[&#39;homogeneous&#39;]) == 1:
+            # Returns a anumpy array filled with random numbers from a uniform distribution on the interval [0, 1)[0,1)
+            Ai = exec_ctx.np_random.rand(rows // self.num_clients, cols)
+            U, S, Vt = np.linalg.svd(Ai, full_matrices=True)
+            L = float(genSpec[&#39;l&#39;])
+            mu = float(genSpec[&#39;mu&#39;])
+            S = np.zeros((U.shape[1], Vt.shape[0]))
+            len_s = min(S.shape[0], S.shape[1])
+            if len_s &gt; 1:
+                for i in range(len_s):
+                    S[i][i] = math.sqrt((L - mu) * float(i) / (len_s - 1) + mu)
+            else:
+                S[0][0] = math.sqrt(L)
+
+            Ai = U @ S @ Vt
+            Bi = Ai @ xSolution
+            Bi = Bi.reshape(-1, 1)
+            Bi += b_perurbation * exec_ctx.np_random.rand(*(Bi.shape))  # random perturbation
+
+            Ai *= math.sqrt(Ai.shape[0]/2.0)
+            Bi *= math.sqrt(Ai.shape[0]/2.0)
+
+            A = []
+            B = []
+            for c in range(self.num_clients):
+                A.append(Ai)
+                B.append(Bi)
+            A = np.vstack(A)
+            B = np.vstack(B)
+        else:
+            A = exec_ctx.np_random.rand(rows, cols)
+            U, S, Vt = np.linalg.svd(A, full_matrices=True)
+            L = float(genSpec[&#39;l&#39;])
+            mu = float(genSpec[&#39;mu&#39;])
+
+            S = np.zeros((U.shape[1], Vt.shape[0]))
+            len_s = min(S.shape[0], S.shape[1])
+
+            if len_s &gt; 1:
+                for i in range(len_s):
+                    S[i][i] = math.sqrt((L - mu) * float(i)/(len_s - 1) + mu)
+            else:
+                S[0][0] = math.sqrt(L)
+
+            A = U @ S @ Vt
+            B = A @ xSolution
+            B = B.reshape(-1, 1)
+            B += b_perurbation * exec_ctx.np_random.rand(*(B.shape))  # random perturbation
+
+            # Extra scaling to have L and \mu specifically for function f(x) = 1/n * sum(a_i * x - b_i)**2
+            A *= math.sqrt(A.shape[0]/2.0)
+            B *= math.sqrt(A.shape[0]/2.0)
+
+        # self.data = torch.from_numpy(A).float()
+        # self.targets = torch.from_numpy(B).float()
+
+        self.data = A
+        self.targets = B
+
+        self.targets = torch.Tensor(self.targets)
+        self.data = torch.Tensor(self.data)
+
+        # ==============================================================================================================
+        # Move data to GPU maybe
+        # self.store_in_target_device = args.store_data_in_target_device
+        # Move data to target device
+        # if self.store_in_target_device:
+        #    self.targets = self.targets.to(device = args.device)
+        #    self.data = self.data.to(device = args.device)
+        # ==============================================================================================================
+
+        self.set_client(client_id)
+
+    def compute_Li_for_linear_regression(self):
+        # ==============================================================================================================
+        # Compute L, Li for linear regression
+        # ==============================================================================================================
+        A = self.data
+        self.L = ((2/A.shape[0]) * torch.linalg.norm(A, 2)**2).item()
+        self.Li_all_clients = []
+
+        for c in range(self.num_clients):
+            self.set_client(c)
+            subdata = self.data[int(self.client_id) * self.n_client_samples:
+                                (int(self.client_id) + 1) * self.n_client_samples, ...]
+
+            Li = ((2/subdata.shape[0]) * torch.linalg.norm(subdata, 2) ** 2).item()
+            self.Li_all_clients.append(Li)
+
+        assert max(self.Li_all_clients) + 1.0e+3 &gt;= self.L
+        assert max(self.Li_all_clients) - 1.0e+3 &lt;= self.L * self.num_clients
+
+    def set_client(self, index=None):
+        &#34;&#34;&#34;
+        Set pointer to client&#39;s data_preprocess corresponding to index.
+        If index is none complete dataset as union of all datapoint will be observable by higher level.
+
+        Args:
+            index(int): index of client.
+
+        Returns:
+            None
+        &#34;&#34;&#34;
+        if index is None:
+            self.client_id = None
+            self.length = len(self.data)
+        else:
+            if index &lt; 0 or index &gt;= self.num_clients:
+                raise ValueError(&#39;Number of clients is out of bounds.&#39;)
+            self.client_id = index
+            self.length = self.n_client_samples
+
+    def load_data(self):
+        &#34;&#34;&#34;
+        Explicit load all need datasets from the filesystem or cache for specific dataset instance.
+        &#34;&#34;&#34;
+        pass
+
+    def __getitem__(self, index):
+        &#34;&#34;&#34;
+        Args:
+            index (int): Index
+
+        Returns:
+            tuple: (image, target) where target is index of the target class.
+        &#34;&#34;&#34;
+        if self.client_id is None:
+            actual_index = index
+        else:
+            actual_index = int(self.client_id) * self.n_client_samples + index
+        img, target = self.data[actual_index], self.targets[actual_index]
+
+        if self.transform is not None:
+            img = self.transform(img)
+
+        if self.target_transform is not None:
+            target = self.target_transform(target)
+
+        # TODO: If __getitem__ will always fetch object from the CPU memory.
+        # Suggestion use GPU memory or another GPU as a cache storage
+        # return torch.from_numpy(img).float(), torch.from_numpy(target).float()
+        # reference to objects from dataset (by reference)
+        return img.detach(), target.detach()
+
+    def __len__(self):
+        return self.length</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="data_preprocess.artificial_dataset.ArificialDataset"><code class="flex name class">
+<span>class <span class="ident">ArificialDataset</span></span>
+<span>(</span><span>exec_ctx, args, train=None, client_id=None, transform=None, target_transform=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Based FL class that loads H5 type data_preprocess.</p>
+<p>The constructor for a synthetic dataset.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>exec_ctx</code></strong></dt>
+<dd>execution context from which random number generator should be use</dd>
+<dt><strong><code>args</code></strong></dt>
+<dd>command-line argument with generation specification</dd>
+<dt>train(bool): True if we're in training mode</dt>
+<dt><strong><code>client_id</code></strong> :&ensp;<code>int</code></dt>
+<dd>make the view of the dataset as we work from the point of view of client client_id</dd>
+<dt><strong><code>transform</code></strong></dt>
+<dd>input transformation applied to input attributes before feeding input into the compute of loss</dd>
+<dt><strong><code>target_transform</code></strong></dt>
+<dd>output or label transformation applied to response variable before computation of loss</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class ArificialDataset(FLDataset):
+    &#34;&#34;&#34;
+    Based FL class that loads H5 type data_preprocess.
+    &#34;&#34;&#34;
+    def __init__(self, exec_ctx, args, train=None, client_id=None, transform=None, target_transform=None):
+        &#34;&#34;&#34;
+        The constructor for a synthetic dataset.
+
+        Args:
+            exec_ctx: execution context from which random number generator should be use
+            args: command-line argument with generation specification
+            train(bool): True if we&#39;re in training mode
+            client_id (int): make the view of the dataset as we work from the point of view of client client_id
+            transform: input transformation applied to input attributes before feeding input into the compute of loss
+            target_transform: output or label transformation applied to response variable before computation of loss
+        &#34;&#34;&#34;
+        genSpecList = args.dataset_generation_spec.split(&#34;,&#34;)
+        genSpec = {}
+        for item in genSpecList:
+            k, v = item.split(&#39;:&#39;)
+            genSpec[k] = v
+
+        self.transform = transform
+        self.target_transform = target_transform
+
+        self.num_clients = int(genSpec[&#39;clients&#39;])
+        self.n_client_samples = int(genSpec[&#39;samples_per_client&#39;])
+
+        d = int(genSpec[&#39;variables&#39;])
+
+        rows = self.num_clients * self.n_client_samples
+        cols = d
+
+        if train is None or train == True:
+            pass
+        else:
+            pass
+
+        xSoltMultiplier = 10.0
+        xSolution = np.ones(d) * xSoltMultiplier
+        b_perurbation = 0.0
+
+        if int(genSpec[&#39;homogeneous&#39;]) == 1:
+            # Returns a anumpy array filled with random numbers from a uniform distribution on the interval [0, 1)[0,1)
+            Ai = exec_ctx.np_random.rand(rows // self.num_clients, cols)
+            U, S, Vt = np.linalg.svd(Ai, full_matrices=True)
+            L = float(genSpec[&#39;l&#39;])
+            mu = float(genSpec[&#39;mu&#39;])
+            S = np.zeros((U.shape[1], Vt.shape[0]))
+            len_s = min(S.shape[0], S.shape[1])
+            if len_s &gt; 1:
+                for i in range(len_s):
+                    S[i][i] = math.sqrt((L - mu) * float(i) / (len_s - 1) + mu)
+            else:
+                S[0][0] = math.sqrt(L)
+
+            Ai = U @ S @ Vt
+            Bi = Ai @ xSolution
+            Bi = Bi.reshape(-1, 1)
+            Bi += b_perurbation * exec_ctx.np_random.rand(*(Bi.shape))  # random perturbation
+
+            Ai *= math.sqrt(Ai.shape[0]/2.0)
+            Bi *= math.sqrt(Ai.shape[0]/2.0)
+
+            A = []
+            B = []
+            for c in range(self.num_clients):
+                A.append(Ai)
+                B.append(Bi)
+            A = np.vstack(A)
+            B = np.vstack(B)
+        else:
+            A = exec_ctx.np_random.rand(rows, cols)
+            U, S, Vt = np.linalg.svd(A, full_matrices=True)
+            L = float(genSpec[&#39;l&#39;])
+            mu = float(genSpec[&#39;mu&#39;])
+
+            S = np.zeros((U.shape[1], Vt.shape[0]))
+            len_s = min(S.shape[0], S.shape[1])
+
+            if len_s &gt; 1:
+                for i in range(len_s):
+                    S[i][i] = math.sqrt((L - mu) * float(i)/(len_s - 1) + mu)
+            else:
+                S[0][0] = math.sqrt(L)
+
+            A = U @ S @ Vt
+            B = A @ xSolution
+            B = B.reshape(-1, 1)
+            B += b_perurbation * exec_ctx.np_random.rand(*(B.shape))  # random perturbation
+
+            # Extra scaling to have L and \mu specifically for function f(x) = 1/n * sum(a_i * x - b_i)**2
+            A *= math.sqrt(A.shape[0]/2.0)
+            B *= math.sqrt(A.shape[0]/2.0)
+
+        # self.data = torch.from_numpy(A).float()
+        # self.targets = torch.from_numpy(B).float()
+
+        self.data = A
+        self.targets = B
+
+        self.targets = torch.Tensor(self.targets)
+        self.data = torch.Tensor(self.data)
+
+        # ==============================================================================================================
+        # Move data to GPU maybe
+        # self.store_in_target_device = args.store_data_in_target_device
+        # Move data to target device
+        # if self.store_in_target_device:
+        #    self.targets = self.targets.to(device = args.device)
+        #    self.data = self.data.to(device = args.device)
+        # ==============================================================================================================
+
+        self.set_client(client_id)
+
+    def compute_Li_for_linear_regression(self):
+        # ==============================================================================================================
+        # Compute L, Li for linear regression
+        # ==============================================================================================================
+        A = self.data
+        self.L = ((2/A.shape[0]) * torch.linalg.norm(A, 2)**2).item()
+        self.Li_all_clients = []
+
+        for c in range(self.num_clients):
+            self.set_client(c)
+            subdata = self.data[int(self.client_id) * self.n_client_samples:
+                                (int(self.client_id) + 1) * self.n_client_samples, ...]
+
+            Li = ((2/subdata.shape[0]) * torch.linalg.norm(subdata, 2) ** 2).item()
+            self.Li_all_clients.append(Li)
+
+        assert max(self.Li_all_clients) + 1.0e+3 &gt;= self.L
+        assert max(self.Li_all_clients) - 1.0e+3 &lt;= self.L * self.num_clients
+
+    def set_client(self, index=None):
+        &#34;&#34;&#34;
+        Set pointer to client&#39;s data_preprocess corresponding to index.
+        If index is none complete dataset as union of all datapoint will be observable by higher level.
+
+        Args:
+            index(int): index of client.
+
+        Returns:
+            None
+        &#34;&#34;&#34;
+        if index is None:
+            self.client_id = None
+            self.length = len(self.data)
+        else:
+            if index &lt; 0 or index &gt;= self.num_clients:
+                raise ValueError(&#39;Number of clients is out of bounds.&#39;)
+            self.client_id = index
+            self.length = self.n_client_samples
+
+    def load_data(self):
+        &#34;&#34;&#34;
+        Explicit load all need datasets from the filesystem or cache for specific dataset instance.
+        &#34;&#34;&#34;
+        pass
+
+    def __getitem__(self, index):
+        &#34;&#34;&#34;
+        Args:
+            index (int): Index
+
+        Returns:
+            tuple: (image, target) where target is index of the target class.
+        &#34;&#34;&#34;
+        if self.client_id is None:
+            actual_index = index
+        else:
+            actual_index = int(self.client_id) * self.n_client_samples + index
+        img, target = self.data[actual_index], self.targets[actual_index]
+
+        if self.transform is not None:
+            img = self.transform(img)
+
+        if self.target_transform is not None:
+            target = self.target_transform(target)
+
+        # TODO: If __getitem__ will always fetch object from the CPU memory.
+        # Suggestion use GPU memory or another GPU as a cache storage
+        # return torch.from_numpy(img).float(), torch.from_numpy(target).float()
+        # reference to objects from dataset (by reference)
+        return img.detach(), target.detach()
+
+    def __len__(self):
+        return self.length</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>data_preprocess.fl_dataset.FLDataset</li>
+<li>torch.utils.data.dataset.Dataset</li>
+<li>typing.Generic</li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="data_preprocess.artificial_dataset.ArificialDataset.compute_Li_for_linear_regression"><code class="name flex">
+<span>def <span class="ident">compute_Li_for_linear_regression</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def compute_Li_for_linear_regression(self):
+    # ==============================================================================================================
+    # Compute L, Li for linear regression
+    # ==============================================================================================================
+    A = self.data
+    self.L = ((2/A.shape[0]) * torch.linalg.norm(A, 2)**2).item()
+    self.Li_all_clients = []
+
+    for c in range(self.num_clients):
+        self.set_client(c)
+        subdata = self.data[int(self.client_id) * self.n_client_samples:
+                            (int(self.client_id) + 1) * self.n_client_samples, ...]
+
+        Li = ((2/subdata.shape[0]) * torch.linalg.norm(subdata, 2) ** 2).item()
+        self.Li_all_clients.append(Li)
+
+    assert max(self.Li_all_clients) + 1.0e+3 &gt;= self.L
+    assert max(self.Li_all_clients) - 1.0e+3 &lt;= self.L * self.num_clients</code></pre>
+</details>
+</dd>
+<dt id="data_preprocess.artificial_dataset.ArificialDataset.load_data"><code class="name flex">
+<span>def <span class="ident">load_data</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Explicit load all need datasets from the filesystem or cache for specific dataset instance.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def load_data(self):
+    &#34;&#34;&#34;
+    Explicit load all need datasets from the filesystem or cache for specific dataset instance.
+    &#34;&#34;&#34;
+    pass</code></pre>
+</details>
+</dd>
+<dt id="data_preprocess.artificial_dataset.ArificialDataset.set_client"><code class="name flex">
+<span>def <span class="ident">set_client</span></span>(<span>self, index=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Set pointer to client's data_preprocess corresponding to index.
+If index is none complete dataset as union of all datapoint will be observable by higher level.</p>
+<h2 id="args">Args</h2>
+<p>index(int): index of client.</p>
+<h2 id="returns">Returns</h2>
+<p>None</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_client(self, index=None):
+    &#34;&#34;&#34;
+    Set pointer to client&#39;s data_preprocess corresponding to index.
+    If index is none complete dataset as union of all datapoint will be observable by higher level.
+
+    Args:
+        index(int): index of client.
+
+    Returns:
+        None
+    &#34;&#34;&#34;
+    if index is None:
+        self.client_id = None
+        self.length = len(self.data)
+    else:
+        if index &lt; 0 or index &gt;= self.num_clients:
+            raise ValueError(&#39;Number of clients is out of bounds.&#39;)
+        self.client_id = index
+        self.length = self.n_client_samples</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="data_preprocess.artificial_dataset.ArificialDataset" href="#data_preprocess.artificial_dataset.ArificialDataset">ArificialDataset</a></code></h4>
+<ul class="">
+<li><code><a title="data_preprocess.artificial_dataset.ArificialDataset.compute_Li_for_linear_regression" href="#data_preprocess.artificial_dataset.ArificialDataset.compute_Li_for_linear_regression">compute_Li_for_linear_regression</a></code></li>
+<li><code><a title="data_preprocess.artificial_dataset.ArificialDataset.load_data" href="#data_preprocess.artificial_dataset.ArificialDataset.load_data">load_data</a></code></li>
+<li><code><a title="data_preprocess.artificial_dataset.ArificialDataset.set_client" href="#data_preprocess.artificial_dataset.ArificialDataset.set_client">set_client</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+FL_PyTorch. The document generated 09-July-2022 23:02:52.
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>

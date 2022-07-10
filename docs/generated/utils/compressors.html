@@ -1,0 +1,1963 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>utils.compressors API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_CHTML" integrity="sha256-kZafAc6mZvK3W3v1pHOcUix30OHQN6pU/NO2oFkqZVw=" crossorigin></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>utils.compressors</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+# Import PyTorch root package import torch
+import torch
+
+import math
+import numpy as np
+
+
+class CompressorType:
+    IDENTICAL = 1                # Identical compressor
+    LAZY_COMPRESSOR = 2          # Lazy or Bernulli compressor
+    RANDK_COMPRESSOR = 3         # Rank-K compressor
+    NATURAL_COMPRESSOR_FP32 = 4  # Natural compressor with FP32
+    STANDARD_DITHERING_FP32 = 5  # Standard dithering with FP32
+    NATURAL_DITHERING_FP32 = 6   # Natural Dithering applied for FP32 components vectors
+    TOPK_COMPRESSOR = 7          # Top-K compressor
+    RANK_K_COMPRESSOR = 8        # Rank-K compressor
+
+
+class Compressor:
+    &#34;&#34;&#34; Collection of unbiased compressor E[C(x)]=x and E[|C(x)-x|^2]&lt;=w|x|^2 \\iff E[|C(x)|^2] &lt;= (w+1)|x|^2 &#34;&#34;&#34;
+
+    def resetStats(self):
+        &#34;&#34;&#34;Reset internal statistics for compressor&#34;&#34;&#34;
+        self.total_input_components = 0            # Total scalar component(fp32 scalar) processed by the compressor
+        self.really_need_to_send_components = 0    # Total scalar component which need to be send across the network
+        self.last_input_advance = 0                # Last input components through the last call
+        self.last_need_to_send_advance = 0         # Last need to send scalar component.
+
+    def __init__(self):
+        &#34;&#34;&#34;Ctor of the compressor by default compressor type is identical&#34;&#34;&#34;
+        self.compressorType = CompressorType.IDENTICAL
+        self.total_input_components = 0
+        self.really_need_to_send_components = 0
+        self.last_input_advance = 0
+        self.last_need_to_send_advance = 0
+        # remove self.w init, because self.w is undefined for biased compressors
+        # self.w = 0.0
+
+    def fullName(self):
+        &#34;&#34;&#34;Get fullname of the compressor.&#34;&#34;&#34;
+        omega = r&#39;$\omega$&#39;
+        if self.compressorType == CompressorType.IDENTICAL:
+            return f&#34;Identical&#34;
+        if self.compressorType == CompressorType.LAZY_COMPRESSOR:
+            return f&#34;Bernoulli(Lazy) [p={self.P:g},{omega}={self.getW():.1f}]&#34;
+        if self.compressorType == CompressorType.RANDK_COMPRESSOR:
+            return f&#34;Rand [K={self.K},D={self.D}]&#34;
+        if self.compressorType == CompressorType.NATURAL_COMPRESSOR_FP32:
+            return f&#34;Natural for fp32 [{omega}={self.getW():.1f}]&#34;
+        if self.compressorType == CompressorType.STANDARD_DITHERING_FP32:
+            return f&#34;Standard Dithering for fp32[s={self.s}]&#34;
+        if self.compressorType == CompressorType.NATURAL_DITHERING_FP32:
+            return f&#34;Natural Dithering for fp32[s={self.s},{omega}={self.getW():.1f}]&#34;
+        if self.compressorType == CompressorType.TOPK_COMPRESSOR:
+            return f&#34;Top [K={self.K},D={self.D}]&#34;
+        if self.compressorType == CompressorType.RANK_K_COMPRESSOR:
+            return f&#34;Rank [K={self.K},D={self.D}]&#34;
+
+        return &#34;?&#34;
+
+    def makeIdenticalCompressor(self):
+        &#34;&#34;&#34; Make identical compressor &#34;&#34;&#34;
+        self.compressorType = CompressorType.IDENTICAL
+        self.w = 0.0
+        self.resetStats()
+
+    def makeLazyCompressor(self, P):
+        &#34;&#34;&#34; Make lazy compressor which with probability &#39;p&#39; returns x/p and w.p. &#39;1-p&#39; return 0 &#34;&#34;&#34;
+
+        # w + 1 = p* 1/(p**2) =&gt; w = 1/p - 1
+        self.compressorType = CompressorType.LAZY_COMPRESSOR
+        self.P = P
+        self.w = 1.0 / P - 1.0
+        self.resetStats()
+
+    def makeStandardDitheringFP32(self, D, levels, p=float(&#34;inf&#34;)):
+        &#34;&#34;&#34;
+        Make standard dithering schema with having uniform levels intervals inside [0.0, 1.0]
+        and using &#34;p&#34; norm for normalizing vectors
+        &#34;&#34;&#34;
+        self.D = D
+        self.compressorType = CompressorType.STANDARD_DITHERING_FP32
+        # levels + 1 values in range [0.0, 1.0] which uniformly split this segment
+        self.levelsValues = torch.arange(0.0, 1.0 + 1.0 / levels * 0.5, 1.0 / levels)
+        self.s = len(self.levelsValues) - 1  # should be equal to level
+        assert self.s == levels
+
+        self.p = p
+        self.w = 0.0  # TODO - specify W for dithering
+
+        self.resetStats()
+
+    def makeQSGD_FP32(self, D, levels):
+        &#34;&#34;&#34; Make QSGD compressors with specific number of levels&#34;&#34;&#34;
+
+        self.makeStandardDitheringFP32(D, levels, p=2)
+        # Lemma 3.1. from https://arxiv.org/pdf/1610.02132.pdf, page 5
+        self.w = min(D / (levels * levels), D ** 0.5 / levels)
+
+    def makeTernGrad(self, D):
+        &#34;&#34;&#34; Make Ternary Gradient compressor &#34;&#34;&#34;
+        # https://arxiv.org/pdf/1705.07878.pdf
+        self.makeStandardDitheringFP32(D, levels=1, p=float(&#34;inf&#34;))
+        self.w = 0.0
+
+    def makeNaturalDitheringFP32(self, D, levels, p=float(&#34;inf&#34;)):
+        &#34;&#34;&#34;
+        Make dithering schema with having levels intervals inside [0.0, 1.0] with lengths power of (1/2)
+        and using &#34;p&#34; norm for normalizing vectors
+        &#34;&#34;&#34;
+        self.D = D
+        self.compressorType = CompressorType.NATURAL_DITHERING_FP32
+        self.levelsValues = torch.zeros(levels + 1)
+        for i in range(levels):
+            self.levelsValues[i] = (1.0 / 2.0) ** i
+        self.levelsValues = torch.flip(self.levelsValues, dims=[0])
+        self.s = len(self.levelsValues) - 1
+        assert self.s == levels
+
+        self.p = p
+
+        r = min(p, 2)
+        self.w = 1.0 / 8.0 + (D ** (1.0 / r)) / (2 ** (self.s - 1)) * min(1, (D ** (1.0 / r)) / (2 ** (self.s - 1)))
+        self.resetStats()
+
+    def makeRandKCompressor(self, D, K):
+        &#34;&#34;&#34;Make Random/Nice sparsification with forcing selecting u.a.r. K non-zeros component from all D components&#34;&#34;&#34;
+        # E[|C(x)|^2]=(d*d)/(k*k) * E[sum(zi*ei*xi)^2)] = (d*d)/(k*k) * k/d *|x|^2 = d/k * (x^2) = (w + 1) (x^2)
+        #  =&gt; w = d/k-1
+        self.compressorType = CompressorType.RANDK_COMPRESSOR
+        self.K = K
+        self.D = D
+        self.w = self.D / self.K - 1.0
+        self.resetStats()
+
+    def makeTopKCompressor(self, D, K):
+        &#34;&#34;&#34;
+        Make Top-K sparsification with forcing selecting maximum K component from all D components
+        in terms of absolute value.
+        &#34;&#34;&#34;
+        # E[|C(x)-x|^2]=(1-a)|x|^2
+        self.compressorType = CompressorType.TOPK_COMPRESSOR
+        self.K = K
+        self.D = D
+        self.alpha = self.K / self.D
+        self.resetStats()
+
+    def makeRankKCompressor(self, D, K):
+        &#34;&#34;&#34;
+        Make Rank-K sparsification compressors with forcing selecting K Rank-1 matrices in truncated SVD expansion
+        of the reshaped &#34;X&#34; into matrix
+        &#34;&#34;&#34;
+        # E[|C(x)-x|^2]=(1-a)|x|^2
+        self.compressorType = CompressorType.RANK_K_COMPRESSOR
+        self.K = K
+        self.D = D
+
+        self.A = int(D**0.5)
+        self.B = int(D**0.5)
+
+        while self.D % self.A != 0:
+            self.A = self.A + 1
+
+        self.B = self.D // self.A
+
+        self.alpha = self.K / min(self.A, self.B)
+
+        self.resetStats()
+
+    def makeNaturalCompressorFP32(self, D):
+        &#34;&#34;&#34;Create Natural compressor&#34;&#34;&#34;
+        self.compressorType = CompressorType.NATURAL_COMPRESSOR_FP32
+        self.D = D
+        self.w = 1.0 / 8.0
+        self.resetStats()
+
+    def getW(self):
+        &#34;&#34;&#34;Get &#39;w&#39; parameter of unbiased compressor&#34;&#34;&#34;
+        return self.w
+
+    def getAlphaContraction(self):
+        &#34;&#34;&#34;Get &#39;alpha&#39; parameter of biased contraction compressor (e.g. top-k)&#34;&#34;&#34;
+        return self.alpha
+
+    def isContractionCompressor(self):
+        &#34;&#34;&#34;Check that compressor is contraction compressor&#34;&#34;&#34;
+        return hasattr(self, &#34;alpha&#34;)
+
+    def isUnbiasedCompressor(self):
+        &#34;&#34;&#34;Check that compressor is unbiased randomized mapping&#34;&#34;&#34;
+        return hasattr(self, &#34;w&#34;)
+
+    def generateCompressPattern(self, rndgen, device, clientId, H):
+        &#34;&#34;&#34;Generate compress pattern. Sampling stochasticity for each compressors happens only on that part&#34;&#34;&#34;
+        # For debug
+        # print(&#34;w for compressor: &#34;, self.getW())
+
+        if self.compressorType == CompressorType.IDENTICAL:
+            pass
+        elif self.compressorType == CompressorType.LAZY_COMPRESSOR:
+            self.testp = rndgen.random()
+        elif self.compressorType == CompressorType.RANDK_COMPRESSOR:
+            self.S = torch.from_numpy(rndgen.choice(self.D, self.K, replace=False)).to(torch.long).to(device=device)
+        elif self.compressorType == CompressorType.NATURAL_COMPRESSOR_FP32:
+            self.testp = torch.from_numpy(rndgen.rand(self.D))
+        elif self.compressorType == CompressorType.STANDARD_DITHERING_FP32:
+            self.testp = torch.from_numpy(rndgen.rand(self.D))
+        elif self.compressorType == CompressorType.NATURAL_DITHERING_FP32:
+            self.testp = torch.from_numpy(rndgen.rand(self.D))
+        elif self.compressorType == CompressorType.TOPK_COMPRESSOR:
+            pass
+        elif self.compressorType == CompressorType.RANK_K_COMPRESSOR:
+            pass
+
+    def compressVector(self, x):
+        &#34;&#34;&#34; Compress input vector &#39;x&#39; and produce compressed results &#34;&#34;&#34;
+        d = max(x.shape)
+        out = None
+
+        self.last_input_advance = d
+        self.last_need_to_send_advance = 0
+
+        # ==============================================================================================================
+        if self.compressorType == CompressorType.IDENTICAL:
+            out = x
+            self.last_need_to_send_advance = d
+
+        elif self.compressorType == CompressorType.LAZY_COMPRESSOR:
+            testp = self.testp
+            if testp &lt; self.P:
+                out = x / self.P
+                self.last_need_to_send_advance = d
+            else:
+                out = torch.zeros_like(x)
+                self.last_need_to_send_advance = 0
+
+        elif self.compressorType == CompressorType.RANDK_COMPRESSOR:
+            S = self.S
+            out = torch.zeros_like(x)
+            out[S] = (self.D / self.K) * x[S]
+            # We assume that we don&#39;t need to send indices
+            self.last_need_to_send_advance = self.K
+
+        elif self.compressorType == CompressorType.NATURAL_COMPRESSOR_FP32:
+            out = torch.zeros_like(x)
+
+            sign = torch.sign(x)
+            alpha = torch.log2(torch.abs(x))
+            alpha_down = torch.floor(alpha)
+            alpha_up = torch.ceil(alpha)
+
+            pt = (torch.pow(2, alpha_up) - torch.abs(x)) / torch.pow(2, alpha_down)
+
+            if self.testp.device != x.device:
+                self.testp = self.testp.to(device=x.device)
+
+            down = (self.testp &lt; pt)
+
+            out[down] = (sign * torch.pow(2, alpha_down))[down]  # with probability pt round to down
+            out[~down] = (sign * torch.pow(2, alpha_up))[~down]   # with probability 1-pt round to up
+            out[x == 0.0] = 0.0                                   # special rule for handling zero items
+
+            # 8-bit in exponent and extra bit of sign. at hardware level it&#39;s possible to get rid of mantissa
+            # (with stochastic exp. rouding)
+            self.last_need_to_send_advance = 9.0 / 32.0 * d
+
+        elif self.compressorType == CompressorType.STANDARD_DITHERING_FP32:
+            out = torch.zeros_like(x)
+            pnorm = torch.norm(x, p=self.p)
+            pnorm_to_send = pnorm
+
+            sign = torch.sign(x)
+            y = torch.abs(x) / pnorm
+
+            if self.testp.device != x.device:
+                self.testp = self.testp.to(device=x.device)
+
+            if self.levelsValues.device != x.device:
+                self.levelsValues = self.levelsValues.to(device=x.device)
+
+            for s in range(len(self.levelsValues) - 1):
+                cond_1 = (y &gt;= self.levelsValues[s])
+                cond_2 = (y &lt;= self.levelsValues[s + 1])
+                p = (y - self.levelsValues[s + 1]) / (self.levelsValues[s] - self.levelsValues[s + 1])
+                cond_3 = (self.testp &lt; p)
+
+                out[cond_1 &amp; cond_2 &amp; cond_3] = self.levelsValues[s]
+                out[cond_1 &amp; cond_2 &amp; (~cond_3)] = self.levelsValues[s + 1]
+
+            # special rule for handling zero items
+            out[x == 0.0] = 0.0
+
+            out = out * sign * pnorm
+            # 1 bit for sign log2(levels) bits to send level
+            # 1 scalar for p-norm
+            self.last_need_to_send_advance = 1.0 + d * (1.0 + math.ceil(math.log2(self.s))) / 32.0
+
+        elif self.compressorType == CompressorType.NATURAL_DITHERING_FP32:
+            out = torch.zeros_like(x)
+            pnorm = torch.norm(x, p=self.p)
+            pnorm_to_send = pnorm
+
+            sign = torch.sign(x)
+            y = torch.abs(x) / pnorm
+
+            if self.testp.device != x.device:
+                self.testp = self.testp.to(device=x.device)
+
+            if self.levelsValues.device != x.device:
+                self.levelsValues = self.levelsValues.to(device=x.device)
+
+            for s in range(len(self.levelsValues) - 1):
+                cond_1 = (y &gt;= self.levelsValues[s])
+                cond_2 = (y &lt;= self.levelsValues[s+1])
+                p = (y - self.levelsValues[s + 1]) / (self.levelsValues[s] - self.levelsValues[s + 1])
+                cond_3 = (self.testp &lt; p)
+                out[cond_1 &amp; cond_2 &amp; cond_3] = self.levelsValues[s]
+                out[cond_1 &amp; cond_2 &amp; (~cond_3)] = self.levelsValues[s+1]
+
+            # special rule for handling zero items
+            out[x == 0.0] = 0.0
+
+            out = y * sign * pnorm
+            # 1 bit for sign log2(levels) bits to send level
+            # 1 scalar for p-norm
+            self.last_need_to_send_advance = 1.0 + d * (1.0 + math.ceil(math.log2(self.s))) / 32.0
+        elif self.compressorType == CompressorType.TOPK_COMPRESSOR:
+            out = torch.zeros_like(x)
+            _, ind = torch.topk(x.abs(), self.K)
+            out[ind] = x[ind]
+            # Similar to RAND-K we assume that we don&#39;t need to send indices
+            self.last_need_to_send_advance = self.K
+        elif self.compressorType == CompressorType.RANK_K_COMPRESSOR:
+            xMat = x.view(self.A, self.B)
+            # ==========================================================================================================
+            try:
+                U, S, Vt = torch.linalg.svd(xMat, full_matrices=False)
+            except RuntimeError:
+                # Backup plan to make SVD in CPU (sometimes SVD in GPU does not work)
+                # Issue: https://github.com/pytorch/pytorch/issues/28293
+                U, S, Vt = torch.linalg.svd(xMat.cpu(), full_matrices=False)
+                U = U.to(device=xMat.device)
+                S = S.to(device=xMat.device)
+                Vt = Vt.to(device=xMat.device)
+            # ==========================================================================================================
+
+            K = self.K
+            K = min(len(S), K)
+
+            Uk = U[..., 0:K]
+            Sk = S[0:K]
+            Vtk = Vt[0:K, ...]
+
+            out = Uk @ torch.diag(Sk) @ Vtk
+            out = out.view(self.D)
+
+            assert Uk.size(0) == self.A
+            assert Vtk.size(1) == self.B
+
+            # RANK-K only sends in principle only parameters of dyadic expansion
+            self.last_need_to_send_advance = K * (self.A + self.B)
+
+        # ==============================================================================================================
+        self.really_need_to_send_components += self.last_need_to_send_advance
+        self.total_input_components += self.last_input_advance
+
+        # print(&#34;----&#34;, (out - x).norm() / x.norm() )
+        return out
+
+
+class ComposedCompressor:
+    &#34;&#34;&#34;Helper class targeted to construct composed compressor from several compressors &#34;&#34;&#34;
+    def __init__(self, c1, c2):
+        self.w = 0.0
+        self.c1 = c1
+        self.c2 = c2
+
+    def resetStats(self):
+        self.c1.resetStats()
+        self.c2.resetStats()
+
+    def fullName(self):
+        self.c1.fullName() + &#34; ( &#34; + self.c2.fullName() + &#34;)&#34;
+
+    def getW(self):
+        return (self.c1.getW() + 1) * (self.c2.getW() + 1) - 1
+
+    def compressVector(self, x):
+        return self.c1.compressVector(self.c2.compressVector(x))
+
+
+class ProbabilisticSwitchingCompressor:
+    &#34;&#34;&#34;Probability switching compressor&#34;&#34;&#34;
+    def __init__(self):
+        self.p = []
+        self.c = []
+        self.p_sum = 0.0
+
+    def addCompressor(self, ci, pi):
+        self.c.append(ci)
+        self.p.append(pi)
+        self.p_sum += pi
+
+    def resetStats(self):
+        for ci in self.c:
+            ci.resetStats()
+
+    def fullName(self):
+        return f&#34;probabilistic switching between {len(self.c)} compressors&#34;
+
+    def getW(self):
+        w = 0.0
+        for i in range(len(self.c)):
+            ci = self.c[i]
+            pi = self.p[i]
+            w += pi / self.p_sum * ci.getW()
+
+        return w
+
+    def compressVector(self, x, rndgen):
+        dice = rndgen.random()
+        pTotal = 0.0
+
+        for i in range(len(self.c)):
+            pi = self.p[i]
+            if dice &gt;= pTotal and dice &lt;= pTotal + pi:
+                return self.c[i].compressVector(x)
+            pTotal += pi
+        return None
+
+
+def initCompressor(compressorCmdLine, D):
+    params = compressorCmdLine.split(&#34;:&#34;)
+    c = Compressor()
+    if params[0] == &#34;ident&#34;:
+        c.makeIdenticalCompressor()
+    elif params[0] == &#34;randk&#34;:
+        if params[1].find(&#34;%&#34;) == -1:
+            K = float(params[1])
+            c.makeRandKCompressor(D, math.ceil(K))
+        else:
+            K = float(params[1][0:-1])/100.0
+            c.makeRandKCompressor(D, math.ceil(K * D))
+    elif params[0] == &#34;bernulli&#34;:
+        p = float(params[1])
+        c.makeLazyCompressor(p)
+    elif params[0] == &#34;natural&#34;:
+        c.makeNaturalCompressorFP32(D)
+    elif params[0] == &#34;qsgd&#34;:
+        L = int(params[1])
+        c.makeQSGD_FP32(D, L)
+    elif params[0] == &#34;nat.dithering&#34;:
+        L = int(params[1])
+        pnorm = math.inf
+        if len(params) == 3:
+            if params[2].lower() == &#34;inf&#34;:
+                pnorm = math.inf
+            else:
+                pnorm = int(params[2])
+
+        c.makeNaturalDitheringFP32(D, L, pnorm)
+    elif params[0] == &#34;std.dithering&#34;:
+        L = int(params[1])
+        pnorm = math.inf
+        if len(params) == 3:
+            if params[2].lower() == &#34;inf&#34;:
+                pnorm = math.inf
+            else:
+                pnorm = int(params[2])
+ 
+        c.makeStandardDitheringFP32(D, L, pnorm)
+    elif params[0] == &#34;topk&#34;:
+        if params[1].find(&#34;%&#34;) == -1:
+            K = float(params[1])
+            c.makeTopKCompressor(D, math.ceil(K))
+        else:
+            K = float(params[1][0:-1])/100.0
+            c.makeTopKCompressor(D, math.ceil(K * D))
+    elif params[0] == &#34;rank_k&#34;:
+        if params[1].find(&#34;%&#34;) == -1:
+            K = float(params[1])
+            c.makeRankKCompressor(D, math.ceil(K))
+        else:
+            K = float(params[1][0:-1])/100.0
+            c.makeRankKCompressor(D, math.ceil(K * D))
+    elif params[0] == &#34;terngrad&#34;:
+        c.makeTernGrad(D)
+    else:
+        assert(not f&#34;Unknown compressor format&#34;)
+
+    return c
+
+
+def test_unbiasedness():
+    # python -m pytest compressors.py
+    gen = np.random.RandomState()  # Thread specific numpy random generator
+
+    for compressor in [&#34;ident&#34;, &#34;randk:10%&#34;, &#34;bernulli:0.5&#34;, &#34;natural&#34;,
+                       &#34;qsgd:10&#34;, &#34;nat.dithering:10:2&#34;, &#34;std.dithering:10:2&#34;]:
+        d = 10000
+        c = initCompressor(compressor, d)
+        x = torch.rand(d)
+        x_out = torch.zeros(d)
+        for i in range(1000):
+            c.generateCompressPattern(gen, &#34;cpu&#34;, -1, None)
+            x_out += c.compressVector(x)
+        x_out /= 1000
+
+        assert (x_out - x).norm() / x.norm() &lt; 0.1
+
+
+def test_topk_compressor():
+    c = initCompressor(&#34;topk:50%&#34;, 8)
+    x_in = torch.Tensor([1, 2, 3, 4, 5, 6, 7, -8])
+
+    rnd = np.random.RandomState()
+    c.generateCompressPattern(rnd, x_in.device, -1, None)
+    x_out = c.compressVector(x_in)
+    print(x_out)
+    assert (x_out - torch.Tensor([0, 0, 0, 0, 5, 6, 7, -8], device=x_in.device)).norm() &lt; 0.1
+
+
+def test_rankk_compressor():
+    c = initCompressor(&#34;rank_k:100%&#34;, 8)
+    x_in = torch.Tensor([1, 2, 3, 4, 5, 6, 7, -8])
+
+    rnd = np.random.RandomState()
+    c.generateCompressPattern(rnd, x_in.device, -1, None)
+    x_out = c.compressVector(x_in)
+    print(x_out)
+    assert (x_out - x_in).norm().item() &lt; 0.0001</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="utils.compressors.initCompressor"><code class="name flex">
+<span>def <span class="ident">initCompressor</span></span>(<span>compressorCmdLine, D)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def initCompressor(compressorCmdLine, D):
+    params = compressorCmdLine.split(&#34;:&#34;)
+    c = Compressor()
+    if params[0] == &#34;ident&#34;:
+        c.makeIdenticalCompressor()
+    elif params[0] == &#34;randk&#34;:
+        if params[1].find(&#34;%&#34;) == -1:
+            K = float(params[1])
+            c.makeRandKCompressor(D, math.ceil(K))
+        else:
+            K = float(params[1][0:-1])/100.0
+            c.makeRandKCompressor(D, math.ceil(K * D))
+    elif params[0] == &#34;bernulli&#34;:
+        p = float(params[1])
+        c.makeLazyCompressor(p)
+    elif params[0] == &#34;natural&#34;:
+        c.makeNaturalCompressorFP32(D)
+    elif params[0] == &#34;qsgd&#34;:
+        L = int(params[1])
+        c.makeQSGD_FP32(D, L)
+    elif params[0] == &#34;nat.dithering&#34;:
+        L = int(params[1])
+        pnorm = math.inf
+        if len(params) == 3:
+            if params[2].lower() == &#34;inf&#34;:
+                pnorm = math.inf
+            else:
+                pnorm = int(params[2])
+
+        c.makeNaturalDitheringFP32(D, L, pnorm)
+    elif params[0] == &#34;std.dithering&#34;:
+        L = int(params[1])
+        pnorm = math.inf
+        if len(params) == 3:
+            if params[2].lower() == &#34;inf&#34;:
+                pnorm = math.inf
+            else:
+                pnorm = int(params[2])
+ 
+        c.makeStandardDitheringFP32(D, L, pnorm)
+    elif params[0] == &#34;topk&#34;:
+        if params[1].find(&#34;%&#34;) == -1:
+            K = float(params[1])
+            c.makeTopKCompressor(D, math.ceil(K))
+        else:
+            K = float(params[1][0:-1])/100.0
+            c.makeTopKCompressor(D, math.ceil(K * D))
+    elif params[0] == &#34;rank_k&#34;:
+        if params[1].find(&#34;%&#34;) == -1:
+            K = float(params[1])
+            c.makeRankKCompressor(D, math.ceil(K))
+        else:
+            K = float(params[1][0:-1])/100.0
+            c.makeRankKCompressor(D, math.ceil(K * D))
+    elif params[0] == &#34;terngrad&#34;:
+        c.makeTernGrad(D)
+    else:
+        assert(not f&#34;Unknown compressor format&#34;)
+
+    return c</code></pre>
+</details>
+</dd>
+<dt id="utils.compressors.test_rankk_compressor"><code class="name flex">
+<span>def <span class="ident">test_rankk_compressor</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def test_rankk_compressor():
+    c = initCompressor(&#34;rank_k:100%&#34;, 8)
+    x_in = torch.Tensor([1, 2, 3, 4, 5, 6, 7, -8])
+
+    rnd = np.random.RandomState()
+    c.generateCompressPattern(rnd, x_in.device, -1, None)
+    x_out = c.compressVector(x_in)
+    print(x_out)
+    assert (x_out - x_in).norm().item() &lt; 0.0001</code></pre>
+</details>
+</dd>
+<dt id="utils.compressors.test_topk_compressor"><code class="name flex">
+<span>def <span class="ident">test_topk_compressor</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def test_topk_compressor():
+    c = initCompressor(&#34;topk:50%&#34;, 8)
+    x_in = torch.Tensor([1, 2, 3, 4, 5, 6, 7, -8])
+
+    rnd = np.random.RandomState()
+    c.generateCompressPattern(rnd, x_in.device, -1, None)
+    x_out = c.compressVector(x_in)
+    print(x_out)
+    assert (x_out - torch.Tensor([0, 0, 0, 0, 5, 6, 7, -8], device=x_in.device)).norm() &lt; 0.1</code></pre>
+</details>
+</dd>
+<dt id="utils.compressors.test_unbiasedness"><code class="name flex">
+<span>def <span class="ident">test_unbiasedness</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def test_unbiasedness():
+    # python -m pytest compressors.py
+    gen = np.random.RandomState()  # Thread specific numpy random generator
+
+    for compressor in [&#34;ident&#34;, &#34;randk:10%&#34;, &#34;bernulli:0.5&#34;, &#34;natural&#34;,
+                       &#34;qsgd:10&#34;, &#34;nat.dithering:10:2&#34;, &#34;std.dithering:10:2&#34;]:
+        d = 10000
+        c = initCompressor(compressor, d)
+        x = torch.rand(d)
+        x_out = torch.zeros(d)
+        for i in range(1000):
+            c.generateCompressPattern(gen, &#34;cpu&#34;, -1, None)
+            x_out += c.compressVector(x)
+        x_out /= 1000
+
+        assert (x_out - x).norm() / x.norm() &lt; 0.1</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="utils.compressors.ComposedCompressor"><code class="flex name class">
+<span>class <span class="ident">ComposedCompressor</span></span>
+<span>(</span><span>c1, c2)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Helper class targeted to construct composed compressor from several compressors</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class ComposedCompressor:
+    &#34;&#34;&#34;Helper class targeted to construct composed compressor from several compressors &#34;&#34;&#34;
+    def __init__(self, c1, c2):
+        self.w = 0.0
+        self.c1 = c1
+        self.c2 = c2
+
+    def resetStats(self):
+        self.c1.resetStats()
+        self.c2.resetStats()
+
+    def fullName(self):
+        self.c1.fullName() + &#34; ( &#34; + self.c2.fullName() + &#34;)&#34;
+
+    def getW(self):
+        return (self.c1.getW() + 1) * (self.c2.getW() + 1) - 1
+
+    def compressVector(self, x):
+        return self.c1.compressVector(self.c2.compressVector(x))</code></pre>
+</details>
+<h3>Methods</h3>
+<dl>
+<dt id="utils.compressors.ComposedCompressor.compressVector"><code class="name flex">
+<span>def <span class="ident">compressVector</span></span>(<span>self, x)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def compressVector(self, x):
+    return self.c1.compressVector(self.c2.compressVector(x))</code></pre>
+</details>
+</dd>
+<dt id="utils.compressors.ComposedCompressor.fullName"><code class="name flex">
+<span>def <span class="ident">fullName</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def fullName(self):
+    self.c1.fullName() + &#34; ( &#34; + self.c2.fullName() + &#34;)&#34;</code></pre>
+</details>
+</dd>
+<dt id="utils.compressors.ComposedCompressor.getW"><code class="name flex">
+<span>def <span class="ident">getW</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getW(self):
+    return (self.c1.getW() + 1) * (self.c2.getW() + 1) - 1</code></pre>
+</details>
+</dd>
+<dt id="utils.compressors.ComposedCompressor.resetStats"><code class="name flex">
+<span>def <span class="ident">resetStats</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def resetStats(self):
+    self.c1.resetStats()
+    self.c2.resetStats()</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="utils.compressors.Compressor"><code class="flex name class">
+<span>class <span class="ident">Compressor</span></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Collection of unbiased compressor E[C(x)]=x and E[|C(x)-x|^2]&lt;=w|x|^2 \iff E[|C(x)|^2] &lt;= (w+1)|x|^2 </p>
+<p>Ctor of the compressor by default compressor type is identical</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Compressor:
+    &#34;&#34;&#34; Collection of unbiased compressor E[C(x)]=x and E[|C(x)-x|^2]&lt;=w|x|^2 \\iff E[|C(x)|^2] &lt;= (w+1)|x|^2 &#34;&#34;&#34;
+
+    def resetStats(self):
+        &#34;&#34;&#34;Reset internal statistics for compressor&#34;&#34;&#34;
+        self.total_input_components = 0            # Total scalar component(fp32 scalar) processed by the compressor
+        self.really_need_to_send_components = 0    # Total scalar component which need to be send across the network
+        self.last_input_advance = 0                # Last input components through the last call
+        self.last_need_to_send_advance = 0         # Last need to send scalar component.
+
+    def __init__(self):
+        &#34;&#34;&#34;Ctor of the compressor by default compressor type is identical&#34;&#34;&#34;
+        self.compressorType = CompressorType.IDENTICAL
+        self.total_input_components = 0
+        self.really_need_to_send_components = 0
+        self.last_input_advance = 0
+        self.last_need_to_send_advance = 0
+        # remove self.w init, because self.w is undefined for biased compressors
+        # self.w = 0.0
+
+    def fullName(self):
+        &#34;&#34;&#34;Get fullname of the compressor.&#34;&#34;&#34;
+        omega = r&#39;$\omega$&#39;
+        if self.compressorType == CompressorType.IDENTICAL:
+            return f&#34;Identical&#34;
+        if self.compressorType == CompressorType.LAZY_COMPRESSOR:
+            return f&#34;Bernoulli(Lazy) [p={self.P:g},{omega}={self.getW():.1f}]&#34;
+        if self.compressorType == CompressorType.RANDK_COMPRESSOR:
+            return f&#34;Rand [K={self.K},D={self.D}]&#34;
+        if self.compressorType == CompressorType.NATURAL_COMPRESSOR_FP32:
+            return f&#34;Natural for fp32 [{omega}={self.getW():.1f}]&#34;
+        if self.compressorType == CompressorType.STANDARD_DITHERING_FP32:
+            return f&#34;Standard Dithering for fp32[s={self.s}]&#34;
+        if self.compressorType == CompressorType.NATURAL_DITHERING_FP32:
+            return f&#34;Natural Dithering for fp32[s={self.s},{omega}={self.getW():.1f}]&#34;
+        if self.compressorType == CompressorType.TOPK_COMPRESSOR:
+            return f&#34;Top [K={self.K},D={self.D}]&#34;
+        if self.compressorType == CompressorType.RANK_K_COMPRESSOR:
+            return f&#34;Rank [K={self.K},D={self.D}]&#34;
+
+        return &#34;?&#34;
+
+    def makeIdenticalCompressor(self):
+        &#34;&#34;&#34; Make identical compressor &#34;&#34;&#34;
+        self.compressorType = CompressorType.IDENTICAL
+        self.w = 0.0
+        self.resetStats()
+
+    def makeLazyCompressor(self, P):
+        &#34;&#34;&#34; Make lazy compressor which with probability &#39;p&#39; returns x/p and w.p. &#39;1-p&#39; return 0 &#34;&#34;&#34;
+
+        # w + 1 = p* 1/(p**2) =&gt; w = 1/p - 1
+        self.compressorType = CompressorType.LAZY_COMPRESSOR
+        self.P = P
+        self.w = 1.0 / P - 1.0
+        self.resetStats()
+
+    def makeStandardDitheringFP32(self, D, levels, p=float(&#34;inf&#34;)):
+        &#34;&#34;&#34;
+        Make standard dithering schema with having uniform levels intervals inside [0.0, 1.0]
+        and using &#34;p&#34; norm for normalizing vectors
+        &#34;&#34;&#34;
+        self.D = D
+        self.compressorType = CompressorType.STANDARD_DITHERING_FP32
+        # levels + 1 values in range [0.0, 1.0] which uniformly split this segment
+        self.levelsValues = torch.arange(0.0, 1.0 + 1.0 / levels * 0.5, 1.0 / levels)
+        self.s = len(self.levelsValues) - 1  # should be equal to level
+        assert self.s == levels
+
+        self.p = p
+        self.w = 0.0  # TODO - specify W for dithering
+
+        self.resetStats()
+
+    def makeQSGD_FP32(self, D, levels):
+        &#34;&#34;&#34; Make QSGD compressors with specific number of levels&#34;&#34;&#34;
+
+        self.makeStandardDitheringFP32(D, levels, p=2)
+        # Lemma 3.1. from https://arxiv.org/pdf/1610.02132.pdf, page 5
+        self.w = min(D / (levels * levels), D ** 0.5 / levels)
+
+    def makeTernGrad(self, D):
+        &#34;&#34;&#34; Make Ternary Gradient compressor &#34;&#34;&#34;
+        # https://arxiv.org/pdf/1705.07878.pdf
+        self.makeStandardDitheringFP32(D, levels=1, p=float(&#34;inf&#34;))
+        self.w = 0.0
+
+    def makeNaturalDitheringFP32(self, D, levels, p=float(&#34;inf&#34;)):
+        &#34;&#34;&#34;
+        Make dithering schema with having levels intervals inside [0.0, 1.0] with lengths power of (1/2)
+        and using &#34;p&#34; norm for normalizing vectors
+        &#34;&#34;&#34;
+        self.D = D
+        self.compressorType = CompressorType.NATURAL_DITHERING_FP32
+        self.levelsValues = torch.zeros(levels + 1)
+        for i in range(levels):
+            self.levelsValues[i] = (1.0 / 2.0) ** i
+        self.levelsValues = torch.flip(self.levelsValues, dims=[0])
+        self.s = len(self.levelsValues) - 1
+        assert self.s == levels
+
+        self.p = p
+
+        r = min(p, 2)
+        self.w = 1.0 / 8.0 + (D ** (1.0 / r)) / (2 ** (self.s - 1)) * min(1, (D ** (1.0 / r)) / (2 ** (self.s - 1)))
+        self.resetStats()
+
+    def makeRandKCompressor(self, D, K):
+        &#34;&#34;&#34;Make Random/Nice sparsification with forcing selecting u.a.r. K non-zeros component from all D components&#34;&#34;&#34;
+        # E[|C(x)|^2]=(d*d)/(k*k) * E[sum(zi*ei*xi)^2)] = (d*d)/(k*k) * k/d *|x|^2 = d/k * (x^2) = (w + 1) (x^2)
+        #  =&gt; w = d/k-1
+        self.compressorType = CompressorType.RANDK_COMPRESSOR
+        self.K = K
+        self.D = D
+        self.w = self.D / self.K - 1.0
+        self.resetStats()
+
+    def makeTopKCompressor(self, D, K):
+        &#34;&#34;&#34;
+        Make Top-K sparsification with forcing selecting maximum K component from all D components
+        in terms of absolute value.
+        &#34;&#34;&#34;
+        # E[|C(x)-x|^2]=(1-a)|x|^2
+        self.compressorType = CompressorType.TOPK_COMPRESSOR
+        self.K = K
+        self.D = D
+        self.alpha = self.K / self.D
+        self.resetStats()
+
+    def makeRankKCompressor(self, D, K):
+        &#34;&#34;&#34;
+        Make Rank-K sparsification compressors with forcing selecting K Rank-1 matrices in truncated SVD expansion
+        of the reshaped &#34;X&#34; into matrix
+        &#34;&#34;&#34;
+        # E[|C(x)-x|^2]=(1-a)|x|^2
+        self.compressorType = CompressorType.RANK_K_COMPRESSOR
+        self.K = K
+        self.D = D
+
+        self.A = int(D**0.5)
+        self.B = int(D**0.5)
+
+        while self.D % self.A != 0:
+            self.A = self.A + 1
+
+        self.B = self.D // self.A
+
+        self.alpha = self.K / min(self.A, self.B)
+
+        self.resetStats()
+
+    def makeNaturalCompressorFP32(self, D):
+        &#34;&#34;&#34;Create Natural compressor&#34;&#34;&#34;
+        self.compressorType = CompressorType.NATURAL_COMPRESSOR_FP32
+        self.D = D
+        self.w = 1.0 / 8.0
+        self.resetStats()
+
+    def getW(self):
+        &#34;&#34;&#34;Get &#39;w&#39; parameter of unbiased compressor&#34;&#34;&#34;
+        return self.w
+
+    def getAlphaContraction(self):
+        &#34;&#34;&#34;Get &#39;alpha&#39; parameter of biased contraction compressor (e.g. top-k)&#34;&#34;&#34;
+        return self.alpha
+
+    def isContractionCompressor(self):
+        &#34;&#34;&#34;Check that compressor is contraction compressor&#34;&#34;&#34;
+        return hasattr(self, &#34;alpha&#34;)
+
+    def isUnbiasedCompressor(self):
+        &#34;&#34;&#34;Check that compressor is unbiased randomized mapping&#34;&#34;&#34;
+        return hasattr(self, &#34;w&#34;)
+
+    def generateCompressPattern(self, rndgen, device, clientId, H):
+        &#34;&#34;&#34;Generate compress pattern. Sampling stochasticity for each compressors happens only on that part&#34;&#34;&#34;
+        # For debug
+        # print(&#34;w for compressor: &#34;, self.getW())
+
+        if self.compressorType == CompressorType.IDENTICAL:
+            pass
+        elif self.compressorType == CompressorType.LAZY_COMPRESSOR:
+            self.testp = rndgen.random()
+        elif self.compressorType == CompressorType.RANDK_COMPRESSOR:
+            self.S = torch.from_numpy(rndgen.choice(self.D, self.K, replace=False)).to(torch.long).to(device=device)
+        elif self.compressorType == CompressorType.NATURAL_COMPRESSOR_FP32:
+            self.testp = torch.from_numpy(rndgen.rand(self.D))
+        elif self.compressorType == CompressorType.STANDARD_DITHERING_FP32:
+            self.testp = torch.from_numpy(rndgen.rand(self.D))
+        elif self.compressorType == CompressorType.NATURAL_DITHERING_FP32:
+            self.testp = torch.from_numpy(rndgen.rand(self.D))
+        elif self.compressorType == CompressorType.TOPK_COMPRESSOR:
+            pass
+        elif self.compressorType == CompressorType.RANK_K_COMPRESSOR:
+            pass
+
+    def compressVector(self, x):
+        &#34;&#34;&#34; Compress input vector &#39;x&#39; and produce compressed results &#34;&#34;&#34;
+        d = max(x.shape)
+        out = None
+
+        self.last_input_advance = d
+        self.last_need_to_send_advance = 0
+
+        # ==============================================================================================================
+        if self.compressorType == CompressorType.IDENTICAL:
+            out = x
+            self.last_need_to_send_advance = d
+
+        elif self.compressorType == CompressorType.LAZY_COMPRESSOR:
+            testp = self.testp
+            if testp &lt; self.P:
+                out = x / self.P
+                self.last_need_to_send_advance = d
+            else:
+                out = torch.zeros_like(x)
+                self.last_need_to_send_advance = 0
+
+        elif self.compressorType == CompressorType.RANDK_COMPRESSOR:
+            S = self.S
+            out = torch.zeros_like(x)
+            out[S] = (self.D / self.K) * x[S]
+            # We assume that we don&#39;t need to send indices
+            self.last_need_to_send_advance = self.K
+
+        elif self.compressorType == CompressorType.NATURAL_COMPRESSOR_FP32:
+            out = torch.zeros_like(x)
+
+            sign = torch.sign(x)
+            alpha = torch.log2(torch.abs(x))
+            alpha_down = torch.floor(alpha)
+            alpha_up = torch.ceil(alpha)
+
+            pt = (torch.pow(2, alpha_up) - torch.abs(x)) / torch.pow(2, alpha_down)
+
+            if self.testp.device != x.device:
+                self.testp = self.testp.to(device=x.device)
+
+            down = (self.testp &lt; pt)
+
+            out[down] = (sign * torch.pow(2, alpha_down))[down]  # with probability pt round to down
+            out[~down] = (sign * torch.pow(2, alpha_up))[~down]   # with probability 1-pt round to up
+            out[x == 0.0] = 0.0                                   # special rule for handling zero items
+
+            # 8-bit in exponent and extra bit of sign. at hardware level it&#39;s possible to get rid of mantissa
+            # (with stochastic exp. rouding)
+            self.last_need_to_send_advance = 9.0 / 32.0 * d
+
+        elif self.compressorType == CompressorType.STANDARD_DITHERING_FP32:
+            out = torch.zeros_like(x)
+            pnorm = torch.norm(x, p=self.p)
+            pnorm_to_send = pnorm
+
+            sign = torch.sign(x)
+            y = torch.abs(x) / pnorm
+
+            if self.testp.device != x.device:
+                self.testp = self.testp.to(device=x.device)
+
+            if self.levelsValues.device != x.device:
+                self.levelsValues = self.levelsValues.to(device=x.device)
+
+            for s in range(len(self.levelsValues) - 1):
+                cond_1 = (y &gt;= self.levelsValues[s])
+                cond_2 = (y &lt;= self.levelsValues[s + 1])
+                p = (y - self.levelsValues[s + 1]) / (self.levelsValues[s] - self.levelsValues[s + 1])
+                cond_3 = (self.testp &lt; p)
+
+                out[cond_1 &amp; cond_2 &amp; cond_3] = self.levelsValues[s]
+                out[cond_1 &amp; cond_2 &amp; (~cond_3)] = self.levelsValues[s + 1]
+
+            # special rule for handling zero items
+            out[x == 0.0] = 0.0
+
+            out = out * sign * pnorm
+            # 1 bit for sign log2(levels) bits to send level
+            # 1 scalar for p-norm
+            self.last_need_to_send_advance = 1.0 + d * (1.0 + math.ceil(math.log2(self.s))) / 32.0
+
+        elif self.compressorType == CompressorType.NATURAL_DITHERING_FP32:
+            out = torch.zeros_like(x)
+            pnorm = torch.norm(x, p=self.p)
+            pnorm_to_send = pnorm
+
+            sign = torch.sign(x)
+            y = torch.abs(x) / pnorm
+
+            if self.testp.device != x.device:
+                self.testp = self.testp.to(device=x.device)
+
+            if self.levelsValues.device != x.device:
+                self.levelsValues = self.levelsValues.to(device=x.device)
+
+            for s in range(len(self.levelsValues) - 1):
+                cond_1 = (y &gt;= self.levelsValues[s])
+                cond_2 = (y &lt;= self.levelsValues[s+1])
+                p = (y - self.levelsValues[s + 1]) / (self.levelsValues[s] - self.levelsValues[s + 1])
+                cond_3 = (self.testp &lt; p)
+                out[cond_1 &amp; cond_2 &amp; cond_3] = self.levelsValues[s]
+                out[cond_1 &amp; cond_2 &amp; (~cond_3)] = self.levelsValues[s+1]
+
+            # special rule for handling zero items
+            out[x == 0.0] = 0.0
+
+            out = y * sign * pnorm
+            # 1 bit for sign log2(levels) bits to send level
+            # 1 scalar for p-norm
+            self.last_need_to_send_advance = 1.0 + d * (1.0 + math.ceil(math.log2(self.s))) / 32.0
+        elif self.compressorType == CompressorType.TOPK_COMPRESSOR:
+            out = torch.zeros_like(x)
+            _, ind = torch.topk(x.abs(), self.K)
+            out[ind] = x[ind]
+            # Similar to RAND-K we assume that we don&#39;t need to send indices
+            self.last_need_to_send_advance = self.K
+        elif self.compressorType == CompressorType.RANK_K_COMPRESSOR:
+            xMat = x.view(self.A, self.B)
+            # ==========================================================================================================
+            try:
+                U, S, Vt = torch.linalg.svd(xMat, full_matrices=False)
+            except RuntimeError:
+                # Backup plan to make SVD in CPU (sometimes SVD in GPU does not work)
+                # Issue: https://github.com/pytorch/pytorch/issues/28293
+                U, S, Vt = torch.linalg.svd(xMat.cpu(), full_matrices=False)
+                U = U.to(device=xMat.device)
+                S = S.to(device=xMat.device)
+                Vt = Vt.to(device=xMat.device)
+            # ==========================================================================================================
+
+            K = self.K
+            K = min(len(S), K)
+
+            Uk = U[..., 0:K]
+            Sk = S[0:K]
+            Vtk = Vt[0:K, ...]
+
+            out = Uk @ torch.diag(Sk) @ Vtk
+            out = out.view(self.D)
+
+            assert Uk.size(0) == self.A
+            assert Vtk.size(1) == self.B
+
+            # RANK-K only sends in principle only parameters of dyadic expansion
+            self.last_need_to_send_advance = K * (self.A + self.B)
+
+        # ==============================================================================================================
+        self.really_need_to_send_components += self.last_need_to_send_advance
+        self.total_input_components += self.last_input_advance
+
+        # print(&#34;----&#34;, (out - x).norm() / x.norm() )
+        return out</code></pre>
+</details>
+<h3>Methods</h3>
+<dl>
+<dt id="utils.compressors.Compressor.compressVector"><code class="name flex">
+<span>def <span class="ident">compressVector</span></span>(<span>self, x)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Compress input vector 'x' and produce compressed results</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def compressVector(self, x):
+    &#34;&#34;&#34; Compress input vector &#39;x&#39; and produce compressed results &#34;&#34;&#34;
+    d = max(x.shape)
+    out = None
+
+    self.last_input_advance = d
+    self.last_need_to_send_advance = 0
+
+    # ==============================================================================================================
+    if self.compressorType == CompressorType.IDENTICAL:
+        out = x
+        self.last_need_to_send_advance = d
+
+    elif self.compressorType == CompressorType.LAZY_COMPRESSOR:
+        testp = self.testp
+        if testp &lt; self.P:
+            out = x / self.P
+            self.last_need_to_send_advance = d
+        else:
+            out = torch.zeros_like(x)
+            self.last_need_to_send_advance = 0
+
+    elif self.compressorType == CompressorType.RANDK_COMPRESSOR:
+        S = self.S
+        out = torch.zeros_like(x)
+        out[S] = (self.D / self.K) * x[S]
+        # We assume that we don&#39;t need to send indices
+        self.last_need_to_send_advance = self.K
+
+    elif self.compressorType == CompressorType.NATURAL_COMPRESSOR_FP32:
+        out = torch.zeros_like(x)
+
+        sign = torch.sign(x)
+        alpha = torch.log2(torch.abs(x))
+        alpha_down = torch.floor(alpha)
+        alpha_up = torch.ceil(alpha)
+
+        pt = (torch.pow(2, alpha_up) - torch.abs(x)) / torch.pow(2, alpha_down)
+
+        if self.testp.device != x.device:
+            self.testp = self.testp.to(device=x.device)
+
+        down = (self.testp &lt; pt)
+
+        out[down] = (sign * torch.pow(2, alpha_down))[down]  # with probability pt round to down
+        out[~down] = (sign * torch.pow(2, alpha_up))[~down]   # with probability 1-pt round to up
+        out[x == 0.0] = 0.0                                   # special rule for handling zero items
+
+        # 8-bit in exponent and extra bit of sign. at hardware level it&#39;s possible to get rid of mantissa
+        # (with stochastic exp. rouding)
+        self.last_need_to_send_advance = 9.0 / 32.0 * d
+
+    elif self.compressorType == CompressorType.STANDARD_DITHERING_FP32:
+        out = torch.zeros_like(x)
+        pnorm = torch.norm(x, p=self.p)
+        pnorm_to_send = pnorm
+
+        sign = torch.sign(x)
+        y = torch.abs(x) / pnorm
+
+        if self.testp.device != x.device:
+            self.testp = self.testp.to(device=x.device)
+
+        if self.levelsValues.device != x.device:
+            self.levelsValues = self.levelsValues.to(device=x.device)
+
+        for s in range(len(self.levelsValues) - 1):
+            cond_1 = (y &gt;= self.levelsValues[s])
+            cond_2 = (y &lt;= self.levelsValues[s + 1])
+            p = (y - self.levelsValues[s + 1]) / (self.levelsValues[s] - self.levelsValues[s + 1])
+            cond_3 = (self.testp &lt; p)
+
+            out[cond_1 &amp; cond_2 &amp; cond_3] = self.levelsValues[s]
+            out[cond_1 &amp; cond_2 &amp; (~cond_3)] = self.levelsValues[s + 1]
+
+        # special rule for handling zero items
+        out[x == 0.0] = 0.0
+
+        out = out * sign * pnorm
+        # 1 bit for sign log2(levels) bits to send level
+        # 1 scalar for p-norm
+        self.last_need_to_send_advance = 1.0 + d * (1.0 + math.ceil(math.log2(self.s))) / 32.0
+
+    elif self.compressorType == CompressorType.NATURAL_DITHERING_FP32:
+        out = torch.zeros_like(x)
+        pnorm = torch.norm(x, p=self.p)
+        pnorm_to_send = pnorm
+
+        sign = torch.sign(x)
+        y = torch.abs(x) / pnorm
+
+        if self.testp.device != x.device:
+            self.testp = self.testp.to(device=x.device)
+
+        if self.levelsValues.device != x.device:
+            self.levelsValues = self.levelsValues.to(device=x.device)
+
+        for s in range(len(self.levelsValues) - 1):
+            cond_1 = (y &gt;= self.levelsValues[s])
+            cond_2 = (y &lt;= self.levelsValues[s+1])
+            p = (y - self.levelsValues[s + 1]) / (self.levelsValues[s] - self.levelsValues[s + 1])
+            cond_3 = (self.testp &lt; p)
+            out[cond_1 &amp; cond_2 &amp; cond_3] = self.levelsValues[s]
+            out[cond_1 &amp; cond_2 &amp; (~cond_3)] = self.levelsValues[s+1]
+
+        # special rule for handling zero items
+        out[x == 0.0] = 0.0
+
+        out = y * sign * pnorm
+        # 1 bit for sign log2(levels) bits to send level
+        # 1 scalar for p-norm
+        self.last_need_to_send_advance = 1.0 + d * (1.0 + math.ceil(math.log2(self.s))) / 32.0
+    elif self.compressorType == CompressorType.TOPK_COMPRESSOR:
+        out = torch.zeros_like(x)
+        _, ind = torch.topk(x.abs(), self.K)
+        out[ind] = x[ind]
+        # Similar to RAND-K we assume that we don&#39;t need to send indices
+        self.last_need_to_send_advance = self.K
+    elif self.compressorType == CompressorType.RANK_K_COMPRESSOR:
+        xMat = x.view(self.A, self.B)
+        # ==========================================================================================================
+        try:
+            U, S, Vt = torch.linalg.svd(xMat, full_matrices=False)
+        except RuntimeError:
+            # Backup plan to make SVD in CPU (sometimes SVD in GPU does not work)
+            # Issue: https://github.com/pytorch/pytorch/issues/28293
+            U, S, Vt = torch.linalg.svd(xMat.cpu(), full_matrices=False)
+            U = U.to(device=xMat.device)
+            S = S.to(device=xMat.device)
+            Vt = Vt.to(device=xMat.device)
+        # ==========================================================================================================
+
+        K = self.K
+        K = min(len(S), K)
+
+        Uk = U[..., 0:K]
+        Sk = S[0:K]
+        Vtk = Vt[0:K, ...]
+
+        out = Uk @ torch.diag(Sk) @ Vtk
+        out = out.view(self.D)
+
+        assert Uk.size(0) == self.A
+        assert Vtk.size(1) == self.B
+
+        # RANK-K only sends in principle only parameters of dyadic expansion
+        self.last_need_to_send_advance = K * (self.A + self.B)
+
+    # ==============================================================================================================
+    self.really_need_to_send_components += self.last_need_to_send_advance
+    self.total_input_components += self.last_input_advance
+
+    # print(&#34;----&#34;, (out - x).norm() / x.norm() )
+    return out</code></pre>
+</details>
+</dd>
+<dt id="utils.compressors.Compressor.fullName"><code class="name flex">
+<span>def <span class="ident">fullName</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get fullname of the compressor.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def fullName(self):
+    &#34;&#34;&#34;Get fullname of the compressor.&#34;&#34;&#34;
+    omega = r&#39;$\omega$&#39;
+    if self.compressorType == CompressorType.IDENTICAL:
+        return f&#34;Identical&#34;
+    if self.compressorType == CompressorType.LAZY_COMPRESSOR:
+        return f&#34;Bernoulli(Lazy) [p={self.P:g},{omega}={self.getW():.1f}]&#34;
+    if self.compressorType == CompressorType.RANDK_COMPRESSOR:
+        return f&#34;Rand [K={self.K},D={self.D}]&#34;
+    if self.compressorType == CompressorType.NATURAL_COMPRESSOR_FP32:
+        return f&#34;Natural for fp32 [{omega}={self.getW():.1f}]&#34;
+    if self.compressorType == CompressorType.STANDARD_DITHERING_FP32:
+        return f&#34;Standard Dithering for fp32[s={self.s}]&#34;
+    if self.compressorType == CompressorType.NATURAL_DITHERING_FP32:
+        return f&#34;Natural Dithering for fp32[s={self.s},{omega}={self.getW():.1f}]&#34;
+    if self.compressorType == CompressorType.TOPK_COMPRESSOR:
+        return f&#34;Top [K={self.K},D={self.D}]&#34;
+    if self.compressorType == CompressorType.RANK_K_COMPRESSOR:
+        return f&#34;Rank [K={self.K},D={self.D}]&#34;
+
+    return &#34;?&#34;</code></pre>
+</details>
+</dd>
+<dt id="utils.compressors.Compressor.generateCompressPattern"><code class="name flex">
+<span>def <span class="ident">generateCompressPattern</span></span>(<span>self, rndgen, device, clientId, H)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Generate compress pattern. Sampling stochasticity for each compressors happens only on that part</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def generateCompressPattern(self, rndgen, device, clientId, H):
+    &#34;&#34;&#34;Generate compress pattern. Sampling stochasticity for each compressors happens only on that part&#34;&#34;&#34;
+    # For debug
+    # print(&#34;w for compressor: &#34;, self.getW())
+
+    if self.compressorType == CompressorType.IDENTICAL:
+        pass
+    elif self.compressorType == CompressorType.LAZY_COMPRESSOR:
+        self.testp = rndgen.random()
+    elif self.compressorType == CompressorType.RANDK_COMPRESSOR:
+        self.S = torch.from_numpy(rndgen.choice(self.D, self.K, replace=False)).to(torch.long).to(device=device)
+    elif self.compressorType == CompressorType.NATURAL_COMPRESSOR_FP32:
+        self.testp = torch.from_numpy(rndgen.rand(self.D))
+    elif self.compressorType == CompressorType.STANDARD_DITHERING_FP32:
+        self.testp = torch.from_numpy(rndgen.rand(self.D))
+    elif self.compressorType == CompressorType.NATURAL_DITHERING_FP32:
+        self.testp = torch.from_numpy(rndgen.rand(self.D))
+    elif self.compressorType == CompressorType.TOPK_COMPRESSOR:
+        pass
+    elif self.compressorType == CompressorType.RANK_K_COMPRESSOR:
+        pass</code></pre>
+</details>
+</dd>
+<dt id="utils.compressors.Compressor.getAlphaContraction"><code class="name flex">
+<span>def <span class="ident">getAlphaContraction</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get 'alpha' parameter of biased contraction compressor (e.g. top-k)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getAlphaContraction(self):
+    &#34;&#34;&#34;Get &#39;alpha&#39; parameter of biased contraction compressor (e.g. top-k)&#34;&#34;&#34;
+    return self.alpha</code></pre>
+</details>
+</dd>
+<dt id="utils.compressors.Compressor.getW"><code class="name flex">
+<span>def <span class="ident">getW</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get 'w' parameter of unbiased compressor</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getW(self):
+    &#34;&#34;&#34;Get &#39;w&#39; parameter of unbiased compressor&#34;&#34;&#34;
+    return self.w</code></pre>
+</details>
+</dd>
+<dt id="utils.compressors.Compressor.isContractionCompressor"><code class="name flex">
+<span>def <span class="ident">isContractionCompressor</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Check that compressor is contraction compressor</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def isContractionCompressor(self):
+    &#34;&#34;&#34;Check that compressor is contraction compressor&#34;&#34;&#34;
+    return hasattr(self, &#34;alpha&#34;)</code></pre>
+</details>
+</dd>
+<dt id="utils.compressors.Compressor.isUnbiasedCompressor"><code class="name flex">
+<span>def <span class="ident">isUnbiasedCompressor</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Check that compressor is unbiased randomized mapping</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def isUnbiasedCompressor(self):
+    &#34;&#34;&#34;Check that compressor is unbiased randomized mapping&#34;&#34;&#34;
+    return hasattr(self, &#34;w&#34;)</code></pre>
+</details>
+</dd>
+<dt id="utils.compressors.Compressor.makeIdenticalCompressor"><code class="name flex">
+<span>def <span class="ident">makeIdenticalCompressor</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Make identical compressor</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def makeIdenticalCompressor(self):
+    &#34;&#34;&#34; Make identical compressor &#34;&#34;&#34;
+    self.compressorType = CompressorType.IDENTICAL
+    self.w = 0.0
+    self.resetStats()</code></pre>
+</details>
+</dd>
+<dt id="utils.compressors.Compressor.makeLazyCompressor"><code class="name flex">
+<span>def <span class="ident">makeLazyCompressor</span></span>(<span>self, P)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Make lazy compressor which with probability 'p' returns x/p and w.p. '1-p' return 0</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def makeLazyCompressor(self, P):
+    &#34;&#34;&#34; Make lazy compressor which with probability &#39;p&#39; returns x/p and w.p. &#39;1-p&#39; return 0 &#34;&#34;&#34;
+
+    # w + 1 = p* 1/(p**2) =&gt; w = 1/p - 1
+    self.compressorType = CompressorType.LAZY_COMPRESSOR
+    self.P = P
+    self.w = 1.0 / P - 1.0
+    self.resetStats()</code></pre>
+</details>
+</dd>
+<dt id="utils.compressors.Compressor.makeNaturalCompressorFP32"><code class="name flex">
+<span>def <span class="ident">makeNaturalCompressorFP32</span></span>(<span>self, D)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create Natural compressor</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def makeNaturalCompressorFP32(self, D):
+    &#34;&#34;&#34;Create Natural compressor&#34;&#34;&#34;
+    self.compressorType = CompressorType.NATURAL_COMPRESSOR_FP32
+    self.D = D
+    self.w = 1.0 / 8.0
+    self.resetStats()</code></pre>
+</details>
+</dd>
+<dt id="utils.compressors.Compressor.makeNaturalDitheringFP32"><code class="name flex">
+<span>def <span class="ident">makeNaturalDitheringFP32</span></span>(<span>self, D, levels, p=inf)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Make dithering schema with having levels intervals inside [0.0, 1.0] with lengths power of (1/2)
+and using "p" norm for normalizing vectors</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def makeNaturalDitheringFP32(self, D, levels, p=float(&#34;inf&#34;)):
+    &#34;&#34;&#34;
+    Make dithering schema with having levels intervals inside [0.0, 1.0] with lengths power of (1/2)
+    and using &#34;p&#34; norm for normalizing vectors
+    &#34;&#34;&#34;
+    self.D = D
+    self.compressorType = CompressorType.NATURAL_DITHERING_FP32
+    self.levelsValues = torch.zeros(levels + 1)
+    for i in range(levels):
+        self.levelsValues[i] = (1.0 / 2.0) ** i
+    self.levelsValues = torch.flip(self.levelsValues, dims=[0])
+    self.s = len(self.levelsValues) - 1
+    assert self.s == levels
+
+    self.p = p
+
+    r = min(p, 2)
+    self.w = 1.0 / 8.0 + (D ** (1.0 / r)) / (2 ** (self.s - 1)) * min(1, (D ** (1.0 / r)) / (2 ** (self.s - 1)))
+    self.resetStats()</code></pre>
+</details>
+</dd>
+<dt id="utils.compressors.Compressor.makeQSGD_FP32"><code class="name flex">
+<span>def <span class="ident">makeQSGD_FP32</span></span>(<span>self, D, levels)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Make QSGD compressors with specific number of levels</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def makeQSGD_FP32(self, D, levels):
+    &#34;&#34;&#34; Make QSGD compressors with specific number of levels&#34;&#34;&#34;
+
+    self.makeStandardDitheringFP32(D, levels, p=2)
+    # Lemma 3.1. from https://arxiv.org/pdf/1610.02132.pdf, page 5
+    self.w = min(D / (levels * levels), D ** 0.5 / levels)</code></pre>
+</details>
+</dd>
+<dt id="utils.compressors.Compressor.makeRandKCompressor"><code class="name flex">
+<span>def <span class="ident">makeRandKCompressor</span></span>(<span>self, D, K)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Make Random/Nice sparsification with forcing selecting u.a.r. K non-zeros component from all D components</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def makeRandKCompressor(self, D, K):
+    &#34;&#34;&#34;Make Random/Nice sparsification with forcing selecting u.a.r. K non-zeros component from all D components&#34;&#34;&#34;
+    # E[|C(x)|^2]=(d*d)/(k*k) * E[sum(zi*ei*xi)^2)] = (d*d)/(k*k) * k/d *|x|^2 = d/k * (x^2) = (w + 1) (x^2)
+    #  =&gt; w = d/k-1
+    self.compressorType = CompressorType.RANDK_COMPRESSOR
+    self.K = K
+    self.D = D
+    self.w = self.D / self.K - 1.0
+    self.resetStats()</code></pre>
+</details>
+</dd>
+<dt id="utils.compressors.Compressor.makeRankKCompressor"><code class="name flex">
+<span>def <span class="ident">makeRankKCompressor</span></span>(<span>self, D, K)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Make Rank-K sparsification compressors with forcing selecting K Rank-1 matrices in truncated SVD expansion
+of the reshaped "X" into matrix</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def makeRankKCompressor(self, D, K):
+    &#34;&#34;&#34;
+    Make Rank-K sparsification compressors with forcing selecting K Rank-1 matrices in truncated SVD expansion
+    of the reshaped &#34;X&#34; into matrix
+    &#34;&#34;&#34;
+    # E[|C(x)-x|^2]=(1-a)|x|^2
+    self.compressorType = CompressorType.RANK_K_COMPRESSOR
+    self.K = K
+    self.D = D
+
+    self.A = int(D**0.5)
+    self.B = int(D**0.5)
+
+    while self.D % self.A != 0:
+        self.A = self.A + 1
+
+    self.B = self.D // self.A
+
+    self.alpha = self.K / min(self.A, self.B)
+
+    self.resetStats()</code></pre>
+</details>
+</dd>
+<dt id="utils.compressors.Compressor.makeStandardDitheringFP32"><code class="name flex">
+<span>def <span class="ident">makeStandardDitheringFP32</span></span>(<span>self, D, levels, p=inf)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Make standard dithering schema with having uniform levels intervals inside [0.0, 1.0]
+and using "p" norm for normalizing vectors</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def makeStandardDitheringFP32(self, D, levels, p=float(&#34;inf&#34;)):
+    &#34;&#34;&#34;
+    Make standard dithering schema with having uniform levels intervals inside [0.0, 1.0]
+    and using &#34;p&#34; norm for normalizing vectors
+    &#34;&#34;&#34;
+    self.D = D
+    self.compressorType = CompressorType.STANDARD_DITHERING_FP32
+    # levels + 1 values in range [0.0, 1.0] which uniformly split this segment
+    self.levelsValues = torch.arange(0.0, 1.0 + 1.0 / levels * 0.5, 1.0 / levels)
+    self.s = len(self.levelsValues) - 1  # should be equal to level
+    assert self.s == levels
+
+    self.p = p
+    self.w = 0.0  # TODO - specify W for dithering
+
+    self.resetStats()</code></pre>
+</details>
+</dd>
+<dt id="utils.compressors.Compressor.makeTernGrad"><code class="name flex">
+<span>def <span class="ident">makeTernGrad</span></span>(<span>self, D)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Make Ternary Gradient compressor</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def makeTernGrad(self, D):
+    &#34;&#34;&#34; Make Ternary Gradient compressor &#34;&#34;&#34;
+    # https://arxiv.org/pdf/1705.07878.pdf
+    self.makeStandardDitheringFP32(D, levels=1, p=float(&#34;inf&#34;))
+    self.w = 0.0</code></pre>
+</details>
+</dd>
+<dt id="utils.compressors.Compressor.makeTopKCompressor"><code class="name flex">
+<span>def <span class="ident">makeTopKCompressor</span></span>(<span>self, D, K)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Make Top-K sparsification with forcing selecting maximum K component from all D components
+in terms of absolute value.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def makeTopKCompressor(self, D, K):
+    &#34;&#34;&#34;
+    Make Top-K sparsification with forcing selecting maximum K component from all D components
+    in terms of absolute value.
+    &#34;&#34;&#34;
+    # E[|C(x)-x|^2]=(1-a)|x|^2
+    self.compressorType = CompressorType.TOPK_COMPRESSOR
+    self.K = K
+    self.D = D
+    self.alpha = self.K / self.D
+    self.resetStats()</code></pre>
+</details>
+</dd>
+<dt id="utils.compressors.Compressor.resetStats"><code class="name flex">
+<span>def <span class="ident">resetStats</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Reset internal statistics for compressor</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def resetStats(self):
+    &#34;&#34;&#34;Reset internal statistics for compressor&#34;&#34;&#34;
+    self.total_input_components = 0            # Total scalar component(fp32 scalar) processed by the compressor
+    self.really_need_to_send_components = 0    # Total scalar component which need to be send across the network
+    self.last_input_advance = 0                # Last input components through the last call
+    self.last_need_to_send_advance = 0         # Last need to send scalar component.</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="utils.compressors.CompressorType"><code class="flex name class">
+<span>class <span class="ident">CompressorType</span></span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class CompressorType:
+    IDENTICAL = 1                # Identical compressor
+    LAZY_COMPRESSOR = 2          # Lazy or Bernulli compressor
+    RANDK_COMPRESSOR = 3         # Rank-K compressor
+    NATURAL_COMPRESSOR_FP32 = 4  # Natural compressor with FP32
+    STANDARD_DITHERING_FP32 = 5  # Standard dithering with FP32
+    NATURAL_DITHERING_FP32 = 6   # Natural Dithering applied for FP32 components vectors
+    TOPK_COMPRESSOR = 7          # Top-K compressor
+    RANK_K_COMPRESSOR = 8        # Rank-K compressor</code></pre>
+</details>
+<h3>Class variables</h3>
+<dl>
+<dt id="utils.compressors.CompressorType.IDENTICAL"><code class="name">var <span class="ident">IDENTICAL</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="utils.compressors.CompressorType.LAZY_COMPRESSOR"><code class="name">var <span class="ident">LAZY_COMPRESSOR</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="utils.compressors.CompressorType.NATURAL_COMPRESSOR_FP32"><code class="name">var <span class="ident">NATURAL_COMPRESSOR_FP32</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="utils.compressors.CompressorType.NATURAL_DITHERING_FP32"><code class="name">var <span class="ident">NATURAL_DITHERING_FP32</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="utils.compressors.CompressorType.RANDK_COMPRESSOR"><code class="name">var <span class="ident">RANDK_COMPRESSOR</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="utils.compressors.CompressorType.RANK_K_COMPRESSOR"><code class="name">var <span class="ident">RANK_K_COMPRESSOR</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="utils.compressors.CompressorType.STANDARD_DITHERING_FP32"><code class="name">var <span class="ident">STANDARD_DITHERING_FP32</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="utils.compressors.CompressorType.TOPK_COMPRESSOR"><code class="name">var <span class="ident">TOPK_COMPRESSOR</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="utils.compressors.ProbabilisticSwitchingCompressor"><code class="flex name class">
+<span>class <span class="ident">ProbabilisticSwitchingCompressor</span></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Probability switching compressor</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class ProbabilisticSwitchingCompressor:
+    &#34;&#34;&#34;Probability switching compressor&#34;&#34;&#34;
+    def __init__(self):
+        self.p = []
+        self.c = []
+        self.p_sum = 0.0
+
+    def addCompressor(self, ci, pi):
+        self.c.append(ci)
+        self.p.append(pi)
+        self.p_sum += pi
+
+    def resetStats(self):
+        for ci in self.c:
+            ci.resetStats()
+
+    def fullName(self):
+        return f&#34;probabilistic switching between {len(self.c)} compressors&#34;
+
+    def getW(self):
+        w = 0.0
+        for i in range(len(self.c)):
+            ci = self.c[i]
+            pi = self.p[i]
+            w += pi / self.p_sum * ci.getW()
+
+        return w
+
+    def compressVector(self, x, rndgen):
+        dice = rndgen.random()
+        pTotal = 0.0
+
+        for i in range(len(self.c)):
+            pi = self.p[i]
+            if dice &gt;= pTotal and dice &lt;= pTotal + pi:
+                return self.c[i].compressVector(x)
+            pTotal += pi
+        return None</code></pre>
+</details>
+<h3>Methods</h3>
+<dl>
+<dt id="utils.compressors.ProbabilisticSwitchingCompressor.addCompressor"><code class="name flex">
+<span>def <span class="ident">addCompressor</span></span>(<span>self, ci, pi)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def addCompressor(self, ci, pi):
+    self.c.append(ci)
+    self.p.append(pi)
+    self.p_sum += pi</code></pre>
+</details>
+</dd>
+<dt id="utils.compressors.ProbabilisticSwitchingCompressor.compressVector"><code class="name flex">
+<span>def <span class="ident">compressVector</span></span>(<span>self, x, rndgen)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def compressVector(self, x, rndgen):
+    dice = rndgen.random()
+    pTotal = 0.0
+
+    for i in range(len(self.c)):
+        pi = self.p[i]
+        if dice &gt;= pTotal and dice &lt;= pTotal + pi:
+            return self.c[i].compressVector(x)
+        pTotal += pi
+    return None</code></pre>
+</details>
+</dd>
+<dt id="utils.compressors.ProbabilisticSwitchingCompressor.fullName"><code class="name flex">
+<span>def <span class="ident">fullName</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def fullName(self):
+    return f&#34;probabilistic switching between {len(self.c)} compressors&#34;</code></pre>
+</details>
+</dd>
+<dt id="utils.compressors.ProbabilisticSwitchingCompressor.getW"><code class="name flex">
+<span>def <span class="ident">getW</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getW(self):
+    w = 0.0
+    for i in range(len(self.c)):
+        ci = self.c[i]
+        pi = self.p[i]
+        w += pi / self.p_sum * ci.getW()
+
+    return w</code></pre>
+</details>
+</dd>
+<dt id="utils.compressors.ProbabilisticSwitchingCompressor.resetStats"><code class="name flex">
+<span>def <span class="ident">resetStats</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def resetStats(self):
+    for ci in self.c:
+        ci.resetStats()</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="utils.compressors.initCompressor" href="#utils.compressors.initCompressor">initCompressor</a></code></li>
+<li><code><a title="utils.compressors.test_rankk_compressor" href="#utils.compressors.test_rankk_compressor">test_rankk_compressor</a></code></li>
+<li><code><a title="utils.compressors.test_topk_compressor" href="#utils.compressors.test_topk_compressor">test_topk_compressor</a></code></li>
+<li><code><a title="utils.compressors.test_unbiasedness" href="#utils.compressors.test_unbiasedness">test_unbiasedness</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="utils.compressors.ComposedCompressor" href="#utils.compressors.ComposedCompressor">ComposedCompressor</a></code></h4>
+<ul class="">
+<li><code><a title="utils.compressors.ComposedCompressor.compressVector" href="#utils.compressors.ComposedCompressor.compressVector">compressVector</a></code></li>
+<li><code><a title="utils.compressors.ComposedCompressor.fullName" href="#utils.compressors.ComposedCompressor.fullName">fullName</a></code></li>
+<li><code><a title="utils.compressors.ComposedCompressor.getW" href="#utils.compressors.ComposedCompressor.getW">getW</a></code></li>
+<li><code><a title="utils.compressors.ComposedCompressor.resetStats" href="#utils.compressors.ComposedCompressor.resetStats">resetStats</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="utils.compressors.Compressor" href="#utils.compressors.Compressor">Compressor</a></code></h4>
+<ul class="">
+<li><code><a title="utils.compressors.Compressor.compressVector" href="#utils.compressors.Compressor.compressVector">compressVector</a></code></li>
+<li><code><a title="utils.compressors.Compressor.fullName" href="#utils.compressors.Compressor.fullName">fullName</a></code></li>
+<li><code><a title="utils.compressors.Compressor.generateCompressPattern" href="#utils.compressors.Compressor.generateCompressPattern">generateCompressPattern</a></code></li>
+<li><code><a title="utils.compressors.Compressor.getAlphaContraction" href="#utils.compressors.Compressor.getAlphaContraction">getAlphaContraction</a></code></li>
+<li><code><a title="utils.compressors.Compressor.getW" href="#utils.compressors.Compressor.getW">getW</a></code></li>
+<li><code><a title="utils.compressors.Compressor.isContractionCompressor" href="#utils.compressors.Compressor.isContractionCompressor">isContractionCompressor</a></code></li>
+<li><code><a title="utils.compressors.Compressor.isUnbiasedCompressor" href="#utils.compressors.Compressor.isUnbiasedCompressor">isUnbiasedCompressor</a></code></li>
+<li><code><a title="utils.compressors.Compressor.makeIdenticalCompressor" href="#utils.compressors.Compressor.makeIdenticalCompressor">makeIdenticalCompressor</a></code></li>
+<li><code><a title="utils.compressors.Compressor.makeLazyCompressor" href="#utils.compressors.Compressor.makeLazyCompressor">makeLazyCompressor</a></code></li>
+<li><code><a title="utils.compressors.Compressor.makeNaturalCompressorFP32" href="#utils.compressors.Compressor.makeNaturalCompressorFP32">makeNaturalCompressorFP32</a></code></li>
+<li><code><a title="utils.compressors.Compressor.makeNaturalDitheringFP32" href="#utils.compressors.Compressor.makeNaturalDitheringFP32">makeNaturalDitheringFP32</a></code></li>
+<li><code><a title="utils.compressors.Compressor.makeQSGD_FP32" href="#utils.compressors.Compressor.makeQSGD_FP32">makeQSGD_FP32</a></code></li>
+<li><code><a title="utils.compressors.Compressor.makeRandKCompressor" href="#utils.compressors.Compressor.makeRandKCompressor">makeRandKCompressor</a></code></li>
+<li><code><a title="utils.compressors.Compressor.makeRankKCompressor" href="#utils.compressors.Compressor.makeRankKCompressor">makeRankKCompressor</a></code></li>
+<li><code><a title="utils.compressors.Compressor.makeStandardDitheringFP32" href="#utils.compressors.Compressor.makeStandardDitheringFP32">makeStandardDitheringFP32</a></code></li>
+<li><code><a title="utils.compressors.Compressor.makeTernGrad" href="#utils.compressors.Compressor.makeTernGrad">makeTernGrad</a></code></li>
+<li><code><a title="utils.compressors.Compressor.makeTopKCompressor" href="#utils.compressors.Compressor.makeTopKCompressor">makeTopKCompressor</a></code></li>
+<li><code><a title="utils.compressors.Compressor.resetStats" href="#utils.compressors.Compressor.resetStats">resetStats</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="utils.compressors.CompressorType" href="#utils.compressors.CompressorType">CompressorType</a></code></h4>
+<ul class="">
+<li><code><a title="utils.compressors.CompressorType.IDENTICAL" href="#utils.compressors.CompressorType.IDENTICAL">IDENTICAL</a></code></li>
+<li><code><a title="utils.compressors.CompressorType.LAZY_COMPRESSOR" href="#utils.compressors.CompressorType.LAZY_COMPRESSOR">LAZY_COMPRESSOR</a></code></li>
+<li><code><a title="utils.compressors.CompressorType.NATURAL_COMPRESSOR_FP32" href="#utils.compressors.CompressorType.NATURAL_COMPRESSOR_FP32">NATURAL_COMPRESSOR_FP32</a></code></li>
+<li><code><a title="utils.compressors.CompressorType.NATURAL_DITHERING_FP32" href="#utils.compressors.CompressorType.NATURAL_DITHERING_FP32">NATURAL_DITHERING_FP32</a></code></li>
+<li><code><a title="utils.compressors.CompressorType.RANDK_COMPRESSOR" href="#utils.compressors.CompressorType.RANDK_COMPRESSOR">RANDK_COMPRESSOR</a></code></li>
+<li><code><a title="utils.compressors.CompressorType.RANK_K_COMPRESSOR" href="#utils.compressors.CompressorType.RANK_K_COMPRESSOR">RANK_K_COMPRESSOR</a></code></li>
+<li><code><a title="utils.compressors.CompressorType.STANDARD_DITHERING_FP32" href="#utils.compressors.CompressorType.STANDARD_DITHERING_FP32">STANDARD_DITHERING_FP32</a></code></li>
+<li><code><a title="utils.compressors.CompressorType.TOPK_COMPRESSOR" href="#utils.compressors.CompressorType.TOPK_COMPRESSOR">TOPK_COMPRESSOR</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="utils.compressors.ProbabilisticSwitchingCompressor" href="#utils.compressors.ProbabilisticSwitchingCompressor">ProbabilisticSwitchingCompressor</a></code></h4>
+<ul class="">
+<li><code><a title="utils.compressors.ProbabilisticSwitchingCompressor.addCompressor" href="#utils.compressors.ProbabilisticSwitchingCompressor.addCompressor">addCompressor</a></code></li>
+<li><code><a title="utils.compressors.ProbabilisticSwitchingCompressor.compressVector" href="#utils.compressors.ProbabilisticSwitchingCompressor.compressVector">compressVector</a></code></li>
+<li><code><a title="utils.compressors.ProbabilisticSwitchingCompressor.fullName" href="#utils.compressors.ProbabilisticSwitchingCompressor.fullName">fullName</a></code></li>
+<li><code><a title="utils.compressors.ProbabilisticSwitchingCompressor.getW" href="#utils.compressors.ProbabilisticSwitchingCompressor.getW">getW</a></code></li>
+<li><code><a title="utils.compressors.ProbabilisticSwitchingCompressor.resetStats" href="#utils.compressors.ProbabilisticSwitchingCompressor.resetStats">resetStats</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+FL_PyTorch. The document generated 09-July-2022 23:03:25.
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>
