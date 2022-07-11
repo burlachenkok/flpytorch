@@ -191,6 +191,8 @@ You are welcome to join the Slack workspace of project and ask questions.
 
 [https://fl-pytorch.slack.com/](https://fl-pytorch.slack.com/)
 
+Please use this invitation [Link](https://join.slack.com/t/fl-pytorch/shared_invite/zt-1cjkjct9c-1wuFdrbVT4LcrAcjyj_gBw).
+
 # Reporting an Issue
 
 For bug or feature request, please fill the ticket in the github repository.
