@@ -13,7 +13,7 @@ setuptools.setup(
                 "Enviroment based on PyTorch",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/burlachenkok/fl_pytorch",
+    url="https://github.com/burlachenkok/flpytorch",
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",

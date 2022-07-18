@@ -27,13 +27,23 @@
 - [About the License](#about-the-license)
 
 
-# About Document
+# About FL_PyTorch
 
-[FL_PyTorch](https://github.com/burlachenkok/fl_pytorch) is a software suite based on [PyTorch](https://pytorch.org/) to support efficient simulated Federated Learning experiments. This [README.md](README.md) file contains a description of how to prepare and install all needed things to start working with FL_PyTorch.
+[FL_PyTorch](https://github.com/burlachenkok/flpytorch) is a software suite based on [PyTorch](https://pytorch.org/) to support efficient simulated Federated Learning experiments. This [README.md](README.md) file contains a description of how to prepare and install all needed things to start working with FL_PyTorch.
 
 If you have already installed and prepared all the needed for a start but need assistance in the following steps, we recommend starting with [TUTORIAL.md](TUTORIAL.md). We also provide automatic generated documentation for the code [pdoc3 documentation](docs/generated) located in "docs/generated" folder of the project.
 
-The slides, presentations, posters, and video with the project presentation are available in [presentations](presentations). 
+**Materials:**
+* Video Presentation: [Link-1](https://burlachenkok.github.io/FL_PyTorch-presentation-at-rising-starts-in-AI-Symposium/), [Link-2](https://webcast.kaust.edu.sa/mediasite/Showcase/kaust/Presentation/600c852bedf94c8298f92d8c1703f8521d)
+* The arXiv link for the paper: [https://arxiv.org/abs/2202.03099](https://arxiv.org/abs/2202.03099)
+* Original publication [https://dl.acm.org/doi/abs/10.1145/3488659.3493775](https://dl.acm.org/doi/abs/10.1145/3488659.3493775)
+* [FL_PyTorch in deepai.org](https://deepai.org/publication/fl-pytorch-optimization-research-simulator-for-federated-learning)
+* [FL_PyTorch in researchgate.net](https://www.researchgate.net/publication/358422816_FL_PyTorch_optimization_research_simulator_for_federated_learning)
+* The slides, presentations, posters, and video with the project presentation are available in [presentations](presentations). 
+
+**Forum:**
+* Slack Workspace: [https://fl-pytorch.slack.com/](https://fl-pytorch.slack.com/)
+* The invitation Link: [https://join.slack.com/t/fl-pytorch/shared_invite/zt-1cjkjct9c-1wuFdrbVT4LcrAcjyj_gBw](https://join.slack.com/t/fl-pytorch/shared_invite/zt-1cjkjct9c-1wuFdrbVT4LcrAcjyj_gBw)
 
 ---
 
@@ -196,14 +206,6 @@ Please use this invitation [Link](https://join.slack.com/t/fl-pytorch/shared_inv
 # Reporting an Issue
 
 For bug or feature request, please fill the ticket in the github repository.
-
-# Another Resources
-
-1. [https://arxiv.org/abs/2202.03099](https://arxiv.org/abs/2202.03099) 
-2. [https://dl.acm.org/doi/abs/10.1145/3488659.3493775](https://dl.acm.org/doi/abs/10.1145/3488659.3493775)
-3. [Video. FL_PyTorch at Rising Stars in AI Symposium 2022 at KAUST](https://webcast.kaust.edu.sa/mediasite/Showcase/kaust/Presentation/600c852bedf94c8298f92d8c1703f8521d)
-4. [FL_PyTorch in deepai.org](https://deepai.org/publication/fl-pytorch-optimization-research-simulator-for-federated-learning)
-5. [FL_PyTorch in researchgate.net](https://www.researchgate.net/publication/358422816_FL_PyTorch_optimization_research_simulator_for_federated_learning)
 
 # About the License
 

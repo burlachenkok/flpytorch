@@ -194,7 +194,7 @@ def onShowAboutDialog():
     programInfo += f"Qt version: {QtCore.qVersion()}\n"
     programInfo += f"NumPy version: {np.__version__}\n"
     programInfo += "\n"
-    programInfo += "Repository: https://github.com/burlachenkok/fl_pytorch\n"
+    programInfo += "Repository: https://github.com/burlachenkok/flpytorch\n"
     programInfo += "Paper: https://dl.acm.org/doi/abs/10.1145/3488659.3493775"
 
     about_box_ui.edtText.setText(programInfo)

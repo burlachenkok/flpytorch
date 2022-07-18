@@ -1,6 +1,6 @@
 # About that document
 
-[FL_PyTorch](https://github.com/burlachenkok/fl_pytorch) is a software suite based on [PyTorch](https://pytorch.org/) to support efficient simulated Federated Learning experiments.
+[FL_PyTorch](https://github.com/burlachenkok/flpytorch) is a software suite based on [PyTorch](https://pytorch.org/) to support efficient simulated Federated Learning experiments.
 
 That document is a cookbook for solving practical problems you may face while using a simulator.
 
