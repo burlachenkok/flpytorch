@@ -39,7 +39,7 @@ FL_PyTorch supports optimization algorithms that can be cast into the form of Al
 
 It provides customization at both the experiments and algorithms at different levels:
 
-Several standard algorithms are already implemented (FedAvg, DCGD, SCAFFOLD, FexProx, MARINA, DIANA, FRECON, COFIG, PP-MARINA, EF21, EF21-PP), and these can be further customized with the flags in console mode and GUI simulation.
+Several standard algorithms are already implemented (GradSkip, FedAvg, DCGD, SCAFFOLD, FexProx, MARINA, DIANA, FRECON, COFIG, PP-MARINA, EF21, EF21-PP), and these can be further customized with the flags in console mode and GUI simulation.
 For example, suppose your algorithm has the form of generalized FedAvg, **Algorithm 1**, but it has an internal custom mechanism for exotic control. In that case, you can append optimization algorithms in the same way as other algorithms that were implemented. Furthermore, a special step-by-step tutorial is presented at the end of the section.
 If your algorithms need a unique option that does not cover the presented interface, we have an extra option for passing experiment configuration.
 

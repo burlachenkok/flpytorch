@@ -252,7 +252,7 @@
                <item row="10" column="1">
                 <widget class="QLineEdit" name="edtGlbInitLearningRate">
                  <property name="text">
-                  <string>0.1</string>
+                  <string>1</string>
                  </property>
                 </widget>
                </item>
@@ -1097,6 +1097,11 @@
                  <item>
                   <property name="text">
                    <string>Wideresnet288</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>dense</string>
                   </property>
                  </item>
                  <item>

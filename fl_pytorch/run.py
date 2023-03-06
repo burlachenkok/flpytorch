@@ -274,7 +274,8 @@ def init_and_help_with_compute(args, raw_cmdline, trainloader, testloader, exec_
 
             res = local_training(None, client_state, client_id, msg, model_dict_original, optimiser_dict_original,
                                  model, trainloader, criterion, local_optimiser, device, round, run_local_iters,
-                                 number_of_local_steps, is_rnn, print_freq, state_dicts_thread_safe, client_state['H']["run_id"])
+                                 number_of_local_steps, is_rnn, print_freq, state_dicts_thread_safe,
+                                 client_state['H']["run_id"])
             # ==========================================================================================================
             # Training is finished - response
             socket.rawSendString("result_of_local_training")
@@ -491,11 +492,18 @@ def init_and_train_model(args, raw_cmdline, trainloader, testloader, exec_ctx):
                                                                          args.number_of_local_iters,
                                                                          is_rnn, sampled_clients)
         train_time = time.time() - start
+        if H['algorithm'] == 'gradskip':
+            train_time = H['time']
         train_time_meter += train_time  # Track timings for across epochs average
         logger.debug(f'Epoch train time: {train_time}')
         # H['history'][current_round]["xi_after"] = mutils.get_params(model)
         H['history'][current_round]["train_time"] = train_time
         H['history'][current_round]["time"] = time.time() - exec_ctx.context_init_time
+        if H['algorithm'] == 'gradskip':
+            if current_round == 0:
+                H['history'][current_round]["time"] = train_time
+            else:
+                H['history'][current_round]["time"] = H['history'][current_round - 1]["time"] + train_time
         H['last_round_elapsed_sec'] = train_time
 
         if (i % args.eval_every == 0 or i == (args.rounds - 1)) and metric_to_optim != "none":
@@ -560,7 +568,7 @@ def init_and_train_model(args, raw_cmdline, trainloader, testloader, exec_ctx):
                 if gpu_utils.is_target_dev_gpu(dev):
                     memory_gpu_used = torch.cuda.memory_stats(args.device)['reserved_bytes.all.current']
                     logger.info(
-                        f"GPU: Before round {i} we have used {memory_gpu_used/(1024.0**2):.2f} MB from device {dev}")
+                        f"GPU: Before round {i} we have used {memory_gpu_used / (1024.0 ** 2):.2f} MB from device {dev}")
                     H['history'][current_round]["memory_gpu_used"] += memory_gpu_used / (1024.0 ** 2)
 
         if current_round % args.eval_every == 0 or i == (args.rounds - 1):
@@ -803,7 +811,7 @@ def init_and_train_model(args, raw_cmdline, trainloader, testloader, exec_ctx):
                     while i < sz:
                         if torch.is_tensor(client_state[field][i]):
                             size_in_mbytes = client_state[field][i].numel() * client_state[field][i].element_size() / (
-                                        1024.0 ** 2)
+                                    1024.0 ** 2)
                             if size_in_mbytes >= tensor_prune_mb_threshold:
                                 del client_state[field][i]
                                 sz = len(client_state[field])

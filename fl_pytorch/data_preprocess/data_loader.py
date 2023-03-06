@@ -222,12 +222,14 @@ def get_num_clients(dataset):
         num_clients = 10
     elif dataset == 'w9a' or dataset == 'w8a' or dataset == 'w7a' or dataset == 'w6a' or dataset == 'w5a' or \
          dataset == 'w4a' or dataset == 'w3a' or dataset == 'w2a' or dataset == 'w1a':
-        num_clients = 100
+        # num_clients = 100
+        num_clients = 10
     elif dataset == 'a9a' or dataset == 'a8a' or dataset == 'a7a' or dataset == 'a6a' or dataset == 'a5a' or \
          dataset == 'a4a' or dataset == 'a3a' or dataset == 'a2a' or dataset == 'a1a':
-        num_clients = 100
+        # num_clients = 100
+        num_clients = 10
     elif dataset == 'mushrooms' or dataset == 'phishing':
-        num_clients = 100
+        num_clients = 10
     else:
         raise ValueError(f"Dataset {dataset} is not supported.")
 

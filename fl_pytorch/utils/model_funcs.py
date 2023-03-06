@@ -41,7 +41,7 @@ CLIP_RNN_GRAD = 5
 def robustLinearRegulizers(model, alphaR):
     value = None
     for p in model.parameters():
-        xSqr = (p*p)
+        xSqr = (p * p)
 
         if value is None:
             value = (xSqr / (xSqr + 1)).sum()
@@ -149,11 +149,31 @@ def initialise_model(model_name, dataset, dataset_ref, args, resume_from=None, l
             target = torch.Tensor([target])
 
         model = nn.Sequential(  # 0 index reserved for samples in the batch
-                                nn.Flatten(1),
-                                # Fully connected layer from example.numel() to target.numel() units
-                                nn.Linear(in_features=example.numel(), out_features=target.numel(), bias=False)
-                              )
+            nn.Flatten(1),
+            # Fully connected layer from example.numel() to target.numel() units
+            nn.Linear(in_features=example.numel(), out_features=target.numel(), bias=False)
+        )
 
+    if model_name == "dense":
+        # Sample single sample to obtain information about data format
+        example, target = dataset_ref[0]
+
+        if not torch.is_tensor(example):
+            example = torch.Tensor(example)
+
+        if not torch.is_tensor(target):
+            target = torch.Tensor([target])
+
+        model = nn.Sequential(  # 0 index reserved for samples in the batch
+            nn.Flatten(1),
+            nn.Linear(in_features=example.numel(), out_features=32, bias=True),
+            nn.ReLU(),
+            nn.Linear(in_features=32, out_features=64, bias=True),
+            nn.ReLU(),
+            nn.Linear(in_features=64, out_features=target.numel(), bias=True),
+            # Apply sigmoid
+            nn.Sigmoid()
+        )
         # mutils.set_params_to_zero(model)
 
     if model_name == "logistic":
@@ -167,12 +187,12 @@ def initialise_model(model_name, dataset, dataset_ref, args, resume_from=None, l
             target = torch.Tensor([target])
 
         model = nn.Sequential(  # 0 index reserved for samples in the batch
-                                nn.Flatten(1),
-                                # Fully connected layer from example.numel() to target.numel() units
-                                nn.Linear(in_features=example.numel(), out_features=target.numel(), bias=False),
-                                # Apply sigmoid
-                                nn.Sigmoid()
-                              )
+            nn.Flatten(1),
+            # Fully connected layer from example.numel() to target.numel() units
+            nn.Linear(in_features=example.numel(), out_features=target.numel(), bias=False),
+            # Apply sigmoid
+            nn.Sigmoid()
+        )
         # mutils.set_params_to_zero(model)
 
     if model_name.startswith("tv_"):
@@ -212,7 +232,7 @@ def initialise_model(model_name, dataset, dataset_ref, args, resume_from=None, l
         else:
             model_filename = os.path.join(resume_from, 'model_last.pth.tar')
             metric_filename = os.path.join(resume_from, 'last_metrics.json')
-    
+
         logger.info("Loading checkpoint '{}'".format(model_filename))
         state = torch.load(model_filename)
         logger.info("Loaded checkpoint '{}'".format(model_filename))
@@ -226,8 +246,8 @@ def initialise_model(model_name, dataset, dataset_ref, args, resume_from=None, l
 
 
 def model_to_device(model, device):
-    if type(device) == list:                 # If to allocate on more than one GPU
-        model = model.to(device=device[0])   # Recursively convert parameters and buffers to device specific tensors
+    if type(device) == list:  # If to allocate on more than one GPU
+        model = model.to(device=device[0])  # Recursively convert parameters and buffers to device specific tensors
 
         # Create data-parallel model across devices "device"
         # Details: https://pytorch.org/docs/stable/generated/torch.nn.DataParallel.html
@@ -235,7 +255,7 @@ def model_to_device(model, device):
         model = DataParallel(model, device_ids=device)
 
     else:
-        model = model.to(device=device)      # Recursively convert parameters and buffers to device specific tensors
+        model = model.to(device=device)  # Recursively convert parameters and buffers to device specific tensors
     return model
 
 
@@ -358,7 +378,6 @@ def local_training(thread, client_state, client_id, msg, model_dict_original, op
 def non_local_training(thread, client_state, client_id, msg, model_dict_original, optimiser_dict_original,
                        model, train_loader, criterion, local_optimiser, device, round, run_local_iters,
                        number_of_local_steps, is_rnn, print_freq, state_dicts):
-
     model_dict_original = model_dict_original.to("cpu")
 
     args = (client_state, client_id, msg, model_dict_original, optimiser_dict_original,
@@ -465,6 +484,7 @@ def run_one_communication_round(H, model, train_loader, criterion, local_optimis
         torch.cuda.default_stream(device).synchronize()
 
     # Wait for all threads
+    time_max = 0
     i = 0
     while i < len(sampled_clients_round):
         # Trainining in a serialized way locally
@@ -474,6 +494,8 @@ def run_one_communication_round(H, model, train_loader, criterion, local_optimis
 
             msg = f'Running local epoch for client: {client_id}, [{i + 1}/{len(sampled_clients_round)}]'
             client_state = algorithms.clientState(H, client_id, client_data_samples, round, device)
+            if H['algorithm'] == 'gradskip':
+                number_of_local_steps = client_state['Ki']
             res = local_training(None, client_state, client_id, msg, model_dict_original, optimiser_dict_original,
                                  model, train_loader, criterion, local_optimiser, device, round, run_local_iters,
                                  number_of_local_steps, is_rnn, print_freq, state_dicts_thread_safe, H["run_id"])
@@ -485,6 +507,8 @@ def run_one_communication_round(H, model, train_loader, criterion, local_optimis
             msg = f'Running local epoch for client: {client_id}, [{i + 1}/{len(sampled_clients_round)}]'
             next_device = exec_ctx.local_training_threads.next_dispatched_thread().device
             client_state = algorithms.clientState(H, client_id, client_data_samples, round, next_device)
+            if H['algorithm'] == 'gradskip':
+                number_of_local_steps = client_state['Ki']
 
             args = (client_state, client_id, msg, model_dict_original, optimiser_dict_original,
                     None, None, criterion, None, next_device, round, run_local_iters,
@@ -508,9 +532,21 @@ def run_one_communication_round(H, model, train_loader, criterion, local_optimis
             args = (client_state, client_id, msg, model_dict_original, optimiser_dict_original,
                     None, None, criterion, None, next_device, round, run_local_iters,
                     number_of_local_steps, is_rnn, print_freq, state_dicts_thread_safe)
+            if H['algorithm'] == 'gradskip':
+                number_of_local_steps = client_state['Ki']
 
             exec_ctx.remote_training_threads.dispatch(non_local_training, args)
             i += 1
+        if H['algorithm'] == 'gradskip':
+            train_time = client_state['T'] * client_state['Ki']
+            random_noise = np.random.uniform(-1, 1)
+            train_time += random_noise
+            client_state['time'].append(train_time)
+            if train_time > time_max:
+                time_max = train_time
+
+    if H['algorithm'] == 'gradskip':
+        H['time'] = time_max
 
     # Prepare for aggregation - weights based on the number of local data
     # if len(sampled_clients_round) >= 1:
@@ -639,8 +675,8 @@ def train_model(client_state, model, train_loader, criterion, local_optimiser, d
     for i in range(iters_to_take):
         # ==============================================================================================================
         if experimental_options["internal_sgd"] == "iterated-minibatch":
-            s = (i*tau) % len(train_loader.dataset)
-            e = ((i+1)*tau) % len(train_loader.dataset)
+            s = (i * tau) % len(train_loader.dataset)
+            e = ((i + 1) * tau) % len(train_loader.dataset)
             client_state['iterated-minibatch-indicies'] = client_state['iterated-minibatch-indicies-full'][s:e]
         elif experimental_options["internal_sgd"] == "sgd-us":
             client_state['iterated-minibatch-indicies'] = np.array([rndgen.randint(len(train_loader.dataset))])
@@ -680,8 +716,7 @@ def train_model(client_state, model, train_loader, criterion, local_optimiser, d
             start_ts = time.time()
 
             if str(data.device) != device or str(label.device) != device or \
-               data.dtype != model.fl_dtype or label.dtype != model.fl_dtype:
-
+                    data.dtype != model.fl_dtype or label.dtype != model.fl_dtype:
                 data = data.to(device=device, dtype=model.fl_dtype)
                 label = label.to(device=device, dtype=model.fl_dtype)
 
@@ -712,7 +747,6 @@ def get_train_inputs(data, label, model, batch_size, device, is_rnn):
 
 def evaluate_model(model, val_loader, criterion, device, round,
                    print_freq=10, metric_to_optim='top_1', is_rnn=False):
-
     logger = Logger.get("default")
 
     metrics_meter = init_metrics_meter(round)
@@ -727,7 +761,8 @@ def evaluate_model(model, val_loader, criterion, device, round,
         for i, (data, label) in enumerate(val_loader):
             batch_size = data.shape[0]
             start_ts = time.time()
-            if str(data.device) != device or str(label.device) != device or data.dtype != model.fl_dtype or label.dtype != model.fl_dtype:
+            if str(data.device) != device or str(
+                    label.device) != device or data.dtype != model.fl_dtype or label.dtype != model.fl_dtype:
                 data = data.to(device=device, dtype=model.fl_dtype)
                 label = label.to(device=device, dtype=model.fl_dtype)
             if is_rnn:
@@ -763,7 +798,7 @@ def accuracy(output, label, topk=(1,)):
     :param topk: Which accuracies to return (e.g. top1, top5)
     :return: The accuracies requested
     """
-    maxk = max(topk)           # maximum k value in which we're interested in
+    maxk = max(topk)  # maximum k value in which we're interested in
     batch_size = label.size(0)
 
     if output.shape[1] == 1:
@@ -807,7 +842,7 @@ def forward_backward(client_state, model, criterion, input, label, inference_dur
     inference_duration += single_inference
 
     loss = compute_loss(model, criterion, output, label)
-    loss = loss * (1.0/total_trainset_size)
+    loss = loss * (1.0 / total_trainset_size)
     loss.backward()
     backprop_duration += time.time() - (start_ts + single_inference)
 
@@ -830,12 +865,13 @@ def forward(client_state, model, criterion, input, label, batch_size, total_trai
     client_state["stats"]["inference_duration"] += single_inference
 
     loss = compute_loss(model, criterion, output, label)
-    loss = loss * (1.0/total_trainset_size)
+    loss = loss * (1.0 / total_trainset_size)
 
     # It's cheap to update loss, but because we slightly move model after each  batch processing -
     # it's not the true train loss, instead of it it's running_loss
     update_metrics(metrics_meter, loss, batch_size, output, label)
     return output, hidden
+
 
 def compute_loss(model, criterion, output, label):
     if type(criterion) is torch.nn.MSELoss and not label.is_floating_point():

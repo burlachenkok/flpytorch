@@ -325,7 +325,7 @@ def parse_args(args):
         "--algorithm",
         type=str,
         default="dcgd",
-        help="Algorithm (marina, diana, dcgd, fedavg, scaffold, fedprox, ef21, cofig, frecon, ef21-pp, pp-marina)"
+        help="Algorithm (gradskip, marina, diana, dcgd, fedavg, scaffold, fedprox, ef21, cofig, frecon, ef21-pp, pp-marina)"
     )
     parser.add_argument(
         "--algorithm-options",
