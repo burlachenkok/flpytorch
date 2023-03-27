@@ -62,9 +62,16 @@ def evaluateGradient(client_state, model, dataloader, criterion, is_rnn, update_
     for i, (data, label) in enumerate(dataloader):
         start_ts = time.time()
         batch_size = data.shape[0]
-        if str(data.device) != device or str(
-                label.device) != device or data.dtype != model.fl_dtype or label.dtype != model.fl_dtype:
-            data, label = data.to(device=device, dtype=model.fl_dtype), label.to(device=device, dtype=model.fl_dtype)
+
+        if str(data.device) != device or data.dtype != model.fl_dtype:
+            data = data.to(device=device, dtype=model.fl_dtype)
+
+        if str(criterion) == 'CrossEntropyLoss()':
+            if str(label.device) != device:
+                label = label.to(device=device)
+        else:
+            if str(label.device) != device or label.dtype != model.fl_dtype:
+                label = label.to(device=device, dtype=model.fl_dtype)
 
         if update_statistics:
             client_state["stats"]["dataload_duration"] += (time.time() - start_ts)
@@ -194,9 +201,16 @@ def evaluateSgd(client_state, model, dataloader, criterion, is_rnn, update_stati
 
         start_ts = time.time()
         batch_size = data.shape[0]
-        if str(data.device) != device or str(
-                label.device) != device or data.dtype != model.fl_dtype or label.dtype != model.fl_dtype:
-            data, label = data.to(device=device, dtype=model.fl_dtype), label.to(device=device, dtype=model.fl_dtype)
+
+        if str(data.device) != device or data.dtype != model.fl_dtype:
+            data = data.to(device=device, dtype=model.fl_dtype)
+
+        if str(criterion) == 'CrossEntropyLoss()':
+            if str(label.device) != device:
+                label = label.to(device=device)
+        else:
+            if str(label.device) != device or label.dtype != model.fl_dtype:
+                label = label.to(device=device, dtype=model.fl_dtype)
 
         if update_statistics:
             client_state["stats"]["dataload_duration"] += (time.time() - start_ts)
@@ -278,10 +292,16 @@ def evaluateFunction(client_state, model, dataloader, criterion, is_rnn, update_
         for i, (data, label) in enumerate(dataloader):
             start_ts = time.time()
             batch_size = data.shape[0]
-            if str(data.device) != device or str(
-                    label.device) != device or data.dtype != model.fl_dtype or label.dtype != model.fl_dtype:
-                data, label = data.to(device=device, dtype=model.fl_dtype), label.to(device=device,
-                                                                                     dtype=model.fl_dtype)
+
+            if str(data.device) != device or data.dtype != model.fl_dtype:
+                data = data.to(device=device, dtype=model.fl_dtype)
+
+            if str(criterion) == 'CrossEntropyLoss()':
+                if str(label.device) != device:
+                    label = label.to(device=device)
+            else:
+                if str(label.device) != device or label.dtype != model.fl_dtype:
+                    label = label.to(device=device, dtype=model.fl_dtype)
 
             if update_statistics:
                 client_state["stats"]["dataload_duration"] += (time.time() - start_ts)

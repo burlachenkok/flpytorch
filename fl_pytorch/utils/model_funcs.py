@@ -715,10 +715,15 @@ def train_model(client_state, model, train_loader, criterion, local_optimiser, d
             batch_size = data.shape[0]
             start_ts = time.time()
 
-            if str(data.device) != device or str(label.device) != device or \
-                    data.dtype != model.fl_dtype or label.dtype != model.fl_dtype:
+            if str(data.device) != device or data.dtype != model.fl_dtype:
                 data = data.to(device=device, dtype=model.fl_dtype)
-                label = label.to(device=device, dtype=model.fl_dtype)
+
+            if str(criterion) == 'CrossEntropyLoss()':
+                if str(label.device) != device:
+                    label = label.to(device=device)
+            else:
+                if str(label.device) != device or label.dtype != model.fl_dtype:
+                    label = label.to(device=device, dtype=model.fl_dtype)
 
             client_state["stats"]["dataload_duration"] += (time.time() - start_ts)
             input, label = get_train_inputs(data, label, model, batch_size, device, is_rnn)
@@ -761,14 +766,22 @@ def evaluate_model(model, val_loader, criterion, device, round,
         for i, (data, label) in enumerate(val_loader):
             batch_size = data.shape[0]
             start_ts = time.time()
-            if str(data.device) != device or str(
-                    label.device) != device or data.dtype != model.fl_dtype or label.dtype != model.fl_dtype:
+
+            if str(data.device) != device or data.dtype != model.fl_dtype:
                 data = data.to(device=device, dtype=model.fl_dtype)
-                label = label.to(device=device, dtype=model.fl_dtype)
+
+            if str(criterion) == 'CrossEntropyLoss()':
+                if str(label.device) != device:
+                    label = label.to(device=device)
+            else:
+                if str(label.device) != device or label.dtype != model.fl_dtype:
+                    label = label.to(device=device, dtype=model.fl_dtype)
+
             if is_rnn:
                 label = label.reshape(-1)
 
             dataload_duration = time.time() - start_ts
+
             if is_rnn:
                 output, hidden = model(data, hidden)
             else:
