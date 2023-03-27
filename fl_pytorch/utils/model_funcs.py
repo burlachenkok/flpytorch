@@ -114,9 +114,22 @@ def get_training_elements(model_name, dataset, dataset_ref, args, resume_from, l
 
     if loss == "crossentropy":
         criterion = nn.CrossEntropyLoss(reduction='sum')
+        # CE Loss in Mathematics: CE(P,Q) = - \sum P log(Q) , where P, Q and p.m.f.
+        # CE Loss in Torch: Instead CE(P,Q) we => 
+        #  (step-1) convert and only consider the case when P is a one-hot vector.
+        #  (step-2) convert one hot vector for and only consider case when P is one-hot vector.
+        #  (step-3) rename P into "target" P'
+        #  (step-4) Instead p.m.f. Q we apply symmetric logistic transformation (name in STATs and Optimization), a.k.a. as softmax (in ML terminology). Specifically: Qi' = exp(Qi)/(\sum exp(Qj))
+        #  (step-5) finally compute CE(P',Q')
+        # See Also: https://pytorch.org/docs/stable/generated/torch.nn.CrossEntropyLoss.html
+
     elif loss == "logistic":
         criterion = nn.BCELoss(reduction='sum')
+        # CE Loss (in Mathmetical sense) between two p.m.f. of Bernoulli r.v.
+        # See Also: https://pytorch.org/docs/stable/generated/torch.nn.BCELoss.html
     elif loss == "mse":
+        # Mean Square Error loss for regression type problems. Loss for one example encoded as (prediction - target)^2
+        # https://pytorch.org/docs/stable/generated/torch.nn.MSELoss.html
         criterion = nn.MSELoss(reduction='sum')
     else:
         raise ValueError(f"There are no registered loss for {loss}")
