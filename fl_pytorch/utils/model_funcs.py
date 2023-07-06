@@ -115,7 +115,7 @@ def get_training_elements(model_name, dataset, dataset_ref, args, resume_from, l
     if loss == "crossentropy":
         criterion = nn.CrossEntropyLoss(reduction='sum')
         # CE Loss in Mathematics: CE(P,Q) = - \sum P log(Q) , where P, Q and p.m.f.
-        # CE Loss in Torch: Instead CE(P,Q) we => 
+        # CE Loss in Torch: Instead CE(P,Q) we =>
         #  (step-1) convert and only consider the case when P is a one-hot vector.
         #  (step-2) convert one hot vector for and only consider case when P is one-hot vector.
         #  (step-3) rename P into "target" P'
@@ -905,6 +905,9 @@ def compute_loss(model, criterion, output, label):
 
     if type(criterion) is torch.nn.BCELoss and not label.is_floating_point():
         label = label.float()
+
+    if type(criterion) is torch.nn.CrossEntropyLoss:
+        label = label.long()
 
     if type(output) == list and len(output) > 1:
         if type(model).__name__.lower() == 'inception3':
